@@ -7,56 +7,40 @@
     box-sizing: border-box;
 }
 
+
 html{
     scroll-behavior: smooth;
 }
 
-.texto-centro{
-    position: absolute;
-    top: 50%;
-    left: 40%;
+.texto-informacion{
+  
+  width: 50%;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.texto-centro a{
-    color: white;
-    
-}
 
+
+
+
+
+/*--------------------------HEADER CON MENU--------------------------------*/
 header{
     width: 100%;
     height: 100vh;
     /*background-image: url(fondo-nuevo.jpg);*/
+    background: lightcoral;
+    backdrop-filter: drop-shadow(4px 4px 10px blue);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     position: static;
+    
    
     
 }
 
- 
-
-.boton{
-
-    display: inline;
-    background-color: #1BAEFF;
-    border-style: none;
-    width: 20%;
-    height: 40px;
-    border-radius: 10px;
-
-}
-
-.boton:active{
-    background-color: blue;
-    transition: .2s;
-}
-
-.texto-centro ul li{
-    
-    display: inline;
-    margin: 10px;
-}
     
 
 nav{
@@ -107,13 +91,13 @@ nav{
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 600;
-    color: #001F54;
+    color: #186fe0;
 
 }
 
 
 .nav-menu li a.active, .nav-menu li a:hover{
-    color: blue;
+    color: #172d8d;
     
     transition: .3s;
 }
@@ -139,38 +123,76 @@ nav{
     display: block;
 }
 
-.container{
-    width: 80%;
-    right: 50%;
+
+
+
+/*----------------TITULO E IMAGEN--------------*/
+.dielmod{
+  width: 200px;
+  margin-bottom: 20px;
+  
+}
+
+.texto-centro{
+  padding: 0 30px;
+  margin-top: 150px;
+  text-align: center;
+  color: #186fe0;
+}
+
+.texto-centro h3{
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.texto-centro h2{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.boton1{
+  margin-right: 30px;
+  padding: 10px 30px;
+  background-color: #186fe0;
+  color: white;
+  border-radius: 5px;
+}
+
+.boton1:hover{
+  background-color: white;
+  color: #186fe0;
+  transition: .3s;
+}
+
+.boton2{
+  margin-right: 30px;
+  padding: 10px 30px;
+  background-color: white;
+  color: #186fe0;
+  border-radius: 5px;
+}
+
+.boton2:hover{
+  background-color: #186fe0;
+  color: white;
+  transition: .3s;
 }
 
 
-.footer{
-    height: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #1BAEFF;
-
-}
-
-.footer {
-    height: 4rem;
-    background-color: #e2e2e2
-  }
 
 
 
 
 
 
+/*----------------FLECHA ABAJO---------------*/
 
 .arrow,
 .arrow:before{
 
   position: absolute;
   left: 50%;
+  text-align: center;
 
 }
 
@@ -183,8 +205,8 @@ nav{
   -webkit-transform: rotate(45deg);
   border-left: none;
   border-top: none;
-  border-right: 2px #1BAEFF solid;
-  border-bottom: 2px #1BAEFF solid;
+  border-right: 2px #186fe0 solid;
+  border-bottom: 2px #186fe0 solid;
   cursor: pointer;
   transition: .5s;
 }
@@ -198,8 +220,8 @@ nav{
   margin: -10px 0 0 -10px;
   border-left: none;
   border-top: none;
-  border-right: 1px #1BAEFF solid;
-  border-bottom: 1px #1BAEFF solid;
+  border-right: 1px #186fe0 solid;
+  border-bottom: 1px #186fe0 solid;
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-name: arrow;
@@ -219,7 +241,11 @@ nav{
 }
 
 
-
+.titulo1{
+  text-align: center;
+  margin-top: 35px;
+  color: #186fe0;
+}
 
 
 
@@ -228,7 +254,7 @@ nav{
 /*------------------GALERIA------------------*/
 
 img {
-    width: 100%; /* need to overwrite inline dimensions */
+    width: 100%; 
     height: auto;
   }
   h2 {
@@ -236,12 +262,13 @@ img {
   }
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     grid-gap: 1em;
+    margin: 25px;
   }
   
   
-  /* hover styles */
+  
   .location-listing {
     position: relative;
   }
@@ -252,10 +279,12 @@ img {
   }
   
   .location-image img {
-    filter: blur(0px);
+    filter: blur(1px);
     transition: filter 0.3s ease-in;
     transform: scale(1.1);
   }
+
+  
   
   .location-title {
     font-size: 1.5em;
@@ -269,14 +298,18 @@ img {
     left: 0;
     opacity: 0;
     transition: opacity .5s;
-    background: rgba(51, 51, 187, 0.575);
-    color: white;
-    
-    /* position the text in t’ middle*/
+    background: #186fe091;
+    color: white;                                    
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
+  .location-title i{
+    font-size: 45px;
+    color: white;
+  }
+
   
   .location-listing:hover .location-title {
     opacity: 1;
@@ -287,7 +320,7 @@ img {
   }
   
   
-  /* for touch screen devices */
+  /*-----------------Celulares------------------*/
   @media (hover: none) { 
     .location-title {
       opacity: 1;
@@ -333,13 +366,13 @@ img {
 
 
 
-@media screen  and (min-width: 864px) {
+@media screen  and (min-width: 800px) {
     .logo{
         margin-left: 50px;
 
     }
     nav{
-        height: 100px;
+        height: 130px;
     }
 
     .bar-btn{
