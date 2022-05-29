@@ -1,0 +1,11 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.info{
+    margin: 20px;
+    line-height: 25px;
+}
+
