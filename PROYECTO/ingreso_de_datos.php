@@ -42,7 +42,7 @@ if($filas > 0){
     $TI = $I1 + $I2 + $I3;
     $TO = $O1 + $O2 + $O3;
     "INSERT INTO total (Promedio, Fichas_Totales, Inasistencias_Totales, Observaciones_Totales, Comentario, ID_Alumno) values
-    ($TP, $TF, $IT, $OT, $Comentario, $ID_Alumno)"; 
+    ($TP, $TF, $TI, $TO, $Comentario, $ID_Alumno)"; 
     include("form-ingreso.html");
     ?>
     <h1> Informacion ingresada correctamente </h1>
