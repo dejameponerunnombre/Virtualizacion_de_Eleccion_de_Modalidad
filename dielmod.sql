@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-06-2022 a las 19:46:33
+-- Tiempo de generación: 02-06-2022 a las 21:09:54
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -33,9 +33,15 @@ CREATE TABLE `alumnos` (
   `CUIL` varchar(11) NOT NULL,
   `Escuela` varchar(365) NOT NULL,
   `Curso` varchar(1) NOT NULL,
-  `Comentario` varchar(365) NOT NULL,
   `ID_Alumno` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `alumnos`
+--
+
+INSERT INTO `alumnos` (`Nombre`, `DNI`, `CUIL`, `Escuela`, `Curso`, `ID_Alumno`) VALUES
+('Matias Bottarini', '45237992', '23452379929', 'Tecnica', 'G', 1);
 
 -- --------------------------------------------------------
 
@@ -152,7 +158,7 @@ ALTER TABLE `total`
 -- AUTO_INCREMENT de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  MODIFY `ID_Alumno` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Alumno` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `anualidad`
