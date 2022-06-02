@@ -1,101 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="eleccion.css">
     <script src="https://kit.fontawesome.com/2eed8f0a03.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="../IMG/logo.png">
+    <link rel="icon" href="../IMG/1.2.png">
     <link rel="stylesheet" href="boton.css">
     <link rel="stylesheet" href="footer.css">
     <title>Dielmod</title>
 </head>
 <body>
     <header id="arriba" >
-        <div>
+        
         <nav>
             <div>
-                <img src="../IMG/logo.png" alt="Imagen de fondo" class="logo">
+               <a href="inicio.html"><img src="../IMG/1.2.png" alt="Imagen de fondo" class="logo"></a> 
             </div>
-            
+            <input type="checkbox" name="check" id="check">
+            <label for="check" class="bar-btn">
+                <i class="fa-solid fa-bars"></i>  
+            </label>
             <ul class="nav-menu">
                 
-                <li><a href="#">Cerrar sesión</a></li>
+                <li><a href="inicio.html#preg">Preguntas frecuentes</a></li>
+                <li><a href="inicio.html#nosotros">Sobre nosotros</a></li>
+                <li><a href="inicio.html">Cerrar sesión</a></li>
+                
+                
                 
             </ul>
-            
-            
-            
         </nav>
-        <div class="formulario">
+        
+        
 
-            <p>Seleccione la modalidad a la que quiera entrar: </p>
-            <br></br>
-    
-            <form action="eleccion.php" method = "post">
-                
-                <input type="radio" name="modalidad" id="eco">
-                <label for="eco">Economía</label>
-            <br></br>
-            
-            <input type="radio" name="modalidad" id="natu">
-            <label for="natu">Naturales</label>
-            
-            <br></br>
-            
-            <input type="radio" name="modalidad" id="ele">
-            <label for="ele">Electrónica</label>
-    
-            <br></br>
-    
-            <input type="radio" name="modalidad" id="info">
-            <label for="info">Informática</label>
-            
-            <br></br>
-            
-            <input type="radio" name="modalidad" id="multi">
-            <label for="multi">Multimedios</label>
-            <br></br>
-            <div class="texto-centro">
-                <ul>
-                    
-                    <li><button type="submit" class="bttn-pill bttn-md bttn-primary boton1">Enviar</button></li>
-                </ul>
-            </form>
-                
-            </div>
-        </div>
+           <a class="arrow" href="#info"></a> 
+
     </header>
-    
+    <div class="body">
+    <div class="formulario">
+
+        <p>Seleccione la modalidad a la que quiera entrar: </p>
+        <br></br>
+
+        <form action="eleccion.php" method = "post">
+            
+            <input type="radio" name="modalidad" id="eco">
+            <label for="eco">Economía</label>
+        <br></br>
+        
+        <input type="radio" name="modalidad" id="natu">
+        <label for="natu">Naturales</label>
+        
+        <br></br>
+        
+        <input type="radio" name="modalidad" id="ele">
+        <label for="ele">Electrónica</label>
+
+        <br></br>
+
+        <input type="radio" name="modalidad" id="info">
+        <label for="info">Informática</label>
+        
+        <br></br>
+        
+        <input type="radio" name="modalidad" id="multi">
+        <label for="multi">Multimedios</label>
+        <br></br>
+        <div class="texto-centro">
+            <ul>
+                
+                <li><button type="submit" class="bttn-pill bttn-md bttn-primary">Enviar</button></li>
+            </ul>
+        </div>
+        </form>
+            
+    </div> 
+</div>
     
 
    
     <footer class="pie-pagina">
-        <div class="grupo-1">
-            <div class="box">
-                <figure>
-                    <a href="#arriba">
-                        <img class="imagen-logo" src="../IMG/logo.png" alt="Logo de Dielmod">
-                    </a>
-                </figure>
-            </div>
-            <div class="box">
-                <h2 id="nosotros">SOBRE NOSOTROS</h2>
-                <p>Somos alumnos de 7mo año secundaria del Instituto Juan XIII, en la modalidad de Informática.</p>
-                <p>Planteamos y realizamos este sistema para que los chicos de 3er año puedan tener una mejor forma de elección de modalidad, como así también información de las mismas.</p>
-            </div>
-            <div class="box">
-                <h2>CONTACTO</h2>
-                <div class="red-social">
-                    
-                    <a href="mailto:juan23@gmail.edu.ar?Subject=Interesado%20en%20el%20curso" class="fa fa-envelope"></a>
-                    <a href="https://www.instagram.com/cpjuan23/" class="fa fa-instagram"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-youtube"></a>
-                </div>
-            </div>
-        </div>
+        
         <div class="grupo-2">
             <small>&copy; 2022 <b>7mo Informática</b> - Todos los Derechos Reservados.</small>
         </div>
