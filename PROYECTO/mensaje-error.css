@@ -1,0 +1,9 @@
+img{
+    text-align: center;
+    width: 50%;
+    
+}
+
+.texto-centro img{
+    width: 40%;
+}

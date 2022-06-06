@@ -10,7 +10,10 @@
 
 html{
     scroll-behavior: smooth;
+    
 }
+
+
 
 .texto-informacion{
   
@@ -18,8 +21,12 @@ html{
   margin: auto;
   padding-left: 10px;
   padding-right: 10px;
+  
 }
 
+hr{
+  border:1px rgba(107, 205, 238, 0.993) solid;
+}
 
 
 
@@ -29,9 +36,9 @@ html{
 header{
     width: 100%;
     height: 100vh;
-    /*background-image: url(fondo-nuevo.jpg);*/
-    background: lightcoral;
-    backdrop-filter: drop-shadow(4px 4px 10px blue);
+    background-image: url(../IMG/prueba.jpg);
+   
+    
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -316,7 +323,15 @@ img {
     filter: blur(2px);
   }
   
+
   
+.preguntas a{
+  color: #186fe0;
+
+}
+
+
+ 
   /*-----------------Celulares------------------*/
   @media (hover: none) { 
     .location-title {
