@@ -1,0 +1,31 @@
+/*.cuerpo{
+    background: red;
+}
+
+
+.contenedor-info{
+    width: 80%;
+    background: white;
+    margin:auto;   
+    
+}
+
+
+*/
+
+.titulo-info h2{
+    text-align: center;
+    color: #186fe0;
+    padding: 15px;
+
+    
+}
+
+.titulo-info hr{
+    width: 25%;
+    margin: auto;
+    
+    border-top: 2px solid #186fe0;
+
+}
+
