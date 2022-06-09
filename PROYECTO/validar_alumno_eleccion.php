@@ -6,8 +6,7 @@ $_SESSION['usuario'] = $usuario;
  
 include("db.php");
  
-$consulta = "SELECT*FROM alumnos where Nombre = '$usuario' and CUIL = '$contraseña'";
-$ID_Alumno = "SELECT ID_Alumno FROM alumnos where Nombre = '$usuario' and CUIL = '$contraseña'";
+$consulta = "SELECT*FROM alumnos where DNI = '$usuario' and CUIL = '$contraseña'";
 $resultado=mysqli_query($conexion,$consulta);
 
 $filas = mysqli_num_rows($resultado);
