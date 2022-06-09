@@ -1,31 +1,173 @@
-/*.cuerpo{
-    background: red;
+*{
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+
 }
 
 
-.contenedor-info{
-    width: 80%;
+
+
+/*------------------- HEADER ----------------------*/
+
+header{
+    width: 100%;
+    height: 100vh;
+    
+    position: static;
+    
+   
+    
+}
+
+nav{
+    
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: white;
-    margin:auto;   
     
+
 }
 
+.logo{
+    width: 100px;
+    margin-left: 20px;
+    margin-top: 10px;
 
-*/
+}
 
-.titulo-info h2{
+.bar-btn{
+    font-size: 25px;
+    color: #001F54;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.nav-menu{
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 100px;
+    background: /*rgba(99, 97, 97, 0.8)*/ lightblue;   
+    transition: all .3s;
     text-align: center;
+}
+
+.nav-menu li{
+    display: none;
+    line-height: 30px;
+    margin: 50px 0;
+    transition: all .5s;
+
+}
+
+.nav-menu li a{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
     color: #186fe0;
-    padding: 15px;
-
-    
-}
-
-.titulo-info hr{
-    width: 25%;
-    margin: auto;
-    
-    border-top: 2px solid #186fe0;
 
 }
 
+
+.nav-menu li a.active, .nav-menu li a:hover{
+    color: #6692CC;
+    border-bottom: 1px solid #6692CC;
+    transition: .3s;
+}
+
+.nav-menu li a.active:hover{
+    color: #6692CC;
+    transition: .3s;
+}
+
+#check{
+    display: none;
+    
+}
+
+#check:checked ~ .nav-menu{
+    height: 100vh;
+    z-index: 1;
+    transition: .1s;
+}
+
+
+#check:checked ~ .nav-menu li{
+    display: block;
+}
+
+
+
+/*----------------TEXTO INFORMACION-----------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen  and (min-width: 800px) {
+    .logo{
+        margin-left: 50px;
+
+    }
+    nav{
+        height: 130px;
+    }
+
+    .bar-btn{
+        display: none;
+    }
+    
+    .nav-menu{
+        position: relative;
+        height: 100px;
+        top: 0;
+        background: none;
+        transition: none;
+        text-align: right;
+        margin-right: 50px;
+
+    }
+    .nav-menu li{
+        display: inline-block;
+        line-height: 100px;
+        margin: 0 20px;
+        transition: none;
+    }
+
+    .nav-menu li a{
+        font-size: 13px;
+    }
+
+    .label{
+      height: auto;
+    }
+
+
+
+   
+
+    
+}
