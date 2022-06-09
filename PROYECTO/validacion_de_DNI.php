@@ -32,6 +32,9 @@ if($filas > 0){
     $fila1 = $datos1 ->fetch_array();
     $fila2 = $datos2 ->fetch_array();
     $fila3 = $datos3 ->fetch_array();
+    $_SESSION['filas1'] = $fila1;
+    $_SESSION['filas2'] = $fila2;
+    $_SESSION['filas3'] = $fila3;
 }else{
     include("form_ingreso_DNI.html");
     ?>
@@ -43,7 +46,7 @@ if($filas > 0){
                 <h2>Ingresar datos de alumno</h2>
             <br>
             
-            <form action="edicion_datos.php" method="post" target="_blank">
+            <form action="edicion_de_datos.php" method="post" target="_blank">
                 <div class="prom">
             
                     <h3>Promedios</h3>

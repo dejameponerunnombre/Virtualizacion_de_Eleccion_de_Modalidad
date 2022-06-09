@@ -13,9 +13,9 @@ $filas = mysqli_num_rows($resultado);
 
 if($filas){
     ?>
-    
+     
     <?php
-    include("HTML_FORMULARIO.html");
+    include("ELECCION.html");
 }else{
     ?>
     <?php

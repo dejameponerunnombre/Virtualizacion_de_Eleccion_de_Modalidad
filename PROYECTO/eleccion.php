@@ -5,5 +5,4 @@ $DNI = $_SESSION['usuario'];
 include("db.php");   
 $con = "UPDATE alumnos SET Modalidad = '$modalidad' where  DNI = '$DNI'";
 $var = $conexion -> query($con);
-mysqli_close($conexion);
 ?>
