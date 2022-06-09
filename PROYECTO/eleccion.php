@@ -1,9 +1,9 @@
 <?php
 $modalidad = $_POST['modalidad'];
 session_start();
-$_SESSION['modalidad'] = $modalidad;
+$DNI = $_SESSION['usuario'];
 include("db.php");   
-"INSERT INTO Curso (ID_Modalidad) where ID_Alumno = '$ID_Alumno' values 
-('$modalidad')";
+$con = "UPDATE alumnos SET Modalidad = '$modalidad' where  DNI = '$DNI'";
+$var = $conexion -> query($con);
 mysqli_close($conexion);
 ?>
