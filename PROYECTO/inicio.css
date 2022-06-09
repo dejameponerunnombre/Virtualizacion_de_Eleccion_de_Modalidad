@@ -17,7 +17,7 @@ html{
 
 .texto-informacion{
   
-  width: 50%;
+  width: 80%;
   margin: auto;
   padding-left: 10px;
   padding-right: 10px;
@@ -104,8 +104,8 @@ nav{
 
 
 .nav-menu li a.active, .nav-menu li a:hover{
-    color: #172d8d;
-    
+    color: #6692CC;
+    border-bottom: 1px solid #6692CC;
     transition: .3s;
 }
 
