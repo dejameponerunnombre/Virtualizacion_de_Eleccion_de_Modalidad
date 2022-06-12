@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-06-2022 a las 18:59:21
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.0.13
+-- Tiempo de generación: 12-06-2022 a las 08:34:45
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,8 +33,8 @@ CREATE TABLE `alumnos` (
   `CUIL` varchar(11) NOT NULL,
   `Escuela` varchar(365) NOT NULL,
   `Curso` varchar(1) NOT NULL,
-  `Comentario` varchar(365) NOT NULL,
-  `Modalidad` int(1) NOT NULL
+  `Comentario` varchar(365) DEFAULT NULL,
+  `Modalidad` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -42,6 +42,7 @@ CREATE TABLE `alumnos` (
 --
 
 INSERT INTO `alumnos` (`Nombre`, `DNI`, `CUIL`, `Escuela`, `Curso`, `Comentario`, `Modalidad`) VALUES
+('AAA', '11111111', '11111111111', 'Tecnica', 'B', '2', 0),
 ('Bottarini Matias', '45237992', '23452379929', 'Tecnica', 'G', 'Hola', 0);
 
 -- --------------------------------------------------------
@@ -64,6 +65,9 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`Promedio`, `Fichas`, `Inasistencias`, `Observaciones`, `DNI`, `ID_Anualidad`) VALUES
+(1, 1, 2, 1, '11111111', '1'),
+(2, 2, 2, 2, '11111111', '2'),
+(3, 3, 3, 3, '11111111', '3'),
 (10, 10, 10, 10, '45237992', '1'),
 (9, 9, 9, 9, '45237992', '2'),
 (8, 7, 25, 6, '45237992', '3');
