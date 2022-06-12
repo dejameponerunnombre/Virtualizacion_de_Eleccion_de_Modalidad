@@ -6,7 +6,7 @@ $_SESSION['usuario'] = $usuario;
  
 include("db.php");
 
-$consulta = "SELECT*FROM trabajador where Nombre = '$usuario' and Clave = '$contraseña'";
+$consulta = "SELECT*FROM trabajador where Nombre = '$usuario' and DNI = '$contraseña'";
 $resultado=mysqli_query($conexion,$consulta);
 
 $filas = mysqli_num_rows($resultado);
