@@ -63,7 +63,7 @@ nav{
 }
 
 .logo{
-    width: 100px;
+    width: 200px;
     margin-left: 20px;
     margin-top: 10px;
 
@@ -266,11 +266,14 @@ img {
   }
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    grid-template-columns: repeat(3,1fr);
     grid-gap: 1em;
     margin: 25px;
   }
-  
+
+.nose{
+  justify-content: center;
+}
   
   
   .location-listing {
