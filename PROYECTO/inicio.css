@@ -257,7 +257,7 @@ nav{
 
 /*------------------GALERIA------------------*/
 
-img {
+.img {
     width: 100%; 
     height: auto;
   }
@@ -271,9 +271,7 @@ img {
     margin: 25px;
   }
 
-.nose{
-  justify-content: center;
-}
+
   
   
   .location-listing {
@@ -332,6 +330,25 @@ img {
   color: #186fe0;
 
 }
+
+
+
+
+
+
+
+.modalidades-extra {
+
+  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1em;
+  margin: auto;
+
+
+}
+
+
 
 
  
@@ -439,6 +456,13 @@ img {
   max-height: 400px;
   transition: 0.5s;
 }
+
+
+
+
+
+
+
 
 
 
