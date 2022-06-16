@@ -271,7 +271,16 @@ nav{
     margin: 25px;
   }
 
-
+  .grid2-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1em;
+    
+    text-align: center;
+    margin-left: 19.5%;
+    margin-right: 19.5%;
+    margin-bottom: 3%;
+  }
   
   
   .location-listing {
