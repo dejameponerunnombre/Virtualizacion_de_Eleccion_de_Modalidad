@@ -18,14 +18,17 @@ html{
 }
 
 header{
-    width: 100%;
-    
-    
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: static;
-   
+        width: 100%;
+        
+       
+        
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: static;
+        
+       
+        
     
 }
 
@@ -61,7 +64,25 @@ footer {
     
 }
 
+.image{
+    
+    background-image: url(../IMG/prueba-elec.jpg);
+   
+    
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    position: static;
+}
 
+.image2{
+    
+    background-image: url(../IMG/prueba-elec.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    position: static;
+}
 .formulario {
     
     margin: auto;
