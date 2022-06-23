@@ -63,10 +63,10 @@ nav{
 }
 
 .logo{
-    width: 200px;
-    margin-left: 20px;
+    width: 70px;
+    margin-left: 60px;
     margin-top: 10px;
-
+    
 }
 
 .bar-btn{
@@ -136,9 +136,9 @@ nav{
 /*----------------TITULO E IMAGEN--------------*/
 .dielmod{
   width: 200px;
-  margin-bottom: 20px;
   
 }
+
 
 .texto-centro{
   padding: 0 30px;

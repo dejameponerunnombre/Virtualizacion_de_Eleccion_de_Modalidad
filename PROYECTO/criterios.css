@@ -70,8 +70,8 @@ nav{
 }
 
 .logo{
-  width: 200px;
-  margin-left: 20px;
+  width: 70px;
+  margin-left: 60px;
   margin-top: 10px;
 
 }
@@ -358,6 +358,167 @@ color: #186fe0;
   
 }
 
+/*------------------CAROUSEL------------------*/
+
+.gallery {
+  width: 100%;
+}
+
+.gallery-container {
+  align-items: center;
+  display: flex;
+  height: 400px;
+  margin: 0 auto;
+  max-width: 1000px;
+  position: relative;
+}
+
+.gallery-item {
+  
+  opacity: 0;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  width: 50%;
+  height: 22vw;
+  z-index: 0;
+}
+
+.gallery-item-1 {
+  left: 15%;
+  opacity: .4;
+  transform: translateX(-50%);
+}
+
+.gallery-item-2,
+.gallery-item-4 {
+  
+  opacity: 1;
+  width: 50%;
+  height: 22vw;
+  z-index: 1;
+}
+
+.gallery-item-2 {
+  left: 30%;
+  transform: translateX(-50%);
+}
+
+.gallery-item-3 {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  height: 300px;
+  opacity: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  z-index: 2;
+}
+
+.gallery-item-4 {
+  left: 70%;
+  transform: translateX(-50%);
+}
+
+.gallery-item-5 {
+  left: 85%;
+  opacity: .4;
+  transform: translateX(-50%);
+}
+
+.gallery-controls {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  color: #186fe0;
+}
+
+.gallery-controls button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 20px;
+  padding: 0 12px;
+  text-transform: capitalize;
+  color: #186fe0;
+}
+
+.gallery-controls button:focus {
+  outline: none;
+}
+
+.gallery-controls-Anterior {
+  position: relative;
+}
+
+.gallery-controls-Anterior::before { 
+  border: solid #186fe0;
+  border-width: 0 2px 2px 0;
+  content: '';
+  display: inline-block;
+  height: 4px;
+  left: -10px;
+  padding: 2px;
+  position: absolute;
+  top: 15%;
+  transform: rotate(135deg) translateY(-50%);
+  transition: left 0.15s ease-in-out;
+  width: 4px;
+}
+
+.gallery-controls-Anterior:hover::before {
+  left: -18px;
+}
+
+.gallery-controls-Siguiente {
+  position: relative;
+}
+
+.gallery-controls-Siguiente::before {
+  border: solid #186fe0;
+  border-width: 0 2px 2px 0;
+  content: '';
+  display: inline-block;
+  height: 4px;
+  padding: 2px;
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: rotate(-45deg) translateY(-50%);
+  transition: right 0.15s ease-in-out;
+  width: 4px;
+}
+
+.gallery-controls-Siguiente:hover::before {
+  right: -18px;
+}
+
+.gallery-nav {
+  bottom: -15px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.gallery-nav li {
+  background: #ccc;
+  border-radius: 50%;
+  height: 10px;
+  margin: 0 16px;
+  width: 10px;
+}
+
+.gallery-nav li.gallery-item-selected {
+  background: #555;
+}
+
+
+
+
+
+
 
 
 
@@ -374,147 +535,6 @@ color: #186fe0;
     filter: blur(2px);
   }
 }
-
-
-
-
-
-
-/*------------------PREGUNTAS FERCUEN------------*/
-
-.wrapper {
-max-width: 600px;
-width: 100%;
-margin: 5vh auto;
-
-}
-
-
-
-.input {
-display: none;
-}
-
-.label {
-display: flex;
-width: 100%;
-height: 100px;
-cursor: pointer;
-border: 3px solid #186fe0;
-user-select: none;
-}
-
-.label div:first-child {
-width: 100%;
-line-height: 45px;
-margin-left: 10px;
-font-size: 1em;
-}
-
-.cross{
-margin-right:15px;
-margin-top:3px;
-}
-
-.cross:before,.cross:after {
-content: '';
-border-top: 3px solid #186fe0;
-width: 15px;
-display: block;
-margin-top: 18px;
-transition: 0.3s;
-}
-
-.cross:after {
-transform: rotate(90deg);
-margin-top: -2px;
-}
-
-.content {
-box-sizing: border-box;
-font-size: 0.9em;
-margin: 10px 10px;
-max-height: 0;
-overflow: hidden;
-transition: max-height, .5s;
-}
-
-.input:checked ~ .content {
-max-height: 400px;
-transition: max-height, 1s;
-}
-
-.input:checked ~ .label .cross:before {
-transform: rotate(180deg);
-}
-
-.input:checked ~ .label .cross:after {
-transform: rotate(0deg);
-}
-
-.questions{
-margin-top:20px;
-max-height: 0;
-overflow: hidden;
-transition: max-height, .5s;
-}
-
-.questions .label{
-border:none;
-box-shadow: none;
-margin:0;
-}
-
-.input:checked ~ .questions {
-max-height: 400px;
-transition: 0.5s;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media screen  and (min-width: 800px) {
@@ -555,79 +575,9 @@ transition: 0.5s;
     height: auto;
   }
 
-
-
- 
-
   
 }
 
-
-.content-all{
-  width: 210px;
-  margin: auto;
-  perspective: 800px;
-  position: relative;
-  margin-top: 50px;
-}
-
-.content-carrousel{
-  width: 100%;
-  position: absolute;
-  animation: rotar 10s infinite linear;
-  transform-style: preserve-3d;
-}
-
-.content-carrousel:hover{
-  animation-play-state: paused;
-  cursor: pointer;
-}
-
-
-.content-carrousel figure{
-  width: 100%;
-  height: 120px;
-  overflow: hidden;
-  position: absolute;
-  box-shadow: 0px 0px 20px 0px black;
-  transition: all 300ms;
-  
-}
-
-.content-carrousel figure:hover{
-  box-shadow: 0px 0px 0px 0px black;
-  transition: all 300ms;
-}
-
-.content-carrousel figure:nth-child(1){transform: rotateY(0deg) translateZ(300px);}
-.content-carrousel figure:nth-child(2){transform: rotateY(40deg) translateZ(300px);}
-.content-carrousel figure:nth-child(3){transform: rotateY(80deg) translateZ(300px);}
-.content-carrousel figure:nth-child(4){transform: rotateY(120deg) translateZ(300px);}
-.content-carrousel figure:nth-child(5){transform: rotateY(160deg) translateZ(300px);}
-.content-carrousel figure:nth-child(6){transform: rotateY(200deg) translateZ(300px);}
-.content-carrousel figure:nth-child(7){transform: rotateY(240deg) translateZ(300px);}
-.content-carrousel figure:nth-child(8){transform: rotateY(280deg) translateZ(300px);}
-.content-carrousel figure:nth-child(9){transform: rotateY(320deg) translateZ(300px);}
-.content-carrousel figure:nth-child(10){transform: rotateY(360deg) translateZ(300px);}
-
-.content-carrousel img{
-  width: 100%;
-  transition: all 300ms;
-}
-
-.content-carrousel img:hover{
-  transform: scale(1.2);
-  transition: all 300ms;
-}
-
-
-@keyframes rotar{
-  from{
-      transform: rotateY(0deg);
-  }to{
-      transform: rotateY(360deg);
-  }
-}
 
 
 
