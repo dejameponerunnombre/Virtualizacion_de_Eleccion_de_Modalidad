@@ -381,6 +381,7 @@ color: #186fe0;
   width: 50%;
   height: 22vw;
   z-index: 0;
+  scrollbar-shadow-color: #001F54;
 }
 
 .gallery-item-1 {
