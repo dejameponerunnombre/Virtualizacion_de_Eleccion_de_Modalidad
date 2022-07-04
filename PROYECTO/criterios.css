@@ -140,7 +140,7 @@ nav{
 
 .service-card {
   font-family: 'Overpass', sans-serif;
-  
+ 
   height: auto;
   width: 300px;;
   color:darkgray;
@@ -153,7 +153,9 @@ nav{
   cursor: pointer;
 }
 .title{
-  padding: 15px;
+  padding-left: 15px;
+  padding-bottom: 0px;
+  padding-top: 15px;
   font-size: 24px;
   border-bottom: 2px solid #d0cffa;
   color:#fff;
