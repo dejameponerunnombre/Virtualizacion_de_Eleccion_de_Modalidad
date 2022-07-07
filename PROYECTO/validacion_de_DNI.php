@@ -17,15 +17,15 @@ session_start();
 $_SESSION['DNI'] = $DNI;
  
 include("db.php");
-$request = "SELECT*FROM alumnos where DNI = '$DNI'";
+$request = "SELECT*FROM info where DNI = '$DNI'";
 $resultado=mysqli_query($conexion,$request);
 
 $filas = mysqli_num_rows($resultado);
 
 if($filas > 0){
-    $consulta1 = "SELECT*FROM info where DNI = $DNI and ID_Anualidad = 1";
-    $consulta2 = "SELECT*FROM info where DNI = $DNI and ID_Anualidad = 2";
-    $consulta3 = "SELECT*FROM info where DNI = $DNI and ID_Anualidad = 3";
+    $consulta1 = "SELECT*FROM info where DNI = $DNI and Anio = 1";
+    $consulta2 = "SELECT*FROM info where DNI = $DNI and Anio = 2";
+    $consulta3 = "SELECT*FROM info where DNI = $DNI and Anio = 3";
     $datos1 = $conexion -> query($consulta1);
     $datos2 = $conexion -> query($consulta2);
     $datos3 = $conexion -> query($consulta3);
@@ -35,14 +35,8 @@ if($filas > 0){
     $_SESSION['filas1'] = $fila1;
     $_SESSION['filas2'] = $fila2;
     $_SESSION['filas3'] = $fila3;
-}else{
-    include("form_ingreso_DNI.html");
     ?>
-    <h1> DNI no existente </h1>
-    <?php
-}
-?>
-<div class="m_formulario">
+    <div class="m_formulario">
                 <h2>Ingresar datos de alumno</h2>
             <br>
             
@@ -50,9 +44,9 @@ if($filas > 0){
                 <div class="prom">
             
                     <h3>Promedios</h3>
-                    <p>Promedio de Primer Año: <input type="number" name="Promedio_1ro" value="<?php $fila1["Promedio"] ?>" placeholder="<?php echo $fila1["Promedio"] ?>"></p>            
-                    <p>Promedio de Segundo Año: <input type="number" name="Promedio_2do" value="<?php $fila2["Promedio"] ?>" placeholder="<?php echo $fila2["Promedio"] ?>"></p>            
-                    <p>Promedio de Tercer Año: <input type="number" name="Promedio_3ro" value="<?php $fila3["Promedio"] ?>" placeholder="<?php echo $fila3["Promedio"] ?>"></p> 
+                    <p>Promedio de Primer Año: <input type="number" name="Promedio_1ro" placeholder="<?php echo $fila1["Prom"] ?>"></p>            
+                    <p>Promedio de Segundo Año: <input type="number" name="Promedio_2do" placeholder="<?php echo $fila2["Prom"] ?>"></p>            
+                    <p>Promedio de Tercer Año: <input type="number" name="Promedio_3ro" placeholder="<?php echo $fila3["Prom"] ?>"></p> 
                     
         
                 </div>   
@@ -60,9 +54,9 @@ if($filas > 0){
                 <div class="inasis">
                     
                     <h3>Inasistencias</h3>
-                    <p>Inasistencias de Primer Año: <input type="number" name="Inasistencias_1ro" value="<?php $fila1["Inasistencias"] ?>" placeholder="<?php echo $fila1["Inasistencias"] ?>"></p>
-                    <p>Inasistencias de Segundo Año: <input type="number" name="Inasistencias_2do" value="<?php $fila2["Inasistencias"] ?>" placeholder="<?php echo $fila2["Inasistencias"] ?>"></p>
-                    <p>Inasistencias de Tercer Año: <input type="number" name="Inasistencias_3ro" value="<?php $fila3["Inasistencias"] ?>" placeholder="<?php echo $fila3["Inasistencias"] ?>"></p>
+                    <p>Inasistencias de Primer Año: <input type="number" name="Inasistencias_1ro" placeholder="<?php echo $fila1["Inasistencias"] ?>"></p>
+                    <p>Inasistencias de Segundo Año: <input type="number" name="Inasistencias_2do" placeholder="<?php echo $fila2["Inasistencias"] ?>"></p>
+                    <p>Inasistencias de Tercer Año: <input type="number" name="Inasistencias_3ro" placeholder="<?php echo $fila3["Inasistencias"] ?>"></p>
                     
         
                 </div>
@@ -70,9 +64,9 @@ if($filas > 0){
                 <div class="fichas">
         
                     <h3>Fichas</h3>
-                    <p>Fichas de Primer Año: <input type="number" name="Fichas_1ro" value="<?php $fila1["Fichas"] ?>" placeholder="<?php echo $fila1["Fichas"] ?>"></p>
-                    <p>Fichas de Segundo Año: <input type="number" name="Fichas_2do" value="<?php $fila2["Fichas"] ?>" placeholder="<?php echo $fila2["Fichas"] ?>"></p>
-                    <p>Fichas de Tercer Año: <input type="number" name="Fichas_3ro" value="<?php $fila3["Fichas"] ?>" placeholder="<?php echo $fila3["Fichas"] ?>"></p>
+                    <p>Fichas de Primer Año: <input type="number" name="Fichas_1ro" placeholder="<?php echo $fila1["Fichas"] ?>"></p>
+                    <p>Fichas de Segundo Año: <input type="number" name="Fichas_2do" placeholder="<?php echo $fila2["Fichas"] ?>"></p>
+                    <p>Fichas de Tercer Año: <input type="number" name="Fichas_3ro" placeholder="<?php echo $fila3["Fichas"] ?>"></p>
                     
                 
                 </div>
@@ -80,9 +74,9 @@ if($filas > 0){
                 <div class="observ">
                 
                     <h3>Obserivaciones</h3>
-                    <p>Observaciones de Primer Año: <input type="number" name="Observaciones_1ro" value="<?php $fila1["Observaciones"] ?>" placeholder="<?php echo $fila1["Observaciones"] ?>"></p>
-                    <p>Observaciones de Segundo Año: <input type="number" name="Observaciones_2do" value="<?php $fila2["Observaciones"] ?>" placeholder="<?php echo $fila2["Observaciones"] ?>"></p>
-                    <p>Observaciones de Tercer Año: <input type="number" name="Observaciones_3ro" value="<?php $fila3["Observaciones"] ?>" placeholder="<?php echo $fila3["Observaciones"] ?>"></p>
+                    <p>Observaciones de Primer Año: <input type="number" name="Observaciones_1ro" placeholder="<?php echo $fila1["Observaciones"] ?>"></p>
+                    <p>Observaciones de Segundo Año: <input type="number" name="Observaciones_2do" placeholder="<?php echo $fila2["Observaciones"] ?>"></p>
+                    <p>Observaciones de Tercer Año: <input type="number" name="Observaciones_3ro" placeholder="<?php echo $fila3["Observaciones"] ?>"></p>
                     
                 
                 </div>
@@ -99,8 +93,16 @@ if($filas > 0){
                 <li><button type="submit" class="bttn-pill bttn-md bttn-primary">Enviar</button></li>
             </ul>
         </div>
-</form>
-<?php
+        </form>
+        <?php   
+}else{
+   
+    include("form_ingreso_DNI.html");
+    ?>
+    <h1> Este DNI no ha sido ingresado anteriormente </h1>
+    <?php
+}
+
 mysqli_free_result($resultado);
 mysqli_close($conexion);
 ?>

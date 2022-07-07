@@ -2,6 +2,10 @@
         session_start();
         include("db.php");
         $x = 0;
+        $PT = 0;
+        $FT = 0;
+        $IT = 0;
+        $OT = 0;
         $DNI = $_SESSION['DNI'];
         $P[0] = $_POST['Promedio_1ro'];
         $P[1] = $_POST['Promedio_2do'];
@@ -38,11 +42,17 @@
             include("db.php");
             for($i = 0; $i < 3; $i++)
             {
-                $in[$i]  = "INSERT INTO info (Promedio, Fichas, Inasistencias, Observaciones, DNI, ID_Anualidad) values 
+                $in[$i]  = "INSERT INTO info (Prom, Fichas, Inasistencias, Observaciones, DNI, Anio) values 
                 ($P[$i], $F[$i], $I[$i], $O[$i], $DNI, $i+1)";
                 $con[$i] =  $conexion -> query($in[$i]);
+                $PT += $P[$i];
+                $FT += $F[$i];
+                $IT += $I[$i];
+                $OT += $O[$i];
             }
-            $var2 = "UPDATE alumnos SET Comentario = '$Comentario' where DNI = '$DNI'"; 
+            $PromT = $PT / 3;
+            $var2 = "INSERT INTO total (PromediosT, FichasT, InasistenciasT, ObservacionesT, DNI, Comentario) values 
+            ($PromT, $FT, $IT, $OT, $DNI, $Comentario)";
             $con4 = $conexion -> query($var2);
             ?>
             <h1> Informacion ingresada correctamente </h1>

@@ -1,36 +1,43 @@
-
-<html>
-    <body>
-    <?php
+<?php
 include("db.php");
+for($i = 1; $i < 2; $i++)
+{
+    $selec = "SELECT DNI FROM eleccion where ID_Modalidad = 4";
+    $a = $conexion->query($selec);
+    $fila = $a ->fetch_array();
+    if($fila > 0)
+    {
+        ECHO ":)";
+    }
+    else 
+    {
+        ECHO "ERROR";
+    }
+    for ($q = 0; $q < count($fila); $q++)
+    {
+        $show2 = "SELECT Nombre FROM alumnos where DNI = $fila[$q]";
+        $nom = $conexion -> query($show2);
+        $fila2 = mysqli_num_rows($nom);
+        if($fila2 > 0)
+        {
+            ECHO ":)";
+        }
+        else 
+        {
+            ECHO "ERROR";
+        }
+        $show3 = "SELECT PromediosT FROM total where DNI = $fila[$q]";
+        $prom = $conexion -> query($show3);
+        $fila3 = $prom ->fetch_array();
+        if($fila3 > 0)
+        {
+            ECHO ":)";
+        }
+        else 
+        {
+            ECHO "ERROR";
+        }
+    }
+}
 
-//$nombre = "SELECT Nombre FROM informacion_personal_alumnos";
-//$DNI = "SELECT DNI FROM informacion_personal_alumnos";
-//$CUIL = "SELECT CUIL FROM informacion_personal_alumnos";
-//$Escuela = "SELECT Escuela FROM informacion_personal_alumnos";
-//$Curso = "SELECT Curso FROM informacion_personal_alumnos";
-$consultas = "SELECT * FROM informacion_personal_alumnos";
-"INSERT into datos_alumnos (Nombre, DNI, CUIL, Escuela, Curso) Values ($nombre, $DNI, $CUIL, $Escuela, $Curso)";
-//mysqli_query($conexion, $nombre, $DNI);
-//mysqli_query($CUIL, $Escuela, $Curso);
-$resultado = mysqli_query($conexion, $consultas);
 ?>
-        <table border = 1>
-            <?php
-            while($rows = mysql_fetch_assoc($resultado))
-            {
-                ?>
-            <tr>
-                <td><?php echo $rows.[consultas]; ?></td>
-                <td><?php echo $rows.[Nombre]; ?></td>
-                <td><?php echo $rows.[Nombre]; ?></td>
-                <td><?php echo $rows.[Nombre]; ?></td>
-                <td><?php echo $Escuela ?></td>
-                <td><?php echo $Curso ?></td>
-            </tr>
-            <?php
-            }
-            ?>
-        </table>
-    </body>
-</html>

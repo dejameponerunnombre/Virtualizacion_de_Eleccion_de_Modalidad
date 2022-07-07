@@ -6,18 +6,14 @@ $_SESSION['usuario'] = $usuario;
  
 include("db.php");
 
-$consulta = "SELECT*FROM trabajador where Nombre = '$usuario' and DNI = '$contraseña'";
-$resultado=mysqli_query($conexion,$consulta);
+$consult = "SELECT*FROM empleado where Usuario = '$usuario' and Contrasenia = '$contraseña'";
+$resultado=mysqli_query($conexion,$consult);
 
 $filas = mysqli_num_rows($resultado);
 
 if($filas){
-    ?>
-    <?php
-    include("form-ingreso.html");
+    include("pc_trabajador.html");
 }else{
-    ?>
-    <?php
     include("login_trbajador_datos.html");
     ?>
     <h1> Datos erroneos </h1>
