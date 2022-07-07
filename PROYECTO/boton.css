@@ -10,7 +10,7 @@
   .bttn-md,
   .bttn-sm,
   .bttn-xs {
-    color: #1d89ff;
+    color: #c8deff;
   }
   
   .bttn,
@@ -51,7 +51,7 @@
     border: none;
     border-radius: 100px;
     background: #fff;
-    color: #1d89ff;
+    color: #c8deff;
     -webkit-transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
     transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
   }
@@ -63,7 +63,7 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: #1d89ff;
+    background: #c8deff;
     content: '';
     opacity: 0;
     -webkit-transition: opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), -webkit-transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
@@ -141,18 +141,18 @@
   }
   .bttn-pill.bttn-default {
     background: #fff;
-    color: #1d89ff;
+    color: #c8deff;
   }
   .bttn-pill.bttn-default:hover,
   .bttn-pill.bttn-default:focus {
-    color: #1d89ff;
+    color: #c8deff;
   }
   .bttn-pill.bttn-default:before,
   .bttn-pill.bttn-default:after {
-    background: #1d89ff;
+    background: #c8deff;
   }
   .bttn-pill.bttn-primary {
-    background: #1d89ff;
+    background: #4e95ff;
     color: #fff;
   }
   .bttn-pill.bttn-primary:hover,
