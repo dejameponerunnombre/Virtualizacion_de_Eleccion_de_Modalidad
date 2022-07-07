@@ -6,25 +6,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="form-ingreso.css">
+    <link rel="stylesheet" href="boton.css">
+    <link rel="stylesheet" href="footer.css">
 
     <title>Control de notas</title>
 </head>
 
 <body>
+ <header id="arriba" >
+        
+                <nav>
+                    <div>
+                       <a><img src="../IMG/logo (3).png" alt="Imagen de fondo" class="logo"></a> 
+                    </div>
+                    <input type="checkbox" name="check" id="check">
+                    <label for="check" class="bar-btn">
+                        <i class="fa-solid fa-bars"></i>  
+                    </label>
+                    <ul class="nav-menu">
+                        
+                        <li><a href="inicio.html" rel="noreferrer">Cerrar sesión</a></li>
+                        
+                        
+                        
+                    </ul>
+                </nav>
+        
+            </header>
 
-    
-    <div>
-            <div class="m_header">
-                <div class="m_container">
-                    <u></u>
-                        <a href="#m__" rel="noreferrer">Cerrar sesión</a>
-                    <u></u>
+            <div class="formulario" >
+                <p>Seleccione la modalidad a la que quiera entrar: </p>
+                <br></br>
+        
+                <form action="eleccion.php" method = "post">
+                    
+                    <input type="radio" name="modalidad" id=1 value=1>
+                    <label for=1>Economía</label>
+                <br></br>
+                
+                <input type="radio" name="modalidad" id=2 value=2>
+                <label for=2>Naturales</label>
+                
+                <br></br>
+                
+                <input type="radio" name="modalidad" id=3 value=3>
+                <label for=3>Electrónica</label>
+        
+                <br></br>
+        
+                <input type="radio" name="modalidad" id=4 value=4>
+                <label for=4>Informática</label>
+                
+                <br></br>
+                
+                <input type="radio" name="modalidad" id=5 value=5>
+                <label for=5>Multimedios</label>
+                <br></br>
+        
+                <input type="radio" name="modalidad" id=10 value=10>
+                <label for=10>Cambio de institución</label>
+                <br></br>
+                <div class="texto-centro">
+                    <ul>
+                        
+                        <li><button type="submit" class="bttn-pill bttn-md bttn-primary">Enviar</button></li>
+                    </ul>
                 </div>
-            </div>
+                </form>
+                    
+            </div> 
 
-            <div class="m_formulario">
 
-            <h2>Ingrese DNI del alumno</h2>
+
+
+
+
+
+
+            <div class="formulario">
+
+            <p>Ingrese DNI del alumno a cambiar</p>
             <br>
             
             <form action="validacion_de_DNI.php" method="post" target="_blank">
@@ -34,15 +95,25 @@
             <h3>DNI del alumno</h3>   
         </div>   
             <p><input type="number" name="DNI" id="DNI"></p>
-            <button type="submit" class="m_boton_formulario" >Enviar</button>
-            </form>
+            <div class="texto-centro">
+                    <ul>
+                        
+                        <li><button type="submit" class="bttn-pill bttn-md bttn-primary">Enviar</button></li>
+                    </ul>
+                </div>
+   
                 
             </div>
             <br>
-            <div class="m_footer">
-                <div class="m_container">Copyright © 2022 7mo C - Grupo 3</div>        
-            </div>
-    </div>
+
+
+    
 
 </body>
+<footer class="pie-pagina" style="left: 0;">
+    <div class="grupo-2">
+        <small>&copy; 2022 <b>7mo Informática</b> - Grupo 3</small>
+    </div>
+</footer>
+
 </html>
