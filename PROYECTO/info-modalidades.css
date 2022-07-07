@@ -5,9 +5,12 @@
 
 }
 
+
+
 .container{
     width: 80%;
     margin: auto;
+    
 }
 
 .container h1{
@@ -15,6 +18,8 @@
     color: #186fe0;
     padding-bottom: 20px;
 }
+
+
 
 
 
@@ -106,6 +111,8 @@ nav{
 
 
 
+
+
 /*----------------------VIDEOS-----------------------*/
 
 
@@ -113,6 +120,9 @@ nav{
 .profesor{
     text-align: center;
 }
+
+
+
 
 
 /*----------------TEXTO INFORMACION-----------------*/
@@ -150,8 +160,22 @@ nav{
 
 
 
+.pie-pagina{
+    background: #186fe0;
+}
 
 
+body{
+    background-image: url(../IMG/prueba.jpg);
+    background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: static;
+}
+
+.container{
+    background: white;
+}
 
 
 
@@ -209,6 +233,8 @@ nav{
     .profesor{
         float: right;
         border-radius: 3px;
+        height: auto;
+        margin-top: 40px;
     }
 
 
