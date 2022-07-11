@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-06-2022 a las 22:07:33
+-- Tiempo de generación: 07-07-2022 a las 22:55:56
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -42,8 +42,16 @@ CREATE TABLE `alumnos` (
 --
 
 INSERT INTO `alumnos` (`DNI`, `CUIL`, `Nombre`, `Escuela`, `Curso`, `Usuario`, `Contrasenia`) VALUES
+('1', '1', 'economia', 'orientada', 'c', '1', '1'),
+('2', '2', 'natu', 'orientada', 'c', '2', '2'),
+('3', '3', 'rales', 'orientada\r\n', 'c', '3', '3'),
+('4', '4', 'elec', 'tecnica', 'a', '4', '4'),
 ('45237992', '23452379929', 'Matias Bottarini', 'Tecnica', 'G', '45237992', '23452379929'),
-('45685987', '23456859879', 'Patricio Altamiranda', 'Tecnica', 'B', '45685987', '23456859879');
+('45685987', '23456859879', 'Patricio Altamiranda', 'Tecnica', 'B', '45685987', '23456859879'),
+('5', '5', 'tronica', 'tecnica', 'a', '5', '5'),
+('6', '6', 'informatica', 'tecnica', 'a', '6', '6'),
+('7', '7', 'multi', 'tecnica', 'a', '7', '7'),
+('8', '8', 'medios', 'tecnica', 'a', '8', '8');
 
 -- --------------------------------------------------------
 
@@ -57,6 +65,24 @@ CREATE TABLE `eleccion` (
   `Prioridad` int(4) NOT NULL,
   `Situacion` varchar(365) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `eleccion`
+--
+
+INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`) VALUES
+(45237992, 4, 0, ''),
+(45237992, 4, 0, ''),
+(45237992, 4, 0, ''),
+(45685987, 1, 0, ''),
+(1, 1, 0, ''),
+(2, 2, 9, 'Dentro del curso'),
+(3, 2, 10, 'Dentro del curso'),
+(4, 3, 0, ''),
+(5, 3, 0, ''),
+(6, 4, 0, ''),
+(7, 5, 0, ''),
+(8, 5, 0, '');
 
 -- --------------------------------------------------------
 
@@ -111,7 +137,7 @@ INSERT INTO `info` (`DNI`, `Anio`, `Prom`, `Fichas`, `Inasistencias`, `Observaci
 CREATE TABLE `modalidad` (
   `ID_Modalidad` int(1) NOT NULL,
   `Descripcion` varchar(365) NOT NULL,
-  `Ingresos` int(5) DEFAULT NULL
+  `Ingresos` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -119,11 +145,11 @@ CREATE TABLE `modalidad` (
 --
 
 INSERT INTO `modalidad` (`ID_Modalidad`, `Descripcion`, `Ingresos`) VALUES
-(1, 'Economia', NULL),
-(2, 'Naturales', NULL),
-(3, 'Electronica', NULL),
-(4, 'Informatica', NULL),
-(5, 'Multimedios', NULL);
+(1, 'Economia', 2),
+(2, 'Naturales', 2),
+(3, 'Electronica', 2),
+(4, 'Informatica', 2),
+(5, 'Multimedios', 2);
 
 -- --------------------------------------------------------
 
@@ -145,7 +171,16 @@ CREATE TABLE `total` (
 --
 
 INSERT INTO `total` (`DNI`, `PromediosT`, `FichasT`, `InasistenciasT`, `ObservacionesT`, `Comentario`) VALUES
-('45237992', 7, 21, 30, 2, '10');
+('1', 7, 8, 9, 10, 'a'),
+('2', 10, 9, 8, 7, 'b'),
+('3', 9, 8, 7, 10, 'c'),
+('4', 6, 5, 4, 3, 'a'),
+('45237992', 7, 21, 30, 2, '10'),
+('45685987', 1, 1, 1, 1, '1'),
+('5', 6, 7, 8, 9, '10'),
+('6', 7, 8, 9, 10, 'je'),
+('7', 8, 9, 10, 1, 'lol'),
+('8', 1, 2, 3, 4, 'kkk\r\n');
 
 --
 -- Índices para tablas volcadas

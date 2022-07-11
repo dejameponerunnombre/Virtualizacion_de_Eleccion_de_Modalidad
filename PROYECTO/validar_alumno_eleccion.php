@@ -6,19 +6,14 @@ $_SESSION['usuario'] = $usuario;
  
 include("db.php");
  
-$consulta = "SELECT*FROM alumnos where DNI = '$usuario' and CUIL = '$contraseña'";
+$consulta = "SELECT*FROM alumnos where Usuario = '$usuario' and Contrasenia = '$contraseña'";
 $resultado=mysqli_query($conexion,$consulta);
 
 $filas = mysqli_num_rows($resultado);
 
 if($filas){
-    ?>
-     
-    <?php
     include("ELECCION.html");
 }else{
-    ?>
-    <?php
     include("login_alumno_eleccion.html");
     ?>
     <h1> Datos erroneos </h1>

@@ -7,7 +7,7 @@
         $anio3[0] = $_POST['Promedio_3ro'];
         $anio1[1] = $_POST['Fichas_1ro'];
         $anio2[1] = $_POST['Fichas_2do'];
-        $anio2[1] = $_POST['Fichas_3ro'];
+        $anio3[1] = $_POST['Fichas_3ro'];
         $anio1[2] = $_POST['Inasistencias_1ro'];
         $anio2[2] = $_POST['Inasistencias_2do'];
         $anio3[2] = $_POST['Inasistencias_3ro'];
@@ -33,15 +33,22 @@
                 $anio3[$i] = $filas3[$i]; 
             }
         }
-        $in[0] = "UPDATE info SET Promedio = '$anio1[0]', Fichas = '$anio1[1]', Inasistencias= $anio1[2], Obvservaciones=$anio1[3], DNI=$DNI,ID_Anualidad=1";
-        $in[1] = "UPDATE info SET Promedio = '$anio2[0]', Fichas = '$anio2[1]', Inasistencias= $anio2[2], Obvservaciones=$anio2[3]O2, DNI=$DNI,ID_Anualidad=2";
-        $in[2] = "UPDATE info SET Promedio = '$anio3[0]', Fichas = '$anio3[1]', Inasistencias= $anio3[2], Obvservaciones=$anio3[3], DNI=$DNI,ID_Anualidad=3";
+        $in[0] = "UPDATE info SET Prom = '$anio1[0]', Fichas = '$anio1[1]', Inasistencias= '$anio1[2]', Observaciones= '$anio1[3]' where DNI = '$DNI' AND Anio = 1";
+        $in[1] = "UPDATE info SET Prom = '$anio2[0]', Fichas = '$anio2[1]', Inasistencias= '$anio2[2]', Observaciones= '$anio2[3]' where DNI= '$DNI' and Anio = 2";
+        $in[2] = "UPDATE info SET Prom = '$anio3[0]', Fichas = '$anio3[1]', Inasistencias= '$anio3[2]', Observaciones= '$anio3[3]' where DNI= '$DNI' and Anio = 3";
+        $PT = ($anio1[0] + $anio2[0] + $anio3[0])/3;
+        $FT = $anio1[1] + $anio2[1] + $anio3[1];
+        $IT = $anio1[2] + $anio2[2] + $anio3[2];
+        $OT = (int)$anio1[3] + (int)$anio2[3] + (int)$anio3[3];
+
         for($i = 0; $i < 3; $i++)
-        {
+        { 
             $conexion -> query($in[$i]);
         }
-        $var2 = "UPDATE alumnos SET Comentario = '$Comentario' where DNI = '$DNI'"; 
+        $var2 = "UPDATE total SET Comentario = '$Comentario' where DNI = '$DNI'"; 
         $conexion -> query($var2);
+        $var3="UPDATE total SET PromedioST='$PT', FichasT='$FT', ObservacionesT='$OT', InasistenciasT='$IT' WHERE DNI='$DNI'";
+        $x = $conexion -> query($var3);
         ?>
             <h1> Informacion ingresada correctamente </h1>
         <?php

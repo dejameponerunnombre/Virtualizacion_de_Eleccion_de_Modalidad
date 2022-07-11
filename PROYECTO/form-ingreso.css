@@ -9,3 +9,296 @@
     line-height: 25px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+.texto-centro a{
+    color: white;
+    
+}
+
+header{
+        width: 100%;
+        
+       
+        
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: static;    
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    
+  
+  }
+
+ 
+
+
+
+.boton:active{
+    transition: .2s;
+}
+
+/*.texto-centro, .boton1{
+    position:absolute;
+    align-items: center;
+    left: 46%;
+    top: 85%;
+}
+*/
+
+/*--------------FORMULARIO---------------*/
+
+
+.body{
+    height: 100%;
+    position: relative;
+    
+}
+
+.image{
+    
+    background-image: url(../IMG/prueba-elec.jpg);
+   
+    
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    position: static;
+}
+
+.image2{
+    
+    background-image: url(../IMG/prueba-elec.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    position: static;
+}
+.formulario {
+    
+    margin: auto;
+    width: 50%;
+    border: 0;
+    padding:  70px 100px 70px 100px;
+    
+    color: rgb(0, 0, 0);
+    
+   
+}
+
+.texto-centro{
+    align-items: center;
+    text-align: center;
+}
+
+.info h2{
+    color: #172d8d;
+    font-family: sans-serif;
+    font-size: 16px;
+    
+}
+
+.info h3{
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+
+
+
+/*--------------HEATHER---------------*/
+nav{
+    
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #172d8d;
+    
+
+}
+
+.logo{
+    width: 60px;
+    margin-left: 20px;
+    margin-top: 2px;
+
+}
+
+.bar-btn{
+    font-size: 25px;
+    color: white;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.nav-menu{
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 100px;
+    background: /*rgba(99, 97, 97, 0.8)*/ lightblue;   
+    transition: all .3s;
+    text-align: center;
+}
+
+.nav-menu li{
+    display: none;
+    line-height: 30px;
+    margin: 50px 0;
+    transition: all .5s;
+
+}
+
+.nav-menu li a{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 200;
+    color: white;
+
+}
+
+
+.nav-menu li a.active, .nav-menu li a:hover{
+    color: #859cbb;
+    
+    transition: .3s;
+}
+
+.nav-menu li a.active:hover{
+    color: #6692CC;
+    transition: .3s;
+}
+
+#check{
+    display: none;
+    
+}
+
+#check:checked ~ .nav-menu{
+    height: 100vh;
+    z-index: 1;
+    transition: .1s;
+}
+
+
+#check:checked ~ .nav-menu li{
+    display: block;
+}
+
+
+
+input[type=number] {
+    -moz-appearance: textfield;
+    font-family: Arial, Sans-Serif;
+    font-size: 18px;
+    padding: 10px;
+    outline:none;   
+    float:left;
+    border: solid 1px #bddaff;
+    width: 230px;
+    transition: all 2s ease-in-out;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -moz-box-shadow:inset 0 0 5px 5px #bddaff;
+    -webkit-box-shadow:inset 0 0 5px 5px #ffffff;
+    box-shadow:inset 0 0 5px 5px #bddaff;
+    background-color: #c8deff;
+    clear: right;
+  }
+
+
+
+
+
+
+
+@media screen  and (min-width: 864px) {
+    .logo{
+        margin-left: 50px;
+
+    }
+    nav{
+        height: 80px;
+    }
+
+    .bar-btn{
+        display: none;
+    }
+    
+    .nav-menu{
+        position: relative;
+        height: 100px;
+        top: 0;
+        background: none;
+        transition: none;
+        text-align: right;
+        margin-right: 50px;
+
+    }
+    .nav-menu li{
+        display: inline-block;
+        line-height: 100px;
+        margin: 0 20px;
+        transition: none;
+    }
+
+    .nav-menu li a{
+        font-size: 13px;
+    }
+
+   
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

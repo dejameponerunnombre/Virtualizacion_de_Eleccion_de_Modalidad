@@ -362,14 +362,7 @@ nav{
 
  
   /*-----------------Celulares------------------*/
-  @media (hover: none) { 
-    .location-title {
-      opacity: 1;
-    }
-    .location-image img {
-      filter: blur(2px);
-    }
-  }
+  
 
 
 
@@ -591,6 +584,10 @@ nav{
   .texto-centro h2{
     font-size: 15px;
     font-weight: 600;
+  }
+
+  .texto-centro img{
+    width: 70px;
   }
 
   .boton1{
