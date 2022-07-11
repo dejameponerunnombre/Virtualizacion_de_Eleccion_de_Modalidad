@@ -8,17 +8,21 @@
 
 
 .container{
-    width: 80%;
+    width: 60%;
     margin: auto;
     
 }
 
 .container h1{
     text-align: center;
-    color: #186fe0;
+    color: #000;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
+.pie-pagina .grupo-1 .red-social a {
+    background-color: #940016;
+}
 
 
 
@@ -34,8 +38,8 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #186fe0;
-    
+    background: #bd1f36;
+    /*#A4C2A5 natu*/
     
 
 }
@@ -82,8 +86,8 @@ nav{
 
 
 .nav-menu li a.active, .nav-menu li a:hover{
-    color: #001F54;
-    border-bottom: 1px solid #001F54;
+    color: #811222;
+    border-bottom: 1px solid #811222;
     transition: .3s;
 }
 
@@ -115,10 +119,14 @@ nav{
 
 /*----------------------VIDEOS-----------------------*/
 
-
+.videos{
+    display: flex;
+    padding-bottom: 10px;
+}
 
 .profesor{
     text-align: center;
+    margin-right: 15px;
 }
 
 
@@ -128,15 +136,20 @@ nav{
 /*----------------TEXTO INFORMACION-----------------*/
 
 .caract h3{
-    padding-bottom: 15px;
-    color: #001F54;
+    padding-bottom: 20px;
+    color: #000;
 }
 
 .caract p{
 
-    padding-bottom: 15px;
+    padding-bottom: 20px;
+    text-align: justify;
     
 
+}
+
+.caract{
+    margin: 20px;
 }
 
 .estudios{
@@ -161,17 +174,11 @@ nav{
 
 
 .pie-pagina{
-    background: #186fe0;
+    background: #a7172d;
 }
 
 
-body{
-    background-image: url(../IMG/prueba.jpg);
-    background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: static;
-}
+
 
 .container{
     background: white;
@@ -179,7 +186,34 @@ body{
 
 
 
+/*--------------------ESTUDIOS---------------------*/
 
+.tabla table{
+    
+    margin: auto;
+    border-spacing: 90px 25px;
+    width: 100%;
+}
+
+.tabla table td{
+    text-align: center;
+    border-bottom: 1px solid #bd1f36;
+}
+
+.tabla h2{
+    margin: 20px;
+}
+
+
+/*----------------------SOBRAS-----------------------*/
+
+body{
+    background: rgb(228, 228, 228);
+}
+
+.videos{
+    background: #ffff;
+}
 
 
 
@@ -231,10 +265,7 @@ body{
 
 
     .profesor{
-        float: right;
-        border-radius: 3px;
-        height: auto;
-        margin-top: 40px;
+        
     }
 
 
