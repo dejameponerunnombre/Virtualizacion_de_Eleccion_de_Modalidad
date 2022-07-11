@@ -6,23 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="form-ingreso.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="boton.css">
 
     <title>Control de notas</title>
 </head>
 
 <body>
 
-    
-    <div>
-            <div class="m_header">
-                <div class="m_container">
-                    <u></u>
-                        <a href="#m__" rel="noreferrer">Cerrar sesión</a>
-                    <u></u>
-                </div>
+    <header id="arriba" >
+        
+        <nav>
+            <div>
+               <a><img src="../IMG/logo (3).png" alt="Imagen de fondo" class="logo"></a> 
             </div>
+            <input type="checkbox" name="check" id="check">
+            <label for="check" class="bar-btn">
+                <i class="fa-solid fa-bars"></i>  
+            </label>
+            <ul class="nav-menu">
+                
+                <li><a href="inicio.html" rel="noreferrer">Cerrar sesión</a></li>
+                
+                
+                
+            </ul>
+        </nav>
 
-            <div class="m_formulario">
+    </header>
+
+    <div>
+            
+
+        <div class="formulario">
 
             <h2>Ingresar datos de alumno</h2>
             <br>
@@ -30,21 +46,36 @@
             <form action="ingreso_de_datos.php" method="post" target="_blank">
         <div class="info">
         <div class="datos">
-            <h2>Ingresar datos de alumno</h2>
+            
             <br>
             <h3>DNI del alumno</h3>   
             <p><input type="number" name="DNI" id="DNI"></p>
             
         </div>   
-            <button type="submit" class="m_boton_formulario">Enviar</button>
+        <div class="texto-centro">
+            <ul>
+                
+                <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px;">Enviar</button></li>
+            </ul>
+        </div>
             </form>
+
                 
             </div>
             <br>
-            <div class="m_footer">
-                <div class="m_container">Copyright © 2022 7mo C - Grupo 3</div>        
-            </div>
-    </div>
+            
+
+
+
+            
+
+
+
 
 </body>
+<footer class="pie-pagina" style="left: 0;" style="right: 0;">
+    <div class="grupo-2">
+        <small>Copyright © 2022 <b>7mo Informática</b> - Grupo 3</small>
+    </div>
+</footer>
 </html>
