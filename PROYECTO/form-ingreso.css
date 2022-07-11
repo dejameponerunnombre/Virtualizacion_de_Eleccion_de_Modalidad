@@ -102,6 +102,12 @@ footer {
     
 }
 
+.formulario p{
+    
+    color: rgb(0, 19, 185);
+    
+}
+
 
 .texto-centro{
     align-items: center;
@@ -178,7 +184,7 @@ nav{
 
 
 .nav-menu li a.active, .nav-menu li a:hover{
-    color: #859cbb;
+    color: #aab3be;
     
     transition: .3s;
 }
