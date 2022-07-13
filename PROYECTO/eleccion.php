@@ -24,15 +24,15 @@ if($a != $DNI)
        }
     else
     {
-        $eliminar = "DELETE*FROM info where DNI = '$DNI'";
+        $eliminar = "DELETE FROM info where DNI = $DNI";
         $borrar = $conexion -> query($eliminar);
-        $eliminar1 = "DELETE*FROM modalidad where DNI = '$DNI'";
+        $eliminar1 = "DELETE FROM modalidad where DNI = $DNI";
         $borrar1 = $conexion -> query($eliminar1);
-        $eliminar2 = "DELETE*FROM total where DNI = '$DNI'";
+        $eliminar2 = "DELETE FROM total where DNI = $DNI";
         $borrar2 = $conexion -> query($eliminar2);
-        $eliminar3 = "DELETE*FROM eleccion where DNI = '$DNI'";
+        $eliminar3 = "DELETE FROM eleccion where DNI = $DNI";
         $borrar3 = $conexion -> query($eliminar3);
-        $eliminar4 = "DELETE*FROM alumnos where DNI = '$DNI'";
+        $eliminar4 = "DELETE FROM alumnos where DNI = $DNI";
         $borrar4 = $conexion -> query($eliminar4);
         if($borrar===TRUE && $borrar1 === TRUE && $borrar2=== TRUE && $borrar3=== TRUE && $borrar4=== TRUE)
         {

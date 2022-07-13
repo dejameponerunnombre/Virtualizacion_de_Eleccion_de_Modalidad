@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-07-2022 a las 22:55:56
+-- Tiempo de generación: 13-07-2022 a las 21:19:19
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -71,18 +71,18 @@ CREATE TABLE `eleccion` (
 --
 
 INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`) VALUES
-(45237992, 4, 0, ''),
-(45237992, 4, 0, ''),
-(45237992, 4, 0, ''),
-(45685987, 1, 0, ''),
-(1, 1, 0, ''),
-(2, 2, 9, 'Dentro del curso'),
-(3, 2, 10, 'Dentro del curso'),
-(4, 3, 0, ''),
-(5, 3, 0, ''),
-(6, 4, 0, ''),
-(7, 5, 0, ''),
-(8, 5, 0, '');
+(45237992, 4, 2, 'Dentro del curso'),
+(45237992, 4, 2, 'Dentro del curso'),
+(45237992, 4, 2, 'Dentro del curso'),
+(45685987, 1, 2, 'Dentro del curso'),
+(1, 1, 1, 'Dentro del curso'),
+(2, 2, 1, 'Dentro del curso'),
+(3, 2, 2, 'Dentro del curso'),
+(4, 3, 1, 'Dentro del curso'),
+(5, 3, 2, 'Dentro del curso'),
+(6, 4, 1, 'Dentro del curso'),
+(7, 5, 1, 'Dentro del curso'),
+(8, 5, 2, 'Dentro del curso');
 
 -- --------------------------------------------------------
 
@@ -94,6 +94,7 @@ CREATE TABLE `empleado` (
   `ID_Empleado` int(11) NOT NULL,
   `Nombre` varchar(365) NOT NULL,
   `Usuario` varchar(365) NOT NULL,
+  `Tipo` varchar(25) NOT NULL,
   `Contrasenia` varchar(365) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -101,8 +102,8 @@ CREATE TABLE `empleado` (
 -- Volcado de datos para la tabla `empleado`
 --
 
-INSERT INTO `empleado` (`ID_Empleado`, `Nombre`, `Usuario`, `Contrasenia`) VALUES
-(1, 'Pepe', 'Pepe123', 'Pepe456');
+INSERT INTO `empleado` (`ID_Empleado`, `Nombre`, `Usuario`, `Tipo`, `Contrasenia`) VALUES
+(1, 'Pepe', 'Pepe123', '', 'Pepe456');
 
 -- --------------------------------------------------------
 
@@ -124,9 +125,9 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`DNI`, `Anio`, `Prom`, `Fichas`, `Inasistencias`, `Observaciones`) VALUES
-('45237992', '1', 10, 10, 10, 1),
-('45237992', '2', 1, 1, 10, 1),
-('45237992', '3', 10, 10, 10, 0);
+('45237992', '1', 7, 1, 10, 0),
+('45237992', '2', 7, 3, 10, 0),
+('45237992', '3', 7, 3, 10, 0);
 
 -- --------------------------------------------------------
 
@@ -175,10 +176,10 @@ INSERT INTO `total` (`DNI`, `PromediosT`, `FichasT`, `InasistenciasT`, `Observac
 ('2', 10, 9, 8, 7, 'b'),
 ('3', 9, 8, 7, 10, 'c'),
 ('4', 6, 5, 4, 3, 'a'),
-('45237992', 7, 21, 30, 2, '10'),
+('45237992', 7, 7, 30, 0, ''),
 ('45685987', 1, 1, 1, 1, '1'),
 ('5', 6, 7, 8, 9, '10'),
-('6', 7, 8, 9, 10, 'je'),
+('6', 7, 6, 9, 10, 'je'),
 ('7', 8, 9, 10, 1, 'lol'),
 ('8', 1, 2, 3, 4, 'kkk\r\n');
 
