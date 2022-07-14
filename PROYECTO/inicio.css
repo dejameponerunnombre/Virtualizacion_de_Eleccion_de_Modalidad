@@ -32,6 +32,16 @@ hr{
 
 
 
+
+body{
+  background-image: url(../IMG/prueba.jpg);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+
+
+}
+
 /*--------------------------HEADER CON MENU--------------------------------*/
 header{
     width: 100%;
@@ -277,8 +287,8 @@ nav{
     grid-gap: 1em;
     
     text-align: center;
-    margin-left: 19.5%;
-    margin-right: 19.5%;
+    margin-left: 16.66%;
+    margin-right: 16.66%;
     margin-bottom: 3%;
   }
   
@@ -346,16 +356,7 @@ nav{
 
 
 
-.modalidades-extra {
 
-  
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1em;
-  margin: auto;
-
-
-}
 
 
 
@@ -363,7 +364,37 @@ nav{
  
   /*-----------------Celulares------------------*/
   
+  @media screen  and (max-width: 800px) { 
+    
 
+    .grid-container {
+      
+      grid-template-columns: repeat(1,1fr);
+     
+    }
+  
+    .grid2-container {
+      
+      grid-template-columns: repeat(1,1fr);
+      width: 66.66%; 
+      height: auto;
+      
+      
+     
+    }
+
+    .grid2-container article{
+      
+      
+      width: 200%; 
+      height: auto;
+      
+      
+     
+    }
+
+
+  }
 
 
 
@@ -375,6 +406,8 @@ nav{
   max-width: 600px;
   width: 100%;
   margin: 5vh auto;
+  background: white;
+  border-radius: 5px;
   
 }
 
@@ -391,6 +424,7 @@ nav{
   cursor: pointer;
   border: 3px solid #186fe0;
   user-select: none;
+  
 }
 
 .label:hover{
@@ -436,6 +470,7 @@ nav{
   max-height: 0;
   overflow: hidden;
   transition: max-height, .5s;
+  
 }
 
 .input:checked ~ .content {
@@ -445,10 +480,12 @@ nav{
 
 .input:checked ~ .label .cross:before {
   transform: rotate(180deg);
+
 }
 
 .input:checked ~ .label .cross:after {
   transform: rotate(0deg);
+  
 }
 
 .questions{
@@ -467,6 +504,7 @@ nav{
 .input:checked ~ .questions {
   max-height: 400px;
   transition: 0.5s;
+  
 }
 
 
