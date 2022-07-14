@@ -6,12 +6,14 @@ $_SESSION['usuario'] = $usuario;
 include("db.php");
 $consult = "SELECT*FROM empleado where Usuario = '$usuario' and Contrasenia = '$contraseña'";
 $resultado=mysqli_query($conexion,$consult);
-$tipo="SELECT Tipo FROM empleado where Usuario = '$usuario' and Contrasenia = '$contraseña ";
-$empleado=$conexion->query($tipo);
 $filas = mysqli_num_rows($resultado);
+$tipo="SELECT Tipo FROM empleado where Usuario = '$usuario' and Contrasenia = '$contraseña ";
+$de=$conexion->query($tipo);
+$empleado=fetch_array($tipo);
+
 if($filas)
 {
- if($empleado='Secretaria')
+ if($empleado[0]='Secretaria')
    {
     include("pc_trabajador.html");
    }

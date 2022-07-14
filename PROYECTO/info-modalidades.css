@@ -24,6 +24,12 @@
     background-color: #001F54;
 }
 
+.titulo h3{
+
+
+
+}
+
 
 
 
@@ -149,7 +155,7 @@ nav{
 }
 
 .caract{
-    margin: 20px;
+    margin: 40px;
 }
 
 .estudios{
@@ -205,8 +211,27 @@ nav{
 }
 
 .tabla h2{
-    margin: 20px;
+    margin: 40px;
     font-size: 23px;
+}
+
+
+
+
+/*-------------------TÍTULO---------------*/
+
+.titulo{
+    margin: 40px;
+}
+
+.titulo h3{
+    
+    padding-bottom: 20px;
+}
+
+.titulo p{
+    padding-bottom: 20px;
+    text-align: justify;
 }
 
 
@@ -273,9 +298,7 @@ body{
     }
 
 
-    .profesor{
-        
-    }
+    
 
 
 

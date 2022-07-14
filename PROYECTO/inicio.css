@@ -286,10 +286,11 @@ nav{
     grid-template-columns: repeat(2,1fr);
     grid-gap: 1em;
     
-    text-align: center;
+    
     margin-left: 16.66%;
     margin-right: 16.66%;
-    margin-bottom: 3%;
+    margin-bottom: 30px;
+    
   }
   
   
@@ -382,16 +383,17 @@ nav{
       
      
     }
-
+    
     .grid2-container article{
       
-      
-      width: 200%; 
+      width: 132%;
       height: auto;
       
       
      
     }
+
+    
 
 
   }
