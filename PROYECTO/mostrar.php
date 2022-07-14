@@ -14,8 +14,15 @@ FROM modalidad m, eleccion e
 WHERE e.DNI=$contraseña;
 $dela=$conexion->($modalidad);
 $descripcion=fetcharray($dela);
-$nombre="SELECT Nombre FROM alumnos WHERE DNI=$contraseña ";
+$nombre="SELECT Nombre 
+FROM alumnos
+WHERE DNI=$contraseña ";
 $del=$conexion->($nombre);
 $alumno=fetcharray($del);
-ECHO"El alumno $alumno esta $situacion de $descripcion";
+$posicion="SELECT prioridad 
+FROM eleccion 
+WHERE DNI=$contraseña";
+$o=$conexion->($posicion);
+$puesto=fetcharray($o);
+ECHO"El alumno $alumno[0] esta $situacion[0] de $descripcion[0] en el puesto $puesto";
 ?>
