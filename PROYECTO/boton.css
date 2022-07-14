@@ -154,6 +154,8 @@
   .bttn-pill.bttn-primary {
     background: #005be4;
     color: #fff;
+    margin-top: 3px;
+    margin-left: 100px;
   }
   .bttn-pill.bttn-primary:hover,
   .bttn-pill.bttn-primary:focus {
