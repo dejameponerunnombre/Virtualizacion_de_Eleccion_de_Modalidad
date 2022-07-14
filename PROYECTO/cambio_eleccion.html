@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="form-ingreso.css">
+    <link rel="stylesheet" href="boton.css">
+    <link rel="stylesheet" href="footer.css">
+    <title>Cambiar eleccion de alumnos</title>
+</head>
+<body>
+ <header id="arriba" >
+        
+                <nav>
+                    <div>
+                       <a><img src="../IMG/logo (3).png" alt="Imagen de fondo" class="logo"></a> 
+                    </div>
+                    <input type="checkbox" name="check" id="check">
+                    <label for="check" class="bar-btn">
+                        <i class="fa-solid fa-bars"></i>  
+                    </label>
+                    <ul class="nav-menu">
+                        <li><a href="inicio.html" rel="noreferrer">Cerrar sesión</a></li>  
+                    </ul>
+                </nav>
+            </header>
+            <div class="formulario">
+            <p>Ingrese DNI del alumno que quiere camiar su eleccion</p>
+            <br>
+            <form action="cambio_eleccion.php" method="post" target="_blank">
+        <div class="info">
+        <div class="datos">
+            <br>
+            <h3>DNI del alumno</h3>   
+        </div>   
+            <p><input type="number" name="DNI" id="DNI"></p>
+            <div class="texto-centro">
+                    <ul>
+                        <li><button type="submit" class="bttn-pill bttn-md bttn-primary">Borrar datos</button></li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+</body>
+<footer class="pie-pagina" style="left: 0;" style="right: 0;">
+    <div class="grupo-2">
+        <small>&copy; 2022 <b>7mo Informática</b> - Grupo 3</small>
+    </div>
+</footer>
+</html>
