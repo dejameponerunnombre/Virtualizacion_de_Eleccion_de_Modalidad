@@ -64,6 +64,7 @@ CREATE TABLE `eleccion` (
   `ID_Modalidad` int(1) NOT NULL,
   `Prioridad` int(4) NOT NULL,
   `Situacion` varchar(365) NOT NULL
+  `Cambio` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -71,18 +72,18 @@ CREATE TABLE `eleccion` (
 --
 
 INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`) VALUES
-(45237992, 4, 2, 'Dentro del curso'),
-(45237992, 4, 2, 'Dentro del curso'),
-(45237992, 4, 2, 'Dentro del curso'),
-(45685987, 1, 2, 'Dentro del curso'),
-(1, 1, 1, 'Dentro del curso'),
-(2, 2, 1, 'Dentro del curso'),
-(3, 2, 2, 'Dentro del curso'),
-(4, 3, 1, 'Dentro del curso'),
-(5, 3, 2, 'Dentro del curso'),
-(6, 4, 1, 'Dentro del curso'),
-(7, 5, 1, 'Dentro del curso'),
-(8, 5, 2, 'Dentro del curso');
+(45237992, 4, 2, 'Dentro del curso', 'No'),
+(45237992, 4, 2, 'Dentro del curso', 'No'),
+(45237992, 4, 2, 'Dentro del curso', 'No'),
+(45685987, 1, 2, 'Dentro del curso', 'No'),
+(1, 1, 1, 'Dentro del curso', 'No'),
+(2, 2, 1, 'Dentro del curso', 'No'),
+(3, 2, 2, 'Dentro del curso', 'No'),
+(4, 3, 1, 'Dentro del curso', 'No'),
+(5, 3, 2, 'Dentro del curso', 'No'),
+(6, 4, 1, 'Dentro del curso', 'No'),
+(7, 5, 1, 'Dentro del curso', 'No'),
+(8, 5, 2, 'Dentro del curso', 'No');
 
 -- --------------------------------------------------------
 
