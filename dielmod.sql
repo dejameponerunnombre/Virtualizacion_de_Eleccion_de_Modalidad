@@ -63,7 +63,7 @@ CREATE TABLE `eleccion` (
   `DNI` int(8) NOT NULL,
   `ID_Modalidad` int(1) NOT NULL,
   `Prioridad` int(4) NOT NULL,
-  `Situacion` varchar(365) NOT NULL
+  `Situacion` varchar(365) NOT NULL,
   `Cambio` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
