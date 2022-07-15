@@ -1,4 +1,12 @@
 <?php
+<?php
+$inicio = mktime(0, 0, 0, 5, 1, 2022);
+$final =  mktime(0, 0, 0, 10, 15, 2022);
+$ahora = time() ;
+
+if($ahora < $final and $ahora > $inicio)
+{
+    
 include("db.php");
 $limpiado="UPDATE eleccion SET Prioridad = 0 ";
 $limpio= $conexion->query($limpiado);
@@ -106,5 +114,10 @@ for($x = 1; $x <= 5; $x++)
     ?>
     </table>
     <?php 
-}  
-?>
+}
+}
+else
+{
+    include("mensaje-error.html");
+}
+?>  
