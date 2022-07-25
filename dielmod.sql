@@ -71,7 +71,7 @@ CREATE TABLE `eleccion` (
 -- Volcado de datos para la tabla `eleccion`
 --
 
-INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`) VALUES
+INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`,`Cambio`) VALUES
 (45237992, 4, 2, 'Dentro del curso', 'No'),
 (45237992, 4, 2, 'Dentro del curso', 'No'),
 (45237992, 4, 2, 'Dentro del curso', 'No'),
