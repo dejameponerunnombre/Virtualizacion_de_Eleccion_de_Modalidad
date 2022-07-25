@@ -3,10 +3,11 @@ $modalidad = $_POST['modalidad'];
 session_start();
 $DNI = $_SESSION['usuario'];
 include("db.php");
-$selec = "SELECT DNI FROM eleccion";
+$selec = "SELECT * FROM eleccion where DNI = $DNI";
 $a =$conexion -> query($selec);
-if($a != $DNI)
-{
+$cant = $a ->num_rows;
+if($cant == 0)
+{ 
     if($modalidad!=10)
         {
             $y = "UPDATE modalidad SET Ingresos = Ingresos + 1 where ID_Modalidad = $modalidad";
@@ -14,12 +15,29 @@ if($a != $DNI)
             if($b === TRUE)
             {
                 ECHO "Eleccion realizada";
-            }
+            }       
             else 
             {
                 ECHO "ERROR";
             }
-            $con = "INSERT INTO eleccion (ID_Modalidad, DNI) values ($modalidad, $DNI)";
+            $request = "SELECT Escuela FROM alumnos where DNI = $DNI";
+            $consulta = $conexion -> query($request);
+            $Escuela = $consulta ->fetch_array();
+            if($modalidad == 1 || $modalidad == 2)
+            {  
+                if($Escuela[0] == 'orientada')
+                    $cambio = "No";
+                else 
+                    $cambio = "Si";
+            }
+            else 
+            {  
+                if($Escuela[0] == 'Tecnica' or  $Escuela[0] == 'tecnica') 
+                    $cambio = "No";
+                else
+                    $cambio = "Si";
+            }
+            $con = "INSERT INTO eleccion (DNI, ID_Modalidad, Prioridad, Situacion, Cambio) values ('$DNI', '$modalidad', 0, '-', '$cambio')";
             $A = $conexion -> query($con);
        }
     else

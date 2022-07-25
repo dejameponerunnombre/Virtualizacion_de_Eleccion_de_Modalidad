@@ -6,20 +6,17 @@ $_SESSION['usuario'] = $usuario;
 include("db.php");
 $consult = "SELECT*FROM empleado where Usuario = '$usuario' and Contrasenia = '$contraseña'";
 $resultado=mysqli_query($conexion,$consult);
-$filas = mysqli_num_rows($resultado);
-$tipo="SELECT Tipo FROM empleado where Usuario = '$usuario' and Contrasenia = '$contraseña ";
-$de=$conexion->query($tipo);
-$empleado=fetch_array($tipo);
+$filas = $resultado -> fetch_array();
 
 if($filas)
 {
- if($empleado[0]='Secretaria')
+ if($filas['Tipo'] == 'Secretaria')
    {
-    include("pc_trabajador.html");
+    include("panel de control.html");
    }
  else
  {
-  include(promedios2.0.php);
+  include('promedios2.0.php');
  }
 }
 else
