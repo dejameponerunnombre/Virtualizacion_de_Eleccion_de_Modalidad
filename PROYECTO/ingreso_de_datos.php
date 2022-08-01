@@ -27,7 +27,7 @@ if($filas > 0){
         <h2>Ingresar datos de alumno</h2>
             <br>
             
-            <form action="carga_de_datos.php" method="post" target="_blank">
+            <form action="carga_de_datos.php" method="post"  >
         <div class="info">
         <div class="datos">
             <h3>Promedios</h3>
@@ -85,7 +85,6 @@ if($filas > 0){
 }
 else
 {
-    include("form-ingreso.html");
     ?>
     <h1> DNI no existente </h1>
     <?php

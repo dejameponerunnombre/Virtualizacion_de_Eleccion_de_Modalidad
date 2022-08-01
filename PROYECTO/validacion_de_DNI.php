@@ -40,7 +40,7 @@ if($filas > 0){
                 <h2>Ingresar datos de alumno</h2>
             <br>
             
-            <form action="edicion_de_datos.php" method="post" target="_blank">
+            <form action="edicion_de_datos.php" method="post" target="_self" >
                 <div class="prom">
             
                     <h3>Promedios</h3>
@@ -96,8 +96,6 @@ if($filas > 0){
         </form>
         <?php   
 }else{
-   
-    include("form_ingreso_DNI.html");
     ?>
     <h1> Este DNI no ha sido ingresado anteriormente </h1>
     <?php
