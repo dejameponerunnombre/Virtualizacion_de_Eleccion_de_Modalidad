@@ -1,4 +1,6 @@
 *{
+    margin: 0;
+    padding: 0;
     text-decoration: none;
     list-style: none;
     font-family: sans-serif;
@@ -8,7 +10,7 @@
 
 
 .container{
-    width: 60%;
+    width: 80%;
     margin: auto;
     
 }
@@ -51,9 +53,8 @@ nav{
 }
 
 .logo{
-    width: 100px;
+    width: 80px;
     margin-left: 20px;
-    margin-top: 10px;
 
 }
 
@@ -187,7 +188,7 @@ nav{
 
 
 .container{
-    background: white;
+    background: rgb(238, 238, 238);
 }
 
 .caract2{
@@ -238,11 +239,16 @@ nav{
 /*----------------------SOBRAS-----------------------*/
 
 body{
-    background: rgb(228, 228, 228);
+    
+    background-image: url(../IMG/prueba.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
 }
 
 .videos{
-    background: #ffff;
+    background: rgb(238, 238, 238);
+
 }
 
 .vacio{
@@ -252,6 +258,31 @@ body{
 
 
 
+
+
+/*-----------------PRUEBAS MODALIDAD 2--------------------*/
+
+
+.container2 {
+
+    width: 90%;
+    margin: auto;
+    display: flex;
+
+    
+
+}
+
+.fotos{
+
+    
+    
+}
+
+.videos{
+   
+    
+}
 
 
 
@@ -265,7 +296,7 @@ body{
 
     }
     nav{
-        height: 130px;
+        height: 115px;
     }
 
     .bar-btn{
