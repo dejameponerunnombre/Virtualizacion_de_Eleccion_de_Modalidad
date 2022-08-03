@@ -18,7 +18,7 @@ body{
 .imagen_fondo{
     width: 380px;
     height: 420px;
-    background: whitesmoke;
+    background: white;
     color: black;
     top: 50%;
     left: 25%;
@@ -124,11 +124,18 @@ body{
     width: 50%;
     float: left;
     height: 100vh;
-    background-color: #186fe0;
+    /*background-color: #186fe0;*/
+    background: url(../IMG/prueba.jpg);
     background-size: cover;
     background-position: center;
 }
 
+.v-line{
+    border-left: solid #80b6fc;
+    height:100%;
+    left: 50%;
+    position: absolute;
+}
 
 
 @media screen  and (max-width: 1140px){
@@ -155,6 +162,10 @@ body{
     .linea-medio{
         width: 100%;
         
+    }
+
+    .v-line{
+        display: none;
     }
 
     
