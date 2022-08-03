@@ -1,7 +1,6 @@
 <?php
-$DNI = $_POST['DNI'];
 session_start();
-$_SESSION['DNI'] = $DNI;
+$DNI = $_SESSION['DNI'];
 include("db.php");
 $request = "SELECT*FROM alumnos where DNI = '$DNI'";
 $resultado=mysqli_query($conexion,$request);

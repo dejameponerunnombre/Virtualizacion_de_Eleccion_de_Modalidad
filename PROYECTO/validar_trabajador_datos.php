@@ -10,14 +10,21 @@ $filas = $resultado -> fetch_array();
 
 if($filas)
 {
- if($filas['Tipo'] == 'Secretaria')
+ switch($filas['Tipo'])
    {
-    include("panel de control.html");
+     case 'Secretaria': {
+      include("panel de control.html");
+      break;
+     }
+     case 'Directivo': {
+      include('promedios2.0.php');
+      break;
+     }
+     case 'Profesor': {
+      include('XXXXX');
+      break;
    }
- else
- {
-  include('promedios2.0.php');
- }
+  }
 }
 else
 {
