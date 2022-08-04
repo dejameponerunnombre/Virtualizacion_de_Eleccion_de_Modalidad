@@ -91,7 +91,7 @@ nav{
     width: 100%;
     height: 0vh;
     top: 100px;
-    background: /*rgba(99, 97, 97, 0.8)*/ lightblue;   
+    background: /*rgba(99, 97, 97, 0.8)*/ #186fe0;   
     transition: all .3s;
     text-align: center;
 }
@@ -108,7 +108,7 @@ nav{
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 600;
-    color: #186fe0;
+    color: #001F54;
 
 }
 
@@ -527,7 +527,7 @@ nav{
 input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #186fe0;
   border-radius: 4px;
   resize: vertical;
 }
@@ -535,7 +535,7 @@ input[type=text], select, textarea {
 input[type=email], select, textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #186fe0;
   border-radius: 4px;
   resize: vertical;
 }
