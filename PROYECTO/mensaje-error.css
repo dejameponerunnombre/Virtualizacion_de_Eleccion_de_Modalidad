@@ -7,3 +7,17 @@ img{
 .texto-centro img{
     width: 40%;
 }
+
+
+@media screen  and (max-width: 800px){
+    .texto-centro img{
+        width: 100%;
+
+    }
+
+    .texto-centro{
+        padding-top: 25%;
+    }
+
+}
+
