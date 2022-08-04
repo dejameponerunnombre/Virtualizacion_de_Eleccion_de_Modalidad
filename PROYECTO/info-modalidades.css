@@ -26,11 +26,7 @@
     background-color: #001F54;
 }
 
-.titulo h3{
 
-
-
-}
 
 
 
@@ -135,8 +131,9 @@ nav{
 }
 
 .profesor{
-    width: 40%;
+    width: 35%;
     padding: 20px;
+    
 }
 
 
@@ -284,16 +281,7 @@ body{
 
 }
 
-.fotos{
 
-    
-    
-}
-
-.videos{
-   
-    
-}
 
 
 
@@ -353,17 +341,19 @@ body{
 
 @media screen  and (max-width: 800px){
     
-    .container h1{
-        
-    }
+    
     .tabla{
         overflow: auto;
 
     }
 
-    .videos{
-        display: grid;
+    .profesor{
+        width: 100%;
+        margin: auto;
+        margin-bottom: 20px;
     }
+
+   
 
     
 }
