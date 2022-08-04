@@ -357,21 +357,21 @@
                 </div>
             </div>
 
-            <div class="box">
+            <!--<div class="box">
               <form method='POST'>
 
                 <div class="form-group">
-                  <label for="nombre">Nombre</label>
+                  <label for="nombre">NOMBRE</label>
                   <input type="text" class="form-control" name='nombre' id="nombre" placeholder="Nombre">
                 </div>
 
                 <div class="form-group">
-                  <label for="email">Email</label>
+                  <label for="email">EMAIL</label>
                   <input type="email" class="form-control" name='email' id="email" placeholder="Ejemplo@gmail.com">
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleTextarea">Mensaje</label>
+                  <label for="exampleTextarea">MENSAJE</label>
                   <textarea class="form-control" name='mensaje' id="mensaje" rows="3"></textarea>
                 </div>
 
@@ -382,8 +382,42 @@
                 <button class="btn btn-primary" type="submit">Enviar</button>
               </form>
 
+            </div>-->
+            <div class="box">
+            <div class="container">
+              <form action="/action_page.php">
+              <div class="row">
+                <div class="col-25">
+                  <label for="fname" >Nombre</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="fname" name="firstname" placeholder="Nombre">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="email">Email</label>
+                </div>
+                <div class="col-75">
+                  <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com">
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-25">
+                  <label for="subject">Mensaje</label>
+                </div>
+                <div class="col-75">
+                  <textarea id="subject" name="subject" placeholder="Escribí algo" style="height:200px"></textarea>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <input type="submit" value="Enviar">
+              </div>
+              </form>
             </div>
-
+          </div>
 
         </div>
         <div class="grupo-2">
