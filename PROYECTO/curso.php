@@ -10,13 +10,13 @@ $consulta = "SELECT*FROM alumnos where Usuario = '$usuario' and Contrasenia = '$
 $resultado=mysqli_query($conexion,$consulta);
 $array = $resultado -> fetch_array();
 $filas = mysqli_num_rows($resultado);
-$eleccion = "SELECT*FROM eleccion where DNI = '$array[0]'";
-$resultado2 = mysqli_query($conexion,$eleccion);
-$filas2 = mysqli_num_rows($resultado2);
+
 
 if($filas)
 {
-
+    $eleccion = "SELECT*FROM eleccion where DNI = '$array[0]'";
+    $resultado2 = mysqli_query($conexion,$eleccion);
+    $filas2 = mysqli_num_rows($resultado2);
     if($filas2)
     {
         include("mostrar.php");
