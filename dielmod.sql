@@ -34,24 +34,25 @@ CREATE TABLE `alumnos` (
   `Escuela` varchar(100) NOT NULL,
   `Curso` varchar(1) NOT NULL,
   `Usuario` varchar(365) NOT NULL,
-  `Contrasenia` varchar(365) NOT NULL
+  `Contrasenia` varchar(365) NOT NULL,
+  `Conducta` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `alumnos`
 --
 
-INSERT INTO `alumnos` (`DNI`, `CUIL`, `Nombre`, `Escuela`, `Curso`, `Usuario`, `Contrasenia`) VALUES
-('1', '1', 'economia', 'orientada', 'c', '1', '1'),
-('2', '2', 'natu', 'orientada', 'c', '2', '2'),
-('3', '3', 'rales', 'orientada\r\n', 'c', '3', '3'),
-('4', '4', 'elec', 'tecnica', 'a', '4', '4'),
-('45237992', '23452379929', 'Matias Bottarini', 'Tecnica', 'G', '45237992', '23452379929'),
-('45685987', '23456859879', 'Patricio Altamiranda', 'Tecnica', 'B', '45685987', '23456859879'),
-('5', '5', 'tronica', 'tecnica', 'a', '5', '5'),
-('6', '6', 'informatica', 'tecnica', 'a', '6', '6'),
-('7', '7', 'multi', 'tecnica', 'a', '7', '7'),
-('8', '8', 'medios', 'tecnica', 'a', '8', '8');
+INSERT INTO `alumnos` (`DNI`, `CUIL`, `Nombre`, `Escuela`, `Curso`, `Usuario`, `Contrasenia`,`Conducta`) VALUES
+('1', '1', 'economia', 'orientada', 'c', '1', '1','0'),
+('2', '2', 'natu', 'orientada', 'c', '2', '2','0'),
+('3', '3', 'rales', 'orientada\r\n', 'c', '3', '3','0'),
+('4', '4', 'elec', 'tecnica', 'a', '4', '4','0'),
+('45237992', '23452379929', 'Matias Bottarini', 'Tecnica', 'G', '45237992', '23452379929','0'),
+('45685987', '23456859879', 'Patricio Altamiranda', 'Tecnica', 'B', '45685987', '23456859879','0'),
+('5', '5', 'tronica', 'tecnica', 'a', '5', '5','0'),
+('6', '6', 'informatica', 'tecnica', 'a', '6', '6','0'),
+('7', '7', 'multi', 'tecnica', 'a', '7', '7','0'),
+('8', '8', 'medios', 'tecnica', 'a', '8', '8','0');
 
 -- --------------------------------------------------------
 
