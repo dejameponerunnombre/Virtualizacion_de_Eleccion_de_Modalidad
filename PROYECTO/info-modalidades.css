@@ -151,6 +151,7 @@ nav{
 
     padding-bottom: 20px;
     text-align: justify;
+    line-height: 25px;
     
 
 }
@@ -344,5 +345,9 @@ body{
     
     .container h1{
         
+    }
+    .tabla{
+        overflow: auto;
+
     }
 }
