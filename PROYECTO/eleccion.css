@@ -230,3 +230,15 @@ nav{
 
     
 }
+
+@media screen  and (max-width: 864px){
+
+    body{
+        width: 100%;
+        position: relative;
+    }
+
+
+
+}
+
