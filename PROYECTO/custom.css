@@ -159,6 +159,21 @@ background-color: #172d8d;
     background-color: #172d8d;
 }
 
+
+.navbar-header a {
+    width: 40px;
+    margin-top: 2px; 
+}
+
+.logo {
+    width: 40px;
+    margin-top: 2px; 
+}
+
+.navbar-header {
+    width: 40px;
+    margin-top: 2px; 
+}
 /*==============================================
     DASHBOARD STYLES     
     =============================================*/
