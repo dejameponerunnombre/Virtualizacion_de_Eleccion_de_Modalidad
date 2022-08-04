@@ -22,7 +22,7 @@ if($filas > 0)
 {
   $array = $resultado -> fetch_array();
   ?>
-  <form action = "ingreso_de_datos.php" method = "post">
+  <form action = "cambio_eleccion.html" method = "post">
     <div class="info">
     <div class="datos">
       <br>
@@ -42,7 +42,6 @@ if($filas > 0)
 else
 {
   echo"Alumno no ingresado";
-  
 }
 mysqli_free_result($resultado);
 mysqli_close($conexion);
