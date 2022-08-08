@@ -105,8 +105,8 @@ CREATE TABLE `empleado` (
 --
 
 INSERT INTO `empleado` (`ID_Empleado`, `Nombre`, `Usuario`, `Tipo`, `Contrasenia`) VALUES
-(1, 'Pepe', 'Pepe123', 'Secretaria', 'Pepe456');
-(2, 'Directivo', 'Directivo', 'Directivo', 'Directivo');
+(1, 'Pepe', 'Pepe123', 'Secretaria', 'Pepe456'),
+(2, 'Directivo', 'Directivo', 'Directivo', 'Directivo'),
 (3, 'Profesor', 'Profesor', 'Profesor', 'Profesor');
 
 
