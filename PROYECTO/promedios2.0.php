@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Listas de Modalidades</title>
 
-    <link href="bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap2.css" rel="stylesheet" />
     <link href="font-awesome.css" rel="stylesheet" />
     <link href="custom.css" rel="stylesheet" />
     <link href="tablas.css" rel="stylesheet" />
