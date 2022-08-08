@@ -1,16 +1,72 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="form-ingreso.css">
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmar alumno</title>
 
-    <title>Agregar infromacion de alumnos</title>
+    <link href="bootstrap.css" rel="stylesheet" />
+  
+    <link href="font-awesome.css" rel="stylesheet" />
+
+    <link href="custom.css" rel="stylesheet" />
+    <link href="boton.css" rel="stylesheet" />
+
+     <link rel="stylesheet" href="footer.css">
+     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
-<body>  
-<?php
+<body>
+     
+           
+          
+    <div id="wrapper">
+         <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="adjust-nav">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="logo" href="#" ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
+                </div>
+              
+
+            </div>
+        </div>
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li class="text-center user-image-back">
+                        <img src="../IMG/find_user.png" class="img-responsive" />
+                    </li>
+                    <li>
+                        <a id= 1 href="form-ingreso.html"><i class="fa fa-desktop "></i>Cargar notas</a>
+                    </li>
+                    <li>
+                        <a href="promedios2.0.php"><i class="fa fa-table "></i>Ver listas de cada modalidad</a>
+                    </li>
+                    <li>
+                        <a href="eliminar_alumno.html"><i class="fa fa-trash-o "></i>Eliminar alumno</a>
+                    </li>
+                    <li>
+                        <a href="form_ingreso_DNI.html"><i class="fa fa-bar-chart-o"></i>Cambiar notas</a>
+                    </li>
+                    <li>
+                        <a href="cambio_eleccion.html"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+
+        </nav>
+       
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                    <?php
 $DNI = $_POST['DNI'];
 session_start(); 
 $_SESSION['DNI'] = $DNI;
@@ -22,27 +78,51 @@ if($filas > 0)
 {
   $array = $resultado -> fetch_array();
   ?>
-  <form action = "cambio_eleccion.html" method = "post">
-    <div class="info">
-    <div class="datos">
-      <br>
-      <h3>Alumno ingresado:</h3>   
-      <p>Nombre: <?php echo $array["Nombre"]?></p>
-      <br>
-      <p>DNI: <?php echo $array["DNI"]?></p>
-    </div>   
-    <div class="texto-centro">
+  <form action = "cambio_eleccion.php" method = "post" class="boton_formulario"> 
+   
+      <h2>Alumno ingresado:</h2>  
+                      
+                    </div>
+                </div>              
+               
+                  <hr />   
+                  <br>
+                  <br>
+                  
+      <p style="font-size: 20px; padding-left: 20%; font-weight: 600;">Nombre: <?php echo $array["Nombre"]?></p>
+      
+      <p style="font-size: 20px; padding-left: 20%; font-weight: 600;">DNI: <?php echo $array["DNI"]?></p>
       <ul>
-        <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px;">Confirmar</button></li>
+        <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px;margin-left: 50%;bottom: 70px;">Confirmar</button></li>
       </ul>
-    </div>
+      </div>   
+ 
   </form>   
   <?php
 }
 else
 {
   echo"Alumno no ingresado";
+  
 }
 mysqli_free_result($resultado);
 mysqli_close($conexion);
-?>
+?>        
+    </div>
+            </div>
+   
+        </div>
+ 
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.metisMenu.js"></script>
+    <script src="../js/custom.js"></script>
+    
+   
+</body>
+<footer class="pie-pagina" style="left: 0;" style="right: 0;">
+    <div class="grupo-2">
+        <small>&copy; 2022 <b>7mo Informática</b> - Grupo 3</small>
+    </div>
+</footer>
+</html>

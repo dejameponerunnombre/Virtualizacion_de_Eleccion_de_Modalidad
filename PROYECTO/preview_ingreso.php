@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agregar infromacion de alumnos</title>
+    <title>Confirmar alumno</title>
 
     <link href="bootstrap.css" rel="stylesheet" />
   
@@ -28,7 +28,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="logo" href="#" ><img src="../IMG/escuela.jpg" style="width: 20%; margin-top: 2px;"/></a>
+                    <a class="logo" href="#" ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
                 </div>
               
 
@@ -41,19 +41,19 @@
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-desktop "></i>Cargar notas</a>
+                        <a id= 1 href="form-ingreso.html"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-table "></i>Ver listas de cada modalidad</a>
+                        <a href="promedios2.0.php"><i class="fa fa-table "></i>Ver listas de cada modalidad</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-trash-o "></i>Eliminar alumno</a>
+                        <a href="eliminar_alumno.html"><i class="fa fa-trash-o "></i>Eliminar alumno</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-bar-chart-o"></i>Cambiar notas</a>
+                        <a href="form_ingreso_DNI.html"><i class="fa fa-bar-chart-o"></i>Cambiar notas</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
+                        <a href="cambio_eleccion.html"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
                     
                 </ul>
@@ -78,7 +78,7 @@ if($filas > 0)
 {
   $array = $resultado -> fetch_array();
   ?>
-  <form action = "ingreso_de_datos.php" method = "post">
+  <form action = "ingreso_de_datos.php" method = "post" class="boton_formulario"> 
    
       <h2>Alumno ingresado:</h2>  
                       
@@ -88,13 +88,14 @@ if($filas > 0)
                   <hr />   
                   <br>
                   <br>
-      <p style="font-size: 20px; padding-left: 20%; font-weight: 200;">Nombre: <?php echo $array["Nombre"]?></p>
-      <br>
-      <p style="font-size: 20px; padding-left: 20%; font-weight: 200;">DNI: <?php echo $array["DNI"]?></p>
-    
+                  
+      <p style="font-size: 20px; padding-left: 20%; font-weight: 600;">Nombre: <?php echo $array["Nombre"]?></p>
+      
+      <p style="font-size: 20px; padding-left: 20%; font-weight: 600;">DNI: <?php echo $array["DNI"]?></p>
       <ul>
-        <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px;">Confirmar</button></li>
-      </ul></div>   
+        <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px;margin-left: 50%;bottom: 70px;">Confirmar</button></li>
+      </ul>
+      </div>   
  
   </form>   
   <?php
