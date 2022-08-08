@@ -1,4 +1,8 @@
+<style>
+<?php include 'style_ingreso.css'; ?>
+</style>
 <?php
+
 session_start();
 $DNI = $_SESSION['DNI'];
 include("db.php");
@@ -23,7 +27,7 @@ if($filas > 0){
          </div>   
         <br>
         <div class="prom">
-        <h2>Ingresar datos de alumno</h2>
+        <h2 style="margin:20px;">Ingresar datos de alumno</h2>
             <br>
             
             <form action="carga_de_datos.php" method="post"  >

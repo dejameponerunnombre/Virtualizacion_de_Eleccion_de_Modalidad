@@ -1,0 +1,23 @@
+*{
+
+    text-decoration: none;
+}
+
+body{
+    
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+    
+
+
+}
+
+.info{
+    margin: 20px;
+}
+
+
+
