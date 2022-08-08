@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-07-2022 a las 21:19:19
+-- Tiempo de generación: 08-08-2022 a las 20:58:03
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -34,25 +34,24 @@ CREATE TABLE `alumnos` (
   `Escuela` varchar(100) NOT NULL,
   `Curso` varchar(1) NOT NULL,
   `Usuario` varchar(365) NOT NULL,
-  `Contrasenia` varchar(365) NOT NULL,
-  `Conducta` int(3) NOT NULL
+  `Contrasenia` varchar(365) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `alumnos`
 --
 
-INSERT INTO `alumnos` (`DNI`, `CUIL`, `Nombre`, `Escuela`, `Curso`, `Usuario`, `Contrasenia`,`Conducta`) VALUES
-('1', '1', 'economia', 'orientada', 'c', '1', '1','0'),
-('2', '2', 'natu', 'orientada', 'c', '2', '2','0'),
-('3', '3', 'rales', 'orientada\r\n', 'c', '3', '3','0'),
-('4', '4', 'elec', 'tecnica', 'a', '4', '4','0'),
-('45237992', '23452379929', 'Matias Bottarini', 'Tecnica', 'G', '45237992', '23452379929','0'),
-('45685987', '23456859879', 'Patricio Altamiranda', 'Tecnica', 'B', '45685987', '23456859879','0'),
-('5', '5', 'tronica', 'tecnica', 'a', '5', '5','0'),
-('6', '6', 'informatica', 'tecnica', 'a', '6', '6','0'),
-('7', '7', 'multi', 'tecnica', 'a', '7', '7','0'),
-('8', '8', 'medios', 'tecnica', 'a', '8', '8','0');
+INSERT INTO `alumnos` (`DNI`, `CUIL`, `Nombre`, `Escuela`, `Curso`, `Usuario`, `Contrasenia`) VALUES
+('1', '1', 'economia', 'orientada', 'c', '1', '1'),
+('2', '2', 'natu', 'orientada', 'c', '2', '2'),
+('3', '3', 'rales', 'orientada\r\n', 'c', '3', '3'),
+('4', '4', 'elec', 'tecnica', 'a', '4', '4'),
+('45237992', '23452379929', 'Matias Bottarini', 'Tecnica', 'G', '45237992', '23452379929'),
+('45685987', '23456859879', 'Patricio Altamiranda', 'Tecnica', 'B', '45685987', '23456859879'),
+('5', '5', 'tronica', 'tecnica', 'a', '5', '5'),
+('6', '6', 'informatica', 'tecnica', 'a', '6', '6'),
+('7', '7', 'multi', 'tecnica', 'a', '7', '7'),
+('8', '8', 'medios', 'tecnica', 'a', '8', '8');
 
 -- --------------------------------------------------------
 
@@ -72,7 +71,7 @@ CREATE TABLE `eleccion` (
 -- Volcado de datos para la tabla `eleccion`
 --
 
-INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`,`Cambio`) VALUES
+INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`, `Cambio`) VALUES
 (45237992, 4, 2, 'Dentro del curso', 'No'),
 (45237992, 4, 2, 'Dentro del curso', 'No'),
 (45237992, 4, 2, 'Dentro del curso', 'No'),
@@ -106,9 +105,8 @@ CREATE TABLE `empleado` (
 
 INSERT INTO `empleado` (`ID_Empleado`, `Nombre`, `Usuario`, `Tipo`, `Contrasenia`) VALUES
 (1, 'Pepe', 'Pepe123', 'Secretaria', 'Pepe456'),
-(2, 'Directivo', 'Directivo', 'Directivo', 'Directivo'),
-(3, 'Profesor', 'Profesor', 'Profesor', 'Profesor');
-
+(2, 'Jorge', 'Jorge123', 'Directivo', 'Jorge456'),
+(3, 'Lara', 'Lara123', 'Profesor', 'Lara456');
 
 -- --------------------------------------------------------
 
@@ -224,7 +222,7 @@ ALTER TABLE `total`
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `ID_Empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_Empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
