@@ -24,11 +24,13 @@ if($filas > 0){
     else 
     {
         ?>
-         </div>   
-        <br>
+           
+        
+        <div class="fondo">
         <div class="prom">
-        <h2 style="margin:20px;">Ingresar datos de alumno</h2>
-            <br>
+        <h2>Ingresar datos de alumno</h2>
+
+           
             
             <form action="carga_de_datos.php" method="post"  >
         <div class="info">
@@ -44,7 +46,7 @@ if($filas > 0){
         <div class="inasis">
             
             <h3>Inasistencias</h3>
-            <p>Inasistencias de Primer Año: <input type="number" name="Inasistencias_1ro" value=""></p>
+            <p>Inasistencias de Primer Año: <input type="number" name="Inasistencias_1ro" value="" ></p>
             <p>Inasistencias de Segundo Año: <input type="number" name="Inasistencias_2do" value=""></p>
             <p>Inasistencias de Tercer Año: <input type="number" name="Inasistencias_3ro" value=""></p>
             
@@ -54,7 +56,7 @@ if($filas > 0){
         <div class="fichas">
 
             <h3>Fichas</h3>
-            <p>Fichas de Primer Año: <input type="number" name="Fichas_1ro" value=""></p>
+            <p>Fichas de Primer Año: <input  type="number" name="Fichas_1ro" value=""></p>
             <p>Fichas de Segundo Año: <input type="number" name="Fichas_2do" value=""></p>
             <p>Fichas de Tercer Año: <input type="number" name="Fichas_3ro" value=""></p>
             
@@ -82,6 +84,7 @@ if($filas > 0){
     <button type="submit" class="m_boton_formulario">Enviar</button>
             </form>
                 
+            
             </div>
     <?php
 }
