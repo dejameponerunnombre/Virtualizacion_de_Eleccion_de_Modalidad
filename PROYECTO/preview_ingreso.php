@@ -78,7 +78,7 @@ if($filas > 0)
 {
   $array = $resultado -> fetch_array();
   ?>
-  <form action = "ingreso_de_datos.php" method = "post" class="boton_formulario"> 
+  <form action = "mensaje_ingreso.html" method = "post" class="boton_formulario"> 
    
       <h2>Alumno ingresado:</h2>  
                       
