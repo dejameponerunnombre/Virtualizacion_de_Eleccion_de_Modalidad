@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="form-ingreso.css">
+    
+    
+    <link rel="stylesheet" href="style_ingreso.css">
 
     <title>Control de notas</title>
 </head>
@@ -37,6 +38,7 @@ if($filas > 0){
     $_SESSION['filas3'] = $fila3;
     ?>
     <div class="m_formulario">
+        <div style="padding:20px;">
                 <h2>Ingresar datos de alumno</h2>
             <br>
             
@@ -73,7 +75,7 @@ if($filas > 0){
                 <br>
                 <div class="observ">
                 
-                    <h3>Obserivaciones</h3>
+                    <h3>Observaciones</h3>
                     <p>Observaciones de Primer Año: <input type="number" name="Observaciones_1ro" placeholder="<?php echo $fila1["Observaciones"] ?>"></p>
                     <p>Observaciones de Segundo Año: <input type="number" name="Observaciones_2do" placeholder="<?php echo $fila2["Observaciones"] ?>"></p>
                     <p>Observaciones de Tercer Año: <input type="number" name="Observaciones_3ro" placeholder="<?php echo $fila3["Observaciones"] ?>"></p>
@@ -92,6 +94,7 @@ if($filas > 0){
                 
                 <li><button type="submit" class="bttn-pill bttn-md bttn-primary">Enviar</button></li>
             </ul>
+            </div>
         </div>
         </form>
         <?php   

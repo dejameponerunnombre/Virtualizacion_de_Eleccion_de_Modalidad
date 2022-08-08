@@ -65,7 +65,7 @@ if($filas > 0){
         <br>
         <div class="observ">
         
-            <h3>Obserivaciones</h3>
+            <h3>Observaciones</h3>
             <p>Observaciones de Primer Año: <input type="number" name="Observaciones_1ro" value=""></p>
             <p>Observaciones de Segundo Año: <input type="number" name="Observaciones_2do" value=""></p>
             <p>Observaciones de Tercer Año: <input type="number" name="Observaciones_3ro" value=""></p>

@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -47,11 +50,10 @@ body{
 
 input[type=number], select, textarea {
     width: 25%;
-    padding: 12px;
+    padding: 11px;
     border: 1px solid #186fe0;
     border-radius: 4px;
     resize: vertical;
-   
     margin-bottom: 10px;
     
     
@@ -85,9 +87,25 @@ button[type=submit]:hover {
     transition: .5s;
   }
 
+
+  
+ 
+
+
+
+
+
+
+
+
 /*--------------------FONDO----------------------*/
 
 .fondo{
     background: white;
+}
+
+.m_formulario{
+    background: white;
+    
 }
 
