@@ -16,14 +16,11 @@ if($filas)
       include("panel de control.html");
       break;
      }
-     case 'Directivo': {
+     case 'Directivo': 
+      {
       include('promedios2.0.php');
       break;
-     }
-     case 'Profesor': {
-      include('XXXXX');
-      break;
-   }
+    }
   }
 }
 else

@@ -91,10 +91,10 @@ if($ahora < $final && $ahora > $inicio)
 {
 
 include("db.php");
-$limpiado="UPDATE eleccion SET Prioridad = 0 ";
+$limpiado="UPDATE eleccion SET Prioridad = 0";
 $limpio= $conexion->query($limpiado);
 for($x = 1; $x <= 5; $x++)
-{    //http://localhost/PROYECTO/promedios2.0.php
+{
     $ahorasi="SELECT Ingresos, Descripcion FROM modalidad where ID_Modalidad = $x";
     $quesi= $conexion->query($ahorasi);
     $siquesi = $quesi ->fetch_array();
@@ -105,7 +105,6 @@ for($x = 1; $x <= 5; $x++)
     $i = 0; 
     for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
     {   
-        $equis = 0;
         $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
         and e.ID_Modalidad = $x and e.Prioridad = 0 and e.Cambio = 'No' 
         order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
