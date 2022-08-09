@@ -55,7 +55,7 @@
                     </li>
                     
                     <li>
-                        <a href="#"><i class="fa fa-trash-o"></i>Eliminar alumno</a>
+                        <a href="eliminar_alumno.html"><i class="fa fa-trash-o"></i>Eliminar alumno</a>
                     </li>
                     <li>
                         <a href="form_ingreso_DNI.html"><i class="fa fa-bar-chart-o"></i>Cambiar notas</a>
