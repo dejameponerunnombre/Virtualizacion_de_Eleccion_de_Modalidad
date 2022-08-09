@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-08-2022 a las 20:58:03
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.0.13
+-- Tiempo de generación: 09-08-2022 a las 02:29:08
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,15 +43,15 @@ CREATE TABLE `alumnos` (
 
 INSERT INTO `alumnos` (`DNI`, `CUIL`, `Nombre`, `Escuela`, `Curso`, `Usuario`, `Contrasenia`) VALUES
 ('1', '1', 'economia', 'orientada', 'c', '1', '1'),
+('10', '10', 'Infromatica2', 'Tecnica', 'G', '10', '10'),
 ('2', '2', 'natu', 'orientada', 'c', '2', '2'),
 ('3', '3', 'rales', 'orientada\r\n', 'c', '3', '3'),
 ('4', '4', 'elec', 'tecnica', 'a', '4', '4'),
-('45237992', '23452379929', 'Matias Bottarini', 'Tecnica', 'G', '45237992', '23452379929'),
-('45685987', '23456859879', 'Patricio Altamiranda', 'Tecnica', 'B', '45685987', '23456859879'),
 ('5', '5', 'tronica', 'tecnica', 'a', '5', '5'),
 ('6', '6', 'informatica', 'tecnica', 'a', '6', '6'),
 ('7', '7', 'multi', 'tecnica', 'a', '7', '7'),
-('8', '8', 'medios', 'tecnica', 'a', '8', '8');
+('8', '8', 'medios', 'tecnica', 'a', '8', '8'),
+('9', '9', 'Economia2', 'Orientada', 'c', '9', '9');
 
 -- --------------------------------------------------------
 
@@ -72,18 +72,16 @@ CREATE TABLE `eleccion` (
 --
 
 INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`, `Cambio`) VALUES
-(45237992, 4, 2, 'Dentro del curso', 'No'),
-(45237992, 4, 2, 'Dentro del curso', 'No'),
-(45237992, 4, 2, 'Dentro del curso', 'No'),
-(45685987, 1, 2, 'Dentro del curso', 'No'),
-(1, 1, 1, 'Dentro del curso', 'No'),
-(2, 2, 1, 'Dentro del curso', 'No'),
-(3, 2, 2, 'Dentro del curso', 'No'),
-(4, 3, 1, 'Dentro del curso', 'No'),
-(5, 3, 2, 'Dentro del curso', 'No'),
-(6, 4, 1, 'Dentro del curso', 'No'),
-(7, 5, 1, 'Dentro del curso', 'No'),
-(8, 5, 2, 'Dentro del curso', 'No');
+(1, 1, 0, 'Dentro del curso', 'No'),
+(2, 2, 0, 'Dentro del curso', 'No'),
+(3, 2, 0, 'Dentro del curso', 'No'),
+(4, 3, 0, 'Dentro del curso', 'No'),
+(5, 3, 0, 'Dentro del curso', 'No'),
+(6, 4, 0, 'Dentro del curso', 'No'),
+(7, 5, 0, 'Dentro del curso', 'No'),
+(8, 5, 0, 'Dentro del curso', 'No'),
+(9, 4, 0, 'Dentro del curso', 'Si'),
+(10, 2, 2, 'Dentro del curso', 'Si');
 
 -- --------------------------------------------------------
 
@@ -105,8 +103,7 @@ CREATE TABLE `empleado` (
 
 INSERT INTO `empleado` (`ID_Empleado`, `Nombre`, `Usuario`, `Tipo`, `Contrasenia`) VALUES
 (1, 'Pepe', 'Pepe123', 'Secretaria', 'Pepe456'),
-(2, 'Jorge', 'Jorge123', 'Directivo', 'Jorge456'),
-(3, 'Lara', 'Lara123', 'Profesor', 'Lara456');
+(2, 'Jorge', 'Jorge123', 'Directivo', 'Jorge456');
 
 -- --------------------------------------------------------
 
@@ -128,9 +125,36 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`DNI`, `Anio`, `Prom`, `Fichas`, `Inasistencias`, `Observaciones`) VALUES
-('45237992', '1', 7, 1, 10, 0),
-('45237992', '2', 7, 3, 10, 0),
-('45237992', '3', 7, 3, 10, 0);
+('1', '1', 1, 1, 1, 1),
+('1', '2', 1, 1, 1, 1),
+('1', '3', 1, 1, 1, 1),
+('10', '1', 10, 10, 10, 10),
+('10', '2', 10, 10, 10, 10),
+('10', '3', 10, 10, 10, 10),
+('2', '1', 2, 2, 2, 2),
+('2', '2', 2, 2, 2, 2),
+('2', '3', 2, 2, 2, 2),
+('3', '1', 3, 3, 3, 3),
+('3', '2', 3, 3, 3, 3),
+('3', '3', 3, 3, 3, 3),
+('4', '1', 4, 4, 4, 4),
+('4', '2', 4, 4, 4, 4),
+('4', '3', 4, 4, 4, 4),
+('5', '1', 5, 5, 5, 5),
+('5', '2', 5, 5, 5, 5),
+('5', '3', 5, 5, 5, 5),
+('6', '1', 1, 6, 6, 6),
+('6', '2', 1, 6, 6, 6),
+('6', '3', 2, 6, 6, 6),
+('7', '1', 7, 7, 7, 7),
+('7', '2', 7, 7, 7, 7),
+('7', '3', 7, 7, 7, 7),
+('8', '1', 8, 8, 8, 8),
+('8', '2', 8, 8, 8, 8),
+('8', '3', 8, 8, 8, 8),
+('9', '1', 9, 9, 9, 9),
+('9', '2', 9, 9, 9, 9),
+('9', '3', 9, 9, 9, 9);
 
 -- --------------------------------------------------------
 
@@ -149,8 +173,8 @@ CREATE TABLE `modalidad` (
 --
 
 INSERT INTO `modalidad` (`ID_Modalidad`, `Descripcion`, `Ingresos`) VALUES
-(1, 'Economia', 2),
-(2, 'Naturales', 2),
+(1, 'Economia', 1),
+(2, 'Naturales', 3),
 (3, 'Electronica', 2),
 (4, 'Informatica', 2),
 (5, 'Multimedios', 2);
@@ -175,16 +199,16 @@ CREATE TABLE `total` (
 --
 
 INSERT INTO `total` (`DNI`, `PromediosT`, `FichasT`, `InasistenciasT`, `ObservacionesT`, `Comentario`) VALUES
-('1', 7, 8, 9, 10, 'a'),
-('2', 10, 9, 8, 7, 'b'),
-('3', 9, 8, 7, 10, 'c'),
-('4', 6, 5, 4, 3, 'a'),
-('45237992', 7, 7, 30, 0, ''),
-('45685987', 1, 1, 1, 1, '1'),
-('5', 6, 7, 8, 9, '10'),
-('6', 7, 6, 9, 10, 'je'),
-('7', 8, 9, 10, 1, 'lol'),
-('8', 1, 2, 3, 4, 'kkk\r\n');
+('1', 1, 3, 3, 3, '2'),
+('10', 10, 30, 30, 30, '11'),
+('2', 2, 6, 6, 6, '3'),
+('3', 3, 9, 9, 9, '3'),
+('4', 4, 12, 12, 12, '5'),
+('5', 5, 15, 15, 15, '6'),
+('6', 1.33333, 18, 18, 18, '6'),
+('7', 7, 21, 21, 21, '8'),
+('8', 8, 24, 24, 24, '8'),
+('9', 9, 27, 27, 27, '10');
 
 --
 -- Índices para tablas volcadas
