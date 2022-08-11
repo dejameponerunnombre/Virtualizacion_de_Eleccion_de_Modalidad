@@ -116,6 +116,7 @@
                           <form action = "validacion_de_DNI.php" method = "post" class="boton_formulario"> 
                            
                               <h2>Alumno ingresado:</h2>  
+
                               
                               <p>Nombre: <?php echo $array["Nombre"]?></p>
                               
@@ -126,7 +127,17 @@
                               </ul>             
                                             </div>
                                         </div>              
+
+              
+                                              
+                                            </div>
+                                        </div>              
+                              <p style="font-size: 20px; padding-left: 20%; font-weight: 600;">Nombre: <?php echo $array["Nombre"]?></p>
                               
+                              <p style="font-size: 20px; padding-left: 20%; font-weight: 600;">DNI: <?php echo $array["DNI"]?></p>
+                              <ul>
+                                <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px;margin-left: 50%;bottom: 70px;">Confirmar</button></li>
+                              </ul>
                               </div>   
                          
                           </form>   
