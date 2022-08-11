@@ -268,8 +268,36 @@ input::-webkit-inner-spin-button {
 
 .boton_formulario p{
     line-height : 25px;
+    font-size: 14px; 
+    padding-left: 20%; 
+}
+
+.boton_formulario h2{
+    line-height : 25px;
+    font-size: 15px; 
+    padding-left: 20%; 
+    font-weight:600;
     text-decoration: underline darkblue;
-    
+
+}
+
+.boton2{
+    background-color: #005be4; 
+  border: none;
+  border-radius: 6px;
+
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+
+  margin-left: 47.5%;
+  bottom: 20px;
 }
 
 

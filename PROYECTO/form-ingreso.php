@@ -55,14 +55,14 @@
                     </li>
                     
                     <li>
-                        <a href="eliminar_alumno.html"><i class="fa fa-trash-o"></i>Eliminar alumno</a>
+                        <a href="eliminar-alumno.php"><i class="fa fa-trash-o"></i>Eliminar alumno</a>
                     </li>
                     <li>
-                        <a href="form_ingreso_DNI.html"><i class="fa fa-bar-chart-o"></i>Cambiar notas</a>
+                        <a href="form_ingreso_DNI.php"><i class="fa fa-bar-chart-o"></i>Cambiar notas</a>
                     </li>
 
                     <li>
-                        <a href="cambio_eleccion.html"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
+                        <a href="cambio-eleccion.php"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
                     
                 </ul>
@@ -81,8 +81,8 @@
                 </div>              
                
                   <hr />
-              
-                  <form action="preview_ingreso.php" method="post"  >
+               
+                  <form action="form-ingreso.php" method="post"  >
                     <div class="info">
                     <div class="datos">
                         
@@ -97,7 +97,48 @@
                             <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px;">Consultar</button></li>
                         </ul>
                     </div>
-                        </form>      
+                        </form>
+                        <?php
+                        $x = empty($_POST['DNI']);
+                        if($x == false)
+                        {
+                            $DNI = $_POST['DNI'];
+                            session_start(); 
+                            $_SESSION['DNI'] = $DNI;
+                            include("db.php");
+                            $request = "SELECT*FROM alumnos where DNI = '$DNI'";
+                            $resultado=mysqli_query($conexion,$request);
+                            $filas = mysqli_num_rows($resultado);
+                            if($filas > 0)
+                            {
+                          $array = $resultado -> fetch_array();
+                          ?>
+                          <form action = "ingreso_de_datos.php" method = "post" class="boton_formulario"> 
+                           
+                              <h2>Alumno ingresado:</h2>  
+                                              
+                                            </div>
+                                        </div>              
+                              <p style="font-size: 20px; padding-left: 20%; font-weight: 600;">Nombre: <?php echo $array["Nombre"]?></p>
+                              
+                              <p style="font-size: 20px; padding-left: 20%; font-weight: 600;">DNI: <?php echo $array["DNI"]?></p>
+                              <ul>
+                                <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px;margin-left: 50%;bottom: 70px;">Confirmar</button></li>
+                              </ul>
+                              </div>   
+                         
+                          </form>   
+                          <?php
+                        }
+                        else
+                        {
+                          echo"Alumno no ingresado";
+                          
+                        }
+                        mysqli_free_result($resultado);
+                        mysqli_close($conexion);
+                    }
+                        ?>              
     </div>
             </div>
    

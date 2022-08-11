@@ -46,7 +46,7 @@
 
 
                     <li>
-                        <a href="form-ingreso.html"><i class="fa fa-desktop "></i>Cargar notas</a>
+                        <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
                    
 
@@ -55,14 +55,14 @@
                     </li>
                     
                     <li>
-                        <a href="eliminar_alumno.html"><i class="fa fa-trash-o"></i>Eliminar alumno</a>
+                        <a href="eliminar-alumno.php"><i class="fa fa-trash-o"></i>Eliminar alumno</a>
                     </li>
                     <li>
-                        <a href="form_ingreso_DNI.html"><i class="fa fa-bar-chart-o"></i>Cambiar notas</a>
+                        <a href="form_ingreso_DNI.php"><i class="fa fa-bar-chart-o"></i>Cambiar notas</a>
                     </li>
 
                     <li>
-                        <a href="cambio_eleccion.html"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
+                        <a href="cambio-eleccion.php"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
                     
                 </ul>
