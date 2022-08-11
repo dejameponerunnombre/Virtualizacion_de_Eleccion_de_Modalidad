@@ -46,7 +46,7 @@
 
 
                     <li>
-                        <a href="form-ingreso.html"><i class="fa fa-desktop "></i>Cargar notas</a>
+                        <a href="eliminar-alumno.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
                    
 
@@ -54,18 +54,15 @@
                         <a href="promedios2.0.php"><i class="fa fa-table "></i>Ver listas de cada modalidad</a>
                     </li>
                     
-
-
-                    
                     <li>
-                        <a href="eliminar_alumno.html"><i class="fa fa-trash-o"></i>Eliminar alumno</a>
+                        <a href="#"><i class="fa fa-trash-o"></i>Eliminar alumno</a>
                     </li>
                     <li>
-                        <a href="form_ingreso_DNI.html"><i class="fa fa-bar-chart-o"></i>Cambiar notas</a>
+                        <a href="form_ingreso_DNI.php"><i class="fa fa-bar-chart-o"></i>Cambiar notas</a>
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
+                        <a href="cambio-eleccion.php"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
                     
                 </ul>
@@ -79,13 +76,13 @@
                 <div class="row">
                     
                     <div class="col-md-12">
-                     <h2>Ingrese DNI del alumno que quiere cambiar su eleccion</h2>   
+                     <h2>Ingrese DNI del alumno a eliminar</h2>   
                     </div>
                 </div>              
                
                   <hr />
               
-                  <form action="preview_eleccion.php" method="post" >
+                  <form action="eliminar-alumno.php" method="post">
                     <div class="info">
                     <div class="datos">
                         <br>
@@ -98,19 +95,57 @@
                                 </ul>
                             </div>
                         </div>
-                 <!-- /. ROW  -->           
+                    </form>  
+                    <?php
+                        $x = empty($_POST['DNI']);
+                        if($x == false)
+                        {
+                            $DNI = $_POST['DNI'];
+                            session_start(); 
+                            $_SESSION['DNI'] = $DNI;
+                            include("db.php");
+                            $request = "SELECT*FROM alumnos where DNI = '$DNI'";
+                            $resultado=mysqli_query($conexion,$request);
+                            $filas = mysqli_num_rows($resultado);
+                            if($filas > 0)
+                            {
+                          $array = $resultado -> fetch_array();
+                          ?>
+                          <form action = "eliminar_alumno.php" method = "post" class="boton_formulario"> 
+                          <h2>Alumno ingresado:</h2>  
+                              <p>Nombre: <?php echo $array["Nombre"]?></p>
+                              
+                              <p>DNI: <?php echo $array["DNI"]?></p>
+                             
+                              <ul>
+                                <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
+                              </ul> 
+                                            </div>
+                                        </div>              
+                              
+                              </div>   
+                         
+                          </form>   
+                          <?php
+                        }
+                        else
+                        {
+                          echo"Alumno no ingresado";
+                          
+                        }
+                        mysqli_free_result($resultado);
+                        mysqli_close($conexion);
+                    }
+                        ?>
+
     </div>
-             <!-- /. PAGE INNER  -->
             </div>
    
         </div>
  
         <script src="../js/jquery-1.10.2.js"></script>
-        <!-- BOOTSTRAP SCRIPTS -->
       <script src="../js/bootstrap.min.js"></script>
-      <!-- METISMENU SCRIPTS -->
       <script src="../js/jquery.metisMenu.js"></script>
-        <!-- CUSTOM SCRIPTS -->
       <script src="../js/custom.js"></script>
    
 </body>
@@ -120,3 +155,4 @@
     </div>
 </footer>
 </html>
+
