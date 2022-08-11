@@ -14,11 +14,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-body{
+.body{
     
     margin: auto;
     border-left: 0.5px solid #186fe0;
-    border-right: 0.5px solid #186fe0;
+    border-right: 0.5px solid red;
 
     background: url(../IMG/prueba.jpg);
     background-repeat: no-repeat;
@@ -39,7 +39,7 @@ body{
 /*-------------------FORMULARIOS Y BOTONES--------------------*/
 
 .prom h2{
-    padding: 20px;
+    padding: 2000px;
 }
 
 
