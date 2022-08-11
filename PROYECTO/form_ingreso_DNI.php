@@ -140,8 +140,8 @@
                         }
                         else
                         {
-                          echo"Alumno no ingresado";
-                          
+                            ?> <div class="boton_formulario"> <h2>Alumno no ingresado</h2></div>
+                            <?php 
                         }
                         mysqli_free_result($resultado);
                         mysqli_close($conexion);

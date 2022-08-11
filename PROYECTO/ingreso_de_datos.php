@@ -16,7 +16,7 @@ if($filas > 0){
     $filas2 = mysqli_num_rows($resultado2);
     if($filas2 > 0){
         
-            include("form-ingreso.html");
+            include("form-ingreso.php");
                 ?>
                 <h1> Alumno ya ingresado</h1>
                 <?php
