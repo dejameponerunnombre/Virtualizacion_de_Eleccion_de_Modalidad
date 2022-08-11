@@ -126,10 +126,7 @@
 
                                 <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
 
-                                <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
-
-                                <li><button type="submit" class="boton2" style="margin-top: 3px;margin-left: 47.5%;bottom: 70px;">Confirmar</button></li>
-
+                                
                               </ul>
                           
                                            

@@ -132,12 +132,7 @@
                                               
                                             </div>
                                         </div>              
-                              <p style="font-size: 20px; padding-left: 20%; font-weight: 600;">Nombre: <?php echo $array["Nombre"]?></p>
-                              
-                              <p style="font-size: 20px; padding-left: 20%; font-weight: 600;">DNI: <?php echo $array["DNI"]?></p>
-                              <ul>
-                                <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px;margin-left: 50%;bottom: 70px;">Confirmar</button></li>
-                              </ul>
+                            
                               </div>   
                          
                           </form>   
