@@ -35,7 +35,6 @@
 
             </div>
         </div>
-        <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
@@ -46,7 +45,7 @@
 
 
                     <li>
-                        <a href="eliminar-alumno.php"><i class="fa fa-desktop "></i>Cargar notas</a>
+                        <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
                    
 
@@ -74,62 +73,50 @@
         <div id="page-wrapper" >
             <div id="page-inner">
                 <div class="row">
-                    
                     <div class="col-md-12">
                      <h2>Ingrese DNI del alumno a eliminar</h2>   
                     </div>
                 </div>              
-               
-                  <hr />
-              
-                  <form action="eliminar-alumno.php" method="post">
-                    <div class="info">
+                <hr />
+                <form action="eliminar-alumno.php" method="post">
+                <div class="info">
                     <div class="datos">
                         <br>
                         <h3>DNI del alumno</h3>   
                     </div>   
-                        <p><input type="number" name="DNI" id="DNI"></p>
-                        <div class="texto-centro">
-                                <ul>
-                                    <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px;">Consultar</button></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </form>  
-                    <?php
-                        $x = empty($_POST['DNI']);
-                        if($x == false)
+                    <p><input type="number" name="DNI" id="DNI"></p>
+                    <div class="texto-centro">
+                        <ul>
+                            <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px;">Consultar</button></li>
+                        </ul>
+                    </div>
+                </div>
+                </form>  
+                <?php
+                $x = empty($_POST['DNI']);
+                    if($x == false)
+                    {
+                        $DNI = $_POST['DNI'];
+                        session_start(); 
+                        $_SESSION['DNI'] = $DNI;
+                        include("db.php");
+                        $request = "SELECT*FROM alumnos where DNI = '$DNI'";
+                        $resultado=mysqli_query($conexion,$request);
+                        $filas = mysqli_num_rows($resultado);
+                        if($filas > 0)
                         {
-                            $DNI = $_POST['DNI'];
-                            session_start(); 
-                            $_SESSION['DNI'] = $DNI;
-                            include("db.php");
-                            $request = "SELECT*FROM alumnos where DNI = '$DNI'";
-                            $resultado=mysqli_query($conexion,$request);
-                            $filas = mysqli_num_rows($resultado);
-                            if($filas > 0)
-                            {
-                          $array = $resultado -> fetch_array();
-                          ?>
-                          <form action = "eliminar_alumno.php" method = "post" class="boton_formulario"> 
-
-                          <h2>Alumno ingresado:</h2>  
-                              <p>Nombre: <?php echo $array["Nombre"]?></p>
-                              
-                              <p>DNI: <?php echo $array["DNI"]?></p>
-                             
-                              <ul>
-                                <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
-                              </ul> 
-                                            </div>
-                                        </div>              
-
-                                              
-                                            </div>
-                                        </div>              
-                              
-                              </div>   
-                         
+                            $array = $resultado -> fetch_array();
+                            ?>
+                            <form action = "eliminar-alumno.php" method = "post" class="boton_formulario"> 
+                            <h2>Alumno ingresado:</h2>  
+                            <p>Nombre: <?php echo $array["Nombre"]?></p>
+                            <p>DNI: <?php echo $array["DNI"]?></p>
+                            <ul>
+                                <li><input type="submit" class="boton2" style="margin-left: 20%;" name = "boton" value = "Confirmar" onclick = "hacer()"></input></li>
+                            </ul> 
+                        </div>
+            </div>                                                    
+        </div>
                           </form>   
                           <?php
                         }
@@ -138,9 +125,29 @@
                             ?> <div class="boton_formulario"> <h2>Alumno no ingresado</h2></div>
                             <?php 
                         }
-                        mysqli_free_result($resultado);
-                        mysqli_close($conexion);
                     }
+                    function hacer ()
+                          {
+                            echo "holaaa";
+                              session_start(); 
+                              $DNI = $_SESSION['DNI'];
+                              include("db.php");
+                              $eliminar = "DELETE FROM info where DNI = $DNI";
+                              $borrar = $conexion -> query($eliminar);
+                              $eliminar1 = "DELETE FROM modalidad where DNI = $DNI";
+                              $borrar1 = $conexion -> query($eliminar1);
+                              $eliminar2 = "DELETE FROM total where DNI = $DNI";
+                              $borrar2 = $conexion -> query($eliminar2);
+                              $eliminar3 = "DELETE FROM eleccion where DNI = $DNI";
+                              $borrar3 = $conexion -> query($eliminar3);
+                              $eliminar4 = "DELETE FROM alumnos where DNI = $DNI";
+                              $borrar4 = $conexion -> query($eliminar4);
+                              if($borrar4===TRUE)
+                                  {
+                                      ECHO"Alumno eliminado de la base de datos";
+                                  }
+                              mysqli_close($conexion);
+                          }
                         ?>
 
     </div>
