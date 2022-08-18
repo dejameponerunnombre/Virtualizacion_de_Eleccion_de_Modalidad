@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="footer.css">
     <link href="bootstrap.css" rel="stylesheet" />
   
-  <link href="font-awesome.css" rel="stylesheet" />
-
-  <link href="custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="boton.css">
+    <link href="font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="validacion_DNI.css">
+    <link href="custom.css" rel="stylesheet" />
     
 
     <title>Control de notas</title>

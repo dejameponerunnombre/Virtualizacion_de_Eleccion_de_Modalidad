@@ -224,6 +224,10 @@ input[type=number] {
     margin-left: 200px;
   }
 
+  
+
+
+
   input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -328,6 +332,16 @@ input::-webkit-inner-spin-button {
     font-weight: 600;
     margin-left: 200px;
 }
+
+
+
+
+
+
+
+
+
+
 
 /*==============================================
     BOOTSTRAP STYLE CHANGES     
