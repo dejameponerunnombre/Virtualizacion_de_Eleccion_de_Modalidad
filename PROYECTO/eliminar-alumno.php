@@ -15,7 +15,7 @@
 <body>
      
            
-          
+           
     <div id="wrapper">
          <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="adjust-nav">
@@ -107,14 +107,12 @@
                         {
                             $array = $resultado -> fetch_array();
                             ?>
-                            <form action = "eliminar-alumno.php" method = "post" class="boton_formulario"> 
+                            <form action = "eliminar_alumno.php" method = "post" class="boton_formulario"> 
                             <h2>Alumno ingresado:</h2>  
                             <p>Nombre: <?php echo $array["Nombre"]?></p>
                             <p>DNI: <?php echo $array["DNI"]?></p>
                             <ul>
-                                <li><input type="submit" class="boton2" style="margin-left: 20%;" name = "boton" value = "Confirmar" onclick = "hacer()"></input></li>
-                            </ul> 
-                        </div>
+                            <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>                        </div>
             </div>                                                    
         </div>
                           </form>   
@@ -126,28 +124,6 @@
                             <?php 
                         }
                     }
-                    function hacer ()
-                          {
-                            echo "holaaa";
-                              session_start(); 
-                              $DNI = $_SESSION['DNI'];
-                              include("db.php");
-                              $eliminar = "DELETE FROM info where DNI = $DNI";
-                              $borrar = $conexion -> query($eliminar);
-                              $eliminar1 = "DELETE FROM modalidad where DNI = $DNI";
-                              $borrar1 = $conexion -> query($eliminar1);
-                              $eliminar2 = "DELETE FROM total where DNI = $DNI";
-                              $borrar2 = $conexion -> query($eliminar2);
-                              $eliminar3 = "DELETE FROM eleccion where DNI = $DNI";
-                              $borrar3 = $conexion -> query($eliminar3);
-                              $eliminar4 = "DELETE FROM alumnos where DNI = $DNI";
-                              $borrar4 = $conexion -> query($eliminar4);
-                              if($borrar4===TRUE)
-                                  {
-                                      ECHO"Alumno eliminado de la base de datos";
-                                  }
-                              mysqli_close($conexion);
-                          }
                         ?>
 
     </div>

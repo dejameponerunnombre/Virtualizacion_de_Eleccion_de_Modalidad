@@ -14,7 +14,7 @@
 </head>
 <body>
      
-           
+            
           
     <div id="wrapper">
          <div class="navbar navbar-inverse navbar-fixed-top">
@@ -94,11 +94,17 @@
                     <div class="texto-centro">
                         <ul>
                             
-                            <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px;">Consultar</button></li>
+                            <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px; border-radius: 100px;">Consultar</button></li>
                         </ul>
                     </div>
                         </form>
                         <?php
+                        $var = empty($_SESSION['var']);
+                        if($var == false)
+                            {
+                                ?> <div class="boton_formulario"> <h2>Las notas de este alumno ya fueron ingresadas</h2></div>
+                                 <?php 
+                            }
                         $x = empty($_POST['DNI']);
                         if($x == false)
                         {

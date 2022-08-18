@@ -10,7 +10,6 @@
     <title>Eliminar alumnos</title>
 </head>
 <body>
-  
 <?php
 session_start();
 $DNI = $_SESSION['DNI'];
@@ -34,10 +33,6 @@ if($filas > 0)
     {
         ECHO"Alumno eliminado de la base de datos";
     }
-}
-else
-{
-  echo"Alumno no ingresado";
 }
 mysqli_free_result($resultado);
 mysqli_close($conexion);

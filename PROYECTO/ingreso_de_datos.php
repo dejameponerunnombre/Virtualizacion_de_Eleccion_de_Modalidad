@@ -1,33 +1,28 @@
+
 <style>
 <?php include 'style_ingreso.css'; ?>
 </style>
 <?php
-
 session_start();
 $DNI = $_SESSION['DNI'];
 include("db.php");
 $request = "SELECT*FROM alumnos where DNI = '$DNI'";
 $resultado=mysqli_query($conexion,$request);
 $filas = mysqli_num_rows($resultado);
-
-if($filas > 0){
+if($filas > 0)
+{
     $request2 = "SELECT*FROM info where DNI = '$DNI'";
     $resultado2 = mysqli_query($conexion,$request2);
     $filas2 = mysqli_num_rows($resultado2);
     if($filas2 > 0){
-        
-            include("form-ingreso.php");
-                ?>
-                <h1> Alumno ya ingresado</h1>
-                <?php
+        $var = 10;
+        $_SESSION['var'] = $var;
+        include("form-ingreso.php");
         }
     else 
     {
         ?>
-           
-        
         <div class="fondo">
-        <div class="prom">
         <h2>Ingresar datos de alumno</h2>
 
            
@@ -87,7 +82,7 @@ if($filas > 0){
             
             </div>
     <?php
-}
+    }
 }
 else
 {
@@ -97,3 +92,4 @@ else
 }
 mysqli_free_result($resultado);
 ?>
+</html>

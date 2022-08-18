@@ -1,8 +1,8 @@
 <?php
-$DNI = $_POST['DNI'];
 session_start();
+$DNI = $_SESSION['DNI'];
 include("db.php");
-$request = "SELECT*FROM alumnos where DNI = '$DNI'";
+$request = "SELECT*FROM eleccion where DNI = '$DNI'";
 $resultado=mysqli_query($conexion,$request);
 $filas = mysqli_num_rows($resultado);
 if($filas > 0)
@@ -17,9 +17,9 @@ if($filas > 0)
 }
 else
 {
-  ?>
-  <h1>Alumno no ingresado</h1>
-  <?php
+  $var = 10;
+  $_SESSION['var'] = $var;
+  include("cambio-eleccion.php");
 }
 mysqli_free_result($resultado);
 mysqli_close($conexion);

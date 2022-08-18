@@ -16,7 +16,7 @@
     <title>Control de notas</title>
 </head>
 
-<body>
+<body> 
 <?php
 session_start();
 $DNI = $_SESSION['DNI'];
@@ -184,9 +184,9 @@ if($filas > 0){
 
         <?php   
 }else{
-    ?>
-    <h1> Este DNI no ha sido ingresado anteriormente </h1>
-    <?php
+    $var = 10;
+    $_SESSION['var'] = $var;
+    include("form_ingreso_DNI.php");
 }
 
 mysqli_free_result($resultado);
