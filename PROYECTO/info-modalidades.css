@@ -287,6 +287,34 @@ body{
 
 
 
+#contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #principal {
+    width: 50%;
+  }
+  #sidebar {
+    width: 50%;
+    
+
+  }
+
+.fotos h3 {
+      padding: 20px;
+}
+
+.fotos img{
+    padding: 20px;
+}
+
+
+
+
+
+
+
 
 
 @media screen  and (min-width: 800px) {
@@ -353,7 +381,7 @@ body{
         margin-bottom: 20px;
     }
 
-    center
+    
 
    
 
