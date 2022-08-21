@@ -99,11 +99,21 @@
                     </div>
                         </form>
                         <?php
+
                         $var = empty($_SESSION['var']);
                         if($var == false)
-                            {
-                                ?> <div class="boton_formulario"> <h2>Las notas de este alumno ya fueron ingresadas</h2></div>
-                                 <?php 
+                            {   
+                                $DNI = $_SESSION['DNI'];
+                                $request = "SELECT*FROM total where DNI = '$DNI'";
+                                $resultado=mysqli_query($conexion,$request);
+                                $array = $resultado -> fetch_array();
+                                ?> <div class="boton_formulario"> <h2>Las notas de este alumno ya fueron ingresadas</h2>
+                                <p>Promedio total: <?php echo $array["PromediosT"]?></p>
+                                <p>Fichas totales: <?php echo $array["FichasT"]?></p>
+                                <p>Inasistencias totales: <?php echo $array["InasistenciasT"]?></p>
+                                <p>Observaciones totales: <?php echo $array["ObservacionesT"]?></p>
+                                <p>Comentario: <?php echo $array["Comentario"]?></p></div>
+                                <?php 
                             }
                         $x = empty($_POST['DNI']);
                         if($x == false)
@@ -123,9 +133,7 @@
 
                           <h2>Alumno ingresado:</h2>  
                               <p>Nombre: <?php echo $array["Nombre"]?></p>
-                              
                               <p>DNI: <?php echo $array["DNI"]?></p>
-                             
                               <ul>
                                 <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
                               </ul>              
