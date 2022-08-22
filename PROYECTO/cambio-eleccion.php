@@ -30,7 +30,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Cerrar Sesión</a></li>
+                        <li><a href="inicio.html">Cerrar Sesión</a></li>
                     </ul>
                 </div>
 

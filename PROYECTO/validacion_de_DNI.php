@@ -55,8 +55,9 @@ if($filas > 0){
                     <a class="logo" href="#" ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Cerrar Sesión</a></li>
+                    <ul class="nav navbar-nav navbar-right"> 
+                        <li><a href="form_ingreso_DNI.php">Volver</a></li>
+                        <li><a href="inicio.html">Cerrar Sesión</a></li>
                     </ul>
                 </div>
 
@@ -69,7 +70,7 @@ if($filas > 0){
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
                     <li>
-                        <a id= 1 href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
+                        <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
                     <li>
                         <a href="promedios2.0.php"><i class="fa fa-table "></i>Ver listas de cada modalidad</a>
