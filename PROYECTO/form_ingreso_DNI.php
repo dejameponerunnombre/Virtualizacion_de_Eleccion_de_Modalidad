@@ -114,6 +114,7 @@
                         if($filas > 0)
                         {
                           $array = $resultado -> fetch_array();
+                          $_SESSION['x'] = null;
                           ?>
                           <form action = "validacion_de_DNI.php" method = "post" class="boton_formulario"> 
                               <h2>Alumno ingresado:</h2> 

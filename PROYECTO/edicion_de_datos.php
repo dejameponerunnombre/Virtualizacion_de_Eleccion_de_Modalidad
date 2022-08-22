@@ -49,9 +49,7 @@
         $conexion -> query($var2);
         $var3="UPDATE total SET PromedioST='$PT', FichasT='$FT', ObservacionesT='$OT', InasistenciasT='$IT' WHERE DNI='$DNI'";
         $x = $conexion -> query($var3);
-        ?>
-            <h1> Informacion ingresada correctamente </h1>
-        <?php
-
-mysqli_close($conexion);
+        $x = 10;
+        $_SESSION['x'] = $x;
+        include("validacion_de_DNI.php");
 ?>

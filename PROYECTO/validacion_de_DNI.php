@@ -21,14 +21,12 @@
 <?php
 session_start();
 $DNI = $_SESSION['DNI'];
- 
 include("db.php");
 $request = "SELECT*FROM info where DNI = '$DNI'";
 $resultado=mysqli_query($conexion,$request);
-
 $filas = mysqli_num_rows($resultado);
-
-if($filas > 0){
+if($filas > 0)
+{
     $consulta1 = "SELECT*FROM info where DNI = $DNI and Anio = 1";
     $consulta2 = "SELECT*FROM info where DNI = $DNI and Anio = 2";
     $consulta3 = "SELECT*FROM info where DNI = $DNI and Anio = 3";
@@ -69,7 +67,7 @@ if($filas > 0){
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
                     <li>
-                        <a id= 1 href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
+                        <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
                     <li>
                         <a href="promedios2.0.php"><i class="fa fa-table "></i>Ver listas de cada modalidad</a>
@@ -94,7 +92,7 @@ if($filas > 0){
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Seleccione una opción</h2>   
+                     
                     </div>
                 </div>              
                
@@ -211,7 +209,6 @@ if($filas > 0){
     $_SESSION['var'] = $var;
     include("form_ingreso_DNI.php");
 }
-
 mysqli_free_result($resultado);
 mysqli_close($conexion);
 ?>
