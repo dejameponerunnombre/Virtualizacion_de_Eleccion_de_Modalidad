@@ -39,11 +39,6 @@ if($filas > 0)
     else 
     {
         ?>
-
-    
-
-
-
     <div id="wrapper">
          <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="adjust-nav">
@@ -115,9 +110,9 @@ if($filas > 0)
 
         <div class="prom">
             <h3>Promedios</h3>
-            <p>Promedio de Primer Año: <input type="number" name="Promedio_1ro" value=""></p>            
-            <p>Promedio de Segundo Año: <input type="number" name="Promedio_2do" value=""></p>           
-            <p>Promedio de Tercer Año: <input type="number" name="Promedio_3ro" value=""></p>
+            <p>Promedio de Primer Año: <input step="any" type="number"  name="Promedio_1ro" value=""></p>            
+            <p>Promedio de Segundo Año: <input  step="any" type="number" name="Promedio_2do" value=""></p>           
+            <p>Promedio de Tercer Año: <input step="any" type="number" name="Promedio_3ro" value=""></p>
             
 
         </div>   
@@ -129,9 +124,9 @@ if($filas > 0)
         <div class="inasis">
             
             <h3>Inasistencias</h3>
-            <p>Inasistencias de Primer Año: <input type="number" name="Inasistencias_1ro" value="" ></p>
-            <p>Inasistencias de Segundo Año: <input type="number" name="Inasistencias_2do" value=""></p>
-            <p>Inasistencias de Tercer Año: <input type="number" name="Inasistencias_3ro" value=""></p>
+            <p>Inasistencias de Primer Año: <input step="any" type="number" name="Inasistencias_1ro" value="" ></p>
+            <p>Inasistencias de Segundo Año: <input step="any" type="number" name="Inasistencias_2do" value=""></p>
+            <p>Inasistencias de Tercer Año: <input step="any" type="number" name="Inasistencias_3ro" value=""></p>
             
 
         </div>

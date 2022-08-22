@@ -55,7 +55,7 @@
                     </li>
                     
                     <li>
-                        <a href="#"><i class="fa fa-trash-o"></i>Eliminar alumno</a>
+                        <a href="eliminar-alumno.php"><i class="fa fa-trash-o"></i>Eliminar alumno</a>
                     </li>
                     <li>
                         <a href="form_ingreso_DNI.php"><i class="fa fa-bar-chart-o"></i>Cambiar notas</a>

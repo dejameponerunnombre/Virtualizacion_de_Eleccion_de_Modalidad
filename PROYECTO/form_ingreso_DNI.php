@@ -60,7 +60,7 @@
                         <a href="eliminar-alumno.php"><i class="fa fa-trash-o"></i>Eliminar alumno</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-bar-chart-o"></i>Cambiar notas</a>
+                        <a href="form_ingreso_DNI.php"><i class="fa fa-bar-chart-o"></i>Cambiar notas</a>
                     </li>
 
                     <li>
@@ -94,7 +94,7 @@
                                 </ul>
                         </div>     
                     </div> 
-                </form>
+                </form> 
                 <?php 
                 $var = empty($_SESSION['var']);
                 if($var == false)

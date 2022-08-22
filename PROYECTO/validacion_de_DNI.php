@@ -117,9 +117,9 @@ if($filas > 0){
                 <div class="prom">
              
                     <h3>Promedios</h3>
-                    <p>Promedio de Primer Año: <input type="number" name="Promedio_1ro" placeholder="<?php echo $fila1["Prom"] ?>"></p>            
-                    <p>Promedio de Segundo Año: <input type="number" name="Promedio_2do" placeholder="<?php echo $fila2["Prom"] ?>"></p>            
-                    <p>Promedio de Tercer Año: <input type="number" name="Promedio_3ro" placeholder="<?php echo $fila3["Prom"] ?>"></p> 
+                    <p>Promedio de Primer Año: <input step="any" type="number" name="Promedio_1ro" placeholder="<?php echo $fila1["Prom"] ?>"></p>            
+                    <p>Promedio de Segundo Año: <input step="any" type="number" name="Promedio_2do" placeholder="<?php echo $fila2["Prom"] ?>"></p>            
+                    <p>Promedio de Tercer Año: <input step="any" type="number" name="Promedio_3ro" placeholder="<?php echo $fila3["Prom"] ?>"></p> 
                     
         
                 </div>   
@@ -127,9 +127,9 @@ if($filas > 0){
                 <div class="inasis">
                     
                     <h3>Inasistencias</h3>
-                    <p>Inasistencias de Primer Año: <input type="number" name="Inasistencias_1ro" placeholder="<?php echo $fila1["Inasistencias"] ?>"></p>
-                    <p>Inasistencias de Segundo Año: <input type="number" name="Inasistencias_2do" placeholder="<?php echo $fila2["Inasistencias"] ?>"></p>
-                    <p>Inasistencias de Tercer Año: <input type="number" name="Inasistencias_3ro" placeholder="<?php echo $fila3["Inasistencias"] ?>"></p>
+                    <p>Inasistencias de Primer Año: <input step="any" type="number" name="Inasistencias_1ro" placeholder="<?php echo $fila1["Inasistencias"] ?>"></p>
+                    <p>Inasistencias de Segundo Año: <input step="any" type="number" name="Inasistencias_2do" placeholder="<?php echo $fila2["Inasistencias"] ?>"></p>
+                    <p>Inasistencias de Tercer Año: <input step="any" type="number" name="Inasistencias_3ro" placeholder="<?php echo $fila3["Inasistencias"] ?>"></p>
                     
         
                 </div>

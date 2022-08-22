@@ -36,7 +36,6 @@
 
             </div>
         </div>
-        <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
@@ -47,7 +46,7 @@
 
 
                     <li>
-                        <a href="#"><i class="fa fa-desktop "></i>Cargar notas</a>
+                        <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
                    
 
@@ -77,12 +76,22 @@
                 <div class="row">
                     
                     <div class="col-md-12">
-                     <h2>Ingresar datos del alumno</h2>   
                     </div>
                 </div>              
-               
+                <?php
+                $x = empty($_SESSION['x']);
+        if($x == false)
+        {
+            ?>
+            <h2>Informacion ingresada correctamente</h2> 
+            <hr />  
+            <?php 
+        }
+        else
+        {
+            ?>  
+                <h2>Ingresar datos del alumno</h2>   
                   <hr />
-               
                   <form action="form-ingreso.php" method="post"  >
                     <div class="info">
                     <div class="datos">
@@ -100,7 +109,6 @@
                     </div>
                         </form>
                         <?php
-
                         $var = empty($_SESSION['var']);
                         if($var == false)
                             {   
@@ -128,7 +136,8 @@
                             $filas = mysqli_num_rows($resultado);
                             if($filas > 0)
                             {
-                          $array = $resultado -> fetch_array();
+                            $_SESSION['x'] = null;
+                            $array = $resultado -> fetch_array();
                           ?>
                           <form action = "ingreso_de_datos.php" method = "post" class="boton_formulario"> 
 
@@ -158,6 +167,7 @@
                         mysqli_free_result($resultado);
                         mysqli_close($conexion);
                     }
+                }
                         ?>              
     </div>
             </div>

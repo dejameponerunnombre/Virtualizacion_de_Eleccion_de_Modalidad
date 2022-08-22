@@ -56,9 +56,9 @@
             $var2 = "INSERT INTO total (PromediosT, FichasT, InasistenciasT, ObservacionesT, DNI, Comentario) values 
             ($PromT, $FT, $IT, $OT, $DNI, $Comentario)";
             $con4 = $conexion -> query($var2);
-            ?>
-            <h1> Informacion ingresada correctamente </h1>
-            <?php
+            $x = 10;
+            $_SESSION['x'] = $x;
+            include("form-ingreso.php");
         }
             
 
