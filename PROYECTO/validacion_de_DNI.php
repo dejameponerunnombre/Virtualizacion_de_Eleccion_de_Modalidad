@@ -10,8 +10,8 @@
   
     <link rel="stylesheet" href="boton.css">
     <link href="font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" href="validacion_DNI.css">
-    <link href="custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="validacion_DNI.css?v=<?php echo time(); ?>">
+    
     
 
     <title>Control de notas</title>
@@ -99,12 +99,14 @@ if($filas > 0){
                 </div>              
                
                   <hr />  
+                  <h2 id="h2">Ingresar datos de alumno</h2>
                   <div class="m_formulario">
         <div>
-                <h2>Ingresar datos de alumno</h2>
             <br>
             
             <form action="edicion_de_datos.php" method="post" target="_self" >
+            <div class="temas">
+            <div class="temas1">
                 <div class="prom">
             
                     <h3>Promedios</h3>
@@ -124,7 +126,10 @@ if($filas > 0){
                     
         
                 </div>
+            </div>
                 <br>
+
+                <div class="temas2">
                 <div class="fichas">
         
                     <h3>Fichas</h3>
@@ -134,7 +139,14 @@ if($filas > 0){
                     
                 
                 </div>
+
+
+
+
                 <br>
+
+                
+
                 <div class="observ">
                 
                     <h3>Observaciones</h3>
@@ -144,20 +156,30 @@ if($filas > 0){
                     
                 
                 </div>
+                </div>
                 <br>
+                <div class="temas3">
                 <div class="comen">    
                 
                     <h3>Comentario de conducta</h3>
                     <p>Comentario de conducta: <input type="text" name="Comentario" id="comentario"></p>
                 
                 </div>
+            
                 <div class="texto-centro">
-            <ul>
+            
+                <ul>
                 
-                <li><button type="submit" class="bttn-pill bttn-md bttn-primary">Enviar</button></li>
-            </ul>
-            </div>
+                    <li><button type="submit" class="bttn-pill bttn-md bttn-primary">Enviar</button></li>
+            
+                </ul>
+
+                </div>
+
+                
+            </div>    
         </div>
+       
         </form>         
     </div>
             </div>
@@ -175,7 +197,7 @@ if($filas > 0){
 
 
 
-
+    </div>
     <footer class="pie-pagina" style="left: 0;" style="right: 0;">
         <div class="grupo-2">
             <small>&copy; 2022 <b>7mo Informática</b> - Grupo 3</small>
