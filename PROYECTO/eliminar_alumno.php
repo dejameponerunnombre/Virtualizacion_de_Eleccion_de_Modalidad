@@ -31,7 +31,9 @@ if($filas > 0)
   $borrar4 = $conexion -> query($eliminar4);
   if($borrar4===TRUE)
     {
-        ECHO"Alumno eliminado de la base de datos";
+        $x = 10;
+        $_SESSION['x'] = $x;
+        include("eliminar-alumno.php");
     }
 }
 mysqli_free_result($resultado);

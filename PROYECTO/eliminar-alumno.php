@@ -75,9 +75,21 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Ingrese DNI del alumno a eliminar</h2>   
                     </div>
-                </div>              
+                </div>   
+                <?php
+                $x = empty($_SESSION['x']);
+        if($x == false)
+        {
+            ?>
+            <h2>Alumno eliminado de la base de datos</h2> 
+            <hr />  
+            <?php 
+        }
+        else
+        {
+            ?>        
+             <h2>Ingrese DNI del alumno a eliminar</h2>        
                 <hr />
                 <form action="eliminar-alumno.php" method="post">
                 <div class="info">
@@ -125,6 +137,7 @@
                             <?php 
                         }
                     }
+                }
                         ?>
 
     </div>
