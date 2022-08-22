@@ -94,22 +94,28 @@ if($filas > 0){
         <div id="page-wrapper" >
             <div id="page-inner">
                 <div class="row">
-                    <div class="col-md-12">
-                     <h2>Seleccione una opción</h2>   
+                    <div class="col-md-12">   
                     </div>
-                </div>              
-               
-                  <hr />  
-                  <h2 id="h2">Ingresar datos de alumno</h2>
-                  <div class="m_formulario">
-        <div>
-            <br>
-            
+                </div>
+                <?php
+        $x = empty($_SESSION['x']);
+        if($x == false)
+        {
+            ?>
+            <h2>Informacion ingresada correctamente</h2> 
+            <hr />  
+            <?php 
+        }
+        else
+        {
+            ?>
+            <h2>Ingresar datos de alumno</h2>
+            <br>      
             <form action="edicion_de_datos.php" method="post" target="_self" >
             <div class="temas">
             <div class="temas1">
                 <div class="prom">
-            
+             
                     <h3>Promedios</h3>
                     <p>Promedio de Primer Año: <input type="number" name="Promedio_1ro" placeholder="<?php echo $fila1["Prom"] ?>"></p>            
                     <p>Promedio de Segundo Año: <input type="number" name="Promedio_2do" placeholder="<?php echo $fila2["Prom"] ?>"></p>            
@@ -137,17 +143,8 @@ if($filas > 0){
                     <p>Fichas de Primer Año: <input type="number" name="Fichas_1ro" placeholder="<?php echo $fila1["Fichas"] ?>"></p>
                     <p>Fichas de Segundo Año: <input type="number" name="Fichas_2do" placeholder="<?php echo $fila2["Fichas"] ?>"></p>
                     <p>Fichas de Tercer Año: <input type="number" name="Fichas_3ro" placeholder="<?php echo $fila3["Fichas"] ?>"></p>
-                    
-                
                 </div>
-
-
-
-
                 <br>
-
-                
-
                 <div class="observ">
                 
                     <h3>Observaciones</h3>
@@ -176,8 +173,8 @@ if($filas > 0){
                 </ul>
 
                 </div>
-
-                
+        <?php
+        } ?>
             </div>    
         </div>
        

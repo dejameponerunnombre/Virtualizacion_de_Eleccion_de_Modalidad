@@ -9,12 +9,10 @@ if($filas > 0)
 {
   $eliminar3 = "DELETE FROM eleccion where DNI = $DNI";
   $borrar3 = $conexion -> query($eliminar3);
-    {
-        ?>
-        <h1>El alumno puede realizar de nuevo la eleccion</h1>
-        <?php
-    }
-}
+  $x = 10;
+  $_SESSION['x'] = $x;
+  include("cambio-eleccion.php");
+} 
 else
 {
   $var = 10;

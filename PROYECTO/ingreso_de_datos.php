@@ -103,25 +103,6 @@ if($filas > 0)
                   <hr />  
                   <h2 id="h2">Ingresar datos de alumno</h2>
                   <br>
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        
-
-           
-            
             <form action="carga_de_datos.php" method="post"  >
 
         
@@ -207,30 +188,11 @@ if($filas > 0)
     </div>
     </div>
     </div>
-    
-
-    
-    
-
-    
-    
-                
-            
-            
-
     <footer class="pie-pagina" style="left: 0;" style="right: 0;">
         <div class="grupo-2">
             <small>&copy; 2022 <b>7mo Informática</b> - Grupo 3</small>
         </div>
     </footer>
-
-
-
-
-    
-
-    
-
     <?php
     }
 }

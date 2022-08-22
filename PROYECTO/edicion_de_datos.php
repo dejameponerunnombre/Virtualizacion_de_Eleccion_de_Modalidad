@@ -18,20 +18,22 @@
         $filas1 = $_SESSION['filas1'];
         $filas2 = $_SESSION['filas2'];
         $filas3 = $_SESSION['filas3'];
-        for($i = 0; $i < 3; $i++)
+        $h = 2;
+        for($i = 0; $i <= 3; $i++)
         {
             if ($anio1[$i] == NULL)
             {
-                $anio1[$i] = $filas1[$i]; 
+                $anio1[$i] = $filas1[$h]; 
             }
             if ($anio2[$i] == NULL)
             {
-                $anio2[$i] = $filas3[$i]; 
+                $anio2[$i] = $filas2[$h]; 
             }
             if ($anio3[$i] == NULL)
             {
-                $anio3[$i] = $filas3[$i]; 
+                $anio3[$i] = $filas3[$h]; 
             }
+            $h++;
         }
         $in[0] = "UPDATE info SET Prom = '$anio1[0]', Fichas = '$anio1[1]', Inasistencias= '$anio1[2]', Observaciones= '$anio1[3]' where DNI = '$DNI' AND Anio = 1";
         $in[1] = "UPDATE info SET Prom = '$anio2[0]', Fichas = '$anio2[1]', Inasistencias= '$anio2[2]', Observaciones= '$anio2[3]' where DNI= '$DNI' and Anio = 2";

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="footer.css">
     
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-</head>
+</head> 
 <body>
      
             
@@ -71,11 +71,23 @@
             <div id="page-inner">
                 <div class="row">
                     
-                    <div class="col-md-12">
-                     <h2>Ingrese DNI del alumno que quiere cambiar su eleccion</h2>   
+                    <div class="col-md-12">  
                     </div>
-                </div>              
-               
+                </div> 
+                <?php
+                $x = empty($_SESSION['x']);
+        if($x == false)
+        {
+            ?>
+            <h2>El alumno ya puede volver a realizar la eleccion</h2> 
+            <hr />  
+            <?php 
+        }
+        else
+        {
+            ?>             
+                <h2>Ingrese DNI del alumno que quiere cambiar su eleccion</h2>   
+
                   <hr />
               
                   <form action="cambio-eleccion.php" method="post" >
@@ -99,8 +111,8 @@
                             ?> <div class="boton_formulario"> <h2>El alumno no realizo la eleccion aún</h2></div>
                              <?php 
                         }
-                    $x = empty($_POST['DNI']);
-                    if($x == false)
+                    $e = empty($_POST['DNI']);
+                    if($e == false)
                     {
                         $DNI = $_POST['DNI'];
                         session_start(); 
@@ -111,6 +123,7 @@
                         $filas = mysqli_num_rows($resultado);
                         if($filas > 0)
                         {
+                        $_SESSION['x'] = null;
                           $array = $resultado -> fetch_array();
                           ?>
                           <form action = "cambio_eleccion.php" method = "post" class="boton_formulario"> 
@@ -143,6 +156,7 @@
                         mysqli_free_result($resultado);
                         mysqli_close($conexion);
                     }
+                }
                         ?>        
     </div>
             </div>

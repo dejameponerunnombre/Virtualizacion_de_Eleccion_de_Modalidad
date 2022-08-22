@@ -95,7 +95,7 @@
                         </div>     
                     </div> 
                 </form>
-                <?php
+                <?php 
                 $var = empty($_SESSION['var']);
                 if($var == false)
                     {
