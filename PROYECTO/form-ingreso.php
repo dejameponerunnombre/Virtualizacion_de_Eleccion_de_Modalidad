@@ -83,8 +83,17 @@
         if($x == false)
         {
             ?>
-            <h2>Informacion ingresada correctamente</h2> 
-            <hr />  
+            <div style="margin-top: 15%; text-align: center; margin-left: 17%; margin-right: 17%; border: 3px outset #172d8d;">
+		                        <h2 style="font-weight: 300;">Enviado con éxito</h2>
+		                        <p style="font-weight: 900;">La información fue ingresada correctamente</p>
+                                <br>
+                                <ul>
+
+                                <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="cambio-eleccion.php">Ingresar otro alumno</a></button></li>
+
+                                
+                              </ul>
+	                        </div> 
             <?php 
         }
         else
