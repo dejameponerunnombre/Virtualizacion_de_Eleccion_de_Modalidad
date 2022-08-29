@@ -58,7 +58,7 @@
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
+                        <a href="cambio-eleccion.php"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
                     
                 </ul>
@@ -79,8 +79,18 @@
         if($x == false)
         {
             ?>
-            <h2>El alumno ya puede volver a realizar la eleccion</h2> 
-            <hr />  
+            <div style="margin-top: 15%; text-align: center;
+    margin-left: 17%; margin-right: 17%; border: 3px outset #172d8d;">
+		                        <h2 style="font-weight: 300;">Enviado con éxito</h2>
+		                        <p style="font-weight: 900;">El alumno ya puede rehacer su elección</p>
+                                <br>
+                                <ul>
+
+                                <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="cambio-eleccion.php">Ingresar otro alumno</a></button></li>
+
+                                
+                              </ul>
+	                        </div> 
             <?php 
         }
         else

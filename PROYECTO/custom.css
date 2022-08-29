@@ -29,6 +29,13 @@ body {
     min-height: 510px;
 }
 
+.preview {
+	font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20%;
+    margin-left: 35%;
+    border: 5px outset #172d8d;
+}
+
 .text-center {
     text-align:center;
 }
@@ -174,6 +181,8 @@ background-color: #172d8d;
     width: 40px;
     margin-top: 2px; 
 }
+
+
 
 
 /*==============================================
