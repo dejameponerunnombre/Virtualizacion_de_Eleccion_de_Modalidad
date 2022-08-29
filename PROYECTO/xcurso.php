@@ -16,11 +16,12 @@ if ($siquesi[0] > 0)
     $request = "SELECT COUNT(*) FROM alumnos a INNER join eleccion e ON Curso = $x where e.DNI = a.DNI";
     $pedido = $conexion -> query($request);
     $alumnos = $pedido -> fetch_array();
-    $DNI[0] = 100.000.000;
+    $DNI[1] = "ZZZZZ";
+    $DNI[0] = 0;
     for($y = 1; $y <= $alumnos[0]; $y++)
     {   
-        $varB = "SELECT e.DNI aFROM eleccion e inner join alumnos a on a.DNI = e.DNI 
-        where a.Curso = $x  and a.DNI > $DNI[0] order by a.DNI DESC";
+        $varB = "SELECT e.DNI, a.Nombre FROM eleccion e inner join alumnos a on a.DNI = e.DNI 
+        where a.Curso = $x and a.Nombre < $DNI[1] and e.DNI != $DNI[0] order by a.Nombre ASC";
         $connB = $conexion -> query($varB);
         $DNI = $connB ->fetch_array();
         $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, m.Descipcion, e.Prioridad, e.Situacion, e.Cambio
