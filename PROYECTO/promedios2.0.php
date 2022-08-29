@@ -121,7 +121,7 @@ for($x = 1; $x <= 5; $x++)
             $connB = $conexion -> query($varB);
             $DNI = $connB ->fetch_array();
         }
-        $var2 = "UPDATE eleccion SET Prioridad = '$y', Situacion = 'Dentro del curso' where DNI = $DNI[0]";
+        $var2 = "UPDATE eleccion SET Prioridad = '$y', Situacion = 'Dentro de la modalidad' where DNI = $DNI[0]";
         $conn2= $conexion->query($var2);
         $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario
         FROM total t, alumnos a, eleccion e 
