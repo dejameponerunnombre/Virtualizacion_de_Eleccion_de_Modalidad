@@ -82,7 +82,44 @@
                                 <div class="questions">
                                     <div class="question-wrap">
                                     <input class="input" type="radio" id="question-7" name="question" >
-                                    <label class="label" for="question-7"><div>Modalidad</div> <div class="cross"></div></label>
+                                    <label class="label" for="question-7"><div>Modalidades</div> <div class="cross"></div></label>
+                                    
+                                    <div class="content">
+                                    
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="eco" name="question" >
+                                    <label class="label" for="eco"><div>Economia</div> <div class="cross"></div></label>
+                                    </div>
+
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="ele" name="question" >
+                                    <label class="label" for="ele"><div>Electrónica</div> <div class="cross"></div></label>
+                                    
+                                    
+                                    </div>
+
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="inf" name="question" >
+                                    <label class="label" for="inf"><div>Informática</div> <div class="cross"></div></label>
+                                    
+                                    
+                                    </div>
+
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="nat" name="question" >
+                                    <label class="label" for="nat"><div>Naturales</div> <div class="cross"></div></label>
+                                    
+                                    
+                                    </div>
+
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="mul" name="question" >
+                                    <label class="label" for="mul"><div>Multimedios</div> <div class="cross"></div></label>
+                                    
+                                    
+                                    </div>
+
+                                    </div>
                                     
                                     </div>
                                     <div class="question-wrap">
@@ -106,7 +143,39 @@
                                     <input class="input" type="radio" id="question-1" name="question">
                                     <label class="label" for="question-1"><div>Modalidad</div> <div class="cross"></div></label>
                                     <div class="content">
-                                        
+
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="eco2" name="question" >
+                                    <label class="label" for="eco2"><div>Economia</div> <div class="cross"></div></label>
+                                    </div>
+
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="ele2" name="question" >
+                                    <label class="label" for="ele2"><div>Electrónica</div> <div class="cross"></div></label>
+                                    
+                                    
+                                    </div>
+
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="inf2" name="question" >
+                                    <label class="label" for="inf2"><div>Informática</div> <div class="cross"></div></label>
+                                    
+                                    
+                                    </div>
+
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="nat2" name="question" >
+                                    <label class="label" for="nat2"><div>Naturales</div> <div class="cross"></div></label>
+                                    
+                                    
+                                    </div>
+
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="mul2" name="question" >
+                                    <label class="label" for="mul2"><div>Multimedios</div> <div class="cross"></div></label>
+                                    
+                                    
+                                    </div>
                                     </div>
                                     </div>
                                     <div class="question-wrap">
@@ -126,7 +195,43 @@
                                     <div class="question-wrap">
                                     <input class="input" type="radio" id="question-3" name="question">
                                     <label class="label" for="question-3"><div>Modalidad</div> <div class="cross"></div></label>
-                                   
+                                    <div class="content">
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="eco3" name="question" >
+                                    <label class="label" for="eco3"><div>Economia</div> <div class="cross"></div></label>
+                                    </div>
+
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="ele3" name="question" >
+                                    <label class="label" for="ele3"><div>Electrónica</div> <div class="cross"></div></label>
+                                    
+                                    
+                                    </div>
+
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="inf3" name="question" >
+                                    <label class="label" for="inf3"><div>Informática</div> <div class="cross"></div></label>
+                                    
+                                    
+                                    </div>
+
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="nat3" name="question" >
+                                    <label class="label" for="nat3"><div>Naturales</div> <div class="cross"></div></label>
+                                    
+                                    
+                                    </div>
+
+                                    <div class="question-wrap">
+                                    <input class="input" type="checkbox" id="mul3" name="question" >
+                                    <label class="label" for="mul3"><div>Multimedios</div> <div class="cross"></div></label>
+                                    
+                                    
+                                    </div>
+                                    </div>
+                                                               
+
+
                                     </div>
                                     <div class="question-wrap">
                                     <input class="input" type="radio" id="question-4" name="question">
