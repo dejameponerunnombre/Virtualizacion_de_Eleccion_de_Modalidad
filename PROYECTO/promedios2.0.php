@@ -106,7 +106,7 @@ for($x = 1; $x <= 5; $x++)
      <div class="datagrid">   <table border = 1 ><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th></tr>
     <?php
     for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
-    {   
+    {    
         $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
         and e.ID_Modalidad = $x and e.Prioridad = 0 and e.Cambio = 'No' 
         order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
