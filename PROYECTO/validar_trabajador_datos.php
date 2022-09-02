@@ -18,7 +18,7 @@ if($filas)
      }
      case 'Directivo': 
       {
-      include('promedios2.0.php');
+      include('directivos.php');
       break;
     }
   }
