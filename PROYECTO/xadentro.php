@@ -14,9 +14,13 @@ if($siquesi[0] > 39)
     <?php
     for($y = 40; $y <= $siquesi[0]; $y++)
     {   
+        $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
+        and e.ID_Modalidad = $x and e.Prioridad = $y";
+        $connB = $conexion -> query($varB);
+        $DNI = $connB ->fetch_array();
         $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario
         FROM total t, alumnos a, eleccion e 
-        where a.DNI = $DNI[$i] and t.DNI = $DNI[$i] ";
+        where a.DNI = $DNI[0] and t.DNI = $DNI[0]";
         $info= $conexion->query($infoalu);
         $datos = $info ->fetch_array();
         ?>

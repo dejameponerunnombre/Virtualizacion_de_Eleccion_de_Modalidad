@@ -148,17 +148,37 @@ for($x = 1; $x <= 5; $x++)
         <?php
         for($y = 40; $y <= $siquesi[0]; $y++)
     {   
+        $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
+        and e.ID_Modalidad = $x and e.Prioridad = 0 and e.Cambio = 'No' 
+        order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
+        $connB = $conexion -> query($varB);
+        $DNI = $connB ->fetch_array();
+        $cant = $connB ->num_rows;
+        if($cant == 0)
+        {
+            $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
+            and e.ID_Modalidad = $x and e.Prioridad = 0
+            order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
+            $connB = $conexion -> query($varB);
+            $DNI = $connB ->fetch_array();
+        }
         $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario
         FROM total t, alumnos a, eleccion e 
-        where a.DNI = $DNI[$i] and t.DNI = $DNI[$i] ";
+        where a.DNI = $DNI[0] and t.DNI = $DNI[0]";
         $info= $conexion->query($infoalu);
         $datos = $info ->fetch_array();
         ?>
         <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td ><?php echo $datos["Comentario"]?></td><tr>
     <?php
-        $var4 = "UPDATE eleccion SET Situacion = 'En lista de espera' where DNI = $DNI[$i]";
+        $var4 = "UPDATE eleccion SET Situacion = 'En lista de espera', Prioridad = $y where DNI = $DNI[0]";
         $conn4 = $conexion->query($var4); 
     }
+    }
+    else
+    {
+        ?>
+        <h2> No hay lista de espera de <?php echo $siquesi["Descripcion"] ?> </h2>
+        <?php
     }
     ?>
     </table></div>
@@ -169,7 +189,8 @@ else
 {
     include("mensaje-error.html");
 }
-?>        
+?>
+<a href="Excel.php"><i class="fa fa-edit "></i>Exportar a Excel</a>        
     </div>
             </div>  
         </div>
