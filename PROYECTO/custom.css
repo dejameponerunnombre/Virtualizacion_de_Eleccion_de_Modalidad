@@ -29,6 +29,13 @@ body {
     min-height: 510px;
 }
 
+.preview {
+	font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20%;
+    margin-left: 35%;
+    border: 5px outset #172d8d;
+}
+
 .text-center {
     text-align:center;
 }
@@ -176,6 +183,8 @@ background-color: #172d8d;
 }
 
 
+
+
 /*==============================================
     DASHBOARD STYLES     
     =============================================*/
@@ -223,6 +232,10 @@ input[type=number] {
     clear: right;
     margin-left: 200px;
   }
+
+  
+
+
 
   input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -328,6 +341,16 @@ input::-webkit-inner-spin-button {
     font-weight: 600;
     margin-left: 200px;
 }
+
+
+
+
+
+
+
+
+
+
 
 /*==============================================
     BOOTSTRAP STYLE CHANGES     

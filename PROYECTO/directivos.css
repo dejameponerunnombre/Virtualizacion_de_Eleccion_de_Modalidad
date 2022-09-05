@@ -1,0 +1,120 @@
+.wrapper {
+    max-width: 600px;
+    width: 100%;
+    margin: 3vh auto;
+    background: white;
+    border-radius: 5px;
+    
+  }
+  
+  
+  
+  .input {
+    display: none;
+  }
+  
+  .label {
+    display: flex;
+    width:75%;
+    height: 50px;
+    cursor: pointer;
+    border: 2px solid #172d8d;
+    user-select: none;
+    color: #172d8d;
+    font-weight: 600;
+    
+    margin-left: 20px;
+  }
+  
+  
+  
+  
+  
+  .label div:first-child {
+    width: 100%;
+    line-height: 45px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  .cross{
+    margin-right:10px;
+    margin-top:3px;
+  }
+  
+  .cross:before,.cross:after {
+    content: '';
+    border-top: 2px solid #172d8d;
+    width: 14px;
+    display: block;
+    margin-top: 18px;
+    transition: 0.3s;
+  }
+  
+  .cross:after {
+    transform: rotate(90deg);
+    margin-top: -2px;
+  }
+  
+  .content {
+    box-sizing: border-box;
+    font-size: 10px;
+    margin: 10px 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height, .5s;
+    
+  }
+  
+  .input:checked ~ .content {
+    max-height: 400px;
+    transition: max-height, 1s;
+  }
+  
+  .input:checked ~ .label .cross:before {
+    transform: rotate(180deg);
+  
+  }
+  
+  .input:checked ~ .label .cross:after {
+    transform: rotate(0deg);
+    
+  }
+  
+  .questions{
+    margin-top:20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height, .5s;
+  }
+  
+  .questions .label{
+    border:none;
+    box-shadow: none;
+    margin:0;
+  }
+  
+  .input:checked ~ .questions {
+    max-height: 400px;
+    transition: 0.5s;
+    
+  }
+
+  .nav li{
+    border-top: 1px solid rgba(240, 240, 240, 1) !important;
+  }
+
+  .nav li h3{
+    color: #172d8d;
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: 600;
+
+  }
+  
+  
+
+  .preguntas .wrapper .content .question-wrap label{
+    color: #186fe0;
+  }

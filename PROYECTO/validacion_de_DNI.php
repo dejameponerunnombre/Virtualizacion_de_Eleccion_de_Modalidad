@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="footer.css">
     <link href="bootstrap.css" rel="stylesheet" />
   
-  <link href="font-awesome.css" rel="stylesheet" />
-
-  <link href="custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="boton.css">
+    <link href="font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="validacion_DNI.css?v=<?php echo time(); ?>">
+    
     
 
     <title>Control de notas</title>
 </head>
 
-<body>
+<body> 
 <?php
 session_start();
 $DNI = $_SESSION['DNI'];
@@ -54,8 +55,9 @@ if($filas > 0){
                     <a class="logo" href="#" ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Cerrar Sesión</a></li>
+                    <ul class="nav navbar-nav navbar-right"> 
+                        <li><a href="form_ingreso_DNI.php">Volver</a></li>
+                        <li><a href="inicio.html">Cerrar Sesión</a></li>
                     </ul>
                 </div>
 
@@ -68,7 +70,7 @@ if($filas > 0){
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
                     <li>
-                        <a id= 1 href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
+                        <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
                     <li>
                         <a href="promedios2.0.php"><i class="fa fa-table "></i>Ver listas de cada modalidad</a>
@@ -92,24 +94,41 @@ if($filas > 0){
         <div id="page-wrapper" >
             <div id="page-inner">
                 <div class="row">
-                    <div class="col-md-12">
-                     <h2>Seleccione una opción</h2>   
+                    <div class="col-md-12">   
                     </div>
-                </div>              
-               
-                  <hr />  
-                  <div class="m_formulario">
-        <div>
-                <h2>Ingresar datos de alumno</h2>
-            <br>
-            
+                </div>
+                <?php
+        $x = empty($_SESSION['x']);
+        if($x == false)
+        {
+            ?>
+            <div style="margin-top: 15%; text-align: center; margin-left: 17%; margin-right: 17%; border: 3px outset #172d8d;">
+		                        <h2 style="font-weight: 300;">Enviado con éxito</h2>
+		                        <p style="font-weight: 600;">La información fue ingresada con éxito</p>
+                                <br>
+                                <ul>
+
+                                <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="form_ingreso_DNI.php">Ingresar otro alumno</a></button></li>
+
+                                
+                              </ul>
+	                        </div>  
+            <?php 
+        }
+        else
+        {
+            ?>
+            <h2>Ingresar datos de alumno</h2>
+            <br>      
             <form action="edicion_de_datos.php" method="post" target="_self" >
+            <div class="temas">
+            <div class="temas1">
                 <div class="prom">
-            
+             
                     <h3>Promedios</h3>
-                    <p>Promedio de Primer Año: <input type="number" name="Promedio_1ro" placeholder="<?php echo $fila1["Prom"] ?>"></p>            
-                    <p>Promedio de Segundo Año: <input type="number" name="Promedio_2do" placeholder="<?php echo $fila2["Prom"] ?>"></p>            
-                    <p>Promedio de Tercer Año: <input type="number" name="Promedio_3ro" placeholder="<?php echo $fila3["Prom"] ?>"></p> 
+                    <p>Promedio de Primer Año: <input step="any" type="number" name="Promedio_1ro" placeholder="<?php echo $fila1["Prom"] ?>"></p>            
+                    <p>Promedio de Segundo Año: <input step="any" type="number" name="Promedio_2do" placeholder="<?php echo $fila2["Prom"] ?>"></p>            
+                    <p>Promedio de Tercer Año: <input step="any" type="number" name="Promedio_3ro" placeholder="<?php echo $fila3["Prom"] ?>"></p> 
                     
         
                 </div>   
@@ -117,21 +136,22 @@ if($filas > 0){
                 <div class="inasis">
                     
                     <h3>Inasistencias</h3>
-                    <p>Inasistencias de Primer Año: <input type="number" name="Inasistencias_1ro" placeholder="<?php echo $fila1["Inasistencias"] ?>"></p>
-                    <p>Inasistencias de Segundo Año: <input type="number" name="Inasistencias_2do" placeholder="<?php echo $fila2["Inasistencias"] ?>"></p>
-                    <p>Inasistencias de Tercer Año: <input type="number" name="Inasistencias_3ro" placeholder="<?php echo $fila3["Inasistencias"] ?>"></p>
+                    <p>Inasistencias de Primer Año: <input step="any" type="number" name="Inasistencias_1ro" placeholder="<?php echo $fila1["Inasistencias"] ?>"></p>
+                    <p>Inasistencias de Segundo Año: <input step="any" type="number" name="Inasistencias_2do" placeholder="<?php echo $fila2["Inasistencias"] ?>"></p>
+                    <p>Inasistencias de Tercer Año: <input step="any" type="number" name="Inasistencias_3ro" placeholder="<?php echo $fila3["Inasistencias"] ?>"></p>
                     
         
                 </div>
+            </div>
                 <br>
+
+                <div class="temas2">
                 <div class="fichas">
         
                     <h3>Fichas</h3>
                     <p>Fichas de Primer Año: <input type="number" name="Fichas_1ro" placeholder="<?php echo $fila1["Fichas"] ?>"></p>
                     <p>Fichas de Segundo Año: <input type="number" name="Fichas_2do" placeholder="<?php echo $fila2["Fichas"] ?>"></p>
                     <p>Fichas de Tercer Año: <input type="number" name="Fichas_3ro" placeholder="<?php echo $fila3["Fichas"] ?>"></p>
-                    
-                
                 </div>
                 <br>
                 <div class="observ">
@@ -143,20 +163,30 @@ if($filas > 0){
                     
                 
                 </div>
+                </div>
                 <br>
+                <div class="temas3">
                 <div class="comen">    
                 
                     <h3>Comentario de conducta</h3>
                     <p>Comentario de conducta: <input type="text" name="Comentario" id="comentario"></p>
                 
                 </div>
+            
                 <div class="texto-centro">
-            <ul>
+            
+                <ul>
                 
-                <li><button type="submit" class="bttn-pill bttn-md bttn-primary">Enviar</button></li>
-            </ul>
-            </div>
+                    <li><button type="submit" class="bttn-pill bttn-md bttn-primary">Enviar</button></li>
+            
+                </ul>
+
+                </div>
+        <?php
+        } ?>
+            </div>    
         </div>
+       
         </form>         
     </div>
             </div>
@@ -174,7 +204,7 @@ if($filas > 0){
 
 
 
-
+    </div>
     <footer class="pie-pagina" style="left: 0;" style="right: 0;">
         <div class="grupo-2">
             <small>&copy; 2022 <b>7mo Informática</b> - Grupo 3</small>
@@ -184,9 +214,9 @@ if($filas > 0){
 
         <?php   
 }else{
-    ?>
-    <h1> Este DNI no ha sido ingresado anteriormente </h1>
-    <?php
+    $var = 10;
+    $_SESSION['var'] = $var;
+    include("form_ingreso_DNI.php");
 }
 
 mysqli_free_result($resultado);

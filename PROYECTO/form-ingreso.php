@@ -14,7 +14,7 @@
 </head>
 <body>
      
-           
+            
           
     <div id="wrapper">
          <div class="navbar navbar-inverse navbar-fixed-top">
@@ -29,13 +29,13 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Cerrar Sesión</a></li>
+                        <li><a href="panel de control.html">Volver</a></li>
+                        <li><a href="inicio.html">Cerrar Sesión</a></li>
                     </ul>
                 </div>
 
             </div>
         </div>
-        <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
@@ -46,7 +46,7 @@
 
 
                     <li>
-                        <a href="#"><i class="fa fa-desktop "></i>Cargar notas</a>
+                        <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
                    
 
@@ -76,12 +76,31 @@
                 <div class="row">
                     
                     <div class="col-md-12">
-                     <h2>Ingresar datos del alumno</h2>   
                     </div>
                 </div>              
-               
+                <?php
+                $x = empty($_SESSION['x']);
+        if($x == false)
+        {
+            ?>
+            <div style="margin-top: 15%; text-align: center; margin-left: 17%; margin-right: 17%; border: 3px outset #172d8d;">
+		                        <h2 style="font-weight: 300;">Enviado con éxito</h2>
+		                        <p style="font-weight: 900;">La información fue ingresada correctamente</p>
+                                <br>
+                                <ul>
+
+                                <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="form-ingreso.php">Ingresar otro alumno</a></button></li>
+
+                                
+                              </ul>
+	                        </div> 
+            <?php 
+        }
+        else
+        {
+            ?>  
+                <h2>Ingresar datos del alumno</h2>   
                   <hr />
-               
                   <form action="form-ingreso.php" method="post"  >
                     <div class="info">
                     <div class="datos">
@@ -94,11 +113,26 @@
                     <div class="texto-centro">
                         <ul>
                             
-                            <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px;">Consultar</button></li>
+                            <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px; border-radius: 100px;">Consultar</button></li>
                         </ul>
                     </div>
                         </form>
                         <?php
+                        $var = empty($_SESSION['var']);
+                        if($var == false)
+                            {   
+                                $DNI = $_SESSION['DNI'];
+                                $request = "SELECT*FROM total where DNI = '$DNI'";
+                                $resultado=mysqli_query($conexion,$request);
+                                $array = $resultado -> fetch_array();
+                                ?> <div class="boton_formulario"> <h2>Las notas de este alumno ya fueron ingresadas</h2>
+                                <p>Promedio total: <?php echo $array["PromediosT"]?></p>
+                                <p>Fichas totales: <?php echo $array["FichasT"]?></p>
+                                <p>Inasistencias totales: <?php echo $array["InasistenciasT"]?></p>
+                                <p>Observaciones totales: <?php echo $array["ObservacionesT"]?></p>
+                                <p>Comentario: <?php echo $array["Comentario"]?></p></div>
+                                <?php 
+                            }
                         $x = empty($_POST['DNI']);
                         if($x == false)
                         {
@@ -111,15 +145,14 @@
                             $filas = mysqli_num_rows($resultado);
                             if($filas > 0)
                             {
-                          $array = $resultado -> fetch_array();
+                            $_SESSION['x'] = null;
+                            $array = $resultado -> fetch_array();
                           ?>
                           <form action = "ingreso_de_datos.php" method = "post" class="boton_formulario"> 
 
                           <h2>Alumno ingresado:</h2>  
                               <p>Nombre: <?php echo $array["Nombre"]?></p>
-                              
                               <p>DNI: <?php echo $array["DNI"]?></p>
-                             
                               <ul>
                                 <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
                               </ul>              
@@ -143,6 +176,7 @@
                         mysqli_free_result($resultado);
                         mysqli_close($conexion);
                     }
+                }
                         ?>              
     </div>
             </div>
