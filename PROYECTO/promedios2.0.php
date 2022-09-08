@@ -133,12 +133,7 @@ for($x = 1; $x <= 5; $x++)
         <?php  
     }
     }
-    else
-    {
-        ?>
-        <h2> No hay alumnos que hayan elegido <?php echo $siquesi["Descripcion"] ?> </h2>
-        <?php
-    }
+    
     if($siquesi[0] > 39)
     {
         ?>
@@ -174,12 +169,7 @@ for($x = 1; $x <= 5; $x++)
         $conn4 = $conexion->query($var4); 
     }
     }
-    else
-    {
-        ?>
-        <h2> No hay lista de espera de <?php echo $siquesi["Descripcion"] ?> </h2>
-        <?php
-    }
+    
     ?>
     </table></div>
     <?php 
@@ -190,7 +180,9 @@ else
     include("mensaje-error.html");
 }
 ?>
-<a href="Excel.php"><i class="fa fa-edit "></i>Exportar a Excel</a>        
+<br>
+<button type="submit" class="boton2" style="margin-left: 85%; "><a href="Exceltotal.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>
+     
     </div>
             </div>  
         </div>
