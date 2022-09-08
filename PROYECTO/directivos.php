@@ -35,7 +35,6 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="inicio.html">Volver</a></li>
                         <li><a href="inicio.html">Cerrar Sesión</a></li>
                     </ul>
                 </div>
@@ -66,7 +65,7 @@
                     <li  style="background: #fff;">
                     
                     
-                    <h3>Filtar por:</h3>                                   
+                    <h3>Filtrar por:</h3>                                   
                    
 
 
@@ -254,15 +253,28 @@
         </nav>
 
         <div id="page-wrapper" >
-            <div id="page-inner" style="min-height:600px;">
+            <div id="page-inner" style=" min-height: 800px;">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Listas por modalidad</h2>   
+                     <h2>Listas de Modalidades</h2>   
                     </div>
+                    
                 </div>              
                
-                  <hr>         
+                  <hr>   
+                  <div style="margin-top: 10%; text-align: center; margin-left: 17%; margin-right: 17%; border: 3px outset #172d8d;">
+		                       
+		                        <p style="margin-top: 5%; font-weight: 400; font-size:25px; color:black;">Seleccione una opción y presione "Aceptar"</p>
+                                <br>
+                                <ul>
+
+                                <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="form_ingreso_DNI.php">Aceptar</a></button></li>
+
+                                
+                              </ul>
+	                        </div>        
     </div>
+    
             </div>  
         </div>
         </tbody>
@@ -276,7 +288,7 @@
 
 
 </body>
-<footer class="pie-pagina" style="left: 0; right: 0; top:absolute; bottom:0;">
+<footer class="pie-pagina" style="left: 0; right: 0; position:fixed; bottom:0;">
     <div class="grupo-2">
         <small>&copy; 2022 <b>7mo Informática</b> - Grupo 3</small>
     </div>
