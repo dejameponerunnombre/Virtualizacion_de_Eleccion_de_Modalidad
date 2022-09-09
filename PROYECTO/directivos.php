@@ -82,40 +82,31 @@
                                         <label class="label" for="question-7"><div>Modalidades</div>  </label>
                                     
                                         <div class="content">
-                                    
-                                            <div class="question-wrap">
-                                                <input class="input" type="submit" id="eco" name="question" >
-                                                <label class="label" for="eco"><a href="inicio.html"><div style="margin-left: 90%;">Economia</div></a>  </label>
-                                            </div>
+                                            <form action = "xespera.php" method = "post">
+                                            <input type="submit" id=1 name="question" value = 1>
+                                                <label for=1>Economia</label>
 
-                                            <div class="question-wrap">
-                                                <input class="input" type="radio" id="ele" name="question" >
-                                                <label class="label" for="ele"><a href="inicio.html"><div style="margin-left: 80%;">Electrónica</div></a></label>
-                                            </div>
+                                                <input type="submit" id=3 name="question" value = 3>
+                                                <label for=3>Multimedios</label>
 
-                                            <div class="question-wrap">
-                                                <input class="input" type="checkbox" id="inf" name="question" >
-                                                <label class="label" for="inf"><a href="inicio.html"><div style="margin-left: 75%;">Informática</div></a></label>
-                                            </div>
+                                                <input type="submit" id=4 name="question" value = 4>
+                                                <label for=4>Informatica</label>
                  
-                                            <div class="question-wrap">
-                                                <input class="input" type="checkbox" id="nat" name="question" >
-                                                <label class="label" for="nat"><a href="inicio.html"><div style="margin-left: 90%;">Naturales</div></a></label>
-                                            </div>
+                                                <input type="submit" id=2 name="question" value = 2>
+                                                <label for=2>Naturales</label>
 
-                                            <div class="question-wrap">
-                                                <input class="input" type="checkbox" id="mul" name="question" >
-                                                <label class="label" for="mul"><a href="inicio.html"><div style="margin-left: 70%;">Multimedios</div></a></label>
-                                            </div>
-
+                                                <input type="submit" id=5 name="question" value = 5>
+                                                <label for=5>Multimedios</label>
+                                            </form>
+                                            
                                         </div>
-                                
+                                        <form action = "xsoloespera.php" method = "post">
+                                            <input type="submit" id=5 name="question" value = 5>
+                                                <label for=5>Todas</label>
+                                        </form>
                                     </div>
                                 
-                                    <div class="question-wrap">
-                                        <input class="input" type="radio" id="question-8" name="question" >
-                                        <label class="label" for="question-8"><a href="inicio.html"><div style="margin-left: 150%; color: #172d8d;">Todas</div></a></label>
-                                    </div>
+                                        
 
                                 </div>
                                 
@@ -134,37 +125,28 @@
                                         <input class="input" type="radio" id="question-1" name="question">
                                         <label class="label" for="question-1"><div>Modalidad</div>  </label>
                                         <div class="content">
+                                            <form action = "xadentro.php" method = "post">
+                                            <input type="submit" id=1 name="question" value = 1>
+                                                <label for=1>Economia</label>
 
-                                        <div class="question-wrap">
-                                                <input class="input" type="submit" id="eco" name="question" >
-                                                <label class="label" for="eco"><a href="inicio.html"><div style="margin-left: 90%;">Economia</div></a>  </label>
-                                            </div>
+                                                <input type="submit" id=3 name="question" value = 3>
+                                                <label for=3>Multimedios</label>
 
-                                            <div class="question-wrap">
-                                                <input class="input" type="radio" id="ele" name="question" >
-                                                <label class="label" for="ele"><a href="inicio.html"><div style="margin-left: 80%;">Electrónica</div></a></label>
-                                            </div>
-
-                                            <div class="question-wrap">
-                                                <input class="input" type="checkbox" id="inf" name="question" >
-                                                <label class="label" for="inf"><a href="inicio.html"><div style="margin-left: 75%;">Informática</div></a></label>
-                                            </div>
+                                                <input type="submit" id=4 name="question" value = 4>
+                                                <label for=4>Informatica</label>
                  
-                                            <div class="question-wrap">
-                                                <input class="input" type="checkbox" id="nat" name="question" >
-                                                <label class="label" for="nat"><a href="inicio.html"><div style="margin-left: 90%;">Naturales</div></a></label>
-                                            </div>
+                                                <input type="submit" id=2 name="question" value = 2>
+                                                <label for=2>Naturales</label>
 
-                                            <div class="question-wrap">
-                                                <input class="input" type="checkbox" id="mul" name="question" >
-                                                <label class="label" for="mul"><a href="inicio.html"><div style="margin-left: 70%;">Multimedios</div></a></label>
-                                            </div>
-                                    </div>
-                                </div>
-                                <div class="question-wrap">
-                                        <input class="input" type="radio" id="question-8" name="question" >
-                                        <label class="label" for="question-8"><a href="inicio.html"><div style="margin-left: 170%; color: #172d8d;">Todas</div></a></label>
-                                    </div>
+                                                <input type="submit" id=5 name="question" value = 5>
+                                                <label for=5>Multimedios</label>
+                                            </form>
+                                            
+                                        </div>
+                                        <form action = "xsoloadentro.php" method = "post">
+                                            <input type="submit" name="question">
+                                                <label for=5>Todas</label>
+                                        </form>
                                 </div>
                             </div>
 
@@ -178,35 +160,28 @@
                                     <input class="input" type="radio" id="question-3" name="question">
                                     <label class="label" for="question-3"><div>Modalidad</div>  </label>
                                     <div class="content">
-                                    <div class="question-wrap">
-                                                <input class="input" type="submit" id="eco" name="question" >
-                                                <label class="label" for="eco"><a href="inicio.html"><div style="margin-left: 90%;">Economia</div></a>  </label>
-                                            </div>
+                                            <form action = "xmodalidad.php" method = "post">
+                                            <input type="submit" id=1 name="question" value = 1>
+                                                <label for=1>Economia</label>
 
-                                            <div class="question-wrap">
-                                                <input class="input" type="radio" id="ele" name="question" >
-                                                <label class="label" for="ele"><a href="inicio.html"><div style="margin-left: 80%;">Electrónica</div></a></label>
-                                            </div>
+                                                <input type="submit" id=3 name="question" value = 3>
+                                                <label for=3>Multimedios</label>
 
-                                            <div class="question-wrap">
-                                                <input class="input" type="checkbox" id="inf" name="question" >
-                                                <label class="label" for="inf"><a href="inicio.html"><div style="margin-left: 75%;">Informática</div></a></label>
-                                            </div>
+                                                <input type="submit" id=4 name="question" value = 4>
+                                                <label for=4>Informatica</label>
                  
-                                            <div class="question-wrap">
-                                                <input class="input" type="checkbox" id="nat" name="question" >
-                                                <label class="label" for="nat"><a href="inicio.html"><div style="margin-left: 90%;">Naturales</div></a></label>
-                                            </div>
+                                                <input type="submit" id=2 name="question" value = 2>
+                                                <label for=2>Naturales</label>
 
-                                            <div class="question-wrap">
-                                                <input class="input" type="checkbox" id="mul" name="question" >
-                                                <label class="label" for="mul"><a href="inicio.html"><div style="margin-left: 70%;">Multimedios</div></a></label>
-                                            </div>
-                                </div>
-                            </div>
-                            <div class="question-wrap">
-                                        <input class="input" type="radio" id="question-8" name="question" >
-                                        <label class="label" for="question-4"><a href="inicio.html" style="margin-left: 27%;"><div style="color: #172d8d;">Todas</div></a></label>
+                                                <input type="submit" id=5 name="question" value = 5>
+                                                <label for=5>Multimedios</label>
+                                            </form>
+                                            
+                                        </div>
+                                        <form action = "xpromedio.php" method = "post">
+                                            <input type="submit" name="question">
+                                                <label for=5>Todas</label>
+                                        </form>
                                     </div>
                         </div>
 
@@ -218,29 +193,25 @@
                             <label class="label" for="tab-7"><div>Cursos</div><div class="cross"></div> </label>
                             <div class="questions">
                             <div class="question-wrap">
-                                                <input class="input" type="submit" id="a" name="question" >
-                                                <label class="label" for="question-9"><a href="inicio.html" style="margin-left: 45%;"><div>A</div></a>  </label>
-                                            </div>
+                            <form action = "xcurso.php" method = "post">
+                                            <input type="submit" id= "a" name="question" value = "a">
+                                                <label for= "a">A</label>
 
-                                            <div class="question-wrap">
-                                                <input class="input" type="radio" id="b" name="question" >
-                                                <label class="label" for="question-10"><a href="inicio.html" style="margin-left: 45%;"><div>B</div></a></label>
-                                            </div>
+                                                <input type="submit" id="b" name="question" value = "b">
+                                                <label for="b">B</label>
 
-                                            <div class="question-wrap">
-                                                <input class="input" type="checkbox" id="d" name="question" >
-                                                <label class="label" for="question-11"><a href="inicio.html" style="margin-left: 45%;"><div>D</div></a></label>
-                                            </div>
+                                                <input type="submit" id="c" name="question" value = "c">
+                                                <label for="c">C</label>
                  
-                                            <div class="question-wrap">
-                                                <input class="input" type="checkbox" id="e" name="question" >
-                                                <label class="label" for="question-12"><a href="inicio.html" style="margin-left: 45%;"><div>E</div></a></label>
-                                            </div>
+                                                <input type="submit" id="d" name="question" value = "d">
+                                                <label for="d">D</label>
 
-                                            <div class="question-wrap">
-                                                <input class="input" type="checkbox" id="g" name="question" >
-                                                <label class="label" for="question-13"><a href="inicio.html" style="margin-left: 45%;"><div>G</div></a></label>
-                                            </div>
+                                                <input type="submit" id="e" name="question" value = "e">
+                                                <label for="e">E</label>
+
+                                                <input type="submit" id="g" name="question" value = "g">
+                                                <label for="g">G</label>
+                                            </form>
                                 </div>
                                 </div>
                             

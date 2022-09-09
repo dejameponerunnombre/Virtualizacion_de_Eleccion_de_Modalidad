@@ -1,5 +1,5 @@
 <?php
-$x = $_POST['modalidad'];
+$x = $_POST['question'];
 session_start();
 include("db.php");
 $ahorasi="SELECT Ingresos, Descripcion FROM modalidad where ID_Modalidad = $x";
@@ -60,4 +60,5 @@ if ($siquesi[0] > 0)
 }
 ?>
 </table></div>
+<button type="submit" class="boton2" style="margin-left: 85%; "><a href="Excel1modalidad.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>
 <?php 

@@ -27,8 +27,6 @@ for($x = 1; $x <= 5; $x++)
         ?>
         <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td ><?php echo $datos["Comentario"]?></td><tr>
     <?php
-        $var4 = "UPDATE eleccion SET Situacion = 'En lista de espera' where DNI = $DNI[$i]";
-        $conn4 = $conexion->query($var4); 
     }
     }
     else
@@ -39,5 +37,6 @@ for($x = 1; $x <= 5; $x++)
     }
     ?>
     </table></div>
+    <button type="submit" class="boton2" style="margin-left: 85%; "><a href="Excelespera.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>
     <?php 
 }

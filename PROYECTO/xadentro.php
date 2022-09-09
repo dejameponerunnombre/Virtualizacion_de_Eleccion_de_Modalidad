@@ -1,18 +1,18 @@
 <?php
-$x = $_POST['modalidad'];
+$x = $_POST['question'];
 session_start();
 include("db.php");
 $ahorasi="SELECT Ingresos, Descripcion FROM modalidad where ID_Modalidad = $x";
 $quesi= $conexion->query($ahorasi);
 $siquesi = $quesi ->fetch_array();
-if($siquesi[0] > 39)
+if($siquesi[0] > 0)
 {
     ?>
     </table></div>
-    <h1>Tabla de espera de <?php echo $siquesi["Descripcion"]?></h1>
+    <h1>Tabla de <?php echo $siquesi["Descripcion"]?></h1>
     <div class="datagrid"><table border = 1><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th></tr>
     <?php
-    for($y = 40; $y <= $siquesi[0]; $y++)
+    for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
     {   
         $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
         and e.ID_Modalidad = $x and e.Prioridad = $y";
@@ -26,8 +26,6 @@ if($siquesi[0] > 39)
         ?>
         <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td ><?php echo $datos["Comentario"]?></td><tr>
         <?php
-        $var4 = "UPDATE eleccion SET Situacion = 'En lista de espera' where DNI = $DNI[$i]";
-        $conn4 = $conexion->query($var4); 
     }
     }
     else
@@ -38,4 +36,5 @@ if($siquesi[0] > 39)
     }
     ?>
         </table></div>
+        <button type="submit" class="boton2" style="margin-left: 85%; "><a href="Excel1adentro.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>
 <?php 
