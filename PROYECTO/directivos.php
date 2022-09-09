@@ -230,10 +230,10 @@
                     <div class="col-md-12">
                      <h2>Listas de Modalidades</h2>   
                     </div>
-                    
-                </div>              
+                                  
                
-                  <hr>   
+                  <hr>
+                  <a class="img"><img src="../IMG/directivos.jpg" style="width: 50%; margin-left: 20%;"/></a>
                   </div>
                              
                     
