@@ -71,7 +71,7 @@
 
                     <div class="preguntas">
 
-                        <div class="wrapper">    
+                        <div class="wrapper" style="margin-top: 30px;">    
             
                             <div class="wrap-6">
                                 <input class="input" type="radio" id="tab-6" name="tabs">
@@ -79,31 +79,32 @@
                                 <div class="questions">
                                     <div class="question-wrap">
                                         <input class="input" type="radio" id="question-7" name="question" >
-                                        <label class="label" for="question-7"><div>Modalidades</div>  </label>
+                                        <label class="label" for="question-7"><div>Modalidad</div>  </label>
                                     
                                         <div class="content">
                                             <form action = "xespera.php" method = "post">
-                                            <input type="submit" id=1 name="question" value = 1>
-                                                <label for=1>Economia</label>
-
-                                                <input type="submit" id=3 name="question" value = 3>
-                                                <label for=3>Multimedios</label>
-
-                                                <input type="submit" id=4 name="question" value = 4>
-                                                <label for=4>Informatica</label>
-                 
-                                                <input type="submit" id=2 name="question" value = 2>
-                                                <label for=2>Naturales</label>
-
-                                                <input type="submit" id=5 name="question" value = 5>
-                                                <label for=5>Multimedios</label>
+                                            <input type="submit" id=1 name="question" value = 1 style="display: none;">
+                                                <label for=1 style="margin-left: 25%; color:#647bde; font-size: 13px;">Economia</label>
+                                                <br>
+                                                <input type="submit" id=3 name="question" value = 3 style="display: none;">
+                                                <label for=3 style="margin-left: 25%; color:#647bde; font-size: 13px;">Electronica</label>
+                                                <br>
+                                                <input type="submit" id=4 name="question" value = 4 style="display: none;">
+                                                <label for=4 style="margin-left: 25%; color:#647bde; font-size: 13px;">Informatica</label>
+                                                <br>                 
+                                                <input type="submit" id=2 name="question" value = 2 style="display: none;">
+                                                <label for=2 style="margin-left: 25%; color:#647bde; font-size: 13px;">Naturales</label>
+                                                <br>
+                                                <input type="submit" id=5 name="question" value = 5 style="display: none;">
+                                                <label for=5 style="margin-left: 25%; color:#647bde; font-size: 13px;">Multimedios</label>
                                             </form>
                                             
                                         </div>
                                         <form action = "xsoloespera.php" method = "post">
-                                            <input type="submit" id=5 name="question" value = 5>
-                                                <label for=5>Todas</label>
+                                            <input type="submit" id= "Todas" name="question" value = "Todas" style="display: none;">
+                                            <label for="Todas" style="margin-left: 25%; color:#172d8d; font-size: 13px;">Todas las Listas</label>
                                         </form>
+                                        <br>
                                     </div>
                                 
                                         
@@ -126,26 +127,26 @@
                                         <label class="label" for="question-1"><div>Modalidad</div>  </label>
                                         <div class="content">
                                             <form action = "xadentro.php" method = "post">
-                                            <input type="submit" id=1 name="question" value = 1>
-                                                <label for=1>Economia</label>
-
-                                                <input type="submit" id=3 name="question" value = 3>
-                                                <label for=3>Multimedios</label>
-
-                                                <input type="submit" id=4 name="question" value = 4>
-                                                <label for=4>Informatica</label>
-                 
-                                                <input type="submit" id=2 name="question" value = 2>
-                                                <label for=2>Naturales</label>
-
-                                                <input type="submit" id=5 name="question" value = 5>
-                                                <label for=5>Multimedios</label>
+                                            <input type="submit" id=1 name="question" value = 1 style="display: none;">
+                                                <label for=1 style="margin-left: 25%; color:#647bde; font-size: 13px;">Economia</label>
+                                                <br>
+                                                <input type="submit" id=3 name="question" value = 3 style="display: none;">
+                                                <label for=3 style="margin-left: 25%; color:#647bde; font-size: 13px;">Multimedios</label>
+                                                <br>
+                                                <input type="submit" id=4 name="question" value = 4 style="display: none;">
+                                                <label for=4 style="margin-left: 25%; color:#647bde; font-size: 13px;">Informatica</label>
+                                                <br>
+                                                <input type="submit" id=2 name="question" value = 2 style="display: none;">
+                                                <label for=2 style="margin-left: 25%; color:#647bde; font-size: 13px;">Naturales</label>
+                                                <br>
+                                                <input type="submit" id=5 name="question" value = 5 style="display: none;">
+                                                <label for=5 style="margin-left: 25%; color:#647bde; font-size: 13px;">Multimedios</label>
                                             </form>
                                             
                                         </div>
                                         <form action = "xsoloadentro.php" method = "post">
-                                            <input type="submit" name="question">
-                                                <label for=5>Todas</label>
+                                            <input type="submit" name="question" id = "value2" value = "value2" style="display: none;">
+                                            <label for="value2" style="margin-left: 25%; color:#172d8d; font-size: 13px;">Todas las Listas</label>
                                         </form>
                                 </div>
                             </div>
@@ -161,26 +162,26 @@
                                     <label class="label" for="question-3"><div>Modalidad</div>  </label>
                                     <div class="content">
                                             <form action = "xmodalidad.php" method = "post">
-                                            <input type="submit" id=1 name="question" value = 1>
-                                                <label for=1>Economia</label>
-
-                                                <input type="submit" id=3 name="question" value = 3>
-                                                <label for=3>Multimedios</label>
-
-                                                <input type="submit" id=4 name="question" value = 4>
-                                                <label for=4>Informatica</label>
-                 
-                                                <input type="submit" id=2 name="question" value = 2>
-                                                <label for=2>Naturales</label>
-
-                                                <input type="submit" id=5 name="question" value = 5>
-                                                <label for=5>Multimedios</label>
+                                            <input type="submit" id=1 name="question" value = 1 style="display: none;">
+                                                <label for=1 style="margin-left: 25%; color:#647bde; font-size: 13px;">Economia</label>
+                                                <br>
+                                                <input type="submit" id=3 name="question" value = 3 style="display: none;">
+                                                <label for=3 style="margin-left: 25%; color:#647bde; font-size: 13px;">Multimedios</label>
+                                                <br>
+                                                <input type="submit" id=4 name="question" value = 4 style="display: none;">
+                                                <label for=4 style="margin-left: 25%; color:#647bde; font-size: 13px;">Informatica</label>
+                                                <br>
+                                                <input type="submit" id=2 name="question" value = 2 style="display: none;">
+                                                <label for=2 style="margin-left: 25%; color:#647bde; font-size: 13px;">Naturales</label>
+                                                <br>
+                                                <input type="submit" id=5 name="question" value = 5 style="display: none;">
+                                                <label for=5 style="margin-left: 25%; color:#647bde; font-size: 13px;">Multimedios</label>
                                             </form>
                                             
                                         </div>
                                         <form action = "xpromedio.php" method = "post">
-                                            <input type="submit" name="question">
-                                                <label for=5>Todas</label>
+                                            <input type="submit" name="question" id = "value3" value = "value3" style="display: none;">
+                                            <label for="value3" style="margin-left: 25%; color:#172d8d; font-size: 13px;">Todas las Listas</label>
                                         </form>
                                     </div>
                         </div>
@@ -194,23 +195,23 @@
                             <div class="questions">
                             <div class="question-wrap">
                             <form action = "xcurso.php" method = "post">
-                                            <input type="submit" id= "a" name="question" value = "a">
-                                                <label for= "a">A</label>
-
-                                                <input type="submit" id="b" name="question" value = "b">
-                                                <label for="b">B</label>
-
-                                                <input type="submit" id="c" name="question" value = "c">
-                                                <label for="c">C</label>
-                 
-                                                <input type="submit" id="d" name="question" value = "d">
-                                                <label for="d">D</label>
-
-                                                <input type="submit" id="e" name="question" value = "e">
-                                                <label for="e">E</label>
-
-                                                <input type="submit" id="g" name="question" value = "g">
-                                                <label for="g">G</label>
+                                            <input type="submit" id= "a" name="question" value = "a" style="display: none;">
+                                                <label for= "a" style="margin-left: 40%; color:#647bde;">A</label>
+                                                <br>
+                                                <input type="submit" id="b" name="question" value = "b" style="display: none;">
+                                                <label for="b" style="margin-left: 40%; color:#647bde;">B</label>
+                                                <br>
+                                                <input type="submit" id="c" name="question" value = "c" style="display: none;">
+                                                <label for="c" style="margin-left: 40%; color:#647bde;">C</label>
+                                                <br>
+                                                <input type="submit" id="d" name="question" value = "d" style="display: none;">
+                                                <label for="d" style="margin-left: 40%; color:#647bde;">D</label>
+                                                <br>
+                                                <input type="submit" id="e" name="question" value = "e" style="display: none;">
+                                                <label for="e" style="margin-left: 40%; color:#647bde;">E</label>
+                                                <br>
+                                                <input type="submit" id="g" name="question" value = "g" style="display: none;">
+                                                <label for="g" style="margin-left: 40%; color:#647bde;">G</label>
                                             </form>
                                 </div>
                                 </div>
@@ -233,17 +234,9 @@
                 </div>              
                
                   <hr>   
-                  <div style="margin-top: 10%; text-align: center; margin-left: 17%; margin-right: 17%; border: 3px outset #172d8d;">
-		                       
-		                        <p style="margin-top: 5%; font-weight: 400; font-size:25px; color:black;">Seleccione una opción y presione "Aceptar"</p>
-                                <br>
-                                <ul>
-
-                                <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="form_ingreso_DNI.php">Aceptar</a></button></li>
-
-                                
-                              </ul>
-	                        </div>        
+                  </div>
+                             
+                    
     </div>
     
             </div>  
