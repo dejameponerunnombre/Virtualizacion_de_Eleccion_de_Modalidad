@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Directivos</title>
+    <title>Listas por Curso</title>
 
     <link href="bootstrap2.css" rel="stylesheet" />
     <link href="font-awesome.css" rel="stylesheet" />
@@ -69,7 +69,7 @@
                    
 
 
-                    <div class="preguntas">
+                    <div class="preguntas" style="z-index:1">
 
                         <div class="wrapper" style="margin-top: 30px;">    
             
@@ -219,6 +219,8 @@
                                 </div>
                             
                             </div>
+                        </div>
+                        </div>
                                                     <div id="no-elijieron">
                                                         <form action = "sineleccion.php" method = "post">
                                                         <input type="submit" name="question" id = "sin-eleccion" value = "sin-eleccion" style="display: none;">
@@ -226,45 +228,139 @@
                                                         </form>
                                                     </div>       
                         </div>
-
                     </li>
                 </ul>
             </div>
         </nav>
 
-        <div id="page-wrapper" >
+        <div id="page-wrapper" style="z-index:1" >
             <div id="page-inner" >
                 <div class="row">
-                    <div class="col-md-12">
-                     <h2>Listas de Modalidades</h2>  
-                     <hr>
-                     <a class="img" ><img src="../IMG/directivos.jpg" style="width: 40%; margin-left: 30%; vertical-align: top;"/></a> 
-                </div>
+
+<?php
+$x = $_POST['question'];
+$x="a";
+include("db.php");
+$ahorasi="SELECT * FROM eleccion e 
+Inner join alumnos a
+on a.Curso = '$x' where a.DNI = e.DNI";
+$quesi= $conexion->query($ahorasi);
+$siquesi = $quesi ->fetch_array();
+if ($siquesi[0] > 0)
+{
+    $z=1;
+    ?>
+        <div class="col-md-12">
+            <h2>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
+            <hr>
+            <div class="datagrid">
+                <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th></tr>
+    <?php
+    $request = "SELECT COUNT(*) FROM alumnos a INNER join eleccion e ON Curso = '$x' where e.DNI = a.DNI";
+    $pedido = $conexion -> query($request);
+    $alumnos = $pedido -> fetch_array();
+    $DNI[1] = "AAAAAAAA";
+    $DNI[0] = 0;
+    for($y = 1; $y <= $alumnos[0]; $y++)
+    {   
+        $varB = "SELECT e.DNI, a.Nombre FROM eleccion e inner join alumnos a on a.DNI = e.DNI 
+        where a.Curso = '$x' and a.Nombre > '$DNI[1]' and e.DNI != $DNI[0] order by a.Nombre ASC";
+        $connB = $conexion -> query($varB);
+        $DNI = $connB ->fetch_array();
+        $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, m.Descripcion, e.Prioridad, e.Situacion, e.Cambio
+        FROM total t, alumnos a, eleccion e, modalidad m
+        where a.DNI = $DNI[0] and t.DNI = $DNI[0] and e.DNI = $DNI[0] and e.ID_Modalidad = m.ID_Modalidad";
+        $info= $conexion->query($infoalu);
+        $datos = $info ->fetch_array();
+        ?>
+        <tr><td><?php echo $datos["Descripcion"]?></td><td><?php echo $datos["Prioridad"]?></td><td><?php echo $DNI[1]?></td><td><?php echo $datos["Situacion"]?></td><td><?php echo $datos["Cambio"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td><?php echo $datos["Comentario"]?></td><tr>
+        <?php  
+        $sineleccion="SELECT COUNT(*) FROM alumnos a WHERE a.Curso = '$x' and a.DNI NOT IN(SELECT DNI FROM eleccion)";
+        $noe= $conexion->query($sineleccion);
+        $nomod = $noe ->fetch_array(); 
+    }
+    if ($nomod[0] > 0)
+    {
+        if($z!=1)
+        {
+            ?>
+            <div class="col-md-12">
+                <h2>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
+                <hr>
+                <div class="datagrid">
+                    <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th></tr>
+            <?php
+        }
+        $aluSinElex[1] = "AAAAAAAA";
+        $aluSinElex[0] = 0;
+        for($y = 1; $y <= $nomod[0]; $y++)
+        {   
+            $sinMod = "SELECT t.DNI, a.Nombre FROM eleccion e, alumnos a, total t 
+            where  a.DNI NOT IN(SELECT DNI FROM eleccion) and a.Nombre > '$aluSinElex[1]' and t.DNI != $aluSinElex[0] and a.DNI=t.DNI and a.Curso = '$x' order by a.Nombre ASC";
+            $sinElex = $conexion -> query($sinMod);
+            $aluSinElex = $sinElex ->fetch_array();
+            $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, a.Curso
+            FROM total t, alumnos a, eleccion e
+            where a.DNI NOT IN(SELECT DNI FROM eleccion) and a.DNI = $aluSinElex[0] and t.DNI = $aluSinElex[0] and a.Curso = '$x'  and a.DNI=t.DNI";
+            $data= $conexion->query($infoalu);
+            $fact = $data ->fetch_array();
+            ?>
+                <tr><td>No realizó la eleccion</td><td>-</td><td><?php echo $aluSinElex[1]?></td><td>-</td><td>-</td><td><?php echo $fact["PromediosT"]?></td><td><?php echo $fact["FichasT"]?></td><td><?php echo $fact["ObservacionesT"]?></td><td><?php echo $fact["InasistenciasT"]?></td><td><?php echo $fact["Comentario"]?></td><td>No realizó la eleccion</td><tr>
+            <?php
+        }
+    }
+    else
+    {
+        ?>  
+            <div class="col-md-12" style="position: relative;display: inline-block;">
+            <h2>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
+            <hr>
+            <a class="img" ><img src="../IMG/curso.jpg" style="opacity: 0.2; width: 50%; margin-left: 25%; vertical-align: top;"/></a> 
+            <h1 style="text-align: center;position: absolute; top: 50%; margin-left: 50%; transform: translate(-50%, -50%);font-size: 25px;">Todos los alumnos hicieron la eleccion</h1>
+        <?php
+    }  
+}
+    else
+    {
+        ?>  
+            <div class="col-md-12" style="position: relative;display: inline-block;">
+                <h2>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
+                <hr>
+                <a class="img" ><img src="../IMG/curso.jpg" style="opacity: 0.2; width: 50%; margin-left: 25%; vertical-align: top;"/></a> 
+                <h1 style="text-align: center;position: absolute; top: 50%; margin-left: 50%; transform: translate(-50%, -50%);font-size: 25px;">No hay alumnos en este curso</h1>
+        <?php     
+    }
+?>
+</table></div>
+<?php  
+?>
+
+</div>
                                   
                
-          
+                  
 
                              
                     
+</div>
+
+        </div>  
     </div>
-    
-            </div>  
-        </div>
-        </tbody>
-    <script src="../js/jquery-1.10.2.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.metisMenu.js"></script>
-    <script src="../js/custom.js"></script>
+    </tbody>
+<script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.metisMenu.js"></script>
+<script src="../js/custom.js"></script>
 </div>
 
 
 
 
 </body>
-<footer class="pie-pagina" style="left: 0; right: 0; position:fixed; bottom:0;">
-    <div class="grupo-2">
-        <small>&copy; 2022 <b>7mo Informática</b> - Grupo 3</small>
-    </div>
+<footer class="pie-pagina" style="left: 0; right: 0; position:fixed; bottom:0;z-index:3">
+<div class="grupo-2">
+    <small>&copy; 2022 <b>7mo Informática</b> - Grupo 3</small>
+</div>
 </footer>
 
 </html>
