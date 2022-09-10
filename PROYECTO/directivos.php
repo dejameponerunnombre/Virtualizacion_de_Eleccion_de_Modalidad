@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Secretaría</title>
+    <title>Directivos</title>
 
     <link href="bootstrap2.css" rel="stylesheet" />
     <link href="font-awesome.css" rel="stylesheet" />

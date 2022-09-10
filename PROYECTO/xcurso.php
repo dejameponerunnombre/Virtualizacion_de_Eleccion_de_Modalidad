@@ -271,14 +271,15 @@ if ($siquesi[0] > 0)
     else
     {
         ?>
-        <div class="col-md-12">
+        <div class="col-md-12" style="position: relative;
+    display: inline-block;
+    ">
                     <h2>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
                      <hr>
-                     <br>
-                     <br>
-                     <br>
-                     <br>
-        <h1> No hay alumnos que hayan hecho la elección en este curso  </h1>
+                     
+                     <a class="img" ><img src="../IMG/curso.jpg" style="opacity: 0.2; width: 50%; margin-left: 25%; vertical-align: top;"/></a> 
+                     <h1 style="text-align: center;position: absolute; top: 50%; margin-left: 50%; transform: translate(-50%, -50%);font-size: 25px;"> No hay alumnos que hayan hecho la elección en este curso  </h1>
+        
         <?php
     }
 ?>
