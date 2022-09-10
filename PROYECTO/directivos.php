@@ -84,25 +84,25 @@
                                         <div class="content">
                                             <form action = "xespera.php" method = "post">
                                             <input type="submit" id=1 name="question" value = 1 style="display: none;">
-                                                <label for=1 style="margin-left: 25%; color:#647bde; font-size: 13px;">Economia</label>
+                                                <label for=1 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px; ">Economia</label>
                                                 <br>
                                                 <input type="submit" id=3 name="question" value = 3 style="display: none;">
-                                                <label for=3 style="margin-left: 25%; color:#647bde; font-size: 13px;">Electronica</label>
+                                                <label for=3 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Electronica</label>
                                                 <br>
                                                 <input type="submit" id=4 name="question" value = 4 style="display: none;">
-                                                <label for=4 style="margin-left: 25%; color:#647bde; font-size: 13px;">Informatica</label>
+                                                <label for=4 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Informatica</label>
                                                 <br>                 
                                                 <input type="submit" id=2 name="question" value = 2 style="display: none;">
-                                                <label for=2 style="margin-left: 25%; color:#647bde; font-size: 13px;">Naturales</label>
+                                                <label for=2 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
                                                 <br>
                                                 <input type="submit" id=5 name="question" value = 5 style="display: none;">
-                                                <label for=5 style="margin-left: 25%; color:#647bde; font-size: 13px;">Multimedios</label>
+                                                <label for=5 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
                                             </form>
                                             
                                         </div>
                                         <form action = "xsoloespera.php" method = "post">
                                             <input type="submit" id= "Todas" name="question" value = "Todas" style="display: none;">
-                                            <label for="Todas" style="margin-left: 25%; color:#172d8d; font-size: 13px;">Todas las Listas</label>
+                                            <label for="Todas" style="margin-left: 25%; color:#172d8d; cursor:pointer; font-size: 13px;">Todas las Listas</label>
                                         </form>
                                         <br>
                                     </div>
@@ -128,26 +128,27 @@
                                         <div class="content">
                                             <form action = "xadentro.php" method = "post">
                                             <input type="submit" id=1 name="question" value = 1 style="display: none;">
-                                                <label for=1 style="margin-left: 25%; color:#647bde; font-size: 13px;">Economia</label>
+                                                <label for=1 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Economia</label>
                                                 <br>
                                                 <input type="submit" id=3 name="question" value = 3 style="display: none;">
-                                                <label for=3 style="margin-left: 25%; color:#647bde; font-size: 13px;">Multimedios</label>
+                                                <label for=3 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
                                                 <br>
                                                 <input type="submit" id=4 name="question" value = 4 style="display: none;">
-                                                <label for=4 style="margin-left: 25%; color:#647bde; font-size: 13px;">Informatica</label>
+                                                <label for=4 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Informatica</label>
                                                 <br>
                                                 <input type="submit" id=2 name="question" value = 2 style="display: none;">
-                                                <label for=2 style="margin-left: 25%; color:#647bde; font-size: 13px;">Naturales</label>
+                                                <label for=2 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
                                                 <br>
                                                 <input type="submit" id=5 name="question" value = 5 style="display: none;">
-                                                <label for=5 style="margin-left: 25%; color:#647bde; font-size: 13px;">Multimedios</label>
+                                                <label for=5 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
                                             </form>
                                             
                                         </div>
                                         <form action = "xsoloadentro.php" method = "post">
                                             <input type="submit" name="question" id = "value2" value = "value2" style="display: none;">
-                                            <label for="value2" style="margin-left: 25%; color:#172d8d; font-size: 13px;">Todas las Listas</label>
+                                            <label for="value2" style="margin-left: 25%; color:#172d8d; cursor:pointer; font-size: 13px;">Todas las Listas</label>
                                         </form>
+                                        <br>
                                 </div>
                             </div>
 
@@ -163,26 +164,27 @@
                                     <div class="content">
                                             <form action = "xmodalidad.php" method = "post">
                                             <input type="submit" id=1 name="question" value = 1 style="display: none;">
-                                                <label for=1 style="margin-left: 25%; color:#647bde; font-size: 13px;">Economia</label>
+                                                <label for=1 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Economia</label>
                                                 <br>
                                                 <input type="submit" id=3 name="question" value = 3 style="display: none;">
-                                                <label for=3 style="margin-left: 25%; color:#647bde; font-size: 13px;">Multimedios</label>
+                                                <label for=3 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
                                                 <br>
                                                 <input type="submit" id=4 name="question" value = 4 style="display: none;">
-                                                <label for=4 style="margin-left: 25%; color:#647bde; font-size: 13px;">Informatica</label>
+                                                <label for=4 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Informatica</label>
                                                 <br>
                                                 <input type="submit" id=2 name="question" value = 2 style="display: none;">
-                                                <label for=2 style="margin-left: 25%; color:#647bde; font-size: 13px;">Naturales</label>
+                                                <label for=2 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
                                                 <br>
                                                 <input type="submit" id=5 name="question" value = 5 style="display: none;">
-                                                <label for=5 style="margin-left: 25%; color:#647bde; font-size: 13px;">Multimedios</label>
+                                                <label for=5 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
                                             </form>
                                             
                                         </div>
                                         <form action = "xpromedio.php" method = "post">
                                             <input type="submit" name="question" id = "value3" value = "value3" style="display: none;">
-                                            <label for="value3" style="margin-left: 25%; color:#172d8d; font-size: 13px;">Todas las Listas</label>
+                                            <label for="value3" style="margin-left: 25%; color:#172d8d; cursor:pointer; font-size: 13px;">Todas las Listas</label>
                                         </form>
+                                        <br>
                                     </div>
                         </div>
 
@@ -196,22 +198,22 @@
                             <div class="question-wrap">
                             <form action = "xcurso.php" method = "post">
                                             <input type="submit" id= "a" name="question" value = "a" style="display: none;">
-                                                <label for= "a" style="margin-left: 40%; color:#647bde;">A</label>
+                                                <label for= "a" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">A</label>
                                                 <br>
                                                 <input type="submit" id="b" name="question" value = "b" style="display: none;">
-                                                <label for="b" style="margin-left: 40%; color:#647bde;">B</label>
+                                                <label for="b" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">B</label>
                                                 <br>
                                                 <input type="submit" id="c" name="question" value = "c" style="display: none;">
-                                                <label for="c" style="margin-left: 40%; color:#647bde;">C</label>
+                                                <label for="c" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">C</label>
                                                 <br>
                                                 <input type="submit" id="d" name="question" value = "d" style="display: none;">
-                                                <label for="d" style="margin-left: 40%; color:#647bde;">D</label>
+                                                <label for="d" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">D</label>
                                                 <br>
                                                 <input type="submit" id="e" name="question" value = "e" style="display: none;">
-                                                <label for="e" style="margin-left: 40%; color:#647bde;">E</label>
+                                                <label for="e" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">E</label>
                                                 <br>
                                                 <input type="submit" id="g" name="question" value = "g" style="display: none;">
-                                                <label for="g" style="margin-left: 40%; color:#647bde;">G</label>
+                                                <label for="g" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">G</label>
                                             </form>
                                 </div>
                                 </div>
@@ -225,16 +227,17 @@
         </nav>
 
         <div id="page-wrapper" >
-            <div id="page-inner" style=" min-height: 800px;">
+            <div id="page-inner" >
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Listas de Modalidades</h2>   
+                     <h2>Listas de Modalidades</h2>  
+                     <hr>
+                     <a class="img" ><img src="../IMG/directivos.jpg" style="width: 40%; margin-left: 30%; vertical-align: top;"/></a> 
                     </div>
                                   
                
-                  <hr>
-                  <a class="img"><img src="../IMG/directivos.jpg" style="width: 50%; margin-left: 20%;"/></a>
-                  </div>
+                  
+
                              
                     
     </div>
