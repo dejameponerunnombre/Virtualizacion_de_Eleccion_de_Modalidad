@@ -239,7 +239,6 @@
 
 <?php
 $x = $_POST['question'];
-$x="a";
 include("db.php");
 $ahorasi="SELECT * FROM eleccion e 
 Inner join alumnos a
