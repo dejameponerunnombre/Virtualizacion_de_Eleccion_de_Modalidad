@@ -196,7 +196,7 @@
                             <label class="label" for="tab-7"><div>Cursos</div><div class="cross"></div> </label>
                             <div class="questions">
                             <div class="question-wrap">
-                            <form action = "xcurso.php" method = "post">
+                            <form action = "sineleccion.php" method = "post">
                                             <input type="submit" id= "a" name="question" value = "a" style="display: none;">
                                                 <label for= "a" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">A</label>
                                                 <br>
@@ -214,19 +214,17 @@
                                                 <br>
                                                 <input type="submit" id="g" name="question" value = "g" style="display: none;">
                                                 <label for="g" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">G</label>
-                                            </form>
+                                </form action = "todoscursos.php" method = "post">
+                                    <input type="submit" id= "p" name="question" value = "p" style="display: none;">
+                                    <label for= "p" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">Todos los Cursos</label>
+                                <form>
+                                </form>
                                 </div>
                                 </div>
                             
                             </div>
                         </div>
-                        </div>
-                                                    <div id="no-elijieron">
-                                                        <form action = "sineleccion.php" method = "post">
-                                                        <input type="submit" name="question" id = "sin-eleccion" value = "sin-eleccion" style="display: none;">
-                                                        <label for="sin-eleccion" style="margin-left: 25%; color:#172d8d; cursor:pointer; font-size: 13px;">Alumnos sin eleccion realizada</label>
-                                                        </form>
-                                                    </div>       
+                        </div>    
                         </div>
                     </li>
                 </ul>
@@ -239,10 +237,11 @@
 
 <?php
 $x = $_POST['question'];
+$x="e";
 include("db.php");
-$ahorasi="SELECT * FROM eleccion e 
+$ahorasi="SELECT * FROM total t 
 Inner join alumnos a
-on a.Curso = '$x' where a.DNI = e.DNI";
+on a.Curso = '$x' where a.DNI = t.DNI";
 $quesi= $conexion->query($ahorasi);
 $siquesi = $quesi ->fetch_array();
 if ($siquesi[0] > 0)
@@ -278,6 +277,9 @@ if ($siquesi[0] > 0)
         $noe= $conexion->query($sineleccion);
         $nomod = $noe ->fetch_array(); 
     }
+    $sineleccion="SELECT COUNT(*) FROM alumnos a WHERE a.Curso = '$x' and a.DNI NOT IN(SELECT DNI FROM eleccion)";
+    $noe= $conexion->query($sineleccion);
+    $nomod = $noe ->fetch_array(); 
     if ($nomod[0] > 0)
     {
         if($z!=1)
@@ -304,7 +306,7 @@ if ($siquesi[0] > 0)
             $data= $conexion->query($infoalu);
             $fact = $data ->fetch_array();
             ?>
-                <tr><td>No realizó la eleccion</td><td>-</td><td><?php echo $aluSinElex[1]?></td><td>-</td><td>-</td><td><?php echo $fact["PromediosT"]?></td><td><?php echo $fact["FichasT"]?></td><td><?php echo $fact["ObservacionesT"]?></td><td><?php echo $fact["InasistenciasT"]?></td><td><?php echo $fact["Comentario"]?></td><td>No realizó la eleccion</td><tr>
+                <tr><td>No realizó la eleccion</td><td>-</td><td><?php echo $aluSinElex[1]?></td><td>-</td><td>-</td><td><?php echo $fact["PromediosT"]?></td><td><?php echo $fact["FichasT"]?></td><td><?php echo $fact["ObservacionesT"]?></td><td><?php echo $fact["InasistenciasT"]?></td><td><?php echo $fact["Comentario"]?></td><tr>
             <?php
         }
     }
@@ -320,16 +322,49 @@ if ($siquesi[0] > 0)
     }  
 }
     else
-    {
-        ?>  
+    {   
+        $sineleccion="SELECT COUNT(*) FROM alumnos a WHERE a.Curso = '$x' and a.DNI NOT IN(SELECT DNI FROM eleccion)";
+        $noe= $conexion->query($sineleccion);
+        $nomod = $noe ->fetch_array(); 
+        if ($nomod[0] > 0)
+        {
+            ?>
+                <div class="col-md-12">
+                    <h2>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
+                    <hr>
+                    <div class="datagrid">
+                        <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th></tr>
+            <?php
+            $aluSinElex[1] = "AAAAAAAA";
+            $aluSinElex[0] = 0;
+            for($y = 1; $y <= $nomod[0]; $y++)
+            {   
+                $sinMod = "SELECT t.DNI, a.Nombre FROM eleccion e, alumnos a, total t 
+                where  a.DNI NOT IN(SELECT DNI FROM eleccion) and a.Nombre > '$aluSinElex[1]' and t.DNI != $aluSinElex[0] and a.DNI=t.DNI and a.Curso = '$x' order by a.Nombre ASC";
+                $sinElex = $conexion -> query($sinMod);
+                $aluSinElex = $sinElex ->fetch_array();
+                $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, a.Curso
+                FROM total t, alumnos a, eleccion e
+                where a.DNI NOT IN(SELECT DNI FROM eleccion) and a.DNI = $aluSinElex[0] and t.DNI = $aluSinElex[0] and a.Curso = '$x'  and a.DNI=t.DNI";
+                $data= $conexion->query($infoalu);
+                $fact = $data ->fetch_array();
+            ?>
+                <tr><td>No realizó la eleccion</td><td>-</td><td><?php echo $aluSinElex[1]?></td><td>-</td><td>-</td><td><?php echo $fact["PromediosT"]?></td><td><?php echo $fact["FichasT"]?></td><td><?php echo $fact["ObservacionesT"]?></td><td><?php echo $fact["InasistenciasT"]?></td><td><?php echo $fact["Comentario"]?></td><td>No realizó la eleccion</td><tr>
+            <?php
+            }
+        }
+        else
+        {
+            ?>  
             <div class="col-md-12" style="position: relative;display: inline-block;">
                 <h2>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
                 <hr>
                 <a class="img" ><img src="../IMG/curso.jpg" style="opacity: 0.2; width: 50%; margin-left: 25%; vertical-align: top;"/></a> 
                 <h1 style="text-align: center;position: absolute; top: 50%; margin-left: 50%; transform: translate(-50%, -50%);font-size: 25px;">No hay alumnos en este curso</h1>
-        <?php     
+            <?php 
+        }      
     }
-?>
+            ?>
 </table></div>
 <?php  
 ?>
