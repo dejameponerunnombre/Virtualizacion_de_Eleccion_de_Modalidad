@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Directivos</title>
+    <title>Listas de Espera</title>
 
     <link href="bootstrap2.css" rel="stylesheet" />
     <link href="font-awesome.css" rel="stylesheet" />
@@ -51,17 +51,7 @@
                         <img src="../IMG/find_user.png" class="img-responsive" />
                      
                     </li>
-
-
-                   
-                   
-
-                    <!--<li  style="background: #fff;">
-                        <a href="#"><i class="fa fa-table "></i>Ver listas de cada modalidad</a>
-                    </li>-->
-
-                    
-                    
+ 
                     <li  style="background: #fff;">
                     
                     
@@ -228,7 +218,7 @@
             <div id="page-inner" >
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Listas de espera</h2>  
+                     <h2>Listas de Espera</h2>  
                      <hr>
 <?php
 
@@ -266,11 +256,9 @@ for($x = 1; $x <= 5; $x++)
     {
         
         ?>
-        <div class="pato-img">
             <br>
-            <h1 style="text-align: center; top: 50%; margin-left: 50%; transform: translate(-50%, -50%);font-size: 25px;"> No hay alumnos en lista de espera en <?php echo $siquesi["Descripcion"] ?></h1>
-            
-    </div>
+            <h1 style=" top: 50%; margin-left: 50%; transform: translate(-50%, -50%);font-size: 25px; "> No hay alumnos en lista de espera en <?php echo $siquesi["Descripcion"] ?></h1>
+    
         <?php
     }
     
@@ -284,7 +272,7 @@ for($x = 1; $x <= 5; $x++)
      if($siquesi[0] <= 39)
      {
         ?>
-        <a class="pato-img" ><img src="../IMG/curso.jpg" style="opacity: 0.2; width: 50%; margin-left: 25%; vertical-align: top;"/></a> 
+        <a  ><img src="../IMG/curso.jpg" style="opacity: 0.1; width: 50%; margin-left: 10%; vertical-align: top; position:fixed; top: 22%; "/></a> 
         <?php
      }
      else{?>
