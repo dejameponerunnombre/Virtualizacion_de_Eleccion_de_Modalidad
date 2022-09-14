@@ -1,5 +1,6 @@
 <?php
 $x = $_POST['question'];
+echo $x;
 session_start();
 include("db.php");
 $ahorasi="SELECT Ingresos, Descripcion FROM modalidad where ID_Modalidad = $x";
@@ -29,7 +30,7 @@ if($siquesi[0] > 0)
     }
     }
     else
-    {
+    { 
         ?>
         <h2> No hay alumnos en lista de espera en <?php echo $siquesi["Descripcion"] ?> </h2>
         <?php
