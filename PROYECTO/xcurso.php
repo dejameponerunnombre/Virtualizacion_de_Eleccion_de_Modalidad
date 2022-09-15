@@ -84,13 +84,13 @@
                                         <div class="content">
                                             <form action = "xespera.php" method = "post">
                                             <input type="submit" id=1 name="question" value = 1 style="display: none;">
-                                                <label for=1 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px; ">Economia</label>
+                                                <label for=1 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px; ">Economía</label>
                                                 <br>
                                                 <input type="submit" id=3 name="question" value = 3 style="display: none;">
-                                                <label for=3 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Electronica</label>
+                                                <label for=3 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Electrónica</label>
                                                 <br>
                                                 <input type="submit" id=4 name="question" value = 4 style="display: none;">
-                                                <label for=4 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Informatica</label>
+                                                <label for=4 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Informática</label>
                                                 <br>                 
                                                 <input type="submit" id=2 name="question" value = 2 style="display: none;">
                                                 <label for=2 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
@@ -118,7 +118,7 @@
                         <!--LISTAS CONFIRMADAS-->     
                             
 
-                            <div class="wrap-8">
+                        <div class="wrap-8">
                                 <input class="input" type="radio" id="tab-8" name="tabs">
                                 <label class="label" for="tab-8"><div>Listas confirmadas</div><div class="cross"></div> </label>
                                 <div class="questions">
@@ -127,20 +127,20 @@
                                         <label class="label" for="question-1"><div>Modalidad</div>  </label>
                                         <div class="content">
                                             <form action = "xadentro.php" method = "post">
-                                            <input type="submit" id=1 name="question" value = 1 style="display: none;">
-                                                <label for=1 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Economia</label>
-                                                <br>
-                                                <input type="submit" id=3 name="question" value = 3 style="display: none;">
-                                                <label for=3 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
-                                                <br>
-                                                <input type="submit" id=4 name="question" value = 4 style="display: none;">
-                                                <label for=4 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Informatica</label>
-                                                <br>
-                                                <input type="submit" id=2 name="question" value = 2 style="display: none;">
-                                                <label for=2 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
-                                                <br>
-                                                <input type="submit" id=5 name="question" value = 5 style="display: none;">
-                                                <label for=5 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
+                                            <input type="submit" id= 6 name="question" value = 1 style="display: none;">
+                                                <label for= 6 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Economía</label>
+                                                
+                                                <input type="submit" id= 8 name="question" value = 3 style="display: none;">
+                                                <label for= 8 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Electrónica</label>
+                                                
+                                                <input type="submit" id= 9 name="question" value = 4 style="display: none;">
+                                                <label for= 9 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Informática</label>
+                                                
+                                                <input type="submit" id= 7 name="question" value = 2 style="display: none;">
+                                                <label for= 2 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
+                                                
+                                                <input type="submit" id= 10 name="question" value = 5 style="display: none;">
+                                                <label for= 10 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
                                             </form>
                                             
                                         </div>
@@ -163,20 +163,20 @@
                                     <label class="label" for="question-3"><div>Modalidad</div>  </label>
                                     <div class="content">
                                             <form action = "xmodalidad.php" method = "post">
-                                            <input type="submit" id=1 name="question" value = 1 style="display: none;">
-                                                <label for=1 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Economia</label>
+                                            <input type="submit" id= 11 name="question" value = 1 style="display: none;">
+                                                <label for= 11 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Economía</label>
                                                 <br>
-                                                <input type="submit" id=3 name="question" value = 3 style="display: none;">
-                                                <label for=3 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
+                                                <input type="submit" id= 13 name="question" value = 3 style="display: none;">
+                                                <label for= 13 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Electrónica</label>
                                                 <br>
-                                                <input type="submit" id=4 name="question" value = 4 style="display: none;">
-                                                <label for=4 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Informatica</label>
+                                                <input type="submit" id= 14 name="question" value = 4 style="display: none;">
+                                                <label for= 14 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Informática</label>
                                                 <br>
-                                                <input type="submit" id=2 name="question" value = 2 style="display: none;">
-                                                <label for=2 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
+                                                <input type="submit" id= 12 name="question" value = 2 style="display: none;">
+                                                <label for= 12 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
                                                 <br>
-                                                <input type="submit" id=5 name="question" value = 5 style="display: none;">
-                                                <label for=5 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
+                                                <input type="submit" id= 15 name="question" value = 5 style="display: none;">
+                                                <label for= 15 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
                                             </form>
                                             
                                         </div>
@@ -271,9 +271,7 @@ if ($siquesi[0] > 0)
     else
     {
         ?>
-        <div class="col-md-12" style="position: relative;
-    display: inline-block;
-    ">
+        <div class="col-md-12" style="position: relative;display: inline-block;">
                     <h2>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
                      <hr>
                      
