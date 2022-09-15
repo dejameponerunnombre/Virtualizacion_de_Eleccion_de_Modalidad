@@ -1,5 +1,232 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listas de Espera</title>
+
+    <link href="bootstrap2.css" rel="stylesheet" />
+    <link href="font-awesome.css" rel="stylesheet" />
+    <link href="custom.css" rel="stylesheet" >
+    <link href="tablas.css" rel="stylesheet" />
+    <link rel="stylesheet" href=" footer.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="directivos.css">
+    
+
+    
+    
+</head>
+<body>
+       
+           
+          
+    <div id="wrapper">
+         <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="adjust-nav">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="logo" href="inicio.html" ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
+                    
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="inicio.html">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        
+        
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li class="text-center user-image-back">
+                        <img src="../IMG/find_user.png" class="img-responsive" />
+                     
+                    </li>
+ 
+                    <li  style="background: #fff;">
+                    
+                    
+                    <h3>Filtrar por:</h3>                                   
+                   
+
+
+                    <div class="preguntas">
+
+                        <div class="wrapper" style="margin-top: 30px;">    
+            
+                            <div class="wrap-6">
+                                <input class="input" type="radio" id="tab-6" name="tabs">
+                                <label class="label" for="tab-6"><div>Listas de espera</div><div class="cross"></div> </label>
+                                <div class="questions">
+                                    <div class="question-wrap">
+                                        <input class="input" type="radio" id="question-7" name="question" >
+                                        <label class="label" for="question-7"><div>Modalidad</div>  </label>
+                                    
+                                        <div class="content">
+                                            <form action = "xespera.php" method = "post">
+                                            <input type="submit" id=1 name="question" value = 1 style="display: none;">
+                                                <label for=1 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px; ">Economía</label>
+                                                <br>
+                                                <input type="submit" id=3 name="question" value = 3 style="display: none;">
+                                                <label for=3 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Electrónica</label>
+                                                <br>
+                                                <input type="submit" id=4 name="question" value = 4 style="display: none;">
+                                                <label for=4 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Informática</label>
+                                                <br>                 
+                                                <input type="submit" id=2 name="question" value = 2 style="display: none;">
+                                                <label for=2 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
+                                                <br>
+                                                <input type="submit" id=5 name="question" value = 5 style="display: none;">
+                                                <label for=5 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
+                                            </form>
+                                            
+                                        </div>
+                                        <form action = "xsoloespera.php" method = "post">
+                                            <input type="submit" id= "Todas" name="question" value = "Todas" style="display: none;">
+                                            <label for="Todas" style="margin-left: 25%; color:#172d8d; cursor:pointer; font-size: 13px;">Todas las Listas</label>
+                                        </form>
+                                        <br>
+                                    </div>
+                                
+                                        
+
+                                </div>
+                                
+                            </div>
+                                <!--LISTAS CONFIRMADAS-->     
+                            
+
+                            <div class="wrap-8">
+                                <input class="input" type="radio" id="tab-8" name="tabs">
+                                <label class="label" for="tab-8"><div>Listas confirmadas</div><div class="cross"></div> </label>
+                                <div class="questions">
+                                    <div class="question-wrap">
+                                        <input class="input" type="radio" id="question-1" name="question">
+                                        <label class="label" for="question-1"><div>Modalidad</div>  </label>
+                                        <div class="content">
+                                            <form action = "xadentro.php" method = "post">
+                                            <input type="submit" id= 6 name="question" value = 1 style="display: none;">
+                                                <label for= 6 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Economía</label>
+                                                
+                                                <input type="submit" id= 8 name="question" value = 3 style="display: none;">
+                                                <label for= 8 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Electrónica</label>
+                                                
+                                                <input type="submit" id= 9 name="question" value = 4 style="display: none;">
+                                                <label for= 9 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Informática</label>
+                                                
+                                                <input type="submit" id= 7 name="question" value = 2 style="display: none;">
+                                                <label for= 2 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
+                                                
+                                                <input type="submit" id= 10 name="question" value = 5 style="display: none;">
+                                                <label for= 10 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
+                                            </form>
+                                            
+                                        </div>
+                                        <form action = "xsoloadentro.php" method = "post">
+                                            <input type="submit" name="question" id = "value2" value = "value2" style="display: none;">
+                                            <label for="value2" style="margin-left: 25%; color:#172d8d; cursor:pointer; font-size: 13px;">Todas las Listas</label>
+                                        </form>
+                                        <br>
+                                </div>
+                            </div>
+
+                            <!--AMBAS LISTAS-->
+
+                        <div class="wrap-9">
+                            <input class="input" type="radio" id="tab-9" name="tabs">
+                            <label class="label" for="tab-9"><div>Ambas listas</div><div class="cross"></div> </label>
+                            <div class="questions">
+                                <div class="question-wrap">
+                                    <input class="input" type="radio" id="question-3" name="question">
+                                    <label class="label" for="question-3"><div>Modalidad</div>  </label>
+                                    <div class="content">
+                                            <form action = "xmodalidad.php" method = "post">
+                                            <input type="submit" id= 11 name="question" value = 1 style="display: none;">
+                                                <label for= 11 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Economía</label>
+                                                <br>
+                                                <input type="submit" id= 13 name="question" value = 3 style="display: none;">
+                                                <label for= 13 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Electrónica</label>
+                                                <br>
+                                                <input type="submit" id= 14 name="question" value = 4 style="display: none;">
+                                                <label for= 14 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Informática</label>
+                                                <br>
+                                                <input type="submit" id= 12 name="question" value = 2 style="display: none;">
+                                                <label for= 12 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
+                                                <br>
+                                                <input type="submit" id= 15 name="question" value = 5 style="display: none;">
+                                                <label for= 15 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
+                                            </form>
+                                            
+                                        </div>
+                                        <form action = "xpromedio.php" method = "post">
+                                            <input type="submit" name="question" id = "value3" value = "value3" style="display: none;">
+                                            <label for="value3" style="margin-left: 25%; color:#172d8d; cursor:pointer; font-size: 13px;">Todas las Listas</label>
+                                        </form>
+                                        <br>
+                                    </div>
+                        </div>
+
+
+
+                        <!--CURSOS-->
+
+                        <div class="wrap-7">
+                            <input class="input" type="radio" id="tab-7" name="tabs">
+                            <label class="label" for="tab-7"><div>Cursos</div><div class="cross"></div> </label>
+                            <div class="questions">
+                            <div class="question-wrap">
+                            <form action = "xcurso.php" method = "post">
+                                            <input type="submit" id= "a" name="question" value = "a" style="display: none;">
+                                                <label for= "a" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">A</label>
+                                                <br>
+                                                <input type="submit" id="b" name="question" value = "b" style="display: none;">
+                                                <label for="b" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">B</label>
+                                                <br>
+                                                <input type="submit" id="c" name="question" value = "c" style="display: none;">
+                                                <label for="c" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">C</label>
+                                                <br>
+                                                <input type="submit" id="d" name="question" value = "d" style="display: none;">
+                                                <label for="d" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">D</label>
+                                                <br>
+                                                <input type="submit" id="e" name="question" value = "e" style="display: none;">
+                                                <label for="e" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">E</label>
+                                                <br>
+                                                <input type="submit" id="g" name="question" value = "g" style="display: none;">
+                                                <label for="g" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">G</label>
+                                            </form>
+                                </div>
+                                </div>
+                            
+                            </div>
+                                                    <div id="no-elijieron">
+                                                        <form action = "sineleccion.php" method = "post">
+                                                        <input type="submit" name="question" id = "sin-eleccion" value = "sin-eleccion" style="display: none;">
+                                                        <label for="sin-eleccion" style="margin-left: 25%; color:#172d8d; cursor:pointer; font-size: 13px;">Alumnos sin eleccion realizada</label>
+                                                        </form>
+                                                    </div>       
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper" >
+            <div id="page-inner" >
+                <div class="row">
+                    <div class="col-md-12">
+                     <h2>Listas de Modalidades</h2>  
+                     <hr>
 <?php
-session_start();
+
 include("db.php");
 for($x = 1; $x <= 5; $x++)
 {
@@ -36,7 +263,30 @@ for($x = 1; $x <= 5; $x++)
     }
     ?>
     </table></div>
+    <br>
     <?php 
 }
 ?>
-<button type="submit" class="boton2" style="margin-left: 85%; "><a href="Exceladentro.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>
+<br>
+
+<button type="submit" class="boton2" style="margin-left: 85%;  "><a href="Exceladentro.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>
+
+</div>
+
+        </div>  
+    </div>
+    <br>
+    </tbody>
+<script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.metisMenu.js"></script>
+<script src="../js/custom.js"></script>
+</div>
+</body>
+<footer class="pie-pagina" style="left: 0; right: 0; position:fixed; bottom:0;">
+    <div class="grupo-2">
+        <small>&copy; 2022 <b>7mo Informática</b> - Grupo 3</small>
+    </div>
+</footer>
+
+</html>

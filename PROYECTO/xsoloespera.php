@@ -281,7 +281,7 @@ for($x = 1; $x <= 5; $x++)
         <?php
      }
      else{?>
-        <button type="submit" class="boton2" style="margin-left: 85%; "><a href="Excelespera.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>
+        <button type="submit" class="boton2" style="margin-left: 85%; position:relative; "><a href="Excelespera.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>
         <?php
      }
 ?>
@@ -294,6 +294,7 @@ for($x = 1; $x <= 5; $x++)
 
         </div>  
     </div>
+    <br>
     </tbody>
 <script src="../js/jquery-1.10.2.js"></script>
 <script src="../js/bootstrap.min.js"></script>

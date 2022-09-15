@@ -84,7 +84,7 @@
                                         <div class="content">
                                             <form action = "xespera.php" method = "post">
                                             <input type="submit" id=1 name="question" value = 1 style="display: none;">
-                                                <label for=1 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px; ">Economía</label>
+                                                <label for=1 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px; ">Economia</label>
                                                 <br>
                                                 <input type="submit" id=3 name="question" value = 3 style="display: none;">
                                                 <label for=3 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Electrónica</label>
@@ -128,7 +128,7 @@
                                         <div class="content">
                                             <form action = "xadentro.php" method = "post">
                                             <input type="submit" id= 6 name="question" value = 1 style="display: none;">
-                                                <label for= 6 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Economía</label>
+                                                <label for= 6 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Economia</label>
                                                 <br>
                                                 <input type="submit" id= 8 name="question" value = 3 style="display: none;">
                                                 <label for= 8 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Electrónica</label>
@@ -164,7 +164,7 @@
                                     <div class="content">
                                             <form action = "xmodalidad.php" method = "post">
                                             <input type="submit" id= 11 name="question" value = 1 style="display: none;">
-                                                <label for= 11 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Economía</label>
+                                                <label for= 11 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Economia</label>
                                                 <br>
                                                 <input type="submit" id= 13 name="question" value = 3 style="display: none;">
                                                 <label for= 13 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Electrónica</label>
@@ -271,9 +271,11 @@ else
 }
 ?>
 </table></div>
-<button type="submit" class="boton2" style="margin-left: 85%; "><a href="Excel1espera.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>
+
 <?php  
 ?>
+<br>
+<button type="submit" class="boton2" style="margin-left: 85%; "><a href="Excel1espera.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>
                     </div>
                                   
                
