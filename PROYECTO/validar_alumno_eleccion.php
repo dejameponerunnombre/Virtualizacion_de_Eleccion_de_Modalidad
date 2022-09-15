@@ -15,8 +15,10 @@ if($filas){
     include("ELECCION.html");
 }else{
     include("login_alumno_eleccion.html");
+    echo '<script>alert("Algún campo fue completado de manera erronea")</script>';
+
     ?>
-    <h1> Datos erroneos </h1>
+    <!--<h1> Datos erroneos </h1>-->
     <?php
 }
 mysqli_free_result($resultado);

@@ -64,8 +64,10 @@ if($filas)
 else
 {
   include("login_trabajador_datos.html");
-  ?>
-  <h1> Datos erroneos </h1>
+  echo '<script>alert("Algún campo fue completado de manera erronea")</script>';
+
+?>
+  <!--<h1> Datos erroneos </h1>-->
   <?php
 }
 mysqli_free_result($resultado);
