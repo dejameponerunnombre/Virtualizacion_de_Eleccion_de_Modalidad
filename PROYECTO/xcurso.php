@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="directivos.css">
     <link rel="icon" href="../IMG/Logo_azul (2).PNG">
 
-
     
     
 </head>
@@ -232,7 +231,6 @@
                 <div class="row">
                     
                      <?php
-
 $x = $_POST['question'];
 include("db.php");
 $ahorasi="SELECT * FROM eleccion e 
@@ -240,7 +238,7 @@ Inner join alumnos a
 on a.Curso = '$x' where a.DNI = e.DNI";
 $quesi= $conexion->query($ahorasi);
 $siquesi = $quesi ->fetch_array();
-if ($siquesi[0] > 0)
+if (empty($siquesi[0]) === FALSE)
 {
     ?>
     <div class="col-md-12">
