@@ -221,7 +221,7 @@
         </nav>
         <div id="page-wrapper" >
             <div id="page-inner" >
-                <div class="row">
+            
                     <div class="col-md-12">
                      <h2>Listas de Espera</h2>  
                      <hr>
@@ -261,9 +261,9 @@ for($x = 1; $x <= 5; $x++)
     {
         
         ?>
-            <br>
-            <h1 style=" top: 50%; margin-left: 50%; transform: translate(-50%, -50%);font-size: 25px; "> No hay alumnos en lista de espera en <?php echo $siquesi["Descripcion"] ?></h1>
-    
+            
+            <div style="margin-top: 40px;"><h1 style=" top: 50%; margin-left: 50%; transform: translate(-50%, -50%);font-size: 16px; border: 2px solid #172d8d; padding: 10px; margin-top: 30px"> No hay alumnos en lista de espera en <?php echo $siquesi["Descripcion"] ?></h1></div>
+            
         <?php
     }
     
@@ -271,7 +271,10 @@ for($x = 1; $x <= 5; $x++)
 }
 
 ?>
+
     </table></div>
+    <br>
+<br>
 </div>
      <?php
      if($siquesi[0] <= 39)
@@ -281,7 +284,11 @@ for($x = 1; $x <= 5; $x++)
         <?php
      }
      else{?>
-        <button type="submit" class="boton2" style="margin-left: 85%; position:relative; "><a href="Excelespera.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>
+     
+        <button type="submit" class="boton2" style="margin-left: 85%;  "><a href="Excelespera.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>
+        <br>
+        <br>
+        <br>
         <?php
      }
 ?>

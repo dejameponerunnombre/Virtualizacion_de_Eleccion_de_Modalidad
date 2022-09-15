@@ -56,11 +56,7 @@
                    
                    
 
-                    <!--<li  style="background: #fff;">
-                        <a href="#"><i class="fa fa-table "></i>Ver listas de cada modalidad</a>
-                    </li>-->
-
-                    
+                  
                     
                     <li  style="background: #fff;">
                     
@@ -227,7 +223,6 @@
         </nav>
         <div id="page-wrapper" >
             <div id="page-inner" >
-                <div class="row">
                     <div class="col-md-12">
                      <h2>Todas las Listas</h2>  
                      <hr>
@@ -242,6 +237,7 @@ for($x = 1; $x <= 5; $x++)
     if ($siquesi[0] > 0)
     {
         ?>
+        </table></div>
     <h2 style="text-align: center; font-weight:600; color:#000a35;"> <?php echo $siquesi["Descripcion"] ?></h2>
      <div class="datagrid">   <table border = 1 ><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th></tr>
     <?php
@@ -257,9 +253,17 @@ for($x = 1; $x <= 5; $x++)
         $info= $conexion->query($infoalu);
         $datos = $info ->fetch_array();
         ?>
+        
         <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td><?php echo $datos["Comentario"]?></td><tr>
+
+
         <?php  
     }
+    ?>
+    
+    </table>
+    
+    <?php
     }
     else
     {
@@ -271,38 +275,46 @@ for($x = 1; $x <= 5; $x++)
     {
         ?>
         </table></div>
-        <h1>Tabla de espera de <?php echo $siquesi["Descripcion"]?></h1>
+        
+        <h1 style="text-align: center; font-weight:600; color:#000a35;">Tabla de espera de <?php echo $siquesi["Descripcion"]?></h1>
         <div class="datagrid"><table border = 1><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th></tr>
         <?php
         for($y = 40; $y <= $siquesi[0]; $y++)
-    {   
-        $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
-        and e.ID_Modalidad = $x and e.Prioridad = $y";
-        $connB = $conexion -> query($varB);
-        $DNI = $connB ->fetch_array();
-        $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario
-        FROM total t, alumnos a, eleccion e 
-        where a.DNI = $DNI[0] and t.DNI = $DNI[0]";
-        $info= $conexion->query($infoalu);
-        $datos = $info ->fetch_array();
-        ?>
-        <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td ><?php echo $datos["Comentario"]?></td><tr>
-    <?php
-    }
+        {   
+            $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
+            and e.ID_Modalidad = $x and e.Prioridad = $y";
+            $connB = $conexion -> query($varB);
+            $DNI = $connB ->fetch_array();
+            $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario
+            FROM total t, alumnos a, eleccion e 
+            where a.DNI = $DNI[0] and t.DNI = $DNI[0]";
+            $info= $conexion->query($infoalu);
+            $datos = $info ->fetch_array();
+            ?>
+            <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td ><?php echo $datos["Comentario"]?></td><tr>
+            <?php
+        }
     ?>
-    </table></div>
+    </table>
     <?php 
-   
     }
     else
     {
         ?>
-        <h1> No hay lista de espera de <?php echo $siquesi["Descripcion"] ?> </h1>
+        </div>
+        <h1 style="text-align: center; font-weight:600; color:#000a35;"> No hay lista de espera de <?php echo $siquesi["Descripcion"] ?> </h1>
+        <div class="datagrid">
         <?php
+        
     }
     
 }
 ?>
+
+
+
+
+</table></div>
 <br>
     <button type="submit" class="boton2" style="margin-left: 85%; "><a href="Exceltotal.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>
     </div>
