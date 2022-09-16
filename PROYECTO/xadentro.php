@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Listas de Modalidades</title>
+    <title>Lista de Modalidad</title>
 
     <link href="bootstrap2.css" rel="stylesheet" />
     <link href="font-awesome.css" rel="stylesheet" />
@@ -14,15 +14,17 @@
     <link rel="stylesheet" href="directivos.css">
     <link rel="icon" href="../IMG/Logo_azul (2).PNG">
 
-
     
     
-</head> 
+</head>
 <body>
        
            
           
-    <div id="wrapper">
+       
+           
+          
+<div id="wrapper">
          <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="adjust-nav">
                 <div class="navbar-header">
@@ -70,7 +72,7 @@
                    
 
 
-                    <div class="preguntas">
+                    <div class="preguntas" style="z-index:1">
 
                         <div class="wrapper" style="margin-top: 30px;">    
             
@@ -85,17 +87,17 @@
                                         <div class="content">
                                             <form action = "xespera.php" method = "post">
                                             <input type="submit" id=1 name="question" value = 1 style="display: none;">
-                                                <label for=1 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px; ">Economía</label>
-                                                
+                                                <label for=1 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px; ">Economia</label>
+                                                <br>
                                                 <input type="submit" id=3 name="question" value = 3 style="display: none;">
-                                                <label for=3 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Electronica</label>
-                                                
+                                                <label for=3 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Electrónica</label>
+                                                <br>
                                                 <input type="submit" id=4 name="question" value = 4 style="display: none;">
-                                                <label for=4 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Informática</label>
-                                                               
+                                                <label for=4 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Informatica</label>
+                                                <br>                 
                                                 <input type="submit" id=2 name="question" value = 2 style="display: none;">
                                                 <label for=2 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
-                                    
+                                                <br>
                                                 <input type="submit" id=5 name="question" value = 5 style="display: none;">
                                                 <label for=5 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
                                             </form>
@@ -119,7 +121,7 @@
                         <!--LISTAS CONFIRMADAS-->     
                             
 
-                            <div class="wrap-8">
+                        <div class="wrap-8">
                                 <input class="input" type="radio" id="tab-8" name="tabs">
                                 <label class="label" for="tab-8"><div>Listas confirmadas</div><div class="cross"></div> </label>
                                 <div class="questions">
@@ -129,16 +131,16 @@
                                         <div class="content">
                                             <form action = "xadentro.php" method = "post">
                                             <input type="submit" id= 6 name="question" value = 1 style="display: none;">
-                                                <label for= 6 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Economía</label>
+                                                <label for= 6 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; cursor:pointer; font-size: 13px;">Economia</label>
                                                 
                                                 <input type="submit" id= 8 name="question" value = 3 style="display: none;">
                                                 <label for= 8 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Electrónica</label>
                                                 
                                                 <input type="submit" id= 9 name="question" value = 4 style="display: none;">
-                                                <label for= 9 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Informática</label>
+                                                <label for= 9 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Informatica</label>
                                                 
                                                 <input type="submit" id= 7 name="question" value = 2 style="display: none;">
-                                                <label for= 2 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
+                                                <label for= 7 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
                                                 
                                                 <input type="submit" id= 10 name="question" value = 5 style="display: none;">
                                                 <label for= 10 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
@@ -164,20 +166,20 @@
                                     <label class="label" for="question-3"><div>Modalidad</div>  </label>
                                     <div class="content">
                                             <form action = "xmodalidad.php" method = "post">
-                                            <input type="submit" id= 11 name="question" value = 1 style="display: none;">
-                                                <label for= 11 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Economía</label>
+                                            <input type="submit" id=11 name="question" value = 1 style="display: none;">
+                                                <label for=11 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Economia</label>
                                                 <br>
-                                                <input type="submit" id= 13 name="question" value = 3 style="display: none;">
-                                                <label for= 13 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Electrónica</label>
+                                                <input type="submit" id=13 name="question" value = 3 style="display: none;">
+                                                <label for=13 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Electrónica</label>
                                                 <br>
-                                                <input type="submit" id= 14 name="question" value = 4 style="display: none;">
-                                                <label for= 14 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Informática</label>
+                                                <input type="submit" id=14 name="question" value = 4 style="display: none;">
+                                                <label for=14 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Informatica</label>
                                                 <br>
-                                                <input type="submit" id= 12 name="question" value = 2 style="display: none;">
-                                                <label for= 12 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
+                                                <input type="submit" id=12 name="question" value = 2 style="display: none;">
+                                                <label for=12 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Naturales</label>
                                                 <br>
-                                                <input type="submit" id= 15 name="question" value = 5 style="display: none;">
-                                                <label for= 15 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
+                                                <input type="submit" id=15 name="question" value = 5 style="display: none;">
+                                                <label for=15 style="margin-left: 25%; color:#647bde; cursor:pointer; cursor:pointer; font-size: 13px;">Multimedios</label>
                                             </form>
                                             
                                         </div>
@@ -215,23 +217,18 @@
                                                 <br>
                                                 <input type="submit" id="g" name="question" value = "g" style="display: none;">
                                                 <label for="g" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">G</label>
-                                            </form>
-                                            <form action = "todoscursos.php" method = "post">
-                                <input type="submit" id= "p" name="question" value = "p" style="display: none; position:auto;">
-                                <label for= "p" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">Todos los Cursos</label>
+                            </form>
+                            <form action = "todoscursos.php" method = "post">
+                                <input type="submit" id= "p" name="question" value = "p" style="display: none;">
+                                <label for= "p" style="margin-left: 23%; font-size: 13px; color:#172d8d; cursor:pointer; cursor:pointer;">Todos los Cursos</label>
                             </form>
                                 </div>
                                 </div>
                             
                             </div>
-                                                    <div id="no-elijieron">
-                                                        <form action = "sineleccion.php" method = "post">
-                                                        <input type="submit" name="question" id = "sin-eleccion" value = "sin-eleccion" style="display: none;">
-                                                        <label for="sin-eleccion" style="margin-left: 25%; color:#172d8d; cursor:pointer; font-size: 13px;">Alumnos sin eleccion realizada</label>
-                                                        </form>
-                                                    </div>       
                         </div>
-
+                        </div>    
+                        </div>
                     </li>
                 </ul>
             </div>
