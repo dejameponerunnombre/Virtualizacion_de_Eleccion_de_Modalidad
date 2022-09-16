@@ -196,7 +196,7 @@
                             <label class="label" for="tab-7"><div>Cursos</div><div class="cross"></div> </label>
                             <div class="questions">
                             <div class="question-wrap">
-                            <form action = "xcurso.php" method = "post">
+                            <form action = "sineleccion.php" method = "post">
                                             <input type="submit" id= "a" name="question" value = "a" style="display: none;">
                                                 <label for= "a" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">A</label>
                                                 <br>
@@ -215,6 +215,10 @@
                                                 <input type="submit" id="g" name="question" value = "g" style="display: none;">
                                                 <label for="g" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">G</label>
                                             </form>
+                                            <form action = "todoscursos.php" method = "post">
+                                <input type="submit" id= "p" name="question" value = "p" style="display: none; position:auto;">
+                                <label for= "p" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">Todos los Cursos</label>
+                            </form>
                                 </div>
                                 </div>
                             

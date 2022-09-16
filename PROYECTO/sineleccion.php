@@ -214,11 +214,11 @@
                                                 <br>
                                                 <input type="submit" id="g" name="question" value = "g" style="display: none;">
                                                 <label for="g" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">G</label>
-                                </form action = "todoscursos.php" method = "post">
-                                    <input type="submit" id= "p" name="question" value = "p" style="display: none;">
-                                    <label for= "p" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">Todos los Cursos</label>
-                                <form>
-                                </form>
+                            </form>
+                            <form action = "todoscursos.php" method = "post">
+                                <input type="submit" id= "p" name="question" value = "p" style="display: none; position:auto;">
+                                <label for= "p" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">Todos los Cursos</label>
+                            </form>
                                 </div>
                                 </div>
                             
