@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -243,7 +246,7 @@
                     <div class="col-md-12">
 <?php
 $x = $_POST['question'];
-
+$_SESSION['a'] = $x;
 include("db.php");
 $ahorasi="SELECT Ingresos, Descripcion FROM modalidad where ID_Modalidad = $x";
 $quesi= $conexion->query($ahorasi);
@@ -306,6 +309,7 @@ if ($siquesi[0] > 0)
 </table></div>
 
 <?php 
+
 ?>
 <br>
 <button type="submit" class="boton2" style="margin-left: 85%; "><a href="Excel1modalidad.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>

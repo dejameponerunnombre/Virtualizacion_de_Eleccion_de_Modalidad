@@ -1,11 +1,12 @@
 <?php
 session_start();
 include("db.php");
-$x = $_SESSION("X");
+$x = $_SESSION['a'];
+echo $x;
 $ahorasi="SELECT Ingresos, Descripcion FROM modalidad where ID_Modalidad = $x";
 $quesi= $conexion->query($ahorasi);
 $siquesi = $quesi ->fetch_array();
-if ($siquesi[0] > 0)
+if (empty($siquesi[0]) === FALSE)
 {
     $encabezado = '';
     $encabezado = $siquesi["Descripcion"]."\n"."Puesto"."\t"."Alumno"."\t"."DNI"."\t"."Promedio"."\t"."Fichas"."\t"."Observaciones"."\t"."Inasistencias"."\t"."Comentario"."\t"."Situacion"."\t";
@@ -30,10 +31,9 @@ if ($siquesi[0] > 0)
     }
 }
 header("Content-type: application/octet-stream");  
-header("Content-Disposition: attachment; filename=Listas.xls");  
+header("Content-Disposition: attachment; filename=Listas-Completas-$siquesi[1].xls");  
 header("Pragma: no-cache");  
 header("Expires: 0");
 
 echo ucwords($encabezado) . "\n" . $setData . "\n";
-
 ?>

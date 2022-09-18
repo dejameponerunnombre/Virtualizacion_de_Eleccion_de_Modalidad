@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("db.php");
-$x = $_SESSION("X");
+$x = $_SESSION["X"];
 $ahorasi="SELECT Ingresos, Descripcion FROM modalidad where ID_Modalidad = $x";
 $quesi= $conexion->query($ahorasi);
 $siquesi = $quesi ->fetch_array();
@@ -30,10 +30,9 @@ if ($siquesi[0] > 0)
     }
 }
 header("Content-type: application/octet-stream");  
-header("Content-Disposition: attachment; filename=Listas.xls");  
+header("Content-Disposition: attachment; filename=Listas-Espera-$siquesi[1].xls");  
 header("Pragma: no-cache");  
 header("Expires: 0");
 
 echo ucwords($encabezado) . "\n" . $setData . "\n";
-
 ?>

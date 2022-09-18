@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -243,6 +246,7 @@
                      <hr>
                      <?php
 $x = $_POST['question'];
+$_SESSION['X'] = $x;
 include("db.php");
 $ahorasi="SELECT Ingresos, Descripcion FROM modalidad where ID_Modalidad = $x";
 $quesi= $conexion->query($ahorasi);

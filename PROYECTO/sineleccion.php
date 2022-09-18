@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -240,6 +243,7 @@
 
 <?php
 $x = $_POST['question'];
+$_SESSION['c'] = $x;
 include("db.php");
 $ahorasi="SELECT * FROM total t 
 Inner join alumnos a
@@ -247,7 +251,7 @@ on a.Curso = '$x' where a.DNI = t.DNI";
 $quesi= $conexion->query($ahorasi);
 $siquesi = $quesi ->fetch_array();
 if (empty($siquesi[0])===FALSE)
-{
+{ 
     $z=1;
     ?>
         <div class="col-md-12">
@@ -301,7 +305,7 @@ if (empty($siquesi[0])===FALSE)
         for($y = 1; $y <= $nomod[0]; $y++)
         {   
             $sinMod = "SELECT t.DNI, a.Nombre FROM eleccion e, alumnos a, total t 
-            where  a.DNI NOT IN(SELECT DNI FROM eleccion) and a.Nombre > '$aluSinElex[1]' and t.DNI != $aluSinElex[0] and a.DNI=t.DNI and a.Curso = '$x' order by a.Nombre ASC";
+            where  a.DNI NOT IN(SELECT DNI FROM eleccion) and a.Nombre > '$aluSinElex[1]' and t.DNI != $aluSinElex[0]  and t.DNI = a.DNI and a.Curso = '$x' order by a.Nombre ASC";
             $sinElex = $conexion -> query($sinMod);
             $aluSinElex = $sinElex ->fetch_array();
             $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, a.Curso
@@ -350,7 +354,7 @@ if (empty($siquesi[0])===FALSE)
                 $data= $conexion->query($infoalu);
                 $fact = $data ->fetch_array();
             ?>
-                <tr><td>No realizó la eleccion</td><td>-</td><td><?php echo $aluSinElex[1]?></td><td>-</td><td>-</td><td><?php echo $fact["PromediosT"]?></td><td><?php echo $fact["FichasT"]?></td><td><?php echo $fact["ObservacionesT"]?></td><td><?php echo $fact["InasistenciasT"]?></td><td><?php echo $fact["Comentario"]?></td><td>No realizó la eleccion</td><tr>
+                <tr><td>No realizó la eleccion</td><td>-</td><td><?php echo $aluSinElex[1]?></td><td>-</td><td>-</td><td><?php echo $fact["PromediosT"]?></td><td><?php echo $fact["FichasT"]?></td><td><?php echo $fact["ObservacionesT"]?></td><td><?php echo $fact["InasistenciasT"]?></td><td><?php echo $fact["Comentario"]?></td><tr>
             <?php
             }
         }
@@ -371,7 +375,8 @@ if (empty($siquesi[0])===FALSE)
 ?>
 
 </div>
-                                  
+<br>
+<button type="submit" class="boton2" style="margin-left: 85%; "><a href="Excel1curso.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>                            
                
                   
 

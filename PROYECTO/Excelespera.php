@@ -32,7 +32,7 @@ for($x = 1; $x <= 5; $x++)
     }
 }
 header("Content-type: application/octet-stream");  
-header("Content-Disposition: attachment; filename=Listas.xls");  
+header("Content-Disposition: attachment; filename=Listas-Espera.xls");  
 header("Pragma: no-cache");  
 header("Expires: 0");
 for($i = 0; $i < $a; $i++)
