@@ -11,7 +11,7 @@ session_start();
     <link href="bootstrap2.css" rel="stylesheet" />
     <link href="font-awesome.css" rel="stylesheet" />
     <link href="custom.css" rel="stylesheet" >
-    <link href="tablas.css" rel="stylesheet" />
+    <link rel="stylesheet" href="tablas.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href=" footer.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="directivos.css">
