@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../IMG/Logo_azul (2).PNG">
-    <title>Login</title>
+    <title>Recuperar Contraseña</title>
 </head>
 <body>
 
@@ -14,25 +14,25 @@
         <img src="../IMG/Escuela.png" alt="contraseña">
 
     </div>
-
+    
     <div class="linea-medio">
     <div class="imagen_fondo">
-        
+
         <h1>Dielmod</h1>
-        <form action="validar_alumno_eleccion.php" method = "post">
-            <label for="username">Documento</label>
-            <input type="text" placeholder="Ingrese DNI" name = "usuario">
+        <p>Se requiere su DNI con el cual se le enviará el mail para que pueda recuperar su contraseña</p>
+        <form action="contrasena_alumno.php" method = "post">
+            <label for="username">Ingrese su DNI</label>
+            <input type="text"  name = "dni">
+            <label for="username">Ingrese su mail registrado</label>
+            <input type="mail"  name = "mail">
+
+            <button type="submit" class="boton_log">Enviar Mail</button>
             
-            <label for="password">Contraseña</label>
-            <input type="password" placeholder="Ingrese contraseña" name = "contraseña">
-
-            <button type="submit" class="boton_log">Log in</button>
-            <a href="contrasena_alumno.html">¿Olvidaste tu contraseña?</a>
         </form>
-
+        
     </div>
     <div class="v-line"></div>
-    </div>
+</div>
     
 </body>
 </html>

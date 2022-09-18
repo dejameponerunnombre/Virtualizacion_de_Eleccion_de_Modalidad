@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-08-2022 a las 02:29:08
--- Versión del servidor: 10.4.20-MariaDB
--- Versión de PHP: 8.0.9
+-- Tiempo de generación: 18-09-2022 a las 21:38:28
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,24 +34,27 @@ CREATE TABLE `alumnos` (
   `Escuela` varchar(100) NOT NULL,
   `Curso` varchar(1) NOT NULL,
   `Usuario` varchar(365) NOT NULL,
-  `Contrasenia` varchar(365) NOT NULL
+  `Contrasenia` varchar(365) NOT NULL,
+  `Mail` varchar(365) NOT NULL DEFAULT 'alumno.paltamiranda@gmail.com'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `alumnos`
 --
 
-INSERT INTO `alumnos` (`DNI`, `CUIL`, `Nombre`, `Escuela`, `Curso`, `Usuario`, `Contrasenia`) VALUES
-('1', '1', 'economia', 'orientada', 'c', '1', '1'),
-('10', '10', 'Infromatica2', 'Tecnica', 'G', '10', '10'),
-('2', '2', 'natu', 'orientada', 'c', '2', '2'),
-('3', '3', 'rales', 'orientada\r\n', 'c', '3', '3'),
-('4', '4', 'elec', 'tecnica', 'a', '4', '4'),
-('5', '5', 'tronica', 'tecnica', 'a', '5', '5'),
-('6', '6', 'informatica', 'tecnica', 'a', '6', '6'),
-('7', '7', 'multi', 'tecnica', 'a', '7', '7'),
-('8', '8', 'medios', 'tecnica', 'a', '8', '8'),
-('9', '9', 'Economia2', 'Orientada', 'c', '9', '9');
+INSERT INTO `alumnos` (`DNI`, `CUIL`, `Nombre`, `Escuela`, `Curso`, `Usuario`, `Contrasenia`, `Mail`) VALUES
+('1', '1', 'economia', 'orientada', 'c', '1', '1', 'alumno.paltamiranda@gmail.com'),
+('10', '10', 'Infromatica2', 'Tecnica', 'G', '10', '10', 'alumno.paltamiranda@gmail.com'),
+('2', '2', 'natu', 'orientada', 'c', '2', '2', 'alumno.paltamiranda@gmail.com'),
+('23', '23', 'paulo', 'tecnica', 'b', '23', '23', 'alumno.paltamiranda@gmail.com'),
+('3', '3', 'rales', 'orientada\r\n', 'c', '3', '3', 'alumno.paltamiranda@gmail.com'),
+('32', '32', 'londra', 'tecnica', 'a', '32', '32', 'alumno.paltamiranda@gmail.com'),
+('4', '4', 'elec', 'tecnica', 'a', '4', '4', 'alumno.paltamiranda@gmail.com'),
+('5', '5', 'tronica', 'tecnica', 'a', '5', '5', 'alumno.paltamiranda@gmail.com'),
+('6', '6', 'informatica', 'tecnica', 'a', '6', '6', 'alumno.paltamiranda@gmail.com'),
+('7', '7', 'multi', 'tecnica', 'a', '7', '7', 'alumno.paltamiranda@gmail.com'),
+('8', '8', 'medios', 'tecnica', 'a', '8', '8', 'alumno.paltamiranda@gmail.com'),
+('9', '9', 'Economia2', 'Orientada', 'c', '9', '9', 'alumno.paltamiranda@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -72,16 +75,16 @@ CREATE TABLE `eleccion` (
 --
 
 INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`, `Cambio`) VALUES
-(1, 1, 0, 'Dentro del curso', 'No'),
-(2, 2, 0, 'Dentro del curso', 'No'),
-(3, 2, 0, 'Dentro del curso', 'No'),
-(4, 3, 0, 'Dentro del curso', 'No'),
-(5, 3, 0, 'Dentro del curso', 'No'),
-(6, 4, 0, 'Dentro del curso', 'No'),
-(7, 5, 0, 'Dentro del curso', 'No'),
-(8, 5, 0, 'Dentro del curso', 'No'),
-(9, 4, 0, 'Dentro del curso', 'Si'),
-(10, 2, 2, 'Dentro del curso', 'Si');
+(1, 1, 1, 'Dentro de la modalidad', 'No'),
+(2, 2, 2, 'Dentro de la modalidad', 'No'),
+(3, 2, 1, 'Dentro de la modalidad', 'No'),
+(4, 3, 2, 'Dentro de la modalidad', 'No'),
+(5, 3, 1, 'Dentro de la modalidad', 'No'),
+(6, 4, 1, 'Dentro de la modalidad', 'No'),
+(7, 5, 2, 'Dentro de la modalidad', 'No'),
+(8, 5, 1, 'Dentro de la modalidad', 'No'),
+(9, 4, 2, 'Dentro de la modalidad', 'Si'),
+(10, 2, 3, 'Dentro de la modalidad', 'Si');
 
 -- --------------------------------------------------------
 
@@ -94,16 +97,17 @@ CREATE TABLE `empleado` (
   `Nombre` varchar(365) NOT NULL,
   `Usuario` varchar(365) NOT NULL,
   `Tipo` varchar(25) NOT NULL,
-  `Contrasenia` varchar(365) NOT NULL
+  `Contrasenia` varchar(365) NOT NULL,
+  `Mail` varchar(365) NOT NULL DEFAULT 'alumno.paltamiranda@gmail.com'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `empleado`
 --
 
-INSERT INTO `empleado` (`ID_Empleado`, `Nombre`, `Usuario`, `Tipo`, `Contrasenia`) VALUES
-(1, 'Pepe', 'Pepe123', 'Secretaria', 'Pepe456'),
-(2, 'Jorge', 'Jorge123', 'Directivo', 'Jorge456');
+INSERT INTO `empleado` (`ID_Empleado`, `Nombre`, `Usuario`, `Tipo`, `Contrasenia`, `Mail`) VALUES
+(1, 'Pepe', 'Pepe123', 'Secretaria', 'Pepe456', 'alumno.paltamiranda@gmail.com'),
+(2, 'Jorge', 'Jorge123', 'Directivo', 'Jorge456', 'alumno.paltamiranda@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -134,9 +138,15 @@ INSERT INTO `info` (`DNI`, `Anio`, `Prom`, `Fichas`, `Inasistencias`, `Observaci
 ('2', '1', 2, 2, 2, 2),
 ('2', '2', 2, 2, 2, 2),
 ('2', '3', 2, 2, 2, 2),
+('23', '1', 2, 2, 2, 2),
+('23', '2', 2, 2, 2, 2),
+('23', '3', 2, 2, 2, 2),
 ('3', '1', 3, 3, 3, 3),
 ('3', '2', 3, 3, 3, 3),
 ('3', '3', 3, 3, 3, 3),
+('32', '1', 9, 1, 1, 1),
+('32', '2', 9, 1, 1, 1),
+('32', '3', 9, 1, 1, 1),
 ('4', '1', 4, 4, 4, 4),
 ('4', '2', 4, 4, 4, 4),
 ('4', '3', 4, 4, 4, 4),
@@ -202,7 +212,9 @@ INSERT INTO `total` (`DNI`, `PromediosT`, `FichasT`, `InasistenciasT`, `Observac
 ('1', 1, 3, 3, 3, '2'),
 ('10', 10, 30, 30, 30, '11'),
 ('2', 2, 6, 6, 6, '3'),
+('23', 2, 6, 6, 6, '2'),
 ('3', 3, 9, 9, 9, '3'),
+('32', 9, 3, 3, 3, 'aaaaaaaaa'),
 ('4', 4, 12, 12, 12, '5'),
 ('5', 5, 15, 15, 15, '6'),
 ('6', 1.33333, 18, 18, 18, '6'),
