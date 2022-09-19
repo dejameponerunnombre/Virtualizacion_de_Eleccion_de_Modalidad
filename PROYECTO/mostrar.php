@@ -40,7 +40,7 @@ if($ahora < $final && $ahora > $inicio)
         <nav>
             <div>
 
-                <a href="http://www.parroquialjuan23.edu.ar/index.html"><img src="../IMG/Escuela.png" alt="Imagen de fondo" class="logo"></a>
+                <a href="inicio.html"><img src="../IMG/Escuela.png" alt="Imagen de fondo" class="logo"></a>
 
             </div>
             <input type="checkbox" name="check" id="check">
