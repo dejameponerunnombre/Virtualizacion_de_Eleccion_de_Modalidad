@@ -323,7 +323,7 @@ for($x = 1; $x <= 5; $x++)
 <script src="../js/custom.js"></script>
 </div>
 </body>
-<footer class="pie-pagina" style="left: 0; right: 0; position:fixed; bottom:0;">
+<footer class="pie-pagina" style="left: 0; right: 0;  bottom:0;">
     <div class="grupo-2">
         <small>&copy; 2022 <b>7mo Informática</b> - Grupo 3</small>
     </div>
