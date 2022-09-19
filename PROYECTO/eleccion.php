@@ -52,15 +52,16 @@ if($cant == 0)
         $borrar3 = $conexion -> query($eliminar3);
         $eliminar4 = "DELETE FROM alumnos where DNI = $DNI";
         $borrar4 = $conexion -> query($eliminar4);
-        if($borrar===TRUE && $borrar1 === TRUE && $borrar2=== TRUE && $borrar3=== TRUE && $borrar4=== TRUE)
+        if($borrar==TRUE)
         {
-            ECHO"Alumno eliminado de la base de datos";
+            include("login_alumno_eleccion.html");
+            echo '<script>alert("Alumno eliminado de la base de datos")</script>';
         }
     }
 }
 else 
 {
-    echo "Eleccion ya realizada";
+    include("login_alumno_eleccion.html");
+    echo '<script>alert("Eleccion realizada correctamente")</script>';
 }
-
 ?>
