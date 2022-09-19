@@ -289,9 +289,6 @@ if (empty($siquesi[0])===FALSE)
     if ($nomod[0] > 0)
     {
         ?>
-            <div class="col-md-12">
-                <h2>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
-                <hr>
         <?php
         if($z!=1)
         {
@@ -373,10 +370,11 @@ if (empty($siquesi[0])===FALSE)
 </table></div>
 <?php  
 ?>
-
-</div>
 <br>
-<button type="submit" class="boton2" style="margin-left: 85%; "><a href="Excel1curso.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>                            
+</div>
+
+<button type="submit" class="boton2" style="margin-left: 85%;"><a href="Excel1curso.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>                            
+
                
                   
 
