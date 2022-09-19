@@ -67,6 +67,32 @@
     color: #849bfd;
 }
 
+
+
+
+
+
+/*-------------------MENSAJE VERDE MOSTRAR.PHP-----------------*/
+
+.texto-centro{
+}
+
+.mesaje_verde{
+    background: rgba(125, 192, 125, 0.637) ;
+    border-radius: 5px;
+    margin-top: 10%;
+    padding: 30px;
+    
+}
+
+.mesaje_verde p{
+    
+    margin-top: 20px;
+}
+
+
+
+
 @media screen and (max-width:800px){
     .pie-pagina .grupo-1{
         width: 90%;
