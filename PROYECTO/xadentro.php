@@ -203,23 +203,23 @@ session_start();
                             <div class="questions">
                             <div class="question-wrap">
                             <form action = "sineleccion.php" method = "post">
-                                            <input type="submit" id= "a" name="question" value = "a" style="display: none;">
-                                                <label for= "a" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">A</label>
+                                            <input type="submit" id= "A" name="question" value = "A" style="display: none;">
+                                                <label for= "A" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">A</label>
                                                 <br>
-                                                <input type="submit" id="b" name="question" value = "b" style="display: none;">
-                                                <label for="b" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">B</label>
+                                                <input type="submit" id="B" name="question" value = "B" style="display: none;">
+                                                <label for="B" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">B</label>
                                                 <br>
-                                                <input type="submit" id="c" name="question" value = "c" style="display: none;">
-                                                <label for="c" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">C</label>
+                                                <input type="submit" id="C" name="question" value = "C" style="display: none;">
+                                                <label for="C" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">C</label>
                                                 <br>
-                                                <input type="submit" id="d" name="question" value = "d" style="display: none;">
-                                                <label for="d" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">D</label>
+                                                <input type="submit" id="D" name="question" value = "D" style="display: none;">
+                                                <label for="D" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">D</label>
                                                 <br>
-                                                <input type="submit" id="e" name="question" value = "e" style="display: none;">
-                                                <label for="e" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">E</label>
+                                                <input type="submit" id="E" name="question" value = "E" style="display: none;">
+                                                <label for="E" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">E</label>
                                                 <br>
-                                                <input type="submit" id="g" name="question" value = "g" style="display: none;">
-                                                <label for="g" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">G</label>
+                                                <input type="submit" id="G" name="question" value = "G" style="display: none;">
+                                                <label for="G" style="margin-left: 40%; color:#647bde; cursor:pointer; cursor:pointer;">G</label>
                             </form>
                             <form action = "todoscursos.php" method = "post">
                                 <input type="submit" id= "p" name="question" value = "p" style="display: none;">

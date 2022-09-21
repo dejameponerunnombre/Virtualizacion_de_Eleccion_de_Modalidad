@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-09-2022 a las 21:38:28
+-- Tiempo de generación: 21-09-2022 a las 20:34:08
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -43,18 +43,18 @@ CREATE TABLE `alumnos` (
 --
 
 INSERT INTO `alumnos` (`DNI`, `CUIL`, `Nombre`, `Escuela`, `Curso`, `Usuario`, `Contrasenia`, `Mail`) VALUES
-('1', '1', 'economia', 'orientada', 'c', '1', '1', 'alumno.paltamiranda@gmail.com'),
+('1', '1', 'economia', 'orientada', 'C', '1', '1', 'alumno.paltamiranda@gmail.com'),
 ('10', '10', 'Infromatica2', 'Tecnica', 'G', '10', '10', 'alumno.paltamiranda@gmail.com'),
-('2', '2', 'natu', 'orientada', 'c', '2', '2', 'alumno.paltamiranda@gmail.com'),
-('23', '23', 'paulo', 'tecnica', 'b', '23', '23', 'alumno.paltamiranda@gmail.com'),
-('3', '3', 'rales', 'orientada\r\n', 'c', '3', '3', 'alumno.paltamiranda@gmail.com'),
-('32', '32', 'londra', 'tecnica', 'a', '32', '32', 'alumno.paltamiranda@gmail.com'),
-('4', '4', 'elec', 'tecnica', 'a', '4', '4', 'alumno.paltamiranda@gmail.com'),
-('5', '5', 'tronica', 'tecnica', 'a', '5', '5', 'alumno.paltamiranda@gmail.com'),
-('6', '6', 'informatica', 'tecnica', 'a', '6', '6', 'alumno.paltamiranda@gmail.com'),
-('7', '7', 'multi', 'tecnica', 'a', '7', '7', 'alumno.paltamiranda@gmail.com'),
-('8', '8', 'medios', 'tecnica', 'a', '8', '8', 'alumno.paltamiranda@gmail.com'),
-('9', '9', 'Economia2', 'Orientada', 'c', '9', '9', 'alumno.paltamiranda@gmail.com');
+('2', '2', 'natu', 'orientada', 'C', '2', '2', 'alumno.paltamiranda@gmail.com'),
+('23', '23', 'paulo', 'tecnica', 'B', '23', '23', 'alumno.paltamiranda@gmail.com'),
+('3', '3', 'rales', 'orientada\r\n', 'C', '3', '3', 'alumno.paltamiranda@gmail.com'),
+('32', '32', 'londra', 'tecnica', 'A', '32', '32', 'alumno.paltamiranda@gmail.com'),
+('4', '4', 'elec', 'tecnica', 'A', '4', '4', 'alumno.paltamiranda@gmail.com'),
+('5', '5', 'tronica', 'tecnica', 'A', '5', '5', 'alumno.paltamiranda@gmail.com'),
+('6', '6', 'informatica', 'tecnica', 'A', '6', '6', 'alumno.paltamiranda@gmail.com'),
+('7', '7', 'multi', 'tecnica', 'A', '7', '7', 'alumno.paltamiranda@gmail.com'),
+('8', '8', 'medios', 'tecnica', 'A', '8', '8', 'alumno.paltamiranda@gmail.com'),
+('9', '9', 'Economia2', 'Orientada', 'C', '9', '9', 'alumno.paltamiranda@gmail.com');
 
 -- --------------------------------------------------------
 
