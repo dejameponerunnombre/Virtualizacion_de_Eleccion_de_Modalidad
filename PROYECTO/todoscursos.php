@@ -234,7 +234,7 @@
 
         <div id="page-wrapper" style="z-index:1" >
             <div id="page-inner" >
-                <div class="row">
+            
                 <div class="col-md-12">
                     <h2>Lista de <span style="color:#040544; font-weight: 900;">Todos Los Cursos</span></h2> 
                     <hr>  
@@ -388,13 +388,9 @@ for($x="A";$x<="G" and $x!="f";$x++)
 
 } 
 ?>
-
-
 <button type="submit" class="boton2" style="margin-left: 85%; "><a href="ExcelCurso.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>                            
 
-</div>
-                                  
-<br>             
+<br><br><br><br>          
                   
 
                              
