@@ -94,7 +94,7 @@ else
         {
             ?>
                 <div class="col-md-12">
-                    <h2>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
+                    <h2>Listas por División: <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
                     <hr>
                     <div class="datagrid">
                         <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th></tr>

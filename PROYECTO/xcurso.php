@@ -199,7 +199,7 @@ session_start();
 
                         <div class="wrap-7">
                             <input class="input" type="radio" id="tab-7" name="tabs">
-                            <label class="label" for="tab-7"><div>Cursos</div><div class="cross"></div> </label>
+                            <label class="label" for="tab-7"><div>Divisiones</div><div class="cross"></div> </label>
                             <div class="questions">
                             <div class="question-wrap">
                             <form action = "sineleccion.php" method = "post">
@@ -223,7 +223,7 @@ session_start();
                             </form>
                             <form action = "todoscursos.php" method = "post">
                                 <input type="submit" id= "p" name="question" value = "p" style="display: none;">
-                                <label for= "p" style="margin-left: 23%; font-size: 13px; color:#172d8d; cursor:pointer; cursor:pointer;">Todos los Cursos</label>
+                                <label for= "p" style="margin-left: 23%; font-size: 13px; color:#172d8d; cursor:pointer; cursor:pointer;">Todas las Divisiones</label>
                             </form>
                                 </div>
                                 </div>
@@ -253,7 +253,7 @@ if (empty($siquesi[0]) === FALSE)
 {
     ?>
     <div class="col-md-12">
-                    <h2>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
+                    <h2>Listas por División: <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
                      <hr>
     <div class="datagrid">   <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th></tr>
     <?php
@@ -282,11 +282,11 @@ if (empty($siquesi[0]) === FALSE)
     {
         ?>
         <div class="col-md-12" style="position: relative;display: inline-block;">
-                    <h2>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
+                    <h2>Listas por División:  <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h2>   
                      <hr>
                      
                      <a class="img" ><img src="../IMG/curso.jpg" style="opacity: 0.2; width: 50%; margin-left: 25%; vertical-align: top;"/></a> 
-                     <h1 style="text-align: center;position: absolute; top: 50%; margin-left: 50%; transform: translate(-50%, -50%);font-size: 25px;"> No hay alumnos que hayan hecho la elección en este curso  </h1>
+                     <h1 style="text-align: center;position: absolute; top: 50%; margin-left: 50%; transform: translate(-50%, -50%);font-size: 25px;"> No hay alumnos que hayan hecho la elección en esta división</h1>
         
         <?php
     }

@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todos los Cursos</title>
+    <title>Todas las Divisiones</title>
 
     <link href="bootstrap2.css" rel="stylesheet" />
     <link href="font-awesome.css" rel="stylesheet" />
@@ -194,7 +194,7 @@
 
                         <div class="wrap-7">
                             <input class="input" type="radio" id="tab-7" name="tabs">
-                            <label class="label" for="tab-7"><div>Cursos</div><div class="cross"></div> </label>
+                            <label class="label" for="tab-7"><div>Divisiones</div><div class="cross"></div> </label>
                             <div class="questions">
                             <div class="question-wrap">
                             <form action = "sineleccion.php" method = "post">
@@ -218,7 +218,7 @@
                             </form>
                             <form action = "todoscursos.php" method = "post">
                                 <input type="submit" id= "p" name="question" value = "p" style="display: none;">
-                                <label for= "p" style="margin-left: 23%; font-size: 13px; color:#172d8d; cursor:pointer; cursor:pointer;">Todos los Cursos</label>
+                                <label for= "p" style="margin-left: 22%; font-size: 13px; color:#172d8d; cursor:pointer; cursor:pointer;">Todas las Divisiones</label>
                             </form>
                                 </div>
                                 </div>
@@ -236,7 +236,7 @@
             <div id="page-inner" >
             
                 <div class="col-md-12">
-                    <h2>Lista de <span style="color:#040544; font-weight: 900;">Todos Los Cursos</span></h2> 
+                    <h2>Lista de <span style="color:#040544; font-weight: 900;"> Divisiones</span></h2> 
                     <hr>  
 <?php
 for($x="A";$x<="G" and $x!="f";$x++)
@@ -287,7 +287,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
             ?>
             <div class="col-md-12">
                 <br>
-                <h1>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h1>   
+                <h1>Listas por División: <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h1>   
         </div>
             <?php
             if($z!=$x)
@@ -322,7 +322,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
             ?> 
              
                 <div class="col-md-12" style="position: relative;display: inline-block;">
-                    <h1>Listas por División: Curso <span style="color:#040544;">3º <?php echo $x ?></span></h1>   
+                    <h1>Listas por División: <span style="color:#040544;">3º <?php echo $x ?></span></h1>   
         
                     <br>
                     </table></div> 
@@ -341,7 +341,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
         {
             ?>
                 <div class="col-md-12" style="position: relative;display: inline-block;">
-                    <h1>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h1>   
+                    <h1>Listas por División: <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h1>   
     
                     <div class="datagrid">
                         </div>
@@ -370,10 +370,10 @@ for($x="A";$x<="G" and $x!="f";$x++)
 
             ?>  
             <div class="col-md-12" style="position: relative;display: inline-block;">
-                <h1>Listas por División: Curso <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h1>   
+                <h1>Listas por División: <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h1>   
             
                 <br>
-            <h1 style="text-align: center; margin-left: 50%; transform: translate(-50%, -50%);font-size:  16px; border: 2px solid #172d8d; padding: 10px; margin-top: 30px;">No hay alumnos en este curso</h1>
+            <h1 style="text-align: center; margin-left: 50%; transform: translate(-50%, -50%);font-size:  16px; border: 2px solid #172d8d; padding: 10px; margin-top: 30px;">No hay alumnos en esta división</h1>
             <?php
         }      
     }
