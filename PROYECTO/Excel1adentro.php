@@ -9,6 +9,14 @@ if ($siquesi[0] > 0)
 {
     $encabezado = '';
     $encabezado = $siquesi["Descripcion"]."\n"."Puesto"."\t"."Alumno"."\t"."DNI"."\t"."Promedio"."\t"."Fichas"."\t"."Observaciones"."\t"."Inasistencias"."\t"."Comentario"."\t"."Situacion"."\t";
+    $format_bold =& $encabezado->addFormat();
+$format_bold->setBold();
+
+$format_title =& $encabezado->addFormat();
+$format_title->setBold();
+$format_title->setColor('yellow');
+$format_title->setPattern(1);
+$format_title->setFgColor('blue');
     for($y = 1; $y <= $siquesi[0]; $y++)
     {   
         $infoalu="SELECT e.Prioridad, a.Nombre, e.DNI, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, e.Situacion

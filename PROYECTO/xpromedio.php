@@ -1,3 +1,44 @@
+<?php
+$limpiado="UPDATE eleccion SET Prioridad = 0";
+$limpio= $conexion->query($limpiado);
+for($x = 1; $x <= 5; $x++)
+{
+    $ahorasi="SELECT Ingresos FROM modalidad where ID_Modalidad = $x";
+    $quesi= $conexion->query($ahorasi);
+    $siquesi = $quesi ->fetch_array();
+    if ($siquesi[0] > 0)
+    {
+    for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
+    {    
+        $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
+        and e.ID_Modalidad = $x and e.Prioridad = 0 and e.Cambio = 'No' 
+        order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
+        $connB = $conexion -> query($varB);
+        $DNI = $connB ->fetch_array();
+        $cant = $connB ->num_rows;
+        if($cant == 0)
+        {
+            $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
+            and e.ID_Modalidad = $x and e.Prioridad = 0
+            order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
+            $connB = $conexion -> query($varB);
+            $DNI = $connB ->fetch_array();
+        }
+        $var2 = "UPDATE eleccion SET Prioridad = '$y', Situacion = 'Dentro de la modalidad' where DNI = $DNI[0]";
+        $conn2= $conexion->query($var2);
+    }
+    }
+    if($siquesi[0] > 39)
+    {
+        for($y = 40; $y <= $siquesi[0]; $y++)
+    {   
+
+        $var4 = "UPDATE eleccion SET Situacion = 'En lista de espera' where DNI = $DNI[$i]";
+        $conn4 = $conexion->query($var4); 
+    }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -196,7 +237,7 @@
 
                         <div class="wrap-7">
                             <input class="input" type="radio" id="tab-7" name="tabs">
-                            <label class="label" for="tab-7"><div>Divisiones</div><div class="cross"></div> </label>
+                            <label class="label" for="tab-7"><div>Cursos</div><div class="cross"></div> </label>
                             <div class="questions">
                             <div class="question-wrap">
                             <form action = "sineleccion.php" method = "post">
@@ -220,7 +261,7 @@
                             </form>
                             <form action = "todoscursos.php" method = "post">
                                 <input type="submit" id= "p" name="question" value = "p" style="display: none;">
-                                <label for= "p" style="margin-left: 22%; font-size: 13px; color:#172d8d; cursor:pointer; cursor:pointer;">Todas las Divisiones</label>
+                                <label for= "p" style="margin-left: 23%; font-size: 13px; color:#172d8d; cursor:pointer; cursor:pointer;">Todos los Cursos</label>
                             </form>
                                 </div>
                                 </div>
