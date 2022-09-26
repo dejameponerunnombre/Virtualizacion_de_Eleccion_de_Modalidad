@@ -238,7 +238,7 @@ for($x = 1; $x <= 5; $x++)
 
                         <div class="wrap-7">
                             <input class="input" type="radio" id="tab-7" name="tabs">
-                            <label class="label" for="tab-7"><div>Cursos</div><div class="cross"></div> </label>
+                            <label class="label" for="tab-7"><div>Divisiones</div><div class="cross"></div> </label>
                             <div class="questions">
                             <div class="question-wrap">
                             <form action = "sineleccion.php" method = "post">
@@ -262,7 +262,7 @@ for($x = 1; $x <= 5; $x++)
                             </form>
                             <form action = "todoscursos.php" method = "post">
                                 <input type="submit" id= "p" name="question" value = "p" style="display: none;">
-                                <label for= "p" style="margin-left: 23%; font-size: 13px; color:#172d8d; cursor:pointer; cursor:pointer;">Todos los Cursos</label>
+                                <label for= "p" style="margin-left: 22%; font-size: 13px; color:#172d8d; cursor:pointer; cursor:pointer;">Todas las Divisiones</label>
                             </form>
                                 </div>
                                 </div>
