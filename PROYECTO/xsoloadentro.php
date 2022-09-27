@@ -1,4 +1,5 @@
 <?php
+include ("db.php");
 $limpiado="UPDATE eleccion SET Prioridad = 0";
 $limpio= $conexion->query($limpiado);
 for($x = 1; $x <= 5; $x++)
