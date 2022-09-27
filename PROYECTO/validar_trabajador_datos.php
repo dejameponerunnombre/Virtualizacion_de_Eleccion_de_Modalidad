@@ -7,27 +7,38 @@ include("db.php");
 $consult = "SELECT Usuario, Contrasenia, Tipo FROM empleado where Usuario = '$usuario' and Contrasenia = '$contraseña'";
 $resultado= $conexion->query($consult);
 $filas = $resultado -> fetch_array();
-if($filas[0]===$usuario && $filas[1]===$contraseña )
+if(empty($filas[0]) === false)
 {
- switch($filas['Tipo'])
-   {
-     case 'Secretaria': {
-      include("panel de control.html");
-      break;
-     }
-     case 'Directivo': 
-      {
-      include('directivos.php');
-      break;
+  if($filas[0]===$usuario && $filas[1]===$contraseña )
+  {
+  switch($filas['Tipo'])
+     {
+       case 'Secretaria': 
+        {
+          include("panel de control.html");
+          break;
+        }
+        case 'Directivo': 
+        {
+        include('directivos.php');
+        break;
+        }
     }
+  }
+  else
+  {
+    include("login_trabajador_datos.html");
+    echo '<script>alert("Algún campo fue completado de manera erronea")</script>';
+    ?>
+    <!--<h1> Datos erroneos </h1>-->
+    <?php
   }
 }
 else
 {
   include("login_trabajador_datos.html");
   echo '<script>alert("Algún campo fue completado de manera erronea")</script>';
-
-?>
+  ?>
   <!--<h1> Datos erroneos </h1>-->
   <?php
 }

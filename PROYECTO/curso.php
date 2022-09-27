@@ -1,7 +1,6 @@
 <?php
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
-session_start();
 $_SESSION['usuario'] = $usuario;
 $_SESSION['contraseña'] = $contraseña;
 include("db.php");
@@ -24,9 +23,6 @@ if($filas)
     else
     {
         include("curso.html");
-    ?>
-    <h1> Todavia no ha realizado la eleccion </h1>
-    <?php
     }
 }
 else
@@ -36,5 +32,5 @@ else
     <h1> Datos erroneos </h1>
     <?php
 }
-mysqli_free_result($resultado);
-mysqli_close($conexion);
+
+
