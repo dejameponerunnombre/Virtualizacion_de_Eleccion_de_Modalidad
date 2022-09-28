@@ -295,7 +295,7 @@ nav{
 
 
 .container{
-    background: rgb(255, 255, 255);
+    background: rgb(255, 253, 255);
 }
 
 .caract2{
@@ -354,7 +354,7 @@ background-color: #ffffff;
 
 body{
     
-    background-image: url(../IMG/prueba.jpg);
+    background-color: #3886FF;
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
