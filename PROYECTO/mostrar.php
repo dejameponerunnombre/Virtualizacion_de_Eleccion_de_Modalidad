@@ -31,7 +31,7 @@ if($ahora < $final && $ahora > $inicio)
     <link rel="stylesheet" href="footer1.css ?v=<?php echo time(); ?>">
     <script src="https://kit.fontawesome.com/2eed8f0a03.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="footer.css">
-
+    <link rel="stylesheet" href="style.css">
     <title>Resultado de elección</title>
   </head>
   
@@ -51,23 +51,34 @@ if($ahora < $final && $ahora > $inicio)
             </label>
             <ul class="nav-menu">
                 
-                <li><a href="login_alumno_eleccion.html">Ingreso Alumnos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="inicio.html">Cerrar Sesión</a></li>
+                
 
             </ul>
         </nav>
         
+        <div class="imagen-costado">
+        <img src="../IMG/elecciones.jpg" style="width: 600px; left:70%;">
+        </div>
+  
+<br>
+<div style=" padding-top: 2%;padding-bottom: 2%;margin-left: 3%;width: 570px; border: 3px solid #9c9cd9; margin-top: 20px; background-color:transparent;">
+    <h1 style="color:#1c244a; font-size:50px; padding-left: 5%; font-family: serif; text-decoration:underline;">Resultado de la Elección</h1>
+    <br>    
+    <div style="padding-left: 5%;">
         
-        <div class="texto-centro">
-           <div class="mesaje_verde" style="color:green;">
+        <div  >
 
             <!--<h1>El alumno <?php echo $alumnos[0] ?> esta <?php echo $eleccion[0] ?> de <?php echo $modalidad[0]?> en el puesto <?php echo $eleccion[1]?></h1>-->
-            <h1>Estás <?php echo $eleccion[0] ?> de <?php echo $modalidad[0]?></h1>
-            <p>Si tiene alguna consulta o inquietud, porfavor comunicarse con <a href="mailto:secretaria@gmail.com">Secretaría</a></p>
+            <h1 style="font-family: inherit; font-size: 26px;">El alumno se encuentra <?php echo $eleccion[0] ?> de la modalidad: <br><br><spans style="color:#002f85; padding-left: 35%;text-decoration:underline;"><?php echo $modalidad[0]?></h1>
+            <br><br>
+            
+            
+            <p>Si tiene alguna consulta o inquietud, porfavor comunicarse con <a href="mailto:secretaria@gmail.com" style="background-color: #cdf2ff; color:black;">Secretaría</a>.</p>
 
             </div>
         </div>
-        
+</div>
 <br>
 
 
