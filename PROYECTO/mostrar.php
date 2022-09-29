@@ -70,7 +70,7 @@ if($ahora < $final && $ahora > $inicio)
         <div  >
 
             <!--<h1>El alumno <?php echo $alumnos[0] ?> esta <?php echo $eleccion[0] ?> de <?php echo $modalidad[0]?> en el puesto <?php echo $eleccion[1]?></h1>-->
-            <h1 style="font-family: inherit; font-size: 26px;">El alumno se encuentra <?php echo $eleccion[0] ?> de la modalidad: <br><br><spans style="color:#002f85; padding-left: 35%;text-decoration:underline;"><?php echo $modalidad[0]?></h1>
+            <h1 style="font-family: inherit; font-size: 26px;">El alumno se encuentra <?php echo $eleccion[0] ?>: <br><br><spans style="color:#002f85; padding-left: 35%;text-decoration:underline;"><?php echo $modalidad[0]?></h1>
             <br><br>
             
             
