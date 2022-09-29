@@ -493,3 +493,45 @@ body{
 
     
 }
+
+.caract .derecha {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    border: 1px solid #186fe0;
+    padding: 10px;
+    box-shadow: 1px 1px 1px 1px black;
+  }
+  .right {
+    max-width: 50%;
+    width: 70px;
+  }
+  .right {
+    flex-basis: 10%
+  }
+  .p {
+    font-size: 20px;
+    padding-left: 20px;
+  }
+  .recuadro{
+    text-align: center;
+  }
+  .caract .izquierda {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    border: 1px solid #186fe0;
+    padding: 10px;
+    box-shadow: 1px 1px 1px 1px black;
+  }
+  .left {
+    max-width: 50%;
+    width: 70px;
+  }
+  .left {
+    flex-basis: 10%
+  }
+  .p {
+    font-size: 20px;
+    padding-left: 20px;
+  }
