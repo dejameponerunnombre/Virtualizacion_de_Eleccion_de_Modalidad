@@ -10,6 +10,8 @@
     <link href="custom.css" rel="stylesheet" />
     <link rel="stylesheet" href="boton.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="icon" href="../IMG/Logo_azul (2).PNG">
+
     
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head> 
@@ -96,7 +98,7 @@
         else
         {
             ?>             
-                <h2>Ingrese DNI del alumno que quiere cambiar su eleccion</h2>   
+                <h2>Ingrese DNI del alumno que desea cambiar su elección</h2>   
 
                   <hr />
               
@@ -118,7 +120,7 @@
                     $var = empty($_SESSION['var']);
                     if($var == false)
                         {
-                            ?> <div class="boton_formulario"> <h2>El alumno no realizo la eleccion aún</h2></div>
+                            ?> <div class="boton_formulario"> <h2>El alumno no ha realizado la elección</h2></div>
                              <?php 
                         }
                     $e = empty($_POST['DNI']);

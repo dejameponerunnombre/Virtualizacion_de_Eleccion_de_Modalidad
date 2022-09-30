@@ -56,36 +56,32 @@ footer {
 
 .body{
     height: 100%;
-    position: relative;
+    position:fixed;
     
 }
 
-.image{
+
+.imagen-costado img{
     
-    background-image: url(../IMG/prueba-elec.jpg);
-   
+    width: 350px;
+    top: 50%;
+    left: 10%;
+    position: absolute;
+    transform: translate(-50%, -50%);
     
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: contain;
-    position: static;
+    
+
 }
 
-.image2{
-    
-    background-image: url(../IMG/prueba-elec.jpg);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
-    position: static;
-}
 .formulario {
     
-    margin: auto;
-    width: 50%;
-    border: 0;
-    padding:  70px 100px 70px 100px;
     
+    
+    border: 0;
+    margin-left: 10%;
+    
+    margin-top: 4%;
+
     color: rgb(0, 0, 0);
     
    

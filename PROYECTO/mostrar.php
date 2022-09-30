@@ -58,7 +58,7 @@ if($ahora < $final && $ahora > $inicio)
         </nav>
         
         <div class="imagen-costado">
-        <img src="../IMG/elecciones.jpg" style="width: 600px; left:70%;">
+        <img src="../IMG/resultado2.jpg" style="width: 430px; left:70%;">
         </div>
   
 <br>

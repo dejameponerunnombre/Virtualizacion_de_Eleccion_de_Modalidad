@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="form-ingreso.css">
+    <link rel="icon" href="../IMG/Logo_azul (2).PNG">
+
 
     <title>Eliminar alumnos</title>
 </head>

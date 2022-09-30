@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="boton.css">
     <link rel="stylesheet" href="footer.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel="icon" href="../IMG/Logo_azul (2).PNG">
+
 </head>
 <body>
      

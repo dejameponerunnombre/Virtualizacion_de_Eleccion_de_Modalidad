@@ -7,7 +7,8 @@
     
     <link rel="stylesheet" href="footer.css">
     <link href="bootstrap.css" rel="stylesheet" />
-  
+    <link rel="icon" href="../IMG/Logo_azul (2).PNG">
+
     <link rel="stylesheet" href="boton.css">
     <link href="font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" href="validacion_DNI.css?v=<?php echo time(); ?>">
