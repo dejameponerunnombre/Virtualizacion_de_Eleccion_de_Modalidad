@@ -19,7 +19,9 @@ h2{
 
 .container h1{
     text-align: center;
+    text-decoration: underline;
     color: #000;
+    font-size: 36px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -249,7 +251,6 @@ nav{
 /*----------------TEXTO INFORMACION-----------------*/
 
 .caract h3{
-    padding-bottom: 20px;
     color: #000;
 }
 
@@ -354,10 +355,12 @@ background-color: #ffffff;
 
 body{
     
-    background-color: whitesmoke;
-    background-repeat: no-repeat;
+    background-image: url("../IMG/prueba-elec.jpg");
+    
+   background-repeat : repeat;
+
     background-position: right;
-    background-size: cover;
+    background-size: contain;
 }
 
 .videos{
