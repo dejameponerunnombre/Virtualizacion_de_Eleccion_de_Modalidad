@@ -243,7 +243,7 @@
                     <div class="col-md-12">
                      <h2>Listas de Modalidades</h2>  
                      <hr>
-                     <a class="img" ><img src="../IMG/directivos.jpg" style="width: 40%; margin-left: 30%; vertical-align: top;"/></a> 
+                     <img src="../IMG/directivos.jpg" style="width: 40%; margin-left: 30%; vertical-align: top;"/>
                 </div>
                                   
                

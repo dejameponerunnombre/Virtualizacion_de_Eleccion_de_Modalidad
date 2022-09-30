@@ -74,7 +74,7 @@ if($ahora < $final && $ahora > $inicio)
             <br><br>
             
             
-            <p>Si tiene alguna consulta o inquietud, porfavor comunicarse con <a href="mailto:secretaria@gmail.com" style="background-color: #cdf2ff; color:black;">Secretaría</a>.</p>
+            <p>Si tiene alguna consulta o inquietud, por favor comunicarse con <a href="mailto:secretaria@gmail.com" style="background-color: #cdf2ff; color:black;">Secretaría</a>.</p>
 
             </div>
         </div>
