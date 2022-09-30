@@ -29,18 +29,13 @@ if(empty($filas[0]) === false)
   {
     include("login_trabajador_datos.html");
     echo '<script>alert("Algún campo fue completado de manera erronea")</script>';
-    ?>
-    <!--<h1> Datos erroneos </h1>-->
-    <?php
   }
 }
 else
 {
   include("login_trabajador_datos.html");
   echo '<script>alert("Algún campo fue completado de manera erronea")</script>';
-  ?>
-  <!--<h1> Datos erroneos </h1>-->
-  <?php
 }
 mysqli_free_result($resultado);
 mysqli_close($conexion);
+session_abort();

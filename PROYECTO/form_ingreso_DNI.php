@@ -14,10 +14,7 @@
     <link rel="icon" href="../IMG/Logo_azul (2).PNG">
 
 </head>
-<body>
-       
-           
-          
+<body>     
     <div id="wrapper">
          <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="adjust-nav">
@@ -38,7 +35,6 @@
 
             </div>
         </div>
-        <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
@@ -98,6 +94,7 @@
                     </div> 
                 </form> 
                 <?php 
+                session_start();
                 $var = empty($_SESSION['var']);
                 if($var == false)
                     {
@@ -108,7 +105,6 @@
                     if($x == false)
                     {
                         $DNI = $_POST['DNI'];
-                        session_start(); 
                         $_SESSION['DNI'] = $DNI;
                         include("db.php");
                         $request = "SELECT*FROM alumnos where DNI = '$DNI'";
