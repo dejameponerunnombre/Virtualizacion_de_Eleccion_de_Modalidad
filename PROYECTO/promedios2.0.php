@@ -86,13 +86,17 @@
                   <hr />
               
                   <?php
+                  if(!isset($_SESSION)) 
+                  { 
+                      session_start(); 
+                  } 
+                  $_SESSION['var'] = null;
 $inicio = mktime(0, 0, 0, 5, 1, 2022);
 $final =  mktime(0, 0, 0, 10, 15, 2022);
 $ahora = time() ;
 
 if($ahora < $final && $ahora > $inicio)
 {
-session_start();
 include("db.php");
 $limpiado="UPDATE eleccion SET Prioridad = 0";
 $limpio= $conexion->query($limpiado);

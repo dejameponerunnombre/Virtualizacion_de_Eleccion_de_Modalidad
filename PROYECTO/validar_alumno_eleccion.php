@@ -23,7 +23,7 @@ if(empty($filas[0]) === false)
         }
         else
         {
-            include("ELECCION.html");
+            include("ELECCIONhtml.php");
         }
     }
     else

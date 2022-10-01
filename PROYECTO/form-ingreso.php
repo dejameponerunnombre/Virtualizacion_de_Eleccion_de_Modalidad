@@ -81,7 +81,10 @@
                     </div>
                 </div>              
                 <?php
-                session_start();
+                if(!isset($_SESSION)) 
+                { 
+                    session_start(); 
+                } 
                 include("db.php");
                 $x = empty($_SESSION['x']);
         if($x == false)
@@ -99,16 +102,16 @@
                               </ul>
 	                        </div> 
             <?php 
+            $_SESSION['x'] = null;
         }
         else
         {
             ?>  
-                <h2>Ingresar datos del alumno</h2>   
-                  <hr />
-                  <form action="form-ingreso.php" method="post"  >
+            <h2>Ingresar datos del alumno</h2>   
+            <hr />
+            <form action="form-ingreso.php" method="post"  >
                     <div class="info">
-                    <div class="datos">
-                        
+                    <div class="datos">        
                         <br>
                         <h3>DNI del alumno</h3>   
                         <p><input type="number" name="DNI" id="DNI"></p>
@@ -122,8 +125,8 @@
                     </div>
                         </form>
                         <?php
-                        $vari = $_SESSION['var'];
-                        if(empty($vari) == false)
+                        $vari = empty($_SESSION['var']);
+                        if($vari == false)
                             {   
                                 $DNI = $_SESSION['DNI'];
                                 $request = "SELECT*FROM total where DNI = '$_SESSION[DNI]'";
@@ -136,6 +139,7 @@
                                 <p>Observaciones totales: <?php echo $array["ObservacionesT"]?></p>
                                 <p>Comentario: <?php echo $array["Comentario"]?></p></div>
                                 <?php 
+                                $_SESSION['var'] = null;
                             }
                         $x = empty($_POST['DNI']);
                         
@@ -143,62 +147,58 @@
                         {
                             $DNI = $_POST['DNI'];
                             $_SESSION['DNI'] = $DNI;
-                            echo $_SESSION['DNI'];
                             include("db.php");
                             $request = "SELECT*FROM alumnos where DNI = '$_SESSION[DNI]'";
                             $resultado=mysqli_query($conexion,$request);
                             $filas = mysqli_num_rows($resultado);
                             if($filas > 0)
                             {
-                                echo $_SESSION['DNI'];
-                            $_SESSION['x'] = null;
-                            $array = $resultado -> fetch_array();
-
-                            $request2 = "SELECT*FROM info where DNI = '$_SESSION[DNI]'";
-                            $resultado2=mysqli_query($conexion,$request2);
-                            $filas2 = mysqli_num_rows($resultado2);
-                            ?>
-                            <h2>Alumno ingresado:</h2>  
-                              <p>Nombre: <?php echo $array["Nombre"]?></p>
-                              <p>DNI: <?php echo $array["DNI"]?></p>
-                              <?php
-                            if($filas2 > 0)
-                            {
-                                echo $_SESSION['DNI'];
-                                $var = 1;
-                                $_SESSION['var'] = $var;
-                            }
-                            if(empty($var) == false)
-                            {
+                                $_SESSION['x'] = null;
+                                $array = $resultado -> fetch_array();
+                                $request2 = "SELECT*FROM info where DNI = '$_SESSION[DNI]'";
+                                $resultado2=mysqli_query($conexion,$request2);
+                                $filas2 = mysqli_num_rows($resultado2);
                                 ?>
-                          <form action = "form-ingreso.php" method = "post" class="boton_formulario"> 
-                              <ul>
-                                <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
-                              </ul>              
-                         
-                          </form>   
-                          <?php
+                                <h2>Alumno ingresado:</h2>  
+                                <p>Nombre: <?php echo $array["Nombre"]?></p>
+                                <p>DNI: <?php echo $array["DNI"]?></p>
+                                </div>
+                                <?php
+                                if(empty($filas2) == false)
+                                {
+                                    $_SESSION['var'] = 1;
+                                }
+                                if(empty($_SESSION['var'] ) == false)
+                                {
+                                    ?>
+                                    <form action = "form-ingreso.php" method = "post" class="boton_formulario"> 
+                                    <ul>
+                                    <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
+                                    </ul>    
+                                    </div>              
+                            </div>             
+                                    </form>   
+                                    <?php
+                                }
+                                else{
+                                    ?>
+                                    <form action = "ingreso_de_datos.php" method = "post" class="boton_formulario"> 
+                                    <ul>
+                                    <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
+                                    </ul>  
+                                    </div>              
+                            </div>               
+                                    </form>   
+                                    <?php
+                                    }
                             }
-                            else{
-                                ?>
-                          <form action = "ingreso_de_datos.php" method = "post" class="boton_formulario"> 
-                              <ul>
-                                <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
-                              </ul>              
-                         
-                          </form>   
-                          <?php
+                            else
+                            {
+                                ?> <div class="boton_formulario"> <h2>Alumno no ingresado</h2></div>
+                                <?php 
                             }
-                                
-
-                            }
-                        else
-                        {
-                            ?> <div class="boton_formulario"> <h2>Alumno no ingresado</h2></div>
-                            <?php 
                         }
                     }
-        }
                         ?>              
     </div>
             </div>

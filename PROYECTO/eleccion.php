@@ -14,12 +14,10 @@ if($cant == 0)
             $b =$conexion -> query($y);
             if($b === TRUE)
             {
-                ECHO "Eleccion realizada";
+                $x = 10;
+                $_SESSION['x'] = $x;
+                include("ELECCIONhtml.php");
             }       
-            else 
-            {
-                ECHO "ERROR";
-            }
             $request = "SELECT Escuela FROM alumnos where DNI = $DNI";
             $consulta = $conexion -> query($request);
             $Escuela = $consulta ->fetch_array();

@@ -94,31 +94,48 @@
                     </div> 
                 </form> 
                 <?php 
-                session_start();
-                $var = empty($_SESSION['var']);
-                if($var == false)
+                
+                if(!isset($_SESSION)) 
+                { 
+                    session_start(); 
+                } 
+                $_SESSION['var'] = null;
+                $varia = empty($_SESSION['vari']);
+                if($varia == false)
                     {
                         ?> <div class="boton_formulario"> <h2>Las notas de este alumno no fueron cargadas con anterioridad</h2></div>
                          <?php 
+                         $_SESSION['vari'] = null;
                     }
-                    $x = empty($_POST['DNI']);
-                    if($x == false)
+                $x = empty($_POST['DNI']);
+                if($x == false)
+                {
+                    $DNI = $_POST['DNI'];
+                    $_SESSION['DNI'] = $DNI;
+                    include("db.php");
+                    $request = "SELECT*FROM alumnos where DNI = '$DNI'";
+                    $resultado=mysqli_query($conexion,$request);
+                    $filas = mysqli_num_rows($resultado);
+                    if($filas > 0)
                     {
-                        $DNI = $_POST['DNI'];
-                        $_SESSION['DNI'] = $DNI;
-                        include("db.php");
-                        $request = "SELECT*FROM alumnos where DNI = '$DNI'";
-                        $resultado=mysqli_query($conexion,$request);
-                        $filas = mysqli_num_rows($resultado);
-                        if($filas > 0)
+                        $array = $resultado -> fetch_array();
+                        $_SESSION['x'] = null;
+                        $request2 = "SELECT*FROM info where DNI = $DNI";
+                        $resultado2=mysqli_query($conexion,$request2);
+                        $filas2 = mysqli_num_rows($resultado2);
+                        ?>
+                        <h2>Alumno ingresado:</h2> 
+                        <p>Nombre: <?php echo $array["Nombre"]?></p>
+                        <p>DNI: <?php echo $array["DNI"]?></p>
+                        <?php
+                        if(empty($filas) === TRUE)
                         {
-                          $array = $resultado -> fetch_array();
-                          $_SESSION['x'] = null;
-                          ?>
-                          <form action = "validacion_de_DNI.php" method = "post" class="boton_formulario"> 
-                              <h2>Alumno ingresado:</h2> 
-                              <p>Nombre: <?php echo $array["Nombre"]?></p>
-                              <p>DNI: <?php echo $array["DNI"]?></p>
+                            $_SESSION['vari'] = 1;
+                        }
+                        if(empty($_SESSION['vari']) == false)
+                        {
+                            ?>
+                            <form action = "form_ingreso_DNI.php" method = "post" class="boton_formulario">   
                               <ul>
                                 <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
                               </ul>             
@@ -126,6 +143,19 @@
                               </div>   
                           </form>   
                           <?php
+                          }
+                          else{
+                            ?>
+                            <form action = "validacion_de_DNI.php" method = "post" class="boton_formulario">  
+                            <ul>
+                            <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
+                            </ul>             
+                            </div>              
+                            </div>   
+                          </form>   
+                          <?php
+                          }
+                          
                         }
                         else
                         {
@@ -134,6 +164,7 @@
                         }
                         mysqli_free_result($resultado);
                         mysqli_close($conexion);
+                        
                     }
                         ?>        
     </div>

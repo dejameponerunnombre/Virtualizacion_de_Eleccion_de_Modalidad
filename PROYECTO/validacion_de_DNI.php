@@ -115,6 +115,7 @@ if($filas > 0){
                               </ul>
 	                        </div>  
             <?php 
+            $_SESSION['x'] = null;
         }
         else
         {

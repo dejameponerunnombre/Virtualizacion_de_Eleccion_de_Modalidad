@@ -77,6 +77,11 @@
                     </div>
                 </div> 
                 <?php
+                if(!isset($_SESSION)) 
+                { 
+                    session_start(); 
+                } 
+                $_SESSION['var'] = null;
                 $x = empty($_SESSION['x']);
         if($x == false)
         {
@@ -94,6 +99,7 @@
                               </ul>
 	                        </div> 
             <?php 
+            $_SESSION['x'] = null;
         }
         else
         {
@@ -127,7 +133,6 @@
                     if($e == false)
                     {
                         $DNI = $_POST['DNI'];
-                        session_start(); 
                         $_SESSION['DNI'] = $DNI;
                         include("db.php");
                         $request = "SELECT*FROM alumnos where DNI = '$DNI'";
