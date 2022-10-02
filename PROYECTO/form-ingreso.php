@@ -159,9 +159,9 @@
                                 $resultado2=mysqli_query($conexion,$request2);
                                 $filas2 = mysqli_num_rows($resultado2);
                                 ?>
-                                <h2>Alumno ingresado:</h2>  
-                                <p>Nombre: <?php echo $array["Nombre"]?></p>
-                                <p>DNI: <?php echo $array["DNI"]?></p>
+                                <h2 style="text-decoration:underline; font-weight:bold; padding-left: 20%;">Alumno ingresado:</h2>  
+                                <p style="padding-left: 20%;">Nombre: <?php echo $array["Nombre"]?></p>
+                                <p style="padding-left: 20%;">DNI: <?php echo $array["DNI"]?></p>
                                 </div>
                                 <?php
                                 if(empty($filas2) == false)

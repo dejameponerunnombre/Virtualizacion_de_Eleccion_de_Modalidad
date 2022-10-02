@@ -92,7 +92,8 @@
                                 </ul>
                         </div>     
                     </div> 
-                </form> 
+                </form>
+                 
                 <?php 
                 
                 if(!isset($_SESSION)) 
@@ -124,9 +125,9 @@
                         $resultado2=mysqli_query($conexion,$request2);
                         $filas2 = mysqli_num_rows($resultado2);
                         ?>
-                        <h2>Alumno ingresado:</h2> 
-                        <p>Nombre: <?php echo $array["Nombre"]?></p>
-                        <p>DNI: <?php echo $array["DNI"]?></p>
+                        <h2 style="text-decoration:underline; font-weight:bold; padding-left: 20%; font-size: 14px;">Alumno ingresado:</h2> 
+                        <p style="padding-left: 20%;">Nombre: <?php echo $array["Nombre"]?></p>
+                        <p style="padding-left: 20%;">DNI: <?php echo $array["DNI"]?></p>
                         <?php
                         if(empty($filas) === TRUE)
                         {
@@ -151,7 +152,7 @@
                             <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
                             </ul>             
                             </div>              
-                            </div>   
+                           
                           </form>   
                           <?php
                           }
