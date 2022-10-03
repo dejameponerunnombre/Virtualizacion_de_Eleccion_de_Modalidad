@@ -357,10 +357,10 @@ body{
     
     background-image: url("../IMG/prueba-elec.jpg");
     
-   background-repeat : repeat;
-
-    background-position: right;
-    background-size: contain;
+   background-repeat : no-repeat;
+  
+    background-position: center;
+    background-size: 2300px;
 }
 
 .videos{
