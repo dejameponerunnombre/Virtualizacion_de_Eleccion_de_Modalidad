@@ -46,7 +46,9 @@
                      
                     </li>
 
-
+                    <li> 
+                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
+                    </li>
                     <li>
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
@@ -84,7 +86,8 @@
                 if(!isset($_SESSION)) 
                 { 
                     session_start(); 
-                } 
+                }
+                $_SESSION['variab'] = null;
                 $_SESSION['varia'] = null;
                 $_SESSION['vari'] = null;
                 include("db.php");

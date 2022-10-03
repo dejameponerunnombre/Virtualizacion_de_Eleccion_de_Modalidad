@@ -44,7 +44,9 @@
                 <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
                         <img src="../IMG/find_user.png" class="img-responsive" />
-                     
+                    <li> 
+                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
+                    </li>
                     </li>
                     <li>
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
@@ -83,6 +85,7 @@
                 } 
                 $_SESSION['var'] = null;
                 $_SESSION['vari'] = null;
+                $_SESSION['variab'] = null;
                 $x = empty($_SESSION['x']);
         if($x == false)
         {

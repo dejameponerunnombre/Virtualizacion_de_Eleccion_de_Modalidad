@@ -13,7 +13,7 @@ if($ahora < $final and $ahora > $inicio)
      
     $consulta = "SELECT*FROM alumnos where Usuario = '$usuario' and Contrasenia = '$contraseña'";
     $resultado=mysqli_query($conexion,$consulta);
-    $array = $resultado -> fetch_array();
+    $array = $resultado -> fetch_array()
     $filas = mysqli_num_rows($resultado);
     
     

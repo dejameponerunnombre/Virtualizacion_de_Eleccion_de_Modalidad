@@ -47,7 +47,9 @@
                      
                     </li>
 
-
+                    <li> 
+                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
+                    </li>
                     <li>
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
@@ -93,6 +95,7 @@
                   $_SESSION['var'] = null;
                   $_SESSION['varia'] = null;
                   $_SESSION['vari'] = null;
+                  $_SESSION['variab'] = null;
 $inicio = mktime(0, 0, 0, 5, 1, 2022);
 $final =  mktime(0, 0, 0, 10, 15, 2022);
 $ahora = time() ;

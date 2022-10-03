@@ -1,24 +1,29 @@
-﻿<!DOCTYPE html>
-<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-      <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Secretaría</title>
+<!DOCTYPE html>
+<html lang="es">
 
-    <link href="bootstrap.css" rel="stylesheet" />
-  
-    <link href="font-awesome.css" rel="stylesheet" />
 
-    <link href="custom.css" rel="stylesheet" />
-    <link rel="icon" href="../IMG/Logo_azul (2).PNG">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="stylesheet" href="footer.css">
+        <link href="bootstrap.css" rel="stylesheet" />
+        
+        <link rel="stylesheet" href="boton.css">
+        <link href="font-awesome.css" rel="stylesheet" />
+        <link rel="stylesheet" href="validacion_DNI.css?v=<?php echo time(); ?>">
+    
+    
 
-     <link rel="stylesheet" href="footer.css">
-     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-</head>
-<body>
-     
-           
-          
+        <title>Ingreso de notas</title>
+
+    </head>
+
+<?php
+session_start();
+$DNI = $_SESSION['DNI'];
+include("db.php");
+?>
     <div id="wrapper">
          <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="adjust-nav">
@@ -32,6 +37,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="form-ingreso.php">Volver</a></li>
                         <li><a href="inicio.html">Cerrar Sesión</a></li>
                     </ul>
                 </div>
@@ -47,8 +53,8 @@
                     <li> 
                         <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
                     </li>
-                    <li> 
-                        <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
+                    <li>
+                        <a id= 1 href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
                     <li>
                         <a href="promedios2.0.php"><i class="fa fa-table "></i>Ver listas de cada modalidad</a>
@@ -73,28 +79,54 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Seleccione una opción del panel</h2>   
+                     <h2>Seleccione una opción</h2>   
                     </div>
                 </div>              
                
-                  <hr /> 
-                  <img src="../IMG/login.png" style="width: 40%; margin-left: 30%; margin-top: 0%;vertical-align: top;"/>
-          
-    </div>
-            </div>
-   
+                  <hr />  
+                  <h2 id="h2">Ingresar datos de alumno</h2>
+                  <br>
+            <form action="carga_alumno.php" method="post"  >
+    <div class="temas">
+
+
+        <div class="temas1">
+
+        <div class="prom">
+            <h3>Nombre y Apellido</h3>
+            <input step="any" type="text"  name="nombre" value="">           
+        </div>   
+        <br>
+        <div class="inasis">
+            <h3>Mail de contacto</h3>
+            <input step="any" type="email" name="mail" value="" >
         </div>
- 
-    <script src="../js/jquery-1.10.2.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.metisMenu.js"></script>
-    <script src="../js/custom.js"></script>
-    
-   
-</body>
-<footer class="pie-pagina" style="left: 0;" style="right: 0;">
-    <div class="grupo-2">
-        <small>&copy; 2022 <b>7mo Informática</b> - Grupo 3</small>
+        </div>
+        <br>
+        <div class="temas2">
+        <div class="fichas">
+            <h3>Usuario</h3>
+            <input  type="text" name="usuario" value="">
+        </div>
+        <br>
+        <div class="observ">
+            <h3>Contraseña</h3>
+            <input type="text" name="contraseña" value=""> 
+        </div>
+        </div>
+        <br>
+        <div class="temas3">
+        
+        
+        <button type="submit" class="m_boton_formulario bttn-pill bttn-md bttn-primary">Enviar</button>
     </div>
-</footer>
+    </form>
+    </div>
+    </div>
+    </div>
+    <footer class="pie-pagina" style="left: 0;" style="right: 0;">
+        <div class="grupo-2">
+            <small>&copy; 2022 <b>7mo Informática</b> - Grupo 3</small>
+        </div>
+    </footer>
 </html>
