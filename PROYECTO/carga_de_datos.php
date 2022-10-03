@@ -45,7 +45,8 @@
             for($i = 0; $i < 3; $i++)
             {
 
-                $in[$i]  = "CALL cargadatos ($P[$i], $F[$i], $I[$i], $O[$i], '$DNI', $i+1)";
+                $in[$i]  = "INSERT INTO info (Prom, Fichas, Inasistencias, Observaciones, DNI, Anio) values 
+                ($P[$i], $F[$i], $I[$i], $O[$i], $DNI, $i+1)";
                 $con[$i] =  $conexion -> query($in[$i]);
                 $PT += $P[$i];
                 $FT += $F[$i];

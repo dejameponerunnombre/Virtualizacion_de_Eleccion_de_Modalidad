@@ -82,6 +82,7 @@
                     session_start(); 
                 } 
                 $_SESSION['var'] = null;
+                $_SESSION['vari'] = null;
                 $x = empty($_SESSION['x']);
         if($x == false)
         {
@@ -123,11 +124,12 @@
                         </div>
                     </form>
                     <?php
-                    $var = empty($_SESSION['var']);
-                    if($var == false)
+                    $variab = empty($_SESSION['varia']); 
+                    if($variab == false)
                         {
                             ?> <div class="boton_formulario"> <h2>El alumno no ha realizado la elección</h2></div>
                              <?php 
+                            $_SESSION['varia'] = null;
                         }
                     $e = empty($_POST['DNI']);
                     if($e == false)
@@ -142,28 +144,41 @@
                         {
                         $_SESSION['x'] = null;
                           $array = $resultado -> fetch_array();
-                          ?>
-                          <form action = "cambio_eleccion.php" method = "post" class="boton_formulario"> 
-                              <h2>Alumno ingresado:</h2>  
-                              <p>Nombre: <?php echo $array["Nombre"]?></p>
-                              
-                              <p>DNI: <?php echo $array["DNI"]?></p>
-                             
+                          $request2 = "SELECT*FROM eleccion where DNI = $DNI";
+                        $resultado2=mysqli_query($conexion,$request2);
+                        $filas2 = mysqli_num_rows($resultado2);
+                        ?>
+                        <h2 style="text-decoration:underline; font-weight:bold; padding-left: 20%; font-size: 14px;">Alumno ingresado:</h2> 
+                        <p style="padding-left: 20%;">Nombre: <?php echo $array["Nombre"]?></p>
+                        <p style="padding-left: 20%;">DNI: <?php echo $array["DNI"]?></p>
+                        <?php
+                        if(empty($filas2) === TRUE)
+                        {
+                            $_SESSION['varia'] = 1;
+                        }
+                        if(empty($_SESSION['varia']) == false)
+                        {
+                            ?>
+                            <form action = "cambio-eleccion.php" method = "post" class="boton_formulario">   
                               <ul>
-
                                 <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
-
-                                
-                              </ul>
-                          
-                                           
-                                            </div>
+                              </ul>             
                                         </div>              
-                              
                               </div>   
-                         
                           </form>   
                           <?php
+                          }
+                          else{
+                            ?>
+                            <form action = "cambio_eleccion.php" method = "post" class="boton_formulario">  
+                            <ul>
+                            <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
+                            </ul>             
+                            </div>              
+                           
+                          </form>   
+                          <?php
+                          }
                         }
                         else
                         {

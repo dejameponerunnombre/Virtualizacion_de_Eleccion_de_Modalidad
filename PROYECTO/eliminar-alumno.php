@@ -85,6 +85,8 @@
                     session_start(); 
                 } 
                 $_SESSION['var'] = null;
+                $_SESSION['varia'] = null;
+                $_SESSION['vari'] = null;
                 $x = empty($_SESSION['x']);
         if($x == false)
         {

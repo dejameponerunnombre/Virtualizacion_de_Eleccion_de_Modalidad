@@ -101,6 +101,7 @@
                     session_start(); 
                 } 
                 $_SESSION['var'] = null;
+                $_SESSION['varia'] = null;
                 $varia = empty($_SESSION['vari']);
                 if($varia == false)
                     {
@@ -129,7 +130,7 @@
                         <p style="padding-left: 20%;">Nombre: <?php echo $array["Nombre"]?></p>
                         <p style="padding-left: 20%;">DNI: <?php echo $array["DNI"]?></p>
                         <?php
-                        if(empty($filas) === TRUE)
+                        if(empty($filas2) === TRUE)
                         {
                             $_SESSION['vari'] = 1;
                         }

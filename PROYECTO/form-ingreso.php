@@ -85,6 +85,8 @@
                 { 
                     session_start(); 
                 } 
+                $_SESSION['varia'] = null;
+                $_SESSION['vari'] = null;
                 include("db.php");
                 $x = empty($_SESSION['x']);
         if($x == false)

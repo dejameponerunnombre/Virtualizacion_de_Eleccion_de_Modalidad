@@ -24,8 +24,11 @@ if($filas > 0)
     $request = "SELECT ID_Modalidad FROM eleccion where DNI = '$DNI'";
     $resultado = mysqli_query($conexion,$request);
     $modalidad = $resultado ->fetch_array();
-    $res = "UPDATE modalidad SET Ingresos = Ingresos - 1 where ID_Modalidad = '$modalidad[0]'";
-    $tar = $conexion -> query($res);
+    if(empty($modalidad) === false)
+    {
+        $res = "UPDATE modalidad SET Ingresos = Ingresos - 1 where ID_Modalidad = '$modalidad[0]'";
+        $tar = $conexion -> query($res);
+    }
     $eliminar = "DELETE FROM info where DNI = $DNI";
     $borrar = $conexion -> query($eliminar);
     $eliminar1 = "DELETE FROM modalidad where DNI = $DNI";
