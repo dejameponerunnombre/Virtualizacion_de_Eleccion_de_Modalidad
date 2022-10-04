@@ -91,20 +91,22 @@ if($filas > 0)
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Seleccione una opción</h2>   
+                     <h2>Ingresar datos de alumno</h2>   
                     </div>
                 </div>              
                
                   <hr />  
-                  <h2 id="h2">Ingresar datos de alumno</h2>
                   <br>
             <form action="carga_de_datos.php" method="post"  >
                 <div class="temas">
                     <div class="temas1">
                     <div class="prom">
-                        <h3>Promedios</h3>
-                        <p>Promedio<input step="any" type="number"  name="Promedio" value=""></p>     
+                        <h3>Promedio</h3>
+                        <input step="any" type="number"  name="Promedio" value="">     
+                        <br> 
+                        <br> 
                         <fieldset id="termina">
+                             
                             <legend>Cuando dejó de tener materias pendientes?</legend>
                             <input type="radio" id="Noviembre" value="Noviembre" name="termina"><label for="Noviembre">Noviembre</label>
                             <input type="radio" id="Diciembre"value="Diciembre" name="termina"><label for="Diciembre">Diciembre</label>
@@ -114,8 +116,10 @@ if($filas > 0)
                     </div>   
                     <br>
                     <div class="inasis">
-                        <h3>Inasistencias</h3>
-                        <p>Inasistencias de Primer Año: <input step="any" type="number" name="Inasistencias" value="" ></p>
+                        <h3>Inasistencias en el año</h3>
+                        <input step="any" type="number" name="Inasistencias" value="" >
+                        <br> 
+                        <br> 
                         <fieldset id="anio">
                             <legend>Año</legend>
                             <input type="radio" id="1" value="1" name="anio"><label for="1">1°</label>
@@ -127,8 +131,10 @@ if($filas > 0)
                 <br>
                 <div class="temas2">
                     <div class="fichas">
-                        <h3>Fichas</h3>
-                        <p>Fichas de Primer Año: <input  type="number" name="Fichas" value=""></p>
+                        <h3>Fichas en el año</h3>
+                        <input  type="number" name="Fichas" value="">
+                        <br> 
+                        <br>
                         <fieldset id="escuela">
                             <legend>Escuela</legend>
                             <input type="radio" id="Tecnica" value="Tecnica" name="escuela"><label for="Tecnica">Tecnica</label>
@@ -138,8 +144,10 @@ if($filas > 0)
                     </div>
                     <br>
                     <div class="observ">
-                        <h3>Observaciones</h3>
-                        <p>Observaciones de Primer Año: <input type="number" name="Observaciones_1ro" value=""></p>
+                        <h3>Observaciones en el año</h3>
+                        <input type="number" name="Observaciones_1ro" value="">
+                        <br> 
+                        <br>
                         <fieldset id="curso">
                             <legend>Curso</legend>
                             <input type="radio" id="A" value="A" name="curso"><label for="A">A</label>
@@ -156,12 +164,13 @@ if($filas > 0)
                 <div class="temas3">
                     <div class="comen">
                         <h3>Comentario de conducta</h3>
-                        <p>Comentario de conducta: <input type="text" name="Comentario" id="comentario"></p>
+                        <input type="text" name="Comentario" id="comentario">
                         <h3>Ciclo Lectivo</h3>
-                        <p>Ciclo Lectivo<input type="number" name="ciclo_lectivo" id="ciclo_lectivo"></p>
+                        <input type="number" name="ciclo_lectivo" id="ciclo_lectivo">
                     </div>
         
-        
+                    <br> 
+                        <br>
         <button type="submit" class="m_boton_formulario bttn-pill bttn-md bttn-primary">Enviar</button>
     </div>
     </form>

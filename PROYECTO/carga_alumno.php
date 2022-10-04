@@ -8,13 +8,16 @@ $DNI = $_SESSION['DNI'];
 $Nombre = $_POST['nombre'];
 $mail = $_POST['mail'];
 $usuario = $_POST['usuario'];
-$contraseña = $_POST['contrasenia'];
-include("db.php");
-$in  = "INSERT INTO alumnos (DNI, Nombre, Usuario,Contrasenia , Mail) values 
-($DNI,$Nombre,$usuario,$contrasenia,$mail)";
+$contrasenia = $_POST['contrasenia'];
+$in  = "INSERT INTO alumnos (DNI, Nombre, Usuario, Contrasenia, Mail) values 
+('$DNI','$Nombre','$usuario','$contrasenia','$mail')";
 $con =  $conexion -> query($in);
-$x = 10;
+if(empty($con) === false)
+{
+    $x = 10;
 $_SESSION['x'] = $x;
 include("ingreso-alumno.php");
+}
+
 mysqli_close($conexion);
-?>
+?> 
