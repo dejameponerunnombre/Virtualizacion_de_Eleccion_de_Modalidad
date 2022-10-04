@@ -111,7 +111,7 @@ include("db.php");
         <br>
         <div class="observ">
             <h3>Contraseña</h3>
-            <input type="text" name="contraseña" value=""> 
+            <input type="text" name="contrasenia" value=""> 
         </div>
         </div>
         <br>

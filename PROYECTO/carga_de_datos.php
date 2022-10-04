@@ -22,11 +22,15 @@ $O[0] = $_POST['Observaciones_1ro'];
 $O[1] = $_POST['Observaciones_2do'];
 $O[2] = $_POST['Observaciones_3ro'];
 $Comentario = $_POST['Comentario'];
+$curso=$_POST['curso'];
+$escuela=$_POST['escuela'];
+$sin_pendientes=$_POST['sin_pendientes'];
+$Ciclo_Lectivo=$_POST['ciclo_lectivo'];
 include("db.php");
 for($i = 0; $i < 3; $i++)
 {
-    $in[$i]  = "INSERT INTO info (Prom, Fichas, Inasistencias, Observaciones, DNI, Anio) values 
-    ($P[$i], $F[$i], $I[$i], $O[$i], $DNI, $i+1)";
+    $in[$i]  = "INSERT INTO info (Prom, Fichas, Inasistencias, Observaciones, DNI, Anio, Curso, Escuela, sin_pendientes, Ciclo_Lectivo) values 
+    ($P[$i], $F[$i], $I[$i], $O[$i], $DNI, $i+1,$curso,$escuela,$sin_pendientes,$Ciclo_Lectivo)";
     $con[$i] =  $conexion -> query($in[$i]);
     $PT += $P[$i];
     $FT += $F[$i];

@@ -8,10 +8,10 @@ $DNI = $_SESSION['DNI'];
 $Nombre = $_POST['nombre'];
 $mail = $_POST['mail'];
 $usuario = $_POST['usuario'];
-$contraseña = $_POST['contraseña'];
+$contraseña = $_POST['contrasenia'];
 include("db.php");
 $in  = "INSERT INTO alumnos (DNI, Nombre, Usuario,Contrasenia , Mail) values 
-($DNI,$Nombre,$mail,$usuario,$contraseña,$mail)";
+($DNI,$Nombre,$usuario,$contrasenia,$mail)";
 $con =  $conexion -> query($in);
 $x = 10;
 $_SESSION['x'] = $x;
