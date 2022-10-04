@@ -5,19 +5,27 @@ session_start();
 include("db.php");
 $x = 0;
 $DNI = $_SESSION['DNI'];
-$P = $_POST['Promedio_1ro'];
-$F = $_POST['Fichas_1ro'];
-$I = $_POST['Inasistencias_1ro'];
+$anio=$_SESSION['anio'];
+$P = $_POST['Promedio'];
+$F = $_POST['Fichas'];
+$I = $_POST['Inasistencias'];
 $O = $_POST['Observaciones_1ro'];
-$Comentario = $_POST['Comentario'];
+$Comentario = $_POST['Comentario']; 
 $curso = $_POST['curso'];
-$escuela = $_POST['escuela'];
-$sin_pendientes = $_POST['sin_pendientes'];
+if($curso=="A" || $curso=="B" || $curso=="C" || $curso=="G")
+{
+    $escuela = "Tecnica";
+}
+if($curso=="D"|| $curso=="E")
+{
+    $escuela = "Orientada";
+}
+$sin_pendientes = $_POST['termina'];
 $Ciclo_Lectivo = $_POST['ciclo_lectivo'];
-$anio = $_POST['anio'];
+echo $anio,$DNI,$P,$F,$I,$O,$Comentario,$curso,$escuela,$sin_pendientes,$Ciclo_Lectivo;
 include("db.php"); 
 $in  = "INSERT INTO info (Prom, Fichas, Inasistencias, Observaciones, DNI, Anio, Curso, Escuela, sin_pendientes, Ciclo_Lectivo) values 
-($P, $F, $I, $O, $DNI, $anio, $curso, $escuela, $sin_pendientes, $Ciclo_Lectivo)";
+($P, $F, $I, $O, '$DNI', $anio, '$curso', '$escuela', '$sin_pendientes', $Ciclo_Lectivo)";
 $con =  $conexion -> query($in);
 $request = "SELECT * FROM total where DNI = '$DNI'";
 $resultado = mysqli_query($conexion,$request);

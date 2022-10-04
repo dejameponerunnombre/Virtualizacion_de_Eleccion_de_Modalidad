@@ -112,14 +112,18 @@
         else
         {
             ?>  
-            <h2>Ingresar datos del alumno</h2>   
+            <h2>Ingresar Año que cursa el alumno</h2>   
             <hr />
-            <form action="form-ingreso.php" method="post"  >
+            <form action="ingreso_de_datos.php" method="post"  >
                     <div class="info">
                     <div class="datos">        
                         <br>
-                        <h3>DNI del alumno</h3>   
-                        <p><input type="number" name="DNI" id="DNI"></p>
+                        <fieldset id="anio">
+                            <input type="radio" id="1" value="1" name="anio"><label for="1">1°</label>
+                            <input type="radio" id="2"value="2" name="anio"><label for="2">2°</label>
+                            <input type="radio" id="3"value="3" name="anio"><label for="3">3°</label>
+                        </fieldset>       
+                        
                         
                     </div>   
                     <div class="texto-centro">

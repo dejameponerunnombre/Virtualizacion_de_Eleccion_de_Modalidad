@@ -21,6 +21,8 @@
 
 <?php
 session_start();
+$anio = $_POST['anio'];
+$_SESSION['anio']=$anio;
 $DNI = $_SESSION['DNI'];
 include("db.php");
 $request = "SELECT*FROM alumnos where DNI = '$DNI'";
@@ -65,6 +67,9 @@ if($filas > 0)
                     <li class="text-center user-image-back">
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
+                    <li> 
+                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
+                    </li>
                     <li>
                         <a id= 1 href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
@@ -106,7 +111,6 @@ if($filas > 0)
                         <br> 
                         <br> 
                         <fieldset id="termina">
-                             
                             <legend>Cuando dejó de tener materias pendientes?</legend>
                             <input type="radio" id="Noviembre" value="Noviembre" name="termina"><label for="Noviembre">Noviembre</label>
                             <input type="radio" id="Diciembre"value="Diciembre" name="termina"><label for="Diciembre">Diciembre</label>
@@ -119,13 +123,6 @@ if($filas > 0)
                         <h3>Inasistencias en el año</h3>
                         <input step="any" type="number" name="Inasistencias" value="" >
                         <br> 
-                        <br> 
-                        <fieldset id="anio">
-                            <legend>Año</legend>
-                            <input type="radio" id="1" value="1" name="anio"><label for="1">1°</label>
-                            <input type="radio" id="2"value="2" name="anio"><label for="2">2°</label>
-                            <input type="radio" id="3"value="3" name="anio"><label for="3">3°</label>
-                        </fieldset>
                     </div>
                 </div>
                 <br>
@@ -135,12 +132,7 @@ if($filas > 0)
                         <input  type="number" name="Fichas" value="">
                         <br> 
                         <br>
-                        <fieldset id="escuela">
-                            <legend>Escuela</legend>
-                            <input type="radio" id="Tecnica" value="Tecnica" name="escuela"><label for="Tecnica">Tecnica</label>
-                            <input type="radio" id="Orientada"value="Orientada" name="escuela"><label for="Orientada">Orientada</label>
-                            <input type="radio" id="Otra"value="Otra" name="escuela"><label for="Otra">Otra</label>
-                        </fieldset>
+
                     </div>
                     <br>
                     <div class="observ">
@@ -200,7 +192,7 @@ mysqli_free_result($resultado2);
 
 
 
-
+ 
     
 
 </html>
