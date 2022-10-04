@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-10-2022 a las 01:52:49
+-- Tiempo de generación: 04-10-2022 a las 02:31:46
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -29,10 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `alumnos` (
   `DNI` varchar(8) NOT NULL,
-  `CUIL` varchar(11) NOT NULL,
   `Nombre` varchar(365) NOT NULL,
-  `Escuela` varchar(100) NOT NULL,
-  `Curso` varchar(1) NOT NULL,
   `Usuario` varchar(365) NOT NULL,
   `Contrasenia` varchar(365) NOT NULL,
   `Mail` varchar(365) NOT NULL DEFAULT 'alumno.paltamiranda@gmail.com'
@@ -42,60 +39,60 @@ CREATE TABLE `alumnos` (
 -- Volcado de datos para la tabla `alumnos`
 --
 
-INSERT INTO `alumnos` (`DNI`, `CUIL`, `Nombre`, `Escuela`, `Curso`, `Usuario`, `Contrasenia`, `Mail`) VALUES
-('1', '1', 'economia', 'orientada', 'C', '1', '1', 'alumno.paltamiranda@gmail.com'),
-('10', '10', 'Infromatica2', 'Tecnica', 'G', '10', '10', 'alumno.paltamiranda@gmail.com'),
-('2', '2', 'natu', 'orientada', 'C', '2', '2', 'alumno.paltamiranda@gmail.com'),
-('23', '23', 'paulo', 'tecnica', 'B', '23', '23', 'alumno.paltamiranda@gmail.com'),
-('261', '261', '261', 'Tecnica', 'B', '261', '261', 'alumno.paltamiranda@gmail.com'),
-('262', '262', '262', 'Tecnica', 'B', '262', '262', 'alumno.paltamiranda@gmail.com'),
-('263', '263', '263', 'Tecnica', 'B', '263', '263', 'alumno.paltamiranda@gmail.com'),
-('264', '264', '264', 'Tecnica', 'B', '264', '264', 'alumno.paltamiranda@gmail.com'),
-('265', '265', '265', 'Tecnica', 'B', '265', '265', 'alumno.paltamiranda@gmail.com'),
-('266', '266', '266', 'Tecnica', 'B', '266', '266', 'alumno.paltamiranda@gmail.com'),
-('267', '267', '267', 'Tecnica', 'B', '267', '267', 'alumno.paltamiranda@gmail.com'),
-('268', '268', '268', 'Tecnica', 'B', '268', '268', 'alumno.paltamiranda@gmail.com'),
-('269', '269', '269', 'Tecnica', 'B', '269', '269', 'alumno.paltamiranda@gmail.com'),
-('270', '270', '270', 'Tecnica', 'B', '270', '270', 'alumno.paltamiranda@gmail.com'),
-('271', '271', '271', 'Tecnica', 'B', '271', '271', 'alumno.paltamiranda@gmail.com'),
-('272', '272', '272', 'Tecnica', 'B', '272', '272', 'alumno.paltamiranda@gmail.com'),
-('273', '273', '273', 'Tecnica', 'B', '273', '273', 'alumno.paltamiranda@gmail.com'),
-('274', '274', '274', 'Tecnica', 'B', '274', '274', 'alumno.paltamiranda@gmail.com'),
-('275', '275', '275', 'Tecnica', 'B', '275', '275', 'alumno.paltamiranda@gmail.com'),
-('276', '276', '276', 'Tecnica', 'B', '276', '276', 'alumno.paltamiranda@gmail.com'),
-('277', '277', '277', 'Tecnica', 'B', '277', '277', 'alumno.paltamiranda@gmail.com'),
-('278', '278', '278', 'Tecnica', 'B', '278', '278', 'alumno.paltamiranda@gmail.com'),
-('279', '279', '279', 'Tecnica', 'B', '279', '279', 'alumno.paltamiranda@gmail.com'),
-('280', '280', '280', 'Tecnica', 'B', '280', '280', 'alumno.paltamiranda@gmail.com'),
-('281', '281', '281', 'Tecnica', 'B', '281', '281', 'alumno.paltamiranda@gmail.com'),
-('282', '282', '282', 'Tecnica', 'B', '282', '282', 'alumno.paltamiranda@gmail.com'),
-('283', '283', '283', 'Tecnica', 'B', '283', '283', 'alumno.paltamiranda@gmail.com'),
-('284', '284', '284', 'Tecnica', 'B', '284', '284', 'alumno.paltamiranda@gmail.com'),
-('285', '285', '285', 'Tecnica', 'B', '285', '285', 'alumno.paltamiranda@gmail.com'),
-('286', '286', '286', 'Tecnica', 'B', '286', '286', 'alumno.paltamiranda@gmail.com'),
-('287', '287', '287', 'Tecnica', 'B', '287', '287', 'alumno.paltamiranda@gmail.com'),
-('288', '288', '288', 'Tecnica', 'B', '288', '288', 'alumno.paltamiranda@gmail.com'),
-('289', '289', '289', 'Tecnica', 'B', '289', '289', 'alumno.paltamiranda@gmail.com'),
-('290', '290', '290', 'Tecnica', 'B', '290', '290', 'alumno.paltamiranda@gmail.com'),
-('291', '291', '291', 'Tecnica', 'B', '291', '291', 'alumno.paltamiranda@gmail.com'),
-('292', '292', '292', 'Tecnica', 'B', '292', '292', 'alumno.paltamiranda@gmail.com'),
-('293', '293', '293', 'Tecnica', 'B', '293', '293', 'alumno.paltamiranda@gmail.com'),
-('294', '294', '294', 'Tecnica', 'B', '294', '294', 'alumno.paltamiranda@gmail.com'),
-('295', '295', '295', 'Tecnica', 'B', '295', '295', 'alumno.paltamiranda@gmail.com'),
-('296', '296', '296', 'Tecnica', 'B', '296', '296', 'alumno.paltamiranda@gmail.com'),
-('297', '297', '297', 'Tecnica', 'B', '297', '297', 'alumno.paltamiranda@gmail.com'),
-('298', '298', '298', 'Tecnica', 'B', '298', '298', 'alumno.paltamiranda@gmail.com'),
-('299', '299', '299', 'Tecnica', 'B', '299', '299', 'alumno.paltamiranda@gmail.com'),
-('3', '3', 'rales', 'orientada\r\n', 'C', '3', '3', 'alumno.paltamiranda@gmail.com'),
-('300', '300', '300', 'Tecnica', 'B', '300', '300', 'alumno.paltamiranda@gmail.com'),
-('32', '32', 'londra', 'tecnica', 'E', '32', '32', 'alumno.paltamiranda@gmail.com'),
-('4', '4', 'elec', 'tecnica', 'A', '4', '4', 'alumno.paltamiranda@gmail.com'),
-('41', '41', '41', 'Tecnica', 'D', '41', '41', 'alumno.paltamiranda@gmail.com'),
-('5', '5', 'tronica', 'tecnica', 'A', '5', '5', 'alumno.paltamiranda@gmail.com'),
-('6', '6', 'informatica', 'tecnica', 'A', '6', '6', 'alumno.paltamiranda@gmail.com'),
-('7', '7', 'multi', 'tecnica', 'A', '7', '7', 'alumno.paltamiranda@gmail.com'),
-('8', '8', 'medios', 'tecnica', 'A', '8', '8', 'alumno.paltamiranda@gmail.com'),
-('9', '9', 'Economia2', 'Orientada', 'C', '9', '9', 'alumno.paltamiranda@gmail.com');
+INSERT INTO `alumnos` (`DNI`, `Nombre`, `Usuario`, `Contrasenia`, `Mail`) VALUES
+('1', 'economia', '1', '1', 'alumno.paltamiranda@gmail.com'),
+('10', 'Infromatica2', '10', '10', 'alumno.paltamiranda@gmail.com'),
+('2', 'natu', '2', '2', 'alumno.paltamiranda@gmail.com'),
+('23', 'paulo', '23', '23', 'alumno.paltamiranda@gmail.com'),
+('261', 'T', '261', '261', 'alumno.paltamiranda@gmail.com'),
+('262', 't', '262', '262', 'alumno.paltamiranda@gmail.com'),
+('263', 'S', '263', '263', 'alumno.paltamiranda@gmail.com'),
+('264', 's', '264', '264', 'alumno.paltamiranda@gmail.com'),
+('265', 'R', '265', '265', 'alumno.paltamiranda@gmail.com'),
+('266', 'r', '266', '266', 'alumno.paltamiranda@gmail.com'),
+('267', 'Q', '267', '267', 'alumno.paltamiranda@gmail.com'),
+('268', 'q', '268', '268', 'alumno.paltamiranda@gmail.com'),
+('269', 'P', '269', '269', 'alumno.paltamiranda@gmail.com'),
+('270', 'p', '270', '270', 'alumno.paltamiranda@gmail.com'),
+('271', 'O', '271', '271', 'alumno.paltamiranda@gmail.com'),
+('272', 'o', '272', '272', 'alumno.paltamiranda@gmail.com'),
+('273', 'N', '273', '273', 'alumno.paltamiranda@gmail.com'),
+('274', 'n', '274', '274', 'alumno.paltamiranda@gmail.com'),
+('275', 'M', '275', '275', 'alumno.paltamiranda@gmail.com'),
+('276', 'm', '276', '276', 'alumno.paltamiranda@gmail.com'),
+('277', 'L', '277', '277', 'alumno.paltamiranda@gmail.com'),
+('278', 'l', '278', '278', 'alumno.paltamiranda@gmail.com'),
+('279', 'K', '279', '279', 'alumno.paltamiranda@gmail.com'),
+('280', 'k', '280', '280', 'alumno.paltamiranda@gmail.com'),
+('281', 'J', '281', '281', 'alumno.paltamiranda@gmail.com'),
+('282', 'j', '282', '282', 'alumno.paltamiranda@gmail.com'),
+('283', 'I', '283', '283', 'alumno.paltamiranda@gmail.com'),
+('284', 'i', '284', '284', 'alumno.paltamiranda@gmail.com'),
+('285', 'H', '285', '285', 'alumno.paltamiranda@gmail.com'),
+('286', 'h', '286', '286', 'alumno.paltamiranda@gmail.com'),
+('287', 'G', '287', '287', 'alumno.paltamiranda@gmail.com'),
+('288', 'g', '288', '288', 'alumno.paltamiranda@gmail.com'),
+('289', 'F', '289', '289', 'alumno.paltamiranda@gmail.com'),
+('290', 'f', '290', '290', 'alumno.paltamiranda@gmail.com'),
+('291', 'E', '291', '291', 'alumno.paltamiranda@gmail.com'),
+('292', 'e', '292', '292', 'alumno.paltamiranda@gmail.com'),
+('293', 'D', '293', '293', 'alumno.paltamiranda@gmail.com'),
+('294', 'd', '294', '294', 'alumno.paltamiranda@gmail.com'),
+('295', 'C', '295', '295', 'alumno.paltamiranda@gmail.com'),
+('296', 'c', '296', '296', 'alumno.paltamiranda@gmail.com'),
+('297', 'B', '297', '297', 'alumno.paltamiranda@gmail.com'),
+('298', 'b', '298', '298', 'alumno.paltamiranda@gmail.com'),
+('299', 'A', '299', '299', 'alumno.paltamiranda@gmail.com'),
+('3', 'rales', '3', '3', 'alumno.paltamiranda@gmail.com'),
+('300', 'a', '300', '300', 'alumno.paltamiranda@gmail.com'),
+('32', 'londra', '32', '32', 'alumno.paltamiranda@gmail.com'),
+('4', 'elec', '4', '4', 'alumno.paltamiranda@gmail.com'),
+('41', 'Dirk', '41', '41', 'alumno.paltamiranda@gmail.com'),
+('5', 'tronica', '5', '5', 'alumno.paltamiranda@gmail.com'),
+('6', 'informatica', '6', '6', 'alumno.paltamiranda@gmail.com'),
+('7', 'multi', '7', '7', 'alumno.paltamiranda@gmail.com'),
+('8', 'medios', '8', '8', 'alumno.paltamiranda@gmail.com'),
+('9', 'Economia2', '9', '9', 'alumno.paltamiranda@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -121,25 +118,25 @@ INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`, `Cambio
 (3, 2, 1, 'Dentro de la modalidad', 'No'),
 (4, 3, 2, 'Dentro de la modalidad', 'No'),
 (5, 3, 1, 'Dentro de la modalidad', 'No'),
-(6, 4, 10, 'Dentro de la modalidad', 'No'),
+(6, 4, 6, 'Dentro de la modalidad', 'No'),
 (7, 5, 0, 'Dentro de la modalidad', 'No'),
 (8, 5, 0, 'Dentro de la modalidad', 'No'),
-(9, 4, 11, 'Dentro de la modalidad', 'Si'),
+(9, 4, 22, 'Dentro de la modalidad', 'Si'),
 (10, 2, 3, 'Dentro de la modalidad', 'Si'),
-(300, 4, 8, 'Dentro de la modalidad', 'No'),
-(299, 4, 1, 'Dentro de la modalidad', 'No'),
-(298, 4, 7, 'Dentro de la modalidad', 'No'),
-(297, 4, 5, 'Dentro de la modalidad', 'No'),
-(296, 4, 4, 'Dentro de la modalidad', 'No'),
-(295, 4, 2, 'Dentro de la modalidad', 'No'),
-(294, 4, 6, 'Dentro de la modalidad', 'No'),
-(293, 4, 3, 'Dentro de la modalidad', 'No'),
-(292, 4, 9, 'Dentro de la modalidad', 'No'),
-(291, 4, 0, '-', 'No'),
-(290, 4, 0, '-', 'No'),
-(289, 4, 0, '-', 'No'),
-(288, 4, 0, '-', 'No'),
-(287, 4, 0, '-', 'No'),
+(300, 4, 21, 'Dentro de la modalidad', 'No'),
+(299, 4, 3, 'Dentro de la modalidad', 'No'),
+(298, 4, 4, 'Dentro de la modalidad', 'No'),
+(297, 4, 9, 'Dentro de la modalidad', 'No'),
+(296, 4, 11, 'Dentro de la modalidad', 'No'),
+(295, 4, 12, 'Dentro de la modalidad', 'No'),
+(294, 4, 15, 'Dentro de la modalidad', 'No'),
+(293, 4, 16, 'Dentro de la modalidad', 'No'),
+(292, 4, 17, 'Dentro de la modalidad', 'No'),
+(291, 4, 19, 'Dentro de la modalidad', 'No'),
+(290, 4, 18, 'Dentro de la modalidad', 'No'),
+(289, 4, 5, 'Dentro de la modalidad', 'No'),
+(288, 4, 7, 'Dentro de la modalidad', 'No'),
+(287, 4, 10, 'Dentro de la modalidad', 'No'),
 (286, 4, 0, '-', 'No'),
 (285, 4, 0, '-', 'No'),
 (284, 4, 0, '-', 'No'),
@@ -154,17 +151,17 @@ INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`, `Cambio
 (274, 4, 0, '-', 'No'),
 (273, 4, 0, '-', 'No'),
 (272, 4, 0, '-', 'No'),
-(271, 4, 0, '-', 'No'),
+(271, 4, 1, 'Dentro de la modalidad', 'No'),
 (270, 4, 0, '-', 'No'),
-(269, 4, 0, '-', 'No'),
-(268, 4, 0, '-', 'No'),
+(269, 4, 2, 'Dentro de la modalidad', 'No'),
+(268, 4, 8, 'Dentro de la modalidad', 'No'),
 (267, 4, 0, '-', 'No'),
 (266, 4, 0, '-', 'No'),
-(265, 4, 0, '-', 'No'),
+(265, 4, 13, 'Dentro de la modalidad', 'No'),
 (264, 4, 0, '-', 'No'),
 (263, 4, 0, '-', 'No'),
-(262, 4, 0, '-', 'No'),
-(261, 4, 0, '-', 'No');
+(262, 4, 20, 'Dentro de la modalidad', 'No'),
+(261, 4, 14, 'Dentro de la modalidad', 'No');
 
 -- --------------------------------------------------------
 
@@ -197,78 +194,16 @@ INSERT INTO `empleado` (`ID_Empleado`, `Nombre`, `Usuario`, `Tipo`, `Contrasenia
 
 CREATE TABLE `info` (
   `DNI` varchar(8) NOT NULL,
-  `Anio` varchar(1) NOT NULL,
+  `Anio` int(1) NOT NULL,
   `Prom` float NOT NULL,
-  `Fichas` int(4) NOT NULL,
+  `Fichas` int(2) NOT NULL,
   `Inasistencias` float NOT NULL,
-  `Observaciones` int(4) NOT NULL
+  `Observaciones` int(2) NOT NULL,
+  `Ciclo_Lectivo` year(4) NOT NULL DEFAULT 2022,
+  `Curso` varchar(1) NOT NULL,
+  `Escuela` varchar(10) NOT NULL,
+  `sin_pendientes` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `info`
---
-
-INSERT INTO `info` (`DNI`, `Anio`, `Prom`, `Fichas`, `Inasistencias`, `Observaciones`) VALUES
-('1', '1', 1, 1, 1, 1),
-('1', '2', 1, 1, 1, 1),
-('1', '3', 1, 1, 1, 1),
-('10', '1', 10, 10, 10, 10),
-('10', '2', 10, 10, 10, 10),
-('10', '3', 10, 10, 10, 10),
-('2', '1', 2, 2, 2, 2),
-('2', '2', 2, 2, 2, 2),
-('2', '3', 2, 2, 2, 2),
-('23', '1', 2, 2, 2, 2),
-('23', '2', 2, 2, 2, 2),
-('23', '3', 2, 2, 2, 2),
-('292', '1', 2, 9, 2, 3),
-('292', '2', 2, 9, 2, 3),
-('292', '3', 2, 9, 2, 3),
-('293', '1', 2, 9, 3, 3),
-('293', '2', 2, 9, 3, 3),
-('293', '3', 2, 9, 3, 3),
-('294', '1', 2, 9, 4, 3),
-('294', '2', 2, 9, 4, 3),
-('294', '3', 2, 9, 4, 3),
-('295', '1', 2, 9, 5, 3),
-('295', '2', 2, 9, 5, 3),
-('295', '3', 2, 9, 5, 3),
-('296', '1', 2, 9, 6, 3),
-('296', '2', 2, 9, 6, 3),
-('296', '3', 2, 9, 6, 3),
-('297', '1', 2, 9, 7, 3),
-('297', '2', 2, 9, 7, 3),
-('297', '3', 2, 9, 7, 3),
-('298', '1', 2, 9, 8, 3),
-('298', '2', 2, 9, 8, 3),
-('298', '3', 2, 9, 8, 3),
-('299', '1', 2, 9, 9, 3),
-('299', '2', 2, 9, 9, 3),
-('299', '3', 2, 9, 9, 3),
-('3', '1', 3, 3, 3, 3),
-('3', '2', 3, 3, 3, 3),
-('3', '3', 3, 3, 3, 3),
-('32', '1', 9, 1, 1, 1),
-('32', '2', 9, 1, 1, 1),
-('32', '3', 9, 1, 1, 1),
-('4', '1', 4, 4, 4, 4),
-('4', '2', 4, 4, 4, 4),
-('4', '3', 4, 4, 4, 4),
-('5', '1', 5, 5, 5, 5),
-('5', '2', 5, 5, 5, 5),
-('5', '3', 5, 5, 5, 5),
-('6', '1', 1, 6, 6, 6),
-('6', '2', 1, 6, 6, 6),
-('6', '3', 2, 6, 6, 6),
-('7', '1', 7, 7, 7, 7),
-('7', '2', 7, 7, 7, 7),
-('7', '3', 7, 7, 7, 7),
-('8', '1', 8, 8, 8, 8),
-('8', '2', 8, 8, 8, 8),
-('8', '3', 8, 8, 8, 8),
-('9', '1', 9, 9, 9, 9),
-('9', '2', 9, 9, 9, 9),
-('9', '3', 9, 9, 9, 9);
 
 -- --------------------------------------------------------
 
@@ -309,33 +244,6 @@ CREATE TABLE `total` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `total`
---
-
-INSERT INTO `total` (`DNI`, `PromediosT`, `FichasT`, `InasistenciasT`, `ObservacionesT`, `Comentario`) VALUES
-('1', 1, 3, 3, 3, '2'),
-('10', 10, 30, 30, 30, '11'),
-('2', 2, 6, 6, 6, '3'),
-('23', 2, 6, 6, 6, '2'),
-('292', 4.33333, 13, 20, 20, '92'),
-('293', 7, 21, 15, 15, '93'),
-('294', 5.66667, 17, 22, 22, '94'),
-('295', 7.66667, 23, 19, 19, '95'),
-('296', 7, 21, 24, 24, '96'),
-('297', 6, 6, 9, 17, '9'),
-('298', 5, 6, 24, 15, '0'),
-('299', 8, 6, 15, 3, '3'),
-('3', 3, 9, 9, 9, '3'),
-('300', 5, 6, 24, 19, '9'),
-('32', 9, 3, 3, 3, 'aaaaaaaaa'),
-('4', 4, 12, 12, 12, '5'),
-('5', 5, 15, 15, 15, '6'),
-('6', 1.33333, 18, 18, 18, '6'),
-('7', 7, 21, 21, 21, '8'),
-('8', 8, 24, 24, 24, '8'),
-('9', 9, 27, 27, 27, '10');
-
---
 -- Índices para tablas volcadas
 --
 
@@ -355,7 +263,7 @@ ALTER TABLE `empleado`
 -- Indices de la tabla `info`
 --
 ALTER TABLE `info`
-  ADD PRIMARY KEY (`DNI`,`Anio`);
+  ADD PRIMARY KEY (`DNI`,`Ciclo_Lectivo`);
 
 --
 -- Indices de la tabla `total`
