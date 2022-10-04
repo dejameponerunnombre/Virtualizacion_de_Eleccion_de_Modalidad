@@ -20,6 +20,18 @@ html{
   
 }
 
+body{
+  
+  position: relative;
+  background-image: url(../IMG/prueba.jpg);
+ 
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: static;
+}
+
 .texto-informacion{
 
 width: 80%;
@@ -44,14 +56,6 @@ border:1px #b7d6ff solid;
 
 header{
   width: 100%;
-  height: 180vh;
-  background-image: url(../IMG/prueba.jpg);
- 
-  
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: static;
   
  
   
@@ -169,8 +173,12 @@ nav{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .row{
+  
   display: flex;
+  justify-content: center;
 }
+
+
 
 
 
@@ -317,7 +325,9 @@ h2 {
 
 
 
-
+footer{
+  bottom: 0;
+}
 
 /*-----------------Celulares------------------*/
 
@@ -373,11 +383,19 @@ h2 {
     height: auto;
   }
 
-  @media screen and (max-width: 900px) {
-    .row{
-        display: flex;
-        flex-direction: column;
-      }
-  }
+}
+
+@media screen and (max-width: 900px) {
   
+  .row{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    align-items: center;
+    }
+
+    .col-md-4{
+      margin-left: 0px;
+    }
 }
