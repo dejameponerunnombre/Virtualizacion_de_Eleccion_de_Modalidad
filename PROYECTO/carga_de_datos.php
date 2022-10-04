@@ -22,7 +22,6 @@ if($curso=="D"|| $curso=="E")
 }
 $sin_pendientes = $_POST['termina'];
 $Ciclo_Lectivo = $_POST['ciclo_lectivo'];
-echo $anio,$DNI,$P,$F,$I,$O,$Comentario,$curso,$escuela,$sin_pendientes,$Ciclo_Lectivo;
 include("db.php"); 
 $in  = "INSERT INTO info (Prom, Fichas, Inasistencias, Observaciones, DNI, Anio, Curso, Escuela, sin_pendientes, Ciclo_Lectivo) values 
 ($P, $F, $I, $O, '$DNI', $anio, '$curso', '$escuela', '$sin_pendientes', $Ciclo_Lectivo)";
