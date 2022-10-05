@@ -1,62 +1,5 @@
 <?php
-include ("db.php");
-$limpiado="UPDATE eleccion SET Prioridad = 0";
-$limpio= $conexion->query($limpiado);
-for($x = 1; $x <= 5; $x++)
-{
-    $ahorasi="SELECT Ingresos FROM modalidad where ID_Modalidad = $x";
-    $quesi= $conexion->query($ahorasi);
-    $siquesi = $quesi ->fetch_array();
-    if ($siquesi[0] > 0)
-    {
-    for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
-    {    
-        $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
-        and e.ID_Modalidad = $x and e.Prioridad = 0 and e.Cambio = 'No' 
-        order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
-        $connB = $conexion -> query($varB);
-        $DNI = $connB ->fetch_array();
-        $cant = $connB ->num_rows;
-        if($cant == 0)
-        {
-            $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
-            and e.ID_Modalidad = $x and e.Prioridad = 0
-            order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
-            $connB = $conexion -> query($varB);
-            $DNI = $connB ->fetch_array();
-        }
-        $var2 = "UPDATE eleccion SET Prioridad = '$y', Situacion = 'Dentro de la modalidad' where DNI = $DNI[0]";
-        $conn2= $conexion->query($var2);
-    }
-    }
-    if($siquesi[0] > 39)
-    {
-        for($y = 40; $y <= $siquesi[0]; $y++)
-    {   
-        $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
-        and e.ID_Modalidad = $x and e.Prioridad = 0 and e.Cambio = 'No' 
-        order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
-        $connB = $conexion -> query($varB);
-        $DNI = $connB ->fetch_array();
-        $cant = $connB ->num_rows;
-        if($cant == 0)
-        {
-            $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
-            and e.ID_Modalidad = $x and e.Prioridad = 0
-            order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
-            $connB = $conexion -> query($varB);
-            $DNI = $connB ->fetch_array();
-        }
-        $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario
-        FROM total t, alumnos a, eleccion e 
-        where a.DNI = $DNI[0] and t.DNI = $DNI[0]";
-        $info= $conexion->query($infoalu);
-        $datos = $info ->fetch_array();
-        $var4 = "UPDATE eleccion SET Situacion = 'En lista de espera', Prioridad = $y where DNI = $DNI[0]";
-        $conn4 = $conexion->query($var4); 
-    }
-    }
-}
+include("calculo.php");
 ?>
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
@@ -301,7 +244,10 @@ for($x = 1; $x <= 5; $x++)
                      <h2>Todas las Listas</h2>  
                      <hr>
 <?php
-
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}
 include("db.php");
 for($x = 1; $x <= 5; $x++)
 {
@@ -313,7 +259,7 @@ for($x = 1; $x <= 5; $x++)
         ?>
         </table></div>
     <h2 style="text-align: center; font-weight:600; color:#000a35;"> <?php echo $siquesi["Descripcion"] ?></h2>
-     <div class="datagrid">   <table border = 1 ><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th></tr>
+     <div class="datagrid">   <table border = 1 ><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
     <?php
     for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
     {   
@@ -321,14 +267,37 @@ for($x = 1; $x <= 5; $x++)
         and e.ID_Modalidad = $x and e.Prioridad = $y";
         $connB = $conexion -> query($varB);
         $DNI = $connB ->fetch_array();
-        $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario
+        $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, t.sin_pendientes
         FROM total t, alumnos a, eleccion e 
         where a.DNI = $DNI[0] and t.DNI = $DNI[0]";
         $info= $conexion->query($infoalu);
         $datos = $info ->fetch_array();
+        switch($datos["sin_pendientes"])
+        {
+            case 1:
+                {
+                    $mes = "Noviembre";  
+                    break; 
+                }
+            case 2:
+                {
+                    $mes = "Diciembre"; 
+                    break;   
+                }
+            case 3:
+                {
+                    $mes = "Febrero"; 
+                    break;   
+                }
+            case 4:
+                {
+                    $mes = "Marzo";   
+                    break; 
+                }
+        }
         ?>
         
-        <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td><?php echo $datos["Comentario"]?></td><tr>
+        <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td><?php echo $datos["Comentario"]?></td><td><?php echo $mes ?></td><tr>
 
 
         <?php  
