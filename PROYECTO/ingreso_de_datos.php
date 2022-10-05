@@ -164,7 +164,14 @@ if($filas > 0)
 
         </div>
 
+        <fieldset id="termina">
 
+        <legend>Cuando dejó de tener materias pendientes?</legend>
+        <input type="radio" id="Noviembre" value= 1 name="termina"><label for="Noviembre">Noviembre</label>
+        <input type="radio" id="Diciembre"value= 2 name="termina"><label for="Diciembre">Diciembre</label>
+        <input type="radio" id="Febrero"value= 3 name="termina"><label for="Febrero">Febrero</label>
+        <input type="radio" id="Marzo"value= 4 name="termina"><label for="Marzo">Marzo</label>
+        </fieldset>
         <br>
 
         <div class="temas3">

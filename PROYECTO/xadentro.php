@@ -14,7 +14,7 @@ for($x = 1; $x <= 5; $x++)
     {    
         $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
         and e.ID_Modalidad = $x and e.Prioridad = 0 and e.Cambio = 'No' 
-        order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
+        order by t.sin_pendientes ASC, t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
         $connB = $conexion -> query($varB);
         $DNI = $connB ->fetch_array();
         $cant = $connB ->num_rows;
@@ -22,7 +22,7 @@ for($x = 1; $x <= 5; $x++)
         {
             $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
             and e.ID_Modalidad = $x and e.Prioridad = 0
-            order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
+            order by t.sin_pendientes ASC, t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
             $connB = $conexion -> query($varB);
             $DNI = $connB ->fetch_array();
         }
@@ -36,7 +36,7 @@ for($x = 1; $x <= 5; $x++)
     {   
         $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
         and e.ID_Modalidad = $x and e.Prioridad = 0 and e.Cambio = 'No' 
-        order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
+        order by t.sin_pendientes ASC, t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
         $connB = $conexion -> query($varB);
         $DNI = $connB ->fetch_array();
         $cant = $connB ->num_rows;
@@ -44,7 +44,7 @@ for($x = 1; $x <= 5; $x++)
         {
             $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
             and e.ID_Modalidad = $x and e.Prioridad = 0
-            order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
+            order by t.sin_pendientes ASC, t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
             $connB = $conexion -> query($varB);
             $DNI = $connB ->fetch_array();
         }
@@ -317,7 +317,7 @@ if($siquesi[0] > 0)
                      <h2>Listas por Modalidad: Tabla de <?php echo $siquesi["Descripcion"]?></h2>  
                      <hr>
 
-    <div class="datagrid"><table border = 1><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th></tr>
+    <div class="datagrid"><table border = 1><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
     <?php
     for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
     {   
@@ -325,20 +325,43 @@ if($siquesi[0] > 0)
         and e.ID_Modalidad = $x and e.Prioridad = $y";
         $connB = $conexion -> query($varB);
         $DNI = $connB ->fetch_array();
-        $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario
+        $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, t.sin_pendientes
         FROM total t, alumnos a, eleccion e 
         where a.DNI = $DNI[0] and t.DNI = $DNI[0]";
         $info= $conexion->query($infoalu);
         $datos = $info ->fetch_array();
+        switch($datos["sin_pendientes"])
+        {
+            case 1:
+                {
+                    $mes = "Noviembre";  
+                    break; 
+                }
+            case 2:
+                {
+                    $mes = "Diciembre"; 
+                    break;   
+                }
+            case 3:
+                {
+                    $mes = "Febrero"; 
+                    break;   
+                }
+            case 4:
+                {
+                    $mes = "Marzo";   
+                    break; 
+                }
+        }
         ?>
-        <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td ><?php echo $datos["Comentario"]?></td><tr>
+        <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td ><?php echo $datos["Comentario"]?></td><td><?php echo $mes?></td><tr>
         <?php
     }
     }
     else
     { 
         ?>
-        <h2> No hay alumnos en lista de espera en <?php echo $siquesi["Descripcion"] ?> </h2>
+        <h2> No hay alumnos que hayan elegido <?php echo $siquesi["Descripcion"] ?> </h2>
         <?php
     }
     ?>

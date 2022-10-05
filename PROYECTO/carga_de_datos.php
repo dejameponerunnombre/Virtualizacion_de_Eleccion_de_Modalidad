@@ -21,10 +21,11 @@
         $O[0] = $_POST['Observaciones_1ro'];
         $O[1] = $_POST['Observaciones_2do'];
         $O[2] = $_POST['Observaciones_3ro'];
+        $fecha = $_POST['termina'];
         $Comentario = $_POST['Comentario'];
         for($i = 0; $i < 3; $i++)
         {
-            if ($P[$i] == NULL|| $F[$i] == NULL|| $I[$i] == NULL|| $O[$i] == NULL|| $Comentario == NULL)
+            if ($P[$i] == NULL|| $F[$i] == NULL|| $I[$i] == NULL|| $O[$i] == NULL|| $Comentario == NULL || $fecha == NULL)
         {
             $x = 1;
         }
@@ -54,8 +55,8 @@
                 $OT += $O[$i];
             }
             $PromT = $PT / 3;
-            $var2 = "INSERT INTO total (PromediosT, FichasT, InasistenciasT, ObservacionesT, DNI, Comentario) values 
-            ($PromT, $FT, $IT, $OT, $DNI, $Comentario)";
+            $var2 = "INSERT INTO total (PromediosT, FichasT, InasistenciasT, ObservacionesT, DNI, Comentario, sin_pendientes) values 
+            ($PromT, $FT, $IT, $OT, $DNI, $Comentario, $fecha)";
             $con4 = $conexion -> query($var2);
             $x = 10;
             $_SESSION['x'] = $x;
