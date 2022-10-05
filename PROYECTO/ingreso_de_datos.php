@@ -21,8 +21,6 @@
 
 <?php
 session_start();
-$anio = $_POST['anio'];
-$_SESSION['anio']=$anio;
 $DNI = $_SESSION['DNI'];
 include("db.php");
 $request = "SELECT*FROM alumnos where DNI = '$DNI'";
@@ -67,9 +65,6 @@ if($filas > 0)
                     <li class="text-center user-image-back">
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
-                    <li> 
-                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
-                    </li>
                     <li>
                         <a id= 1 href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
@@ -96,73 +91,92 @@ if($filas > 0)
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Ingresar datos de alumno</h2>   
+                     <h2>Seleccione una opción</h2>   
                     </div>
                 </div>              
                
                   <hr />  
+                  <h2 id="h2">Ingresar datos de alumno</h2>
                   <br>
             <form action="carga_de_datos.php" method="post"  >
-                <div class="temas">
-                    <div class="temas1">
-                    <div class="prom">
-                        <h3>Promedio</h3>
-                        <input step="any" type="number"  name="Promedio" value="">     
-                        <br> 
-                        <br> 
-                        <fieldset id="termina">
-                            <legend>Cuando dejó de tener materias pendientes?</legend>
-                            <input type="radio" id="Noviembre" value="Noviembre" name="termina"><label for="Noviembre">Noviembre</label>
-                            <input type="radio" id="Diciembre"value="Diciembre" name="termina"><label for="Diciembre">Diciembre</label>
-                            <input type="radio" id="Febrero"value="Febrero" name="termina"><label for="Febrero">Febrero</label>
-                            <input type="radio" id="Marzo"value="Marzo" name="termina"><label for="Marzo">Marzo</label>
-                        </fieldset>       
-                    </div>   
-                    <br>
-                    <div class="inasis">
-                        <h3>Inasistencias en el año</h3>
-                        <input step="any" type="number" name="Inasistencias" value="" >
-                        <br> 
-                    </div>
-                </div>
-                <br>
-                <div class="temas2">
-                    <div class="fichas">
-                        <h3>Fichas en el año</h3>
-                        <input  type="number" name="Fichas" value="">
-                        <br> 
-                        <br>
 
-                    </div>
-                    <br>
-                    <div class="observ">
-                        <h3>Observaciones en el año</h3>
-                        <input type="number" name="Observaciones_1ro" value="">
-                        <br> 
-                        <br>
-                        <fieldset id="curso">
-                            <legend>Curso</legend>
-                            <input type="radio" id="A" value="A" name="curso"><label for="A">A</label>
-                            <input type="radio" id="B"value="B" name="curso"><label for="B">B</label>
-                            <input type="radio" id="C"value="C" name="curso"><label for="C">C</label>
-                            <input type="radio" id="D" value="D" name="curso"><label for="D">D</label>
-                            <input type="radio" id="E"value="E" name="curso"><label for="E">E</label>
-                            <input type="radio" id="G"value="G" name="curso"><label for="G">G</label>
-                            <input type="radio" id="Otra"value="Otra" name="curso"><label for="Otra">Otra</label>
-                        </fieldset>
-                    </div>
-                </div>
-                <br>
-                <div class="temas3">
-                    <div class="comen">
-                        <h3>Comentario de conducta</h3>
-                        <input type="text" name="Comentario" id="comentario">
-                        <h3>Ciclo Lectivo</h3>
-                        <input type="number" name="ciclo_lectivo" id="ciclo_lectivo">
-                    </div>
         
-                    <br> 
-                        <br>
+        
+
+    <div class="temas">
+
+
+        <div class="temas1">
+
+        <div class="prom">
+            <h3>Promedios</h3>
+            <p>Promedio de Primer Año: <input step="any" type="number"  name="Promedio_1ro" value=""></p>            
+            <p>Promedio de Segundo Año: <input  step="any" type="number" name="Promedio_2do" value=""></p>           
+            <p>Promedio de Tercer Año: <input step="any" type="number" name="Promedio_3ro" value=""></p>
+            
+
+        </div>   
+
+
+        <br>
+
+
+        <div class="inasis">
+            
+            <h3>Inasistencias</h3>
+            <p>Inasistencias de Primer Año: <input step="any" type="number" name="Inasistencias_1ro" value="" ></p>
+            <p>Inasistencias de Segundo Año: <input step="any" type="number" name="Inasistencias_2do" value=""></p>
+            <p>Inasistencias de Tercer Año: <input step="any" type="number" name="Inasistencias_3ro" value=""></p>
+            
+
+        </div>
+
+        </div>
+
+
+        <br>
+
+        <div class="temas2">
+
+        <div class="fichas">
+
+            <h3>Fichas</h3>
+            <p>Fichas de Primer Año: <input  type="number" name="Fichas_1ro" value=""></p>
+            <p>Fichas de Segundo Año: <input type="number" name="Fichas_2do" value=""></p>
+            <p>Fichas de Tercer Año: <input type="number" name="Fichas_3ro" value=""></p>
+            
+        
+        </div>
+
+
+        <br>
+
+
+        <div class="observ">
+        
+            <h3>Observaciones</h3>
+            <p>Observaciones de Primer Año: <input type="number" name="Observaciones_1ro" value=""></p>
+            <p>Observaciones de Segundo Año: <input type="number" name="Observaciones_2do" value=""></p>
+            <p>Observaciones de Tercer Año: <input type="number" name="Observaciones_3ro" value=""></p>
+            
+        
+        </div>
+
+        </div>
+
+
+        <br>
+
+        <div class="temas3">
+
+        <div class="comen">    
+        
+            <h3>Comentario de conducta</h3>
+            <p>Comentario de conducta: <input type="text" name="Comentario" id="comentario"></p>
+        
+        </div>
+        
+        
         <button type="submit" class="m_boton_formulario bttn-pill bttn-md bttn-primary">Enviar</button>
     </div>
     </form>
@@ -192,7 +206,7 @@ mysqli_free_result($resultado2);
 
 
 
- 
+
     
 
 </html>

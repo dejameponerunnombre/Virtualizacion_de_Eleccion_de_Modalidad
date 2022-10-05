@@ -1,9 +1,3 @@
-<?php
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
-?>
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -49,9 +43,7 @@ if(!isset($_SESSION))
                      
                     </li>
 
-                    <li> 
-                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
-                    </li>
+
                     <li>
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
@@ -101,10 +93,15 @@ if(!isset($_SESSION))
                         </div>     
                     </div> 
                 </form>
+                 
                 <?php 
+                
+                if(!isset($_SESSION)) 
+                { 
+                    session_start(); 
+                } 
                 $_SESSION['var'] = null;
                 $_SESSION['varia'] = null;
-                $_SESSION['variab'] = null;
                 $varia = empty($_SESSION['vari']);
                 if($varia == false)
                     {

@@ -46,9 +46,7 @@
                      
                     </li>
 
-                    <li> 
-                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
-                    </li>
+
                     <li>
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
@@ -86,8 +84,7 @@
                 if(!isset($_SESSION)) 
                 { 
                     session_start(); 
-                }
-                $_SESSION['variab'] = null;
+                } 
                 $_SESSION['varia'] = null;
                 $_SESSION['vari'] = null;
                 include("db.php");
@@ -149,7 +146,7 @@
                         $x = empty($_POST['DNI']);
                         
                         if($x == false)
-                        { 
+                        {
                             $DNI = $_POST['DNI'];
                             $_SESSION['DNI'] = $DNI;
                             include("db.php");
@@ -187,7 +184,7 @@
                                 }
                                 else{
                                     ?>
-                                    <form action = "carga_anio.php" method = "post" class="boton_formulario"> 
+                                    <form action = "ingreso_de_datos.php" method = "post" class="boton_formulario"> 
                                     <ul>
                                     <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
                                     </ul>  
