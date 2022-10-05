@@ -266,45 +266,66 @@ for($x="A";$x<="G" and $x!="f";$x++)
         $DNI[0] = 0;
         for($y = 1; $y <= $alumnos[0]; $y++)
         {   
-            $varB = "SELECT e.DNI, a.Nombre FROM eleccion e inner join alumnos a on a.DNI = e.DNI 
-            where a.Curso = '$x' and a.Nombre > '$DNI[1]' and e.DNI != $DNI[0] order by a.Nombre ASC";
-            $connB = $conexion -> query($varB);
-            $DNI = $connB ->fetch_array();
-            $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, m.Descripcion, e.Prioridad, e.Situacion, e.Cambio, t.sin_pendientes
-            FROM total t, alumnos a, eleccion e, modalidad m
-            where a.DNI = $DNI[0] and t.DNI = $DNI[0] and e.DNI = $DNI[0] and e.ID_Modalidad = m.ID_Modalidad";
-            $info= $conexion->query($infoalu);
-            $datos = $info ->fetch_array();
-            switch($datos["sin_pendientes"])
-        {
-            case 1:
-                {
-                    $mes = "Noviembre";  
-                    break; 
-                }
-            case 2:
-                {
-                    $mes = "Diciembre"; 
-                    break;   
-                }
-            case 3:
-                {
-                    $mes = "Febrero"; 
-                    break;   
-                }
-            case 4:
-                {
-                    $mes = "Marzo";   
-                    break; 
-                }
-        }
-            ?>
+
+            $sineleccion="SELECT COUNT(*) FROM alumnos a INNER join eleccion e on a.DNI = e.DNI WHERE a.Curso = '$x' AND a.DNI NOT IN(SELECT DNI FROM total)";
+            $not= $conexion->query($sineleccion);
+            $notod = $not ->fetch_array(); 
+            if (empty($notod[0]) === FALSE)
+            {
+                $sinMod = "SELECT a.DNI, a.Nombre, a.Curso, m.Descripcion, e.Cambio FROM eleccion e, alumnos a, modalidad m 
+                where  a.DNI NOT IN(SELECT DNI FROM total) and a.DNI = e.DNI and a.Nombre > '$DNI[1]' and a.DNI != $DNI[0] and a.Curso = '$x'and e.ID_Modalidad = m.ID_Modalidad order by a.Nombre ASC";
+                $sinElex = $conexion -> query($sinMod);
+                $DNI = $sinElex ->fetch_array();
+                ?>
+                <tr><td><?php echo $DNI["Descripcion"]?></td><td>No ingresado</td><td><?php echo $DNI[1]?></td><td>-</td><td><?php echo $DNI["Cambio"]?></td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No realizó la eleccion</td><td>No ingresado</td><tr>
+                <?php
+
+            }    
+            else
+            {
+                    $varB = "SELECT e.DNI, a.Nombre FROM eleccion e inner join alumnos a on a.DNI = e.DNI 
+                    where a.Curso = '$x' and a.Nombre > '$DNI[1]' and e.DNI != $DNI[0] order by a.Nombre ASC";
+                    $connB = $conexion -> query($varB);
+                    $DNI = $connB ->fetch_array();
+                    $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, m.Descripcion, e.Prioridad, e.Situacion, e.Cambio, t.sin_pendientes
+                    FROM total t, alumnos a, eleccion e, modalidad m
+                    where a.DNI = $DNI[0] and t.DNI = $DNI[0] and e.DNI = $DNI[0] and e.ID_Modalidad = m.ID_Modalidad";
+                    $info= $conexion->query($infoalu);
+                    $datos = $info ->fetch_array();
+                    switch($datos["sin_pendientes"])
+                    {
+                        case 1:
+                            {
+                                $mes = "Noviembre";  
+                                break; 
+                            }
+                        case 2:
+                            {
+                                $mes = "Diciembre"; 
+                                break;   
+                            }
+                        case 3:
+                            {
+                                $mes = "Febrero"; 
+                                break;   
+                            }
+                        case 4:
+                            {
+                                $mes = "Marzo";   
+                                break; 
+                            }
+                    }
+                ?>
                 <tr><td><?php echo $datos["Descripcion"]?></td><td><?php echo $datos["Prioridad"]?></td><td><?php echo $DNI[1]?></td><td><?php echo $datos["Situacion"]?></td><td><?php echo $datos["Cambio"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td><?php echo $datos["Comentario"]?></td><td><?php echo $mes ?></td><tr>
-            <?php  
-            $sineleccion="SELECT COUNT(*) FROM alumnos a WHERE a.Curso = '$x' and a.DNI NOT IN(SELECT DNI FROM eleccion)";
-            $noe= $conexion->query($sineleccion);
-            $nomod = $noe ->fetch_array(); 
-        }
+                <?php  
+                $sineleccion="SELECT COUNT(*) FROM alumnos a WHERE a.Curso = '$x' and a.DNI NOT IN(SELECT DNI FROM eleccion)";
+                $noe= $conexion->query($sineleccion);
+                $nomod = $noe ->fetch_array(); 
+            }
+
+                }
+
+            
         $sineleccion="SELECT COUNT(*) FROM alumnos a WHERE a.Curso = '$x' and a.DNI NOT IN(SELECT DNI FROM eleccion)";
         $noe= $conexion->query($sineleccion);
         $nomod = $noe ->fetch_array(); 
@@ -405,21 +426,26 @@ for($x="A";$x<="G" and $x!="f";$x++)
                 $notod = $not ->fetch_array(); 
                 if (empty($notod[0]) === FALSE)
                 {
-                    $sinMod = "SELECT t.DNI, a.Nombre FROM eleccion e, alumnos a, total t 
-                    where  a.DNI NOT IN(SELECT DNI FROM eleccion) and a.Nombre > '$aluSinElex[1]' and t.DNI != $aluSinElex[0] and a.DNI=t.DNI and a.Curso = '$x' order by a.Nombre ASC";
+                    $sinMod = "SELECT a.DNI, a.Nombre, a.Curso FROM eleccion e, alumnos a, total t 
+                    where  a.DNI NOT IN(SELECT DNI FROM total) a.DNI NOT IN(SELECT DNI FROM eleccion) and a.Nombre > '$aluSinElex[1]' and a.DNI != $aluSinElex[0] and a.Curso = '$x' order by a.Nombre ASC";
                     $sinElex = $conexion -> query($sinMod);
                     $aluSinElex = $sinElex ->fetch_array();
+                    ?>
+                    <tr><td>No realizó la eleccion</td><td>-</td><td><?php echo $aluSinElex[1]?></td><td>-</td><td>-</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No realizó la eleccion</td><td>No ingresado</td><tr>
+                    <?php
                 }
                 else
                 {
                     $sinMod = "SELECT t.DNI, a.Nombre FROM eleccion e, alumnos a, total t 
-                    where  a.DNI NOT IN(SELECT DNI FROM total) and a.Nombre > '$aluSinElex[1]' and t.DNI != $aluSinElex[0] and a.DNI=t.DNI and a.Curso = '$x' order by a.Nombre ASC";
+                    where  a.DNI NOT IN(SELECT DNI FROM eleccion) and a.Nombre > '$aluSinElex[1]' and t.DNI != $aluSinElex[0] and a.DNI=t.DNI and a.Curso = '$x' order by a.Nombre ASC";
+                    $sinElex = $conexion -> query($sinMod);
+                    $aluSinElex = $sinElex ->fetch_array();
+
                     $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, a.Curso
                     FROM total t, alumnos a, eleccion e
                     where a.DNI NOT IN(SELECT DNI FROM eleccion) and a.DNI = $aluSinElex[0] and t.DNI = $aluSinElex[0] and a.Curso = '$x'  and a.DNI=t.DNI";
                     $data= $conexion->query($infoalu);
                     $fact = $data ->fetch_array();
-                }
                     switch($fact["sin_pendientes"])
                     {
                         case 1:
@@ -446,6 +472,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
                     ?>
                     <tr><td>No realizó la eleccion</td><td>-</td><td><?php echo $aluSinElex[1]?></td><td>-</td><td>-</td><td><?php echo $fact["PromediosT"]?></td><td><?php echo $fact["FichasT"]?></td><td><?php echo $fact["ObservacionesT"]?></td><td><?php echo $fact["InasistenciasT"]?></td><td><?php echo $fact["Comentario"]?></td><td>No realizó la eleccion</td><td><?php echo $mes?></td><tr>
                     <?php
+                }
             }
         }
             else
