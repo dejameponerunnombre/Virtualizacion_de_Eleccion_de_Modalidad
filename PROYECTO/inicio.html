@@ -359,13 +359,13 @@
             
             <div class="box">
             <div class="container">
-              <form action="comentarios.php" method="post">
+              <form target="_blank" action= "https://formsubmit.co/melinatroncosoleal@gmail.com" method="post">
               <div class="row">
                 <div class="col-25">
                   <label for="fname" >Nombre</label>
                 </div>
                 <div class="col-75">
-                  <input type="text" id="fname" name="firstname" placeholder="Nombre">
+                  <input type="text" id="name" name="firstname" class="form-control" placeholder="Nombre" required>
                 </div>
               </div>
               <div class="row">
@@ -373,7 +373,7 @@
                   <label for="email">Email</label>
                 </div>
                 <div class="col-75">
-                  <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com">
+                  <input type="email" id="email" name="email" class="form-control" placeholder="ejemplo@gmail.com" required>
                 </div>
               </div>
               
@@ -383,12 +383,12 @@
                   <label for="subject">Mensaje</label>
                 </div>
                 <div class="col-75">
-                  <textarea id="subject"  name="subject" placeholder="Escribí algo" style="height:100px"></textarea>
+                  <textarea id="subject"  name="subject" placeholder="Escribí algo" style="height:100px" required></textarea>
                 </div>
               </div>
               <br>
               <div class="row">
-                <input type="submit" value="Enviar">
+                <button type="submit" class="btn btn-lg btn-dark btn-block" >Enviar</button>
               </div>
               </form>
             </div>
