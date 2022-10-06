@@ -89,118 +89,137 @@
                 $_SESSION['vari'] = null;
                 include("db.php");
                 $x = empty($_SESSION['x']);
-        if($x == false)
-        {
-            ?>
-            <div style="margin-top: 15%; text-align: center; margin-left: 17%; margin-right: 17%; border: 3px outset #172d8d;">
-		                        <h2 style="font-weight: 300;">Enviado con éxito</h2>
-		                        <p style="font-weight: 900;">La información fue ingresada correctamente</p>
+                    if($x == false)
+                    {
+                        ?>
+                        <div style="margin-top: 15%; text-align: center; margin-left: 17%; margin-right: 17%; border: 3px outset #172d8d;">
+                                            <h2 style="font-weight: 300;">Enviado con éxito</h2>
+                                            <p style="font-weight: 900;">La información fue ingresada correctamente</p>
+                                            <br>
+                                            <ul>
+            
+                                            <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="form-ingreso.php">Ingresar otro alumno</a></button></li>
+            
+                                            
+                                          </ul>
+                                        </div> 
+                        <?php 
+                        $_SESSION['x'] = null;
+                    }
+                    else
+                    {
+                        $p = empty($_SESSION['p']);
+                        if($p==false)
+                        {
+                            ?>
+                            <div style="margin-top: 15%; text-align: center; margin-left: 17%; margin-right: 17%; border: 3px outset #172d8d;">
+                                <h2 style="font-weight: 300;">Algun campo no fue completado</h2>
                                 <br>
                                 <ul>
-
-                                <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="form-ingreso.php">Ingresar otro alumno</a></button></li>
-
-                                
-                              </ul>
-	                        </div> 
-            <?php 
-            $_SESSION['x'] = null;
-        }
-        else
-        {
-            ?>  
-            <h2>Ingresar datos del alumno</h2>   
-            <hr />
-            <form action="form-ingreso.php" method="post"  >
-                    <div class="info">
-                    <div class="datos">        
-                        <br>
-                        <h3>DNI del alumno</h3>   
-                        <p><input type="number" name="DNI" id="DNI"></p>
-                        
-                    </div>   
-                    <div class="texto-centro">
-                        <ul>
-                            
-                            <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px; border-radius: 100px;">Consultar</button></li>
-                        </ul>
-                    </div>
-                        </form>
-                        <?php
-                        $vari = empty($_SESSION['var']);
-                        if($vari == false)
-                            {   
-                                $DNI = $_SESSION['DNI'];
-                                $request = "SELECT*FROM total where DNI = '$_SESSION[DNI]'";
-                                $resultado=mysqli_query($conexion,$request);
-                                $array = $resultado -> fetch_array();
-                                ?> <div class="boton_formulario"> <h2>Las notas de este alumno ya fueron ingresadas</h2>
-                                <p>Promedio total: <?php echo $array["PromediosT"]?></p>
-                                <p>Fichas totales: <?php echo $array["FichasT"]?></p>
-                                <p>Inasistencias totales: <?php echo $array["InasistenciasT"]?></p>
-                                <p>Observaciones totales: <?php echo $array["ObservacionesT"]?></p>
-                                <p>Comentario: <?php echo $array["Comentario"]?></p></div>
-                                <?php 
-                                $_SESSION['var'] = null;
-                            }
-                        $x = empty($_POST['DNI']);
-                        
-                        if($x == false)
-                        {
-                            $DNI = $_POST['DNI'];
-                            $_SESSION['DNI'] = $DNI;
-                            include("db.php");
-                            $request = "SELECT*FROM alumnos where DNI = '$_SESSION[DNI]'";
-                            $resultado=mysqli_query($conexion,$request);
-                            $filas = mysqli_num_rows($resultado);
-                            if($filas > 0)
-                            {
-                                $_SESSION['x'] = null;
-                                $array = $resultado -> fetch_array();
-                                $request2 = "SELECT*FROM info where DNI = '$_SESSION[DNI]'";
-                                $resultado2=mysqli_query($conexion,$request2);
-                                $filas2 = mysqli_num_rows($resultado2);
-                                ?>
-                                <h2 style="text-decoration:underline; font-weight:bold; padding-left: 20%;">Alumno ingresado:</h2>  
-                                <p style="padding-left: 20%;">Nombre: <?php echo $array["Nombre"]?></p>
-                                <p style="padding-left: 20%;">DNI: <?php echo $array["DNI"]?></p>
-                                </div>
-                                <?php
-                                if(empty($filas2) == false)
-                                {
-                                    $_SESSION['var'] = 1;
-                                }
-                                if(empty($_SESSION['var'] ) == false)
-                                {
-                                    ?>
-                                    <form action = "form-ingreso.php" method = "post" class="boton_formulario"> 
-                                    <ul>
-                                    <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
-                                    </ul>    
-                                    </div>              
-                            </div>             
-                                    </form>   
-                                    <?php
-                                }
-                                else{
-                                    ?>
-                                    <form action = "ingreso_de_datos.php" method = "post" class="boton_formulario"> 
-                                    <ul>
-                                    <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
-                                    </ul>  
-                                    </div>              
-                            </div>               
-                                    </form>   
-                                    <?php
-                                    }
-                            }
-                            else
-                            {
-                                ?> <div class="boton_formulario"> <h2>Alumno no ingresado</h2></div>
-                                <?php 
-                            }
+                                    <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="form-ingreso.php">Volver a ingresar alumno</a></button></li>
+                                </ul>
+                            </div> 
+                            <?php 
+                            $_SESSION['p'] = null;       
                         }
-                    }
+                        else
+                        {
+                            ?>  
+                        <h2>Ingresar datos del alumno</h2>   
+                        <hr />
+                        <form action="form-ingreso.php" method="post"  >
+                                <div class="info">
+                                <div class="datos">        
+                                    <br>
+                                    <h3>DNI del alumno</h3>   
+                                    <p><input type="number" name="DNI" id="DNI"></p>
+                                    
+                                </div>   
+                                <div class="texto-centro">
+                                    <ul>
+                                        <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px; border-radius: 100px;">Consultar</button></li>
+                                    </ul>
+                                </div>
+                                    </form>
+                                    <?php
+                                    $vari = empty($_SESSION['var']);
+                                    if($vari == false)
+                                        {   
+                                            $DNI = $_SESSION['DNI'];
+                                            $request = "SELECT*FROM total where DNI = '$_SESSION[DNI]'";
+                                            $resultado=mysqli_query($conexion,$request);
+                                            $array = $resultado -> fetch_array();
+                                            ?> <div class="boton_formulario"> <h2>Las notas de este alumno ya fueron ingresadas</h2>
+                                            <p>Promedio total: <?php echo $array["PromediosT"]?></p>
+                                            <p>Fichas totales: <?php echo $array["FichasT"]?></p>
+                                            <p>Inasistencias totales: <?php echo $array["InasistenciasT"]?></p>
+                                            <p>Observaciones totales: <?php echo $array["ObservacionesT"]?></p>
+                                            <p>Comentario: <?php echo $array["Comentario"]?></p></div>
+                                            <?php 
+                                            $_SESSION['var'] = null;
+                                        }
+                                    $x = empty($_POST['DNI']);
+                                    
+                                    if($x == false)
+                                    {
+                                        $DNI = $_POST['DNI'];
+                                        $_SESSION['DNI'] = $DNI;
+                                        include("db.php");
+                                        $request = "SELECT*FROM alumnos where DNI = '$_SESSION[DNI]'";
+                                        $resultado=mysqli_query($conexion,$request);
+                                        $filas = mysqli_num_rows($resultado);
+                                        if($filas > 0)
+                                        {
+                                            $_SESSION['x'] = null;
+                                            $array = $resultado -> fetch_array();
+                                            $request2 = "SELECT*FROM info where DNI = '$_SESSION[DNI]'";
+                                            $resultado2=mysqli_query($conexion,$request2);
+                                            $filas2 = mysqli_num_rows($resultado2);
+                                            ?>
+                                            <h2 style="text-decoration:underline; font-weight:bold; padding-left: 20%;">Alumno ingresado:</h2>  
+                                            <p style="padding-left: 20%;">Nombre: <?php echo $array["Nombre"]?></p>
+                                            <p style="padding-left: 20%;">DNI: <?php echo $array["DNI"]?></p>
+                                            </div>
+                                            <?php
+                                            if(empty($filas2) == false)
+                                            {
+                                                $_SESSION['var'] = 1;
+                                            }
+                                            if(empty($_SESSION['var'] ) == false)
+                                            {
+                                                ?>
+                                                <form action = "form-ingreso.php" method = "post" class="boton_formulario"> 
+                                                <ul>
+                                                <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
+                                                </ul>    
+                                                </div>              
+                                        </div>             
+                                                </form>   
+                                                <?php
+                                            }
+                                            else{
+                                                ?>
+                                                <form action = "ingreso_de_datos.php" method = "post" class="boton_formulario"> 
+                                                <ul>
+                                                <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
+                                                </ul>  
+                                                </div>              
+                                        </div>               
+                                                </form>   
+                                                <?php
+                                                }
+                                        }
+                                        else
+                                        {
+                                            ?> <div class="boton_formulario"> <h2>Alumno no ingresado</h2></div>
+                                            <?php 
+                                        }
+                                    }
+                                }
+                        }
+                        
+                
+
                         ?>              
     </div>
             </div>

@@ -36,9 +36,9 @@
         }
         if($x == 1)
         {
-            ?>
-            <h1>Algun campo no ha sido completado</h1>
-            <?php
+            $p=10;
+            $_SESSION['p']=$p;
+            include("form-ingreso.php");
         }
         else
         {
