@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("calculo.php");
 ?>
 <!DOCTYPE html>
@@ -237,17 +238,16 @@ include("calculo.php");
             </div>
         </nav>
 
-
+        
         <div id="page-wrapper" >
             <div id="page-inner" >
                 <div class="row">
                     <div class="col-md-12">
                     <?php
-$x = $_POST['question'];
-$_SESSION['b'] = $x;
-?>
-<?php
+
 include("db.php");
+$x = $_POST['question'];
+$_SESSION["b"] = $x;
 $ahorasi="SELECT Ingresos, Descripcion FROM modalidad where ID_Modalidad = $x";
 $quesi= $conexion->query($ahorasi);
 $siquesi = $quesi ->fetch_array();
@@ -295,6 +295,7 @@ if($siquesi[0] > 0)
                     break; 
                 }
         }
+        $_SESSION["mes"] = $mes;
         ?>
         <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td ><?php echo $datos["Comentario"]?></td><td><?php echo $mes?></td><tr>
         <?php

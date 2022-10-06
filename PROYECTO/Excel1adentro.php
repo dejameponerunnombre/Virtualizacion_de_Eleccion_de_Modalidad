@@ -1,22 +1,15 @@
 <?php
 session_start();
 include("db.php");
-$x = $_SESSION["b"];
+$x = $_SESSION['b'];
 $ahorasi="SELECT Ingresos, Descripcion FROM modalidad where ID_Modalidad = $x";
 $quesi= $conexion->query($ahorasi);
 $siquesi = $quesi ->fetch_array();
 if ($siquesi[0] > 0)
 {
     $encabezado = '';
-    $encabezado = $siquesi["Descripcion"]."\n"."Puesto"."\t"."Alumno"."\t"."DNI"."\t"."Promedio"."\t"."Fichas"."\t"."Observaciones"."\t"."Inasistencias"."\t"."Comentario"."\t"."Situacion"."\t";
-    $format_bold =& $encabezado->addFormat();
-$format_bold->setBold();
+    $encabezado = $siquesi["Descripcion"]."\n"."Puesto"."\t"."Alumno"."\t"."DNI"."\t"."Promedio"."\t"."Fichas"."\t"."Observaciones"."\t"."Inasistencias"."\t"."Comentario"."\t"."Situacion"."\t"."Cuando no adeuda materias"."\t";
 
-$format_title =& $encabezado->addFormat();
-$format_title->setBold();
-$format_title->setColor('yellow');
-$format_title->setPattern(1);
-$format_title->setFgColor('blue');
     for($y = 1; $y <= $siquesi[0]; $y++)
     {   
         $infoalu="SELECT e.Prioridad, a.Nombre, e.DNI, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, e.Situacion
@@ -25,16 +18,20 @@ $format_title->setFgColor('blue');
         order by e.Prioridad asc";
         $info = $conexion->query($infoalu);
         $setData = '';
+        $mes = $_SESSION["mes"];
         while ($datos = mysqli_fetch_row($info)) 
         {  
+
             $rowData = ''; 
             foreach ($datos as $value) 
             {  
                 $value = '"' . $value . '"' . "\t";  
                 $rowData .= $value;  
-            }  
+            }   
+            $value .= '"' . $mes . '"' . "\t";  
+            $rowData .= $value;
             $setData = $setData.trim($rowData) . "\n";  
-        }  
+        }
     }
 }
 header("Content-type: application/octet-stream");  
