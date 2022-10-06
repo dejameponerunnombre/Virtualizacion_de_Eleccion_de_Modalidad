@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="footer.css" >
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="icon" href="../IMG/Logo_azul (2).PNG">
-
+ 
 </head>
 <body>
      
@@ -41,33 +41,31 @@
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
+            <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
                         <img src="../IMG/find_user.png" class="img-responsive" />
-                     
                     </li>
-
-
-                    <li>
+                    <li> 
+                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
+                    </li>
+                    <li> 
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
-                   
-
                     <li>
                         <a href="promedios2.0.php"><i class="fa fa-table "></i>Ver listas de cada modalidad</a>
                     </li>
-                    
                     <li>
-                        <a href="eliminar-alumno.php"><i class="fa fa-trash-o"></i>Eliminar alumno</a>
+                        <a href="eliminar-alumno.php"><i class="fa fa-trash-o "></i>Eliminar alumno</a>
                     </li>
                     <li>
                         <a href="form_ingreso_DNI.php"><i class="fa fa-bar-chart-o"></i>Cambiar notas</a>
                     </li>
-
                     <li>
                         <a href="cambio-eleccion.php"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
-                    
+                    <li>
+                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver todos los alumnos cargados</a>
+                    </li>
                 </ul>
 
             </div>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-09-2022 a las 20:34:08
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.10
+-- Tiempo de generación: 06-10-2022 a las 22:51:45
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -54,7 +54,8 @@ INSERT INTO `alumnos` (`DNI`, `CUIL`, `Nombre`, `Escuela`, `Curso`, `Usuario`, `
 ('6', '6', 'informatica', 'tecnica', 'A', '6', '6', 'alumno.paltamiranda@gmail.com'),
 ('7', '7', 'multi', 'tecnica', 'A', '7', '7', 'alumno.paltamiranda@gmail.com'),
 ('8', '8', 'medios', 'tecnica', 'A', '8', '8', 'alumno.paltamiranda@gmail.com'),
-('9', '9', 'Economia2', 'Orientada', 'C', '9', '9', 'alumno.paltamiranda@gmail.com');
+('9', '9', 'Economia2', 'Orientada', 'C', '9', '9', 'alumno.paltamiranda@gmail.com'),
+('99', '99', 'Kachy Chien', 'Tecnica', 'B', '99', '99', 'alumno.paltamiranda@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,8 @@ INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`, `Cambio
 (7, 5, 2, 'Dentro de la modalidad', 'No'),
 (8, 5, 1, 'Dentro de la modalidad', 'No'),
 (9, 4, 2, 'Dentro de la modalidad', 'Si'),
-(10, 2, 3, 'Dentro de la modalidad', 'Si');
+(10, 2, 3, 'Dentro de la modalidad', 'Si'),
+(23, 3, 3, 'Dentro de la modalidad', 'No');
 
 -- --------------------------------------------------------
 
@@ -185,7 +187,7 @@ CREATE TABLE `modalidad` (
 INSERT INTO `modalidad` (`ID_Modalidad`, `Descripcion`, `Ingresos`) VALUES
 (1, 'Economia', 1),
 (2, 'Naturales', 3),
-(3, 'Electronica', 2),
+(3, 'Electronica', 3),
 (4, 'Informatica', 2),
 (5, 'Multimedios', 2);
 
@@ -201,26 +203,27 @@ CREATE TABLE `total` (
   `FichasT` float NOT NULL,
   `InasistenciasT` float NOT NULL,
   `ObservacionesT` float NOT NULL,
-  `Comentario` varchar(365) NOT NULL
+  `Comentario` varchar(365) NOT NULL,
+  `sin_pendientes` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `total`
 --
 
-INSERT INTO `total` (`DNI`, `PromediosT`, `FichasT`, `InasistenciasT`, `ObservacionesT`, `Comentario`) VALUES
-('1', 1, 3, 3, 3, '2'),
-('10', 10, 30, 30, 30, '11'),
-('2', 2, 6, 6, 6, '3'),
-('23', 2, 6, 6, 6, '2'),
-('3', 3, 9, 9, 9, '3'),
-('32', 9, 3, 3, 3, 'aaaaaaaaa'),
-('4', 4, 12, 12, 12, '5'),
-('5', 5, 15, 15, 15, '6'),
-('6', 1.33333, 18, 18, 18, '6'),
-('7', 7, 21, 21, 21, '8'),
-('8', 8, 24, 24, 24, '8'),
-('9', 9, 27, 27, 27, '10');
+INSERT INTO `total` (`DNI`, `PromediosT`, `FichasT`, `InasistenciasT`, `ObservacionesT`, `Comentario`, `sin_pendientes`) VALUES
+('1', 1, 3, 3, 3, '2', 1),
+('10', 10, 30, 30, 30, '11', 1),
+('2', 2, 6, 6, 6, '3', 1),
+('23', 2, 6, 6, 6, '2', 1),
+('3', 3, 9, 9, 9, '3', 1),
+('32', 9, 3, 3, 3, 'aaaaaaaaa', 1),
+('4', 4, 12, 12, 12, '5', 1),
+('5', 5, 15, 15, 15, '6', 1),
+('6', 1.33333, 18, 18, 18, '6', 1),
+('7', 7, 21, 21, 21, '8', 1),
+('8', 8, 24, 24, 24, '8', 1),
+('9', 9, 27, 27, 27, '10', 1);
 
 --
 -- Índices para tablas volcadas
