@@ -247,10 +247,7 @@ h2 {
   grid-template-columns: repeat(2,1fr);
   grid-gap: 1em;
   
-  text-align: center;
-  margin-left: 19.5%;
-  margin-right: 19.5%;
-  margin-bottom: 3%;
+  
 }
 
 
@@ -347,7 +344,7 @@ footer{
 
 @media screen  and (min-width: 800px) {
   .logo{
-      margin-left: 50px;
+      margin-left: 10px;
 
   }
   nav{
@@ -392,10 +389,8 @@ footer{
     flex-direction: column;
     flex-wrap: wrap;
 
-    align-items: center;
+    
     }
 
-    .col-md-4{
-      margin-left: 0px;
-    }
+    
 }
