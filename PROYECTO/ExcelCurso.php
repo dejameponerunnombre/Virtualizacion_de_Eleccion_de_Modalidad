@@ -14,7 +14,7 @@ if (empty($siquesi[0])===FALSE)
 { 
     $z=1;
     $encabezado[$a] = '';
-    $encabezado[$a] = "3 - ".$x."\n"."Modalidad"."\t"."Puesto"."\t"."Alumno"."\t"."Situacion"."\t"."Cambio de colegio"."\t"."Promedio"."\t"."Fichas"."\t"."Observaciones"."\t"."Inasistencias"."\t"."Comentario"."\t";
+    $encabezado[$a] = "3 - ".$x."\n"."Modalidad"."\t"."Puesto"."\t"."Alumno"."\t"."Situacion"."\t"."Cambio de colegio"."\t"."Promedio"."\t"."Fichas"."\t"."Observaciones"."\t"."Inasistencias"."\t"."Comentario"."\t"."Cuando no adeuda materias"."\t";
     $request = "SELECT COUNT(*) FROM alumnos a INNER join eleccion e ON Curso = '$x' where e.DNI = a.DNI";
     $pedido = $conexion -> query($request);
     $alumnos = $pedido -> fetch_array();
@@ -146,22 +146,32 @@ else
                 $dato[9] = '"' . $fact["Comentario"] . '"' . "\t";
                 $rowData .= $dato[9];
                 $setData[$a] = $setData[$a].trim($rowData) . "\n";    
+                $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
             }     
+            $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
             }
+            $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
         }  
+        $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
     }
+    $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
     if($x == "e")
     {
         $x++;
+        $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
     }
     if($setData[$a] !== null)
                 {
                     $a++;
+                    $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
                 }
+                $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
     
 }
+$objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
 header("Content-type: application/octet-stream");  
 header("Content-Disposition: attachment; filename=Listas-Cursos.xls");  
+$objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
 header("Pragma: no-cache");  
 header("Expires: 0");
 for($i = 0; $i < $a; $i++)

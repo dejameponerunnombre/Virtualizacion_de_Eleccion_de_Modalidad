@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("calculo.php");
 ?>
 <!DOCTYPE html>
@@ -296,6 +297,7 @@ if (empty($siquesi[0]) === FALSE)
                     break; 
                 }
         }
+        $_SESSION["mes"] = $mes;
         ?>
         <tr><td><?php echo $datos["Descripcion"]?></td><td><?php echo $datos["Prioridad"]?></td><td><?php echo $DNI[1]?></td><td><?php echo $datos["Situacion"]?></td><td><?php echo $datos["Cambio"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td><?php echo $datos["Comentario"]?></td><td><?php echo $mes ?></td><tr>
         <?php  

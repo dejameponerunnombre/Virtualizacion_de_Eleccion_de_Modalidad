@@ -11,7 +11,7 @@ if (empty($siquesi[0])===FALSE)
 { 
     $z=1;
     $encabezado = '';
-    $encabezado = "3º ".$x."\n"."Modalidad"."\t"."Puesto"."\t"."Alumno"."\t"."Situacion"."\t"."Cambio de colegio"."\t"."Promedio"."\t"."Fichas"."\t"."Observaciones"."\t"."Inasistencias"."\t"."Comentario"."\t";
+    $encabezado = "3º ".$x."\n"."Modalidad"."\t"."Puesto"."\t"."Alumno"."\t"."Situacion"."\t"."Cambio de colegio"."\t"."Promedio"."\t"."Fichas"."\t"."Observaciones"."\t"."Inasistencias"."\t"."Comentario"."\t"."Cuando esta libre de materias"."\t";
     $request = "SELECT COUNT(*) FROM alumnos a INNER join eleccion e ON Curso = '$x' where e.DNI = a.DNI";
     $pedido = $conexion -> query($request);
     $alumnos = $pedido -> fetch_array();
@@ -36,6 +36,8 @@ if (empty($siquesi[0])===FALSE)
                 $value = '"' . $value . '"' . "\t";  
                 $rowData .= $value;  
             }  
+            $value .= '"' . $mes . '"' . "\t";  
+            $rowData .= $value;
             $setData = $setData.trim($rowData) . "\n";  
         }   
         $sineleccion="SELECT COUNT(*) FROM alumnos a WHERE a.Curso = '$x' and a.DNI NOT IN(SELECT DNI FROM eleccion)";

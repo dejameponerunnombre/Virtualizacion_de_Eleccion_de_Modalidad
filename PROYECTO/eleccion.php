@@ -9,7 +9,7 @@ $cant = $a ->num_rows;
 if($cant == 0)
 { 
     if($modalidad!=10)
-        {
+        { 
             $y = "UPDATE modalidad SET Ingresos = Ingresos + 1 where ID_Modalidad = $modalidad";
             $b =$conexion -> query($y);
             if($b === TRUE)
@@ -52,14 +52,10 @@ if($cant == 0)
         $borrar4 = $conexion -> query($eliminar4);
         if($borrar==TRUE)
         {
-            include("login_alumno_eleccion.html");
-            echo '<script>alert("Alumno eliminado de la base de datos")</script>';
+            $x = 10;
+            $_SESSION['x'] = $x;
+            include("ELECCIONhtml.php");
         }
     }
-}
-else 
-{
-    include("login_alumno_eleccion.html");
-    echo '<script>alert("Eleccion realizada correctamente")</script>';
 }
 ?>

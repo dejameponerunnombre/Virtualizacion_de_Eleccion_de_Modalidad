@@ -9,7 +9,7 @@ $siquesi = $quesi ->fetch_array();
 if (empty($siquesi[0]) === FALSE)
 {
     $encabezado = '';
-    $encabezado = $siquesi["Descripcion"]."\n"."Puesto"."\t"."Alumno"."\t"."DNI"."\t"."Promedio"."\t"."Fichas"."\t"."Observaciones"."\t"."Inasistencias"."\t"."Comentario"."\t"."Situacion"."\t";
+    $encabezado = $siquesi["Descripcion"]."\n"."Puesto"."\t"."Alumno"."\t"."DNI"."\t"."Promedio"."\t"."Fichas"."\t"."Observaciones"."\t"."Inasistencias"."\t"."Comentario"."\t"."Situacion"."\t"."Cuando no adeuda materias"."\t";
     for($y = 1; $y <= $siquesi[0]; $y++)
     {   
         $infoalu="SELECT e.Prioridad, a.Nombre, e.DNI, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, e.Situacion
@@ -26,6 +26,8 @@ if (empty($siquesi[0]) === FALSE)
                 $value = '"' . $value . '"' . "\t";  
                 $rowData .= $value;  
             }  
+            $value .= '"' . $mes . '"' . "\t";  
+            $rowData .= $value;
             $setData = $setData.trim($rowData) . "\n";  
         }  
     }

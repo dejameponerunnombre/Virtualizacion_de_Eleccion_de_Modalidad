@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("calculo.php");
 ?>
 <!DOCTYPE html>
@@ -301,6 +302,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
                         break; 
                     }
                 }
+                $_SESSION["mes"] = $mes;
                 ?>
                 <tr><td><?php echo $datos["Descripcion"]?></td><td><?php echo $datos["Prioridad"]?></td><td><?php echo $DNI[1]?></td><td><?php echo $datos["Situacion"]?></td><td><?php echo $datos["Cambio"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td><?php echo $datos["Comentario"]?></td><td><?php echo $mes ?></td><tr>
                 <?php  
@@ -349,6 +351,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
                         break; 
                     }
                 }
+                $_SESSION["mes"] = $mes;
                 ?>
                 <tr><td>No realizó la eleccion</td><td>-</td><td><?php echo $DNI[1]?></td><td>-</td><td>-</td><td><?php echo $fact["PromediosT"]?></td><td><?php echo $fact["FichasT"]?></td><td><?php echo $fact["ObservacionesT"]?></td><td><?php echo $fact["InasistenciasT"]?></td><td><?php echo $fact["Comentario"]?></td><td><?php echo $mes?></td><tr>
                 <?php

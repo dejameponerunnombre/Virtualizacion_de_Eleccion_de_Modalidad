@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("calculo.php");
 ?>
 <!DOCTYPE html>
@@ -290,6 +291,7 @@ for($x = 1; $x <= 5; $x++)
                     break; 
                 }
         }
+        $_SESSION["mes"] = $mes;
         ?>
         <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td><?php echo $datos["Comentario"]?></td><td><?php echo $mes ?></td><tr>
         <?php  
