@@ -244,10 +244,6 @@ include("calculo.php");
                      <h2>Todas las Listas</h2>  
                      <hr>
 <?php
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-}
 include("db.php");
 for($x = 1; $x <= 5; $x++)
 {

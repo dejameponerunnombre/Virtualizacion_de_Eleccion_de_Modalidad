@@ -242,10 +242,6 @@ include("calculo.php");
                 <div class="row">
                     
                      <?php
-                     if(!isset($_SESSION)) 
-                     { 
-                         session_start(); 
-                     } 
 $x = $_POST['question'];
 include("db.php");
 $ahorasi="SELECT * FROM eleccion e 

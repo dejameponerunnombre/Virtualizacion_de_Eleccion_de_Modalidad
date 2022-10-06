@@ -244,11 +244,7 @@ include("calculo.php");
                     <div class="col-md-12">
                      <h2>Lista de espera por Modalidad</h2>  
                      <hr>
-                     <?php
-                     if(!isset($_SESSION)) 
-                     { 
-                         session_start(); 
-                     } 
+                     <?php 
 $x = $_POST['question'];
 $_SESSION['X'] = $x;
 include("db.php");

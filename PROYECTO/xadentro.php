@@ -243,10 +243,6 @@ include("calculo.php");
                 <div class="row">
                     <div class="col-md-12">
                     <?php
-                    if(!isset($_SESSION)) 
-                    { 
-                        session_start(); 
-                    } 
 $x = $_POST['question'];
 $_SESSION['b'] = $x;
 ?>
