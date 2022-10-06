@@ -97,23 +97,23 @@ if($ahora < $final && $ahora > $inicio)
         </nav>
         
         <div class="imagen-costado">
-        <img src="../IMG/resultado2.jpg" style="width: 430px; left:70%;">
+        <img src="../IMG/resultado2.jpg" style="margin-top: 50px;" >
         </div>
   
 <br>
-<div style=" padding-top: 2%;padding-bottom: 2%;margin-left: 3%;width: 570px; border: 3px solid #9c9cd9; margin-top: 20px; background-color:transparent;">
-    <h1 style="color:#1c244a; font-size:50px; padding-left: 5%; font-family: serif; text-decoration:underline;">Resultado de la Elección</h1>
+<div class="mensaje">
+    <h1 style="color:#1c244a; font-size:50px; font-family: serif; text-decoration:underline;">Resultado de la Elección</h1>
     <br>    
     <div style="padding-left: 5%;">
         
         <div  >
 
             <!--<h1>El alumno <?php echo $alumnos[0] ?> esta <?php echo $eleccion[0] ?> de <?php echo $modalidad[0]?> en el puesto <?php echo $eleccion[1]?></h1>-->
-            <h1 style="font-family: inherit; font-size: 26px;">El alumno se encuentra <?php echo $eleccion[0] ?>: <br><br><spans style="color:#002f85; padding-left: 35%;text-decoration:underline;"><?php echo $modalidad[0]?></h1>
+            <h1 style="font-family: inherit; font-size: 26px;">El alumno se encuentra <?php echo $eleccion[0] ?>: <br><br><span style="color:#002f85; padding-left: 25%;text-decoration:underline;"><?php echo $modalidad[0]?></h1>
             <br><br>
             
             
-            <p>Si tiene alguna consulta o inquietud, por favor comunicarse con <a href="mailto:secretaria@gmail.com" style="background-color: #cdf2ff; color:black;">Secretaría</a>.</p>
+            <p class="hiper">Si tiene alguna consulta o inquietud, por favor comunicarse con <a href="mailto:secretaria@gmail.com"  style="text-decoration: underline; color: blue;">Secretaría</a>.</p>
 
             </div>
         </div>

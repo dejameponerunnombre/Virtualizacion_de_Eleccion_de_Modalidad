@@ -56,7 +56,7 @@ footer {
 
 .body{
     height: 100%;
-    position:fixed;
+    position:relative;
     
 }
 
@@ -96,8 +96,7 @@ footer {
 
 
 
-
-/*--------------HEATHER---------------*/
+/*--------------HEADER---------------*/
 nav{
     
     height: 100px;
@@ -180,6 +179,33 @@ nav{
 
 
 
+footer{
+    
+
+}
+
+
+
+
+
+
+
+
+
+/*----------------CUADRO DE MENSAJE-----------------*/
+
+.mensaje{
+    width: 90%; 
+    border: 3px solid #9c9cd9; 
+    background-color:transparent; 
+    margin: auto; 
+    padding: 10px; 
+    margin-top:50px;
+}
+
+
+
+
 
 
 
@@ -232,7 +258,14 @@ nav{
     body{
         width: 100%;
         position: relative;
+
     }
+
+    span{
+        margin: auto;
+    }
+
+    
 
 
 
