@@ -55,14 +55,14 @@
    else 
    {
     ?>
-    <div class="imagen-costado" >
-        <img src="../IMG/elecciones.jpg" style="width: 650px; margin-left:65%; margin-top: 3%;">
-        </div>
-        <div style="
+    <div class="imagen-costado">
+        <img src="../IMG/elecciones.jpg" style=" width: 45%; margin-left:65%; margin-top: 3%;">
+    </div>
+        <div class="linea" style="
             border-left: 3px solid #172d8d;
             height: 80%;
             position:absolute;
-            left: 49%;
+            left: 50%;
         "></div>
     <div class="formulario" >
         <p>Seleccione la modalidad u opción a la que desea acceder: </p>
@@ -96,12 +96,10 @@
         <input type="radio" name="modalidad" id=10 value=10>
         <label for=10>Cambio de institución</label>
         <br></br>
-        <div style="margin-left: 10%;">
-            <ul>
+        
                  
-                <li><button type="submit" class="bttn-pill bttn-md bttn-primary">Enviar</button></li>
-            </ul>
-        </div>
+        <button type="submit" class="bttn-pill bttn-md bttn-primary">Enviar</button>
+            
         </form>
             
     </div> 

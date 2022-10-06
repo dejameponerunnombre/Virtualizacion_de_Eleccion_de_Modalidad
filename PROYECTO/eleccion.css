@@ -75,14 +75,9 @@ footer {
 
 .formulario {
     
+    width: 80%;
+    margin: 35px;
     
-    
-    border: 0;
-    margin-left: 10%;
-    
-    margin-top: 4%;
-
-    color: rgb(0, 0, 0);
     
    
 }
@@ -265,9 +260,30 @@ footer{
         margin: auto;
     }
 
+    .imagen-costado img{
+        display: none;
+    }
+
+    .linea{
+        display: none;
+    }
+
+    footer {
+        position: relative;
+        bottom: 0;
+        
+      
+      }
+
+    
+    
+
     
 
 
 
 }
+
+
+
 
