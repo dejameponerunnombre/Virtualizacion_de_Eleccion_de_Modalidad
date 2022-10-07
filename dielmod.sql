@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-10-2022 a las 22:51:45
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.0.13
+-- Tiempo de generación: 07-10-2022 a las 06:21:46
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `alumnos` (
   `DNI` varchar(8) NOT NULL,
-  `CUIL` varchar(11) NOT NULL,
   `Nombre` varchar(365) NOT NULL,
   `Escuela` varchar(100) NOT NULL,
   `Curso` varchar(1) NOT NULL,
@@ -42,20 +41,20 @@ CREATE TABLE `alumnos` (
 -- Volcado de datos para la tabla `alumnos`
 --
 
-INSERT INTO `alumnos` (`DNI`, `CUIL`, `Nombre`, `Escuela`, `Curso`, `Usuario`, `Contrasenia`, `Mail`) VALUES
-('1', '1', 'economia', 'orientada', 'C', '1', '1', 'alumno.paltamiranda@gmail.com'),
-('10', '10', 'Infromatica2', 'Tecnica', 'G', '10', '10', 'alumno.paltamiranda@gmail.com'),
-('2', '2', 'natu', 'orientada', 'C', '2', '2', 'alumno.paltamiranda@gmail.com'),
-('23', '23', 'paulo', 'tecnica', 'B', '23', '23', 'alumno.paltamiranda@gmail.com'),
-('3', '3', 'rales', 'orientada\r\n', 'C', '3', '3', 'alumno.paltamiranda@gmail.com'),
-('32', '32', 'londra', 'tecnica', 'A', '32', '32', 'alumno.paltamiranda@gmail.com'),
-('4', '4', 'elec', 'tecnica', 'A', '4', '4', 'alumno.paltamiranda@gmail.com'),
-('5', '5', 'tronica', 'tecnica', 'A', '5', '5', 'alumno.paltamiranda@gmail.com'),
-('6', '6', 'informatica', 'tecnica', 'A', '6', '6', 'alumno.paltamiranda@gmail.com'),
-('7', '7', 'multi', 'tecnica', 'A', '7', '7', 'alumno.paltamiranda@gmail.com'),
-('8', '8', 'medios', 'tecnica', 'A', '8', '8', 'alumno.paltamiranda@gmail.com'),
-('9', '9', 'Economia2', 'Orientada', 'C', '9', '9', 'alumno.paltamiranda@gmail.com'),
-('99', '99', 'Kachy Chien', 'Tecnica', 'B', '99', '99', 'alumno.paltamiranda@gmail.com');
+INSERT INTO `alumnos` (`DNI`, `Nombre`, `Escuela`, `Curso`, `Usuario`, `Contrasenia`, `Mail`) VALUES
+('1', 'economia', 'orientada', 'C', '1', '1', 'alumno.paltamiranda@gmail.com'),
+('10', 'Infromatica2', 'Tecnica', 'G', '10', '10', 'alumno.paltamiranda@gmail.com'),
+('2', 'natu', 'orientada', 'C', '2', '2', 'alumno.paltamiranda@gmail.com'),
+('23', 'paulo', 'tecnica', 'B', '23', '23', 'alumno.paltamiranda@gmail.com'),
+('3', 'rales', 'orientada\r\n', 'C', '3', '3', 'alumno.paltamiranda@gmail.com'),
+('32', 'londra', 'tecnica', 'A', '32', '32', 'alumno.paltamiranda@gmail.com'),
+('4', 'elec', 'tecnica', 'A', '4', '4', 'alumno.paltamiranda@gmail.com'),
+('5', 'tronica', 'tecnica', 'A', '5', '5', 'alumno.paltamiranda@gmail.com'),
+('6', 'informatica', 'tecnica', 'A', '6', '6', 'alumno.paltamiranda@gmail.com'),
+('7', 'multi', 'tecnica', 'A', '7', '7', 'alumno.paltamiranda@gmail.com'),
+('8', 'medios', 'tecnica', 'A', '8', '8', 'alumno.paltamiranda@gmail.com'),
+('9', 'Economia2', 'Orientada', 'C', '9', '9', 'alumno.paltamiranda@gmail.com'),
+('99', 'Kachy Chien', 'Tecnica', 'B', '99', '99', 'alumno.paltamiranda@gmail.com');
 
 -- --------------------------------------------------------
 
