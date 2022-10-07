@@ -66,11 +66,14 @@ if($filas > 0){
         </div>
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
+            <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
-                    <li>
+                    <li> 
+                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
+                    </li>
+                    <li> 
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
                     </li>
                     <li>
@@ -85,7 +88,9 @@ if($filas > 0){
                     <li>
                         <a href="cambio-eleccion.php"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
-                    
+                    <li>
+                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver todos los alumnos cargados</a>
+                    </li>
                 </ul>
 
             </div>
