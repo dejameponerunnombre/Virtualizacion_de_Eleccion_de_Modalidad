@@ -422,7 +422,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
 ?>
 <button type="submit" class="boton2" style="margin-left: 85%; "><a href="ExcelCurso.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>                            
 
-<br><br><br><br>          
+<br><br><br><br>           
                   
 
                              

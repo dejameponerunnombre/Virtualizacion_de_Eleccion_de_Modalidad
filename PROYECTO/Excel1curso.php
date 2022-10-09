@@ -1,17 +1,18 @@
 <?php
 session_start();
+$mes=$_SESSION["mes"] ;
 include("db.php");
-$x = $_SESSION['c'];
+$x = $_SESSION['c']; 
 $ahorasi="SELECT * FROM total t 
 Inner join alumnos a
 on a.Curso = '$x' where a.DNI = t.DNI";
 $quesi= $conexion->query($ahorasi);
 $siquesi = $quesi ->fetch_array();
 if (empty($siquesi[0])===FALSE)
-{ 
+{  
     $z=1;
     $encabezado = '';
-    $encabezado = "3º ".$x."\n"."Modalidad"."\t"."Puesto"."\t"."Alumno"."\t"."Situacion"."\t"."Cambio de colegio"."\t"."Promedio"."\t"."Fichas"."\t"."Observaciones"."\t"."Inasistencias"."\t"."Comentario"."\t"."Cuando esta libre de materias"."\t";
+    $encabezado = "3º ".$x."\n"."Modalidad"."\t"."Puesto"."\t"."Alumno"."\t"."Situacion"."\t"."Cambio de colegio"."\t"."Promedio"."\t"."Fichas"."\t"."Observaciones"."\t"."Inasistencias"."\t"."Comentario"."\t"."Cuando no adeuda materias"."\t";
     $request = "SELECT COUNT(*) FROM alumnos a INNER join eleccion e ON Curso = '$x' where e.DNI = a.DNI";
     $pedido = $conexion -> query($request);
     $alumnos = $pedido -> fetch_array();
@@ -83,6 +84,9 @@ if (empty($siquesi[0])===FALSE)
                     $rowData .= $dato[8];
                     $dato[9] = '"' . $fact["Comentario"] . '"' . "\t";
                     $rowData .= $dato[9];
+                    $setData = $setData.trim($rowData) . "\n";  
+                    $value .= '"' . $mes . '"' . "\t";  
+                    $rowData .= $value;
                     $setData = $setData.trim($rowData) . "\n";    
         }
     } 
@@ -136,6 +140,9 @@ else
                     $dato[9] = '"' . $fact["Comentario"] . '"' . "\t";
                     $rowData .= $dato[9];
                     $setData = $setData.trim($rowData) . "\n";   
+                    $value .= '"' . $mes . '"' . "\t";  
+                    $rowData .= $value;
+                    $setData = $setData.trim($rowData) . "\n";  
             }
         }  
     }

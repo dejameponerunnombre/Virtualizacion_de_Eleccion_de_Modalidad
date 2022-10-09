@@ -1,5 +1,6 @@
 <?php
 session_start();
+$mes=$_SESSION["mes"] ;
 include("db.php");
 $a = 0;
 for($x = 1; $x <= 5; $x++)

@@ -398,7 +398,7 @@ $siquesi[0] = 0;
                     <tr><td>No realizo la eleccion</td><td>No ingresado</td><td><?php echo $DNI[1]?></td><td>-</td><td>Indefinido</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><tr>
                     <?php
             }
-        }      
+        }       
         ?>
             </table></div>
         <?php

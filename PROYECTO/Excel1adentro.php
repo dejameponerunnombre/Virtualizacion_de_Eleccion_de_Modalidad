@@ -1,5 +1,6 @@
 <?php
 session_start();
+$mes=$_SESSION["mes"] ;
 include("db.php");
 $x = $_SESSION['b'];
 $ahorasi="SELECT Ingresos, Descripcion FROM modalidad where ID_Modalidad = $x";
