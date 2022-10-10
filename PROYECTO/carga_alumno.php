@@ -6,11 +6,12 @@ include("db.php");
 $x = 0;
 $DNI = $_SESSION['DNI'];
 $Nombre = $_POST['nombre'];
+$curso=$_POST['curso'];
 $mail = $_POST['mail'];
 $usuario = $_POST['usuario'];
 $contrasenia = $_POST['contrasenia'];
-$in  = "INSERT INTO alumnos (DNI, Nombre, Usuario, Contrasenia, Mail) values 
-('$DNI','$Nombre','$usuario','$contrasenia','$mail')";
+$in  = "INSERT INTO alumnos (DNI, Nombre, Usuario, Contrasenia, Mail,Curso) values 
+('$DNI','$Nombre','$usuario','$contrasenia','$mail','$curso')";
 $con =  $conexion -> query($in);
 if(empty($con) === false)
 {

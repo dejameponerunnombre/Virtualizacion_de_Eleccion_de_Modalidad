@@ -103,6 +103,10 @@ include("db.php");
             <h3>Mail de contacto</h3>
             <input step="any" type="email" name="mail" value="" >
         </div>
+        <div class="inasis">
+            <h3>Curso</h3>
+            <input step="any" type="text" name="curso" value="" >
+        </div>
         </div>
         <br>
         <div class="temas2">
