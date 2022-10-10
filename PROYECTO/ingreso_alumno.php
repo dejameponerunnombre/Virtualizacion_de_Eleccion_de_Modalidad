@@ -103,10 +103,17 @@ include("db.php");
             <h3>Mail de contacto</h3>
             <input step="any" type="email" name="mail" value="" >
         </div>
-        <div class="inasis">
-            <h3>Curso</h3>
-            <input step="any" type="text" name="curso" value="" >
-        </div>
+
+        <fieldset id="curso">
+
+        <legend>Curso</legend>
+        <input type="radio" id="A" value= A name="curso" ><label for="A">A</label>
+        <input type="radio" id="B"value= B name="curso"><label for="B">B</label>
+        <input type="radio" id="C"value= C name="curso"><label for="C">C</label>
+        <input type="radio" id="D"value= D name="curso" required><label for="D">D</label>
+        <input type="radio" id="E"value= E name="curso"><label for="E">E</label>
+        <input type="radio" id="G"value= G name="curso" required><label for="G">G</label>
+        </fieldset>
         </div>
         <br>
         <div class="temas2">

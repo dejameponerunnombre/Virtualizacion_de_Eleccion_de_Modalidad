@@ -7,11 +7,19 @@ $x = 0;
 $DNI = $_SESSION['DNI'];
 $Nombre = $_POST['nombre'];
 $curso=$_POST['curso'];
+if($curso=='A' || $curso=='B' || $curso=='C' || $curso=='G' )
+{
+    $escuela="Tecnica";
+}
+else
+{
+    $escuela="Orientada";
+}
 $mail = $_POST['mail'];
 $usuario = $_POST['usuario'];
 $contrasenia = $_POST['contrasenia'];
-$in  = "INSERT INTO alumnos (DNI, Nombre, Usuario, Contrasenia, Mail,Curso) values 
-('$DNI','$Nombre','$usuario','$contrasenia','$mail','$curso')";
+$in  = "INSERT INTO alumnos (DNI, Nombre, Usuario, Contrasenia, Mail,Curso,Escuela) values 
+('$DNI','$Nombre','$usuario','$contrasenia','$mail','$curso','$escuela')";
 $con =  $conexion -> query($in);
 if(empty($con) === false)
 {
