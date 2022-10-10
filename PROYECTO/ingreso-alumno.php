@@ -97,7 +97,7 @@
                                 <br>
                                 <ul>
 
-                                <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="form-ingreso.php">Ingresar otro alumno</a></button></li>
+                                <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="ingreso-alumno.php">Ingresar otro alumno</a></button></li>
 
                                 
                               </ul>
