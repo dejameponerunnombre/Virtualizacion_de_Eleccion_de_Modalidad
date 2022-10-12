@@ -8,34 +8,44 @@ for($x = 1; $x <= 5; $x++)
     $siquesi = $quesi ->fetch_array();
     if ($siquesi[0] > 0)
     {
-    for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
-    {    
-        $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
-        and e.ID_Modalidad = $x and e.Prioridad = 0 and e.Cambio = 'No' 
-        order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
-        $connB = $conexion -> query($varB);
-        $DNI = $connB ->fetch_array();
-        $cant = $connB ->num_rows;
-        if($cant == 0)
+        for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
         {
-            $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
-            and e.ID_Modalidad = $x and e.Prioridad = 0
-            order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
-            $connB = $conexion -> query($varB);
-            $DNI = $connB ->fetch_array();
+            $no="SELECT DNI from eleccion  where ID_Modalidad = $x and Prioridad = 0 and DNI not in(SELECT DNI from total)";
+            $tas = $conexion -> query($no);
+            $sinotas = $tas ->fetch_array();
+            if(empty($sinotas)==TRUE)
+            {
+                $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
+                and e.ID_Modalidad = $x and e.Prioridad = 0 and e.Cambio = 'No' 
+                order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
+                $connB = $conexion -> query($varB);
+                $DNI = $connB ->fetch_array();
+                $cant = $connB ->num_rows;
+                if($cant == 0)
+                {
+                    $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
+                    and e.ID_Modalidad = $x and e.Prioridad = 0
+                    order by t.PromediosT DESC, t.FichasT  ASC, t.ObservacionesT ASC, t.InasistenciasT ASC";
+                    $connB = $conexion -> query($varB);
+                    $DNI = $connB ->fetch_array();
+                }
+                $var2 = "UPDATE eleccion SET Prioridad = '$y', Situacion = 'Dentro de la modalidad' where DNI = $DNI[0]";
+                $conn2= $conexion->query($var2);
+            }
+            else
+            {
+                $var4 = "UPDATE eleccion SET Situacion = 'En lista de espera' where DNI = '$sinotas[0]'";
+                $conn4 = $conexion->query($var4); 
+            }
         }
-        $var2 = "UPDATE eleccion SET Prioridad = '$y', Situacion = 'Dentro de la modalidad' where DNI = $DNI[0]";
-        $conn2= $conexion->query($var2);
-    }
     }
     if($siquesi[0] > 39)
     {
         for($y = 40; $y <= $siquesi[0]; $y++)
-    {   
-
-        $var4 = "UPDATE eleccion SET Situacion = 'En lista de espera' where DNI = $DNI[$i]";
-        $conn4 = $conexion->query($var4); 
-    }
+        {
+            $var4 = "UPDATE eleccion SET Situacion = 'En lista de espera' where DNI = $DNI[$i]";
+            $conn4 = $conexion->query($var4); 
+        }
     }
 }
 $inicio = mktime(0, 0, 0, 5, 1, 2022);
@@ -43,20 +53,19 @@ $final =  mktime(0, 0, 0, 10, 15, 2022);
 $ahora = time() ;
 if($ahora < $final && $ahora > $inicio)
 {
-  $usuario = $_SESSION['usuario'];
-  $contraseña = $_SESSION['contraseña']; 
-  include("db.php");
-  $request = "SELECT Nombre, DNI FROM alumnos where contrasenia = $contraseña";
-  $pedido = $conexion -> query($request);
-  $alumnos = $pedido -> fetch_array();
-  $request="SELECT Situacion, Prioridad FROM eleccion WHERE DNI = $alumnos[1]";
-  $pedido = $conexion->query($request);
-  $eleccion = $pedido ->fetch_array();
-  $request = "SELECT m.Descripcion FROM modalidad m, eleccion e 
-  WHERE e.DNI = $alumnos[1] and m.ID_Modalidad = e.ID_Modalidad";
-  $pedido = $conexion-> query($request);
-  $modalidad = $pedido -> fetch_array();
-  ?>
+    $DNI = $_SESSION['DNI'];
+    include("db.php");
+    $request = "SELECT Nombre, DNI FROM alumnos where DNI = '$DNI'";
+    $pedido = $conexion -> query($request);
+    $alumnos = $pedido -> fetch_array();
+    $request="SELECT Situacion, Prioridad FROM eleccion WHERE DNI = $alumnos[1]";
+    $pedido = $conexion->query($request);
+    $eleccion = $pedido ->fetch_array();
+    $request = "SELECT m.Descripcion FROM modalidad m, eleccion e 
+    WHERE e.DNI = $alumnos[1] and m.ID_Modalidad = e.ID_Modalidad";
+    $pedido = $conexion-> query($request);
+    $modalidad = $pedido -> fetch_array();
+    ?>
 
   <!DOCTYPE html>
   <html lang="en">

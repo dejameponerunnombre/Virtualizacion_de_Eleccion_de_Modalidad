@@ -2,13 +2,11 @@
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
 session_start();
-$_SESSION['usuario'] = $usuario;
- 
 include("db.php");
- 
 $consulta = "SELECT DNI, Usuario, Contrasenia FROM alumnos where Usuario = '$usuario' and Contrasenia = '$contraseña'";
 $resultado = $conexion -> query($consulta);
 $filas = $resultado ->fetch_array();
+$_SESSION['DNI'] = $filas[0];
 
 if(empty($filas[0]) === false)
 {

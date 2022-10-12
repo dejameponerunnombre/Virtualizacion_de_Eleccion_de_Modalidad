@@ -1,12 +1,11 @@
 <?php
-$modalidad = $_POST['modalidad'];
 session_start();
-$DNI = $_SESSION['usuario'];
+$modalidad = $_POST['modalidad'];
+$DNI = $_SESSION['DNI'];
 include("db.php");
-$selec = "SELECT * FROM eleccion where DNI = $DNI";
+$selec = "SELECT * FROM eleccion where Usuario = $DNI";
 $a =$conexion -> query($selec);
-$cant = $a ->num_rows;
-if($cant == 0)
+if(empty($a) == true)
 { 
     if($modalidad!=10)
         { 
@@ -18,12 +17,12 @@ if($cant == 0)
                 $_SESSION['x'] = $x;
                 include("ELECCIONhtml.php");
             }       
-            $request = "SELECT Escuela FROM alumnos where DNI = $DNI";
+            $request = "SELECT Escuela FROM alumnos where DNI = '$DNI'";
             $consulta = $conexion -> query($request);
             $Escuela = $consulta ->fetch_array();
             if($modalidad == 1 || $modalidad == 2)
             {  
-                if($Escuela[0] == 'orientada')
+                if($Escuela[0] == 'Orientada')
                     $cambio = "No";
                 else 
                     $cambio = "Si";
