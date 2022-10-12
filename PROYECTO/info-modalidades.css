@@ -373,6 +373,28 @@ body{
     color: red;
 }
 
+.container .box{
+  
+  display: inline-block;
+  margin: 20px;
+
+}
+
+.container .box iframe{
+  width: 25em;
+  height: 14em;
+  margin: 2em;
+
+  
+}
+
+.container .box h3{
+  margin-left: 3em;
+  
+}
+
+
+
 
 
 
@@ -464,6 +486,8 @@ body{
       height: auto;
     }
 
+    
+
 
 
     
@@ -490,6 +514,25 @@ body{
         margin-bottom: 20px;
     }
 
+    .box {
+      display: flex;
+      flex-direction: column;
+      display: block;
+      margin: 40px;
+      width: 40%;
+      
+    }
+
+    .container .box iframe{
+      
+      
+      width: 14em;
+      height: 13em;
+      
+      
+    }
+    
+    
     
 
    
@@ -538,3 +581,4 @@ body{
     font-size: 20px;
     padding-left: 20px;
   }
+
