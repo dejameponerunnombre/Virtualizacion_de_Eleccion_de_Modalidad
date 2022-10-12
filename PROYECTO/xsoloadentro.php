@@ -259,10 +259,10 @@ for($x = 1; $x <= 5; $x++)
     <?php
     for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
     {
-        $no="SELECT DNI from eleccion  where ID_Modalidad = $x and Prioridad = 0 and DNI in(SELECT DNI from total)";
+        $no="SELECT DNI from eleccion  where ID_Modalidad = $x and Prioridad = $y and DNI in(SELECT DNI from total)";
         $tas = $conexion -> query($no);
         $sinotas = $tas ->fetch_array();
-        if(empty($sinotas)==TRUE)
+        if(empty($sinotas)==false)
         {    
         $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
         and e.ID_Modalidad = $x and e.Prioridad = $y";
@@ -300,6 +300,18 @@ for($x = 1; $x <= 5; $x++)
         ?>
         <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td><?php echo $datos["Comentario"]?></td><td><?php echo $mes ?></td><tr>
         <?php  
+        }
+        else
+        {
+            $no="SELECT DNI from eleccion  where ID_Modalidad = $x and Prioridad = $y and DNI not in(SELECT DNI from total)";
+            $tas = $conexion -> query($no);
+            $sinotas = $tas ->fetch_array();
+            if(empty($sinotas)==false)
+            {
+                ?>
+                <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><tr>
+                <?php 
+            }
         }
     }
     }
