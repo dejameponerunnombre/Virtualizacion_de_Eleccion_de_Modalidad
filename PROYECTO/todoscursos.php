@@ -266,7 +266,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
         {$alumnos = $pedido -> fetch_array();}
         if ($alumnos[0] != 0)
         {
-            $DNI[1] = "A";
+            $DNI[1] = 1;
             $DNI[0] = 0;
             for($y = 1; $y <= $alumnos[0]; $y++)
             {
@@ -315,7 +315,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
         {$alumnos = $pedido -> fetch_array();}
         if ($alumnos[0] != 0)
         {
-            $DNI[1] = "A";
+            $DNI[1] = 1;
             $DNI[0] = 0;
             for($y = 1; $y <= $alumnos[0]; $y++)
             {
@@ -364,16 +364,16 @@ for($x="A";$x<="G" and $x!="f";$x++)
         {$alumnos = $pedido -> fetch_array();}
         if ($alumnos[0] != 0)
         {
-            $DNI[1] = "A";
+            $DNI[1] = 1;
             $DNI[0] = 0;
             for($y = 1; $y <= $alumnos[0]; $y++)
             {
                     $sinMod = "SELECT a.DNI, a.Nombre, m.Descripcion, e.Cambio FROM eleccion e, alumnos a, modalidad m 
-                    where  a.DNI NOT IN(SELECT DNI FROM total) and a.DNI = e.DNI and a.Nombre > '$DNI[1]' and a.DNI != $DNI[0] and a.Curso = '$x'and e.ID_Modalidad = m.ID_Modalidad order by a.Nombre ASC";
+                    where  a.DNI NOT IN(SELECT DNI FROM total) and a.DNI IN(SELECT DNI FROM eleccion) and a.Nombre > '$DNI[1]' and a.DNI != '$DNI[0]' and a.Curso = '$x'and e.ID_Modalidad = m.ID_Modalidad order by a.Nombre ASC";
                     $sinElex = $conexion -> query($sinMod);
                     $DNI = $sinElex ->fetch_array();
                     ?>
-                    <tr><td><?php echo $DNI["Descripcion"]?></td><td>No ingresado</td><td><?php echo $DNI[1]?></td><td>-</td><td><?php echo $DNI["Cambio"]?></td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No realizó la eleccion</td><td>No ingresado</td><tr>
+                    <tr><td><?php echo $DNI[2]?></td><td>No ingresado</td><td><?php echo $DNI[1]?></td><td>-</td><td><?php echo $DNI[3]?></td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No realizó la eleccion</td><td>No ingresado</td><tr>
                     <?php
             }
             $alumnos[0] = 0;

@@ -94,8 +94,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
         <div class="col-md-12" style="position: relative;display: inline-block;">
         <h1>Listas por División: <span style="color:#040544;">3º <?php echo $x ?></span></h1>
         <br>  
-        <div class="datagrid">
-        <table style="text-align:center;" border = 1 ><tr><th style="text-align:center;">Modalidad</th><th style="text-align:center;">Puesto</th><th style="text-align:center;">Alumno</th><th style="text-align:center;">Situacion</th><th style="text-align:center;">Cambio de colegio</th><th style="text-align:center;">Promedio</th><th style="text-align:center;">Fichas</th><th style="text-align:center;">Observaciones</th><th style="text-align:center;">Inasistencias</th><th style="text-align:center;">Comentario</th><th style="text-align:center;">Mes sin adeudamineto de materia</th></tr>
+        <div class="datagrid"> <p>hola</p><table style="text-align:center;" border = 1 ><tr><th style="text-align:center;">Modalidad</th><th style="text-align:center;">Puesto</th><th style="text-align:center;">Alumno</th><th style="text-align:center;">Situacion</th><th style="text-align:center;">Cambio de colegio</th><th style="text-align:center;">Promedio</th><th style="text-align:center;">Fichas</th><th style="text-align:center;">Observaciones</th><th style="text-align:center;">Inasistencias</th><th style="text-align:center;">Comentario</th><th style="text-align:center;">Mes sin adeudamineto de materia</th></tr>
         <?php
         include("db.php");
         $request = "SELECT COUNT(*) FROM alumnos where Curso = '$x' and DNI in(select DNI from eleccion) and DNI in(select DNI from total)";
@@ -104,7 +103,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
         {$alumnos = $pedido -> fetch_array();}
         if ($alumnos[0] != 0)
         {
-            $DNI[1] = "A";
+            $DNI[1] = 1;
             $DNI[0] = 0;
             for($y = 1; $y <= $alumnos[0]; $y++)
             {
@@ -153,7 +152,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
         {$alumnos = $pedido -> fetch_array();}
         if ($alumnos[0] != 0)
         {
-            $DNI[1] = "A";
+            $DNI[1] = 1;
             $DNI[0] = 0;
             for($y = 1; $y <= $alumnos[0]; $y++)
             {
@@ -202,7 +201,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
         {$alumnos = $pedido -> fetch_array();}
         if ($alumnos[0] != 0)
         {
-            $DNI[1] = "A";
+            $DNI[1] = 1;
             $DNI[0] = 0;
             for($y = 1; $y <= $alumnos[0]; $y++)
             {
@@ -223,7 +222,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
         echo $alumnos[0];
         if ($alumnos[0] != 0)
         {
-            $DNI[1] = "A";
+            $DNI[1] = 1;
             $DNI[0] = 0;
             for($y = 1; $y <= $alumnos[0]; $y++)
             {
