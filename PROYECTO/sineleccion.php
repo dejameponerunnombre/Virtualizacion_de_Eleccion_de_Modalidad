@@ -257,7 +257,7 @@ $siquesi[0] = 0;
         <div class="col-md-12" style="position: relative;display: inline-block;">
         <h1>Listas por División: <span style="color:#040544;">3º <?php echo $x ?></span></h1>
         <br>  
-        <div class="datagrid">
+        <div class="datagrid" style="overflow-x:auto;">
         <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
         <?php
         include("db.php");
@@ -267,7 +267,7 @@ $siquesi[0] = 0;
         {$alumnos = $pedido -> fetch_array();}
         if ($alumnos[0] != 0)
         {
-            $DNI[1] = "A";
+            $DNI[1] = "1";
             $DNI[0] = 0;
             for($y = 1; $y <= $alumnos[0]; $y++)
             {
@@ -275,37 +275,13 @@ $siquesi[0] = 0;
                 and Curso = '$x' and Nombre > '$DNI[1]' and DNI != $DNI[0] and DNI in(select DNI from total) order by Nombre ASC";
                 $connB = $conexion -> query($varB);
                 $DNI = $connB ->fetch_array();
-                $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, m.Descripcion, e.Prioridad, e.Situacion, e.Cambio, t.sin_pendientes
-                FROM total t, alumnos a, eleccion e, modalidad m
-                where a.DNI = $DNI[0] and t.DNI = $DNI[0] and e.DNI = $DNI[0] and e.ID_Modalidad in(select ID_Modalidad from modalidad)";
+                $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, m.Descripcion, e.Prioridad, e.Situacion, e.Cambio, f.mes
+                FROM total t, alumnos a, eleccion e, modalidad m, fecha f
+                where a.DNI = $DNI[0] and t.DNI = $DNI[0] and e.DNI = $DNI[0] and e.ID_Modalidad in(select ID_Modalidad from modalidad) and f.ID_mes = t.sin_pendientes";
                 $info= $conexion->query($infoalu);
                 $datos = $info ->fetch_array();
-                switch($datos["sin_pendientes"])
-                {
-                    case 1:
-                    {
-                        $mes = "Noviembre";  
-                        break; 
-                    }
-                    case 2:
-                    {
-                        $mes = "Diciembre"; 
-                        break;   
-                    }
-                    case 3:
-                    {
-                        $mes = "Febrero"; 
-                        break;   
-                    }
-                    case 4:
-                    {
-                        $mes = "Marzo";   
-                        break; 
-                    }
-                }
-                $_SESSION["mes"] = $mes;
                 ?>
-                <tr><td><?php echo $datos["Descripcion"]?></td><td><?php echo $datos["Prioridad"]?></td><td><?php echo $DNI[1]?></td><td><?php echo $datos["Situacion"]?></td><td><?php echo $datos["Cambio"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td><?php echo $datos["Comentario"]?></td><td><?php echo $mes ?></td><tr>
+                <tr><td><?php echo $datos["Descripcion"]?></td><td><?php echo $datos["Prioridad"]?></td><td><?php echo $DNI[1]?></td><td><?php echo $datos["Situacion"]?></td><td><?php echo $datos["Cambio"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td><?php echo $datos["Comentario"]?></td><td><?php echo $datos["mes"] ?></td><tr>
                 <?php  
             } 
             $alumnos[0] = 0;  
@@ -316,7 +292,7 @@ $siquesi[0] = 0;
         {$alumnos = $pedido -> fetch_array();}
         if ($alumnos[0] != 0)
         {
-            $DNI[1] = "A";
+            $DNI[1] = "1";
             $DNI[0] = 0;
             for($y = 1; $y <= $alumnos[0]; $y++)
             {
@@ -324,37 +300,13 @@ $siquesi[0] = 0;
                 where  a.DNI NOT IN(SELECT DNI FROM eleccion) and a.Nombre > '$DNI[1]' and t.DNI != $DNI[0] and a.DNI in(select DNI from total) and a.Curso = '$x' order by a.Nombre ASC";
                 $sinElex = $conexion -> query($sinMod);
                 $DNI = $sinElex ->fetch_array();
-                $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, t.sin_pendientes
-                FROM total t, alumnos a
-                where a.DNI NOT IN(SELECT DNI FROM eleccion) and  $DNI[0] in(select DNI from alumnos) and $DNI[0] in(select DNI from total) and a.Curso = '$x' and a.DNI in(select DNI from total)";
+                $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, f.mes
+                FROM total t, alumnos a, fecha f
+                where a.DNI NOT IN(SELECT DNI FROM eleccion) and  $DNI[0] in(select DNI from alumnos) and $DNI[0] in(select DNI from total) and a.Curso = '$x' and a.DNI in(select DNI from total) and f.ID_mes = t.sin_pendientes";
                 $data= $conexion->query($infoalu);
                 $fact = $data ->fetch_array();
-                switch($fact["sin_pendientes"])
-                {
-                    case 1:
-                    {
-                        $mes = "Noviembre";  
-                        break; 
-                    }
-                    case 2:
-                    {
-                        $mes = "Diciembre"; 
-                        break;   
-                    }
-                    case 3:
-                    {
-                        $mes = "Febrero"; 
-                        break;   
-                    }
-                    case 4:
-                    {
-                        $mes = "Marzo";   
-                        break; 
-                    }
-                }
-                $_SESSION["mes"] = $mes;
                 ?>
-                <tr><td>No realizó la eleccion</td><td>-</td><td><?php echo $DNI[1]?></td><td>-</td><td>-</td><td><?php echo $fact["PromediosT"]?></td><td><?php echo $fact["FichasT"]?></td><td><?php echo $fact["ObservacionesT"]?></td><td><?php echo $fact["InasistenciasT"]?></td><td><?php echo $fact["Comentario"]?></td><td><?php echo $mes?></td><tr>
+                <tr><td>No realizó la eleccion</td><td>-</td><td><?php echo $DNI[1]?></td><td>-</td><td>-</td><td><?php echo $fact["PromediosT"]?></td><td><?php echo $fact["FichasT"]?></td><td><?php echo $fact["ObservacionesT"]?></td><td><?php echo $fact["InasistenciasT"]?></td><td><?php echo $fact["Comentario"]?></td><td><?php echo $fact["mes"]?></td><tr>
                 <?php
             }
             $alumnos[0] = 0;
@@ -374,7 +326,7 @@ $siquesi[0] = 0;
                     $sinElex = $conexion -> query($sinMod);
                     $DNI = $sinElex ->fetch_array();
                     ?>
-                    <tr><td><?php echo $DNI["Descripcion"]?></td><td>No ingresado</td><td><?php echo $DNI[1]?></td><td>-</td><td><?php echo $DNI["Cambio"]?></td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No realizó la eleccion</td><td>No ingresado</td><tr>
+                    <tr><td><?php echo $DNI["Descripcion"]?></td><td>No ingresado</td><td><?php echo $DNI[1]?></td><td>-</td><td><?php echo $DNI["Cambio"]?></td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><tr>
                     <?php
             }
             $alumnos[0] = 0;
@@ -419,7 +371,7 @@ $siquesi[0] = 0;
 <br>
 </div>
 
-<button type="submit" class="boton2" style="margin-left: 85%;"><a href="Excel1curso.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>                            
+<button type="submit" class="boton2" style="margin-left: 85%;margin-top:20px;"><a href="Excel1curso.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>                            
 
                
                   
@@ -436,10 +388,6 @@ $siquesi[0] = 0;
 <script src="../js/jquery.metisMenu.js"></script>
 <script src="../js/custom.js"></script>
 </div>
-
-
-
-
 </body>
 <footer class="pie-pagina" style="left: 0; right: 0; position:fixed; bottom:0;">
 <div class="grupo-2">
