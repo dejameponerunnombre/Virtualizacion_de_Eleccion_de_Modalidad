@@ -256,7 +256,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
         <div class="col-md-12" style="position: relative;display: inline-block;">
         <h1>Listas por División: <span style="color:#040544;">3º <?php echo $x ?></span></h1>
         <br>  
-        <div class="datagrid">
+        <div class="datagrid" style="overflow-x:auto;">
         <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
         <?php
         include("db.php");
@@ -420,7 +420,8 @@ for($x="A";$x<="G" and $x!="f";$x++)
     <?php
 } 
 ?>
-<button type="submit" class="boton2" style="margin-left: 85%; "><a href="ExcelCurso.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>                            
+
+<button type="submit" class="boton2" style="margin-left: 85%; margin-top:20px; "><a href="ExcelCurso.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>                            
 
 <br><br><br><br>           
                   
