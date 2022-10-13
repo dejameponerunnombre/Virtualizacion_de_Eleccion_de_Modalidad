@@ -1,46 +1,67 @@
+<html>
 <?php
 session_start();
-$mes=$_SESSION["mes"] ;
 include("db.php");
-$a = 0;
+header("Content-type: application/octet-stream");  
+header("Content-Disposition: attachment; filename=Listas_espera.xls");  
+header("Pragma: no-cache");  
+header("Expires: 0");
 for($x = 1; $x <= 5; $x++)
 {
     $ahorasi="SELECT Ingresos, Descripcion FROM modalidad where ID_Modalidad = $x";
     $quesi= $conexion->query($ahorasi);
     $siquesi = $quesi ->fetch_array();
-    if ($siquesi[0] > 0)
+    if($siquesi[0] > 39)
     {
-        $encabezado[$a] = '';
-        $encabezado[$a] = $siquesi["Descripcion"]."\n"."Puesto"."\t"."Alumno"."\t"."DNI"."\t"."Promedio"."\t"."Fichas"."\t"."Observaciones"."\t"."Inasistencias"."\t"."Comentario"."\t"."Situacion"."\t"."Cuando no adeuda materias"."\t";
-        for($y = 1; $y <= $siquesi[0]; $y++)
+        $a = 1;
+        ?>
+        </table></div>
+        <h1>Tabla de espera de <?php echo $siquesi["Descripcion"]?></h1>
+        <div class="datagrid"><table border = 1><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th>
+        <?php
+        for($y = 40; $y <= $siquesi[0]; $y++)
         {   
-            $infoalu="SELECT e.Prioridad, a.Nombre, e.DNI, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, e.Situacion
-            FROM total t, alumnos a, eleccion e 
-            where t.DNI = e.DNI  and a.DNI = e.DNI and e.ID_Modalidad = $x and e.Situacion = 'En lista de espera'
-            order by e.Prioridad asc";
-            $info = $conexion->query($infoalu);
-            $setData[$a] = '';
-            while ($datos = mysqli_fetch_row($info)) {  
-                $rowData = ''; 
-                foreach ($datos as $value) {  
-                    $value = '"' . $value . '"' . "\t";  
-                    $rowData .= $value;  
-                }  
-                $value .= '"' . $mes . '"' . "\t";  
-                $rowData .= $value;
-                $setData[$a] = $setData[$a].trim($rowData) . "\n";  
-            }  
+            $no="SELECT DNI from eleccion  where ID_Modalidad = $x and Prioridad = $y and DNI in(SELECT DNI from total)";
+        $tas = $conexion -> query($no);
+        $sinotas = $tas ->fetch_array();
+        if(empty($sinotas)==false)
+        {  
+            $varB = "SELECT t.DNI FROM total t , eleccion e where t.DNI = e.DNI 
+            and e.ID_Modalidad = $x and e.Prioridad = $y";
+            $connB = $conexion -> query($varB);
+            $DNI = $connB ->fetch_array();
+            $infoalu="SELECT a.Nombre, t.PromediosT, t.FichasT, t.ObservacionesT, t.InasistenciasT, t.Comentario, f.mes
+            FROM total t, alumnos a, eleccion e, fecha f
+            where a.DNI = $DNI[0] and t.DNI = $DNI[0] and f.ID_mes = t.sin_pendientes";
+            $info= $conexion->query($infoalu);
+            $datos = $info ->fetch_array();
+            ?>
+            <tr><td><?php echo $y?></td><td><?php echo $datos["Nombre"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td ><?php echo $datos["Comentario"]?></td><td><?php echo $datos["mes"] ?></td>
+        <?php
         }
-        $a ++;
+        else
+        {
+            $no="SELECT a.Nombre, e.DNI from eleccion e, alumnos a, total t where e.ID_Modalidad = $x and e.Prioridad = $y and e.DNI != t.DNI and e.DNI = a.DNI";
+            $tas = $conexion -> query($no);
+            $sinotas = $tas ->fetch_array();
+            if(empty($sinotas)==false)
+            {
+                ?>
+                <tr><td><?php echo $y?></td><td><?php echo $sinotas["Nombre"]?></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                <?php 
+            }
+        }
     }
+    ?>
+    </table></div>
+    <?php
+    }
+    else
+    {
+        ?>
+            <div style="margin-top: 40px;"><h1 style=" top: 50%; margin-left: 50%; transform: translate(-50%, -50%);font-size: 16px; border: 2px solid #172d8d; padding: 10px; margin-top: 30px"> No hay alumnos en lista de espera en <?php echo $siquesi["Descripcion"] ?></h1></div>    
+        <?php
+    }   
 }
-header("Content-type: application/octet-stream");  
-header("Content-Disposition: attachment; filename=Listas-Espera.xls");  
-header("Pragma: no-cache");  
-header("Expires: 0");
-for($i = 0; $i < $a; $i++)
-{
-    echo ucwords($encabezado[$i]) . "\n" . $setData[$i] . "\n";
-}
-
 ?>
+</html>

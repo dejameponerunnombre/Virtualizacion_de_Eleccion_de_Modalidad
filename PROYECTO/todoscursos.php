@@ -242,7 +242,7 @@ include("calculo.php");
                 <div class="col-md-12">
                     <h2>Lista de <span style="color:#040544; font-weight: 900;"> Divisiones</span></h2> 
                     <hr>  
-<?php
+                    <?php
 for($x="A";$x<="G" and $x!="f";$x++)
 {  
     $siquesi[0] = 0;
@@ -256,28 +256,13 @@ for($x="A";$x<="G" and $x!="f";$x++)
         <div class="col-md-12" style="position: relative;display: inline-block;">
         <h1>Listas por División: <span style="color:#040544;">3º <?php echo $x ?></span></h1>
         <br>  
-
-        <div class="datagrid">
+        <div class="datagrid" style="overflow-x:auto;">
             <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
             <?php
             include("db.php");
             $request = "SELECT COUNT(*) FROM alumnos where Curso = '$x' and DNI in(select DNI from eleccion) and DNI in(select DNI from total)";
             $pedido = $conexion -> query($request);
             if($pedido != null)
-            ?>
-        <div class="datagrid" style="overflow-x:auto;">
-        <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
-        <?php
-        include("db.php");
-        $request = "SELECT COUNT(*) FROM alumnos where Curso = '$x' and DNI in(select DNI from eleccion) and DNI in(select DNI from total)";
-        $pedido = $conexion -> query($request);
-        if($pedido != null)
-        {$alumnos = $pedido -> fetch_array();}
-        if ($alumnos[0] != 0)
-        {
-            $DNI[1] = 1;
-            $DNI[0] = 0;
-            for($y = 1; $y <= $alumnos[0]; $y++)
             {
                 $alumnos = $pedido -> fetch_array();
             }
@@ -395,6 +380,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
 <?php
 } 
 ?>
+
 
 <button type="submit" class="boton2" style="margin-left: 85%; margin-top:20px; "><a href="ExcelCurso.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>                            
 
