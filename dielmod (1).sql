@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-10-2022 a las 22:17:23
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.10
+-- Tiempo de generación: 13-10-2022 a las 22:59:41
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -152,15 +152,15 @@ INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`, `Cambio
 (17, 4, 15, 'Dentro de la modalidad', 'No'),
 (18, 4, 25, 'Dentro de la modalidad', 'No'),
 (19, 4, 27, 'Dentro de la modalidad', 'No'),
-(20, 4, 0, '-', 'No'),
-(21, 4, 0, '-', 'No'),
-(22, 4, 0, '-', 'No'),
-(24, 4, 0, '-', 'No'),
-(25, 4, 0, '-', 'No'),
-(26, 4, 0, '-', 'No'),
-(27, 4, 0, '-', 'No'),
-(28, 4, 0, '-', 'No'),
-(29, 4, 0, '-', 'No'),
+(20, 4, 31, 'Dentro de la modalidad', 'No'),
+(21, 4, 32, 'Dentro de la modalidad', 'No'),
+(22, 4, 33, 'Dentro de la modalidad', 'No'),
+(24, 4, 34, 'Dentro de la modalidad', 'No'),
+(25, 4, 35, 'Dentro de la modalidad', 'No'),
+(26, 4, 36, 'Dentro de la modalidad', 'No'),
+(27, 4, 37, 'Dentro de la modalidad', 'No'),
+(28, 4, 38, 'Dentro de la modalidad', 'No'),
+(29, 4, 39, 'Dentro de la modalidad', 'No'),
 (50, 4, 11, 'Dentro de la modalidad', 'No'),
 (51, 4, 14, 'Dentro de la modalidad', 'No'),
 (52, 4, 23, 'Dentro de la modalidad', 'No'),
@@ -171,16 +171,16 @@ INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`, `Cambio
 (57, 4, 8, 'Dentro de la modalidad', 'No'),
 (58, 4, 6, 'Dentro de la modalidad', 'No'),
 (59, 4, 3, 'Dentro de la modalidad', 'No'),
-(60, 4, 5, 'Dentro de la modalidad', 'No'),
+(60, 4, 4, 'Dentro de la modalidad', 'No'),
 (61, 4, 13, 'Dentro de la modalidad', 'No'),
 (62, 4, 22, 'Dentro de la modalidad', 'No'),
 (63, 4, 21, 'Dentro de la modalidad', 'No'),
 (64, 4, 9, 'Dentro de la modalidad', 'No'),
 (65, 4, 7, 'Dentro de la modalidad', 'No'),
-(66, 4, 4, 'Dentro de la modalidad', 'No'),
+(66, 4, 5, 'Dentro de la modalidad', 'No'),
 (67, 4, 2, 'Dentro de la modalidad', 'No'),
 (68, 4, 1, 'Dentro de la modalidad', 'No'),
-(69, 4, 0, '-', 'No');
+(69, 4, 40, 'En lista de espera', 'No');
 
 -- --------------------------------------------------------
 
@@ -204,6 +204,27 @@ CREATE TABLE `empleado` (
 INSERT INTO `empleado` (`ID_Empleado`, `Nombre`, `Usuario`, `Tipo`, `Contrasenia`, `Mail`) VALUES
 (1, 'Pepe', 'Pepe123', 'Secretaria', 'Pepe456', 'alumno.paltamiranda@gmail.com'),
 (2, 'Jorge', 'Jorge123', 'Directivo', 'Jorge456', 'alumno.paltamiranda@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `fecha`
+--
+
+CREATE TABLE `fecha` (
+  `ID_mes` int(11) NOT NULL,
+  `mes` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `fecha`
+--
+
+INSERT INTO `fecha` (`ID_mes`, `mes`) VALUES
+(1, 'Noviembre'),
+(2, 'Diciembre'),
+(3, 'Febrero'),
+(4, 'Marzo');
 
 -- --------------------------------------------------------
 
