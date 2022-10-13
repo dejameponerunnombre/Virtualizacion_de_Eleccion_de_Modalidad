@@ -17,30 +17,15 @@ for($x="A";$x<="G" and $x!="f";$x++)
     {
         ?>
         <div class="col-md-12" style="position: relative;display: inline-block;">
-        <h1>Listas por División: <span style="color:#040544;">3º <?php echo $x ?></span></h1>
+        <h1>Listas por Division: <span style="color:#040544;">3º <?php echo $x ?></span></h1>
         <br>  
-
-        <div class="datagrid">
-            <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
+        <div class="datagrid" style="overflow-x:auto;">
+            <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th>
             <?php
             include("db.php");
             $request = "SELECT COUNT(*) FROM alumnos where Curso = '$x' and DNI in(select DNI from eleccion) and DNI in(select DNI from total)";
             $pedido = $conexion -> query($request);
             if($pedido != null)
-            ?>
-        <div class="datagrid" style="overflow-x:auto;">
-        <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
-        <?php
-        include("db.php");
-        $request = "SELECT COUNT(*) FROM alumnos where Curso = '$x' and DNI in(select DNI from eleccion) and DNI in(select DNI from total)";
-        $pedido = $conexion -> query($request);
-        if($pedido != null)
-        {$alumnos = $pedido -> fetch_array();}
-        if ($alumnos[0] != 0)
-        {
-            $DNI[1] = 1;
-            $DNI[0] = 0;
-            for($y = 1; $y <= $alumnos[0]; $y++)
             {
                 $alumnos = $pedido -> fetch_array();
             }
@@ -60,7 +45,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
                     $info= $conexion->query($infoalu);
                     $datos = $info ->fetch_array();
                     ?>
-                    <tr><td><?php echo $datos["Descripcion"]?></td><td><?php echo $datos["Prioridad"]?></td><td><?php echo $DNI[1]?></td><td><?php echo $datos["Situacion"]?></td><td><?php echo $datos["Cambio"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td><?php echo $datos["Comentario"]?></td><td><?php echo $datos["mes"] ?></td><tr>
+                    <tr><td><?php echo $datos["Descripcion"]?></td><td><?php echo $datos["Prioridad"]?></td><td><?php echo $DNI[1]?></td><td><?php echo $datos["Situacion"]?></td><td><?php echo $datos["Cambio"]?></td><td><?php echo $datos["PromediosT"]?></td><td><?php echo $datos["FichasT"]?></td><td><?php echo $datos["ObservacionesT"]?></td><td><?php echo $datos["InasistenciasT"]?></td><td><?php echo $datos["Comentario"]?></td><td><?php echo $datos["mes"] ?></td>
                     <?php  
                 }
                 $alumnos[0] = 0;  
@@ -87,7 +72,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
                     $data= $conexion->query($infoalu);
                     $fact = $data ->fetch_array();
                     ?>
-                    <tr><td>No realizó la eleccion</td><td>-</td><td><?php echo $DNI[1]?></td><td>-</td><td>-</td><td><?php echo $fact["PromediosT"]?></td><td><?php echo $fact["FichasT"]?></td><td><?php echo $fact["ObservacionesT"]?></td><td><?php echo $fact["InasistenciasT"]?></td><td><?php echo $fact["Comentario"]?></td><td><?php echo $fact["mes"]?></td><tr>
+                    <tr><td>No realizo la eleccion</td><td>-</td><td><?php echo $DNI[1]?></td><td>-</td><td>-</td><td><?php echo $fact["PromediosT"]?></td><td><?php echo $fact["FichasT"]?></td><td><?php echo $fact["ObservacionesT"]?></td><td><?php echo $fact["InasistenciasT"]?></td><td><?php echo $fact["Comentario"]?></td><td><?php echo $fact["mes"]?></td>
                         <?php
                 }
                 $alumnos[0] = 0;
@@ -109,7 +94,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
                     $sinElex = $conexion -> query($sinMod);
                     $DNI = $sinElex ->fetch_array();
                     ?>
-                    <tr><td><?php echo $DNI[2]?></td><td>No ingresado</td><td><?php echo $DNI[1]?></td><td>-</td><td><?php echo $DNI[3]?></td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><tr>
+                    <tr><td><?php echo $DNI[2]?></td><td>No ingresado</td><td><?php echo $DNI[1]?></td><td>-</td><td><?php echo $DNI[3]?></td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td>
                     <?php
                 }
                 $alumnos[0] = 0;
@@ -132,7 +117,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
                     $sinElex = $conexion -> query($sinMod);
                     $DNI = $sinElex ->fetch_array();
                     ?>
-                    <tr><td>No realizo la eleccion</td><td>No ingresado</td><td><?php echo $DNI[1]?></td><td>-</td><td>Indefinido</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><tr>
+                    <tr><td>No realizo la eleccion</td><td>No ingresado</td><td><?php echo $DNI[1]?></td><td>-</td><td>Indefinido</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td><td>No ingresado</td>
                     <?php
                 }
             }
@@ -144,9 +129,9 @@ for($x="A";$x<="G" and $x!="f";$x++)
     {
         ?>
         <div class="col-md-12" style="position: relative;display: inline-block;">
-        <h1>Listas por División: <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h1>
+        <h1>Listas por Division: <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h1>
         <br>
-        <h1 style="text-align: center; margin-left: 50%; transform: translate(-50%, -50%);font-size:  16px; border: 2px solid #172d8d; padding: 10px; margin-top: 30px;">No hay alumnos en esta división</h1>
+        <h1 style="text-align: center; margin-left: 50%; transform: translate(-50%, -50%);font-size:  16px; border: 2px solid #172d8d; padding: 10px; margin-top: 30px;">No hay alumnos en esta division</h1>
         <?php
     }
     if($x==="E")
