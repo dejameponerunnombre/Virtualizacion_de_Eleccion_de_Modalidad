@@ -342,7 +342,6 @@ for($x="A";$x<="G" and $x!="f";$x++)
             {
                 $alumnos = $pedido -> fetch_array();
             }
-            echo $alumnos[0];
             if ($alumnos[0] != 0)
             {
                 $DNI[1] = 1;

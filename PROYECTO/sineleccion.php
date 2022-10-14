@@ -335,7 +335,6 @@ $siquesi[0] = 0;
         $pedido = $conexion -> query($request);
         if($pedido != null)
         {$alumnos = $pedido -> fetch_array();}
-        echo $alumnos[0];
         if ($alumnos[0] != 0)
         {
             $DNI[1] = "A";
@@ -366,8 +365,6 @@ $siquesi[0] = 0;
     }
             ?>
 </table></div>
-<?php  
-?>
 <br>
 </div>
 

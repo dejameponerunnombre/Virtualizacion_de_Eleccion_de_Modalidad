@@ -17,7 +17,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
     {
         ?>
         <div class="col-md-12" style="position: relative;display: inline-block;">
-        <h1>Listas por Division: <span style="color:#040544;">3º <?php echo $x ?></span></h1>
+        <h1>Listas por Division: <span style="color:#040544;">3 <?php echo $x ?></span></h1>
         <br>  
         <div class="datagrid" style="overflow-x:auto;">
             <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th>
@@ -105,7 +105,6 @@ for($x="A";$x<="G" and $x!="f";$x++)
             {
                 $alumnos = $pedido -> fetch_array();
             }
-            echo $alumnos[0];
             if ($alumnos[0] != 0)
             {
                 $DNI[1] = 1;
@@ -129,7 +128,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
     {
         ?>
         <div class="col-md-12" style="position: relative;display: inline-block;">
-        <h1>Listas por Division: <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h1>
+        <h1>Listas por Division: <span style="color:#040544; font-weight: 900;">3 <?php echo $x ?></span></h1>
         <br>
         <h1 style="text-align: center; margin-left: 50%; transform: translate(-50%, -50%);font-size:  16px; border: 2px solid #172d8d; padding: 10px; margin-top: 30px;">No hay alumnos en esta division</h1>
         <?php
