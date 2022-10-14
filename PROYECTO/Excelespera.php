@@ -16,8 +16,8 @@ for($x = 1; $x <= 5; $x++)
         $a = 1;
         ?>
         </table></div>
-        <h1>Tabla de espera de <?php echo $siquesi["Descripcion"]?></h1>
-        <div class="datagrid"><table border = 1><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th>
+        <h1 style="font-size:22px; text-align:center; color:#172d8d; ">Tabla de espera de <?php echo $siquesi["Descripcion"]?></h1>
+        <div class="datagrid"><table border = 1 style=" margin-left: auto; margin-right: auto;"><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamiento de materia</th>
         <?php
         for($y = 40; $y <= $siquesi[0]; $y++)
         {   
@@ -59,7 +59,7 @@ for($x = 1; $x <= 5; $x++)
     else
     {
         ?>
-            <div style="margin-top: 40px;"><h1 style=" top: 50%; margin-left: 50%; transform: translate(-50%, -50%);font-size: 16px; border: 2px solid #172d8d; padding: 10px; margin-top: 30px"> No hay alumnos en lista de espera en <?php echo $siquesi["Descripcion"] ?></h1></div>    
+            <div style="margin-top: 40px;"><h1 style=" text-align:center; font-size: 18px; padding: 10px;"> No hay alumnos en lista de espera en <?php echo $siquesi["Descripcion"] ?></h1></div>    
         <?php
     }   
 }
