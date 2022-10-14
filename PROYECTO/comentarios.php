@@ -1,17 +1,11 @@
 <?php
-$de = 'dielmod7c@gmail.com';
-$nombre = $_POST['firstname'];
-$email = $_POST['email'];
-$duda=$_POST['subject'];
-session_start();
-$_SESSION['email'] = $email;
-include("db.php");
-    if(mail($de, $email, $duda))
-    {
-        echo "La consulta fue realizada el equipo tecnico le estará enviando una respuesta en breves";
-    }
 
-    else
-    {
-        echo "ERROR";
-    }
+$destino = "melinatroncosoleal@gmail.com";
+$name = $_POST["name"];
+$email = $_POST["email"];
+$mensaje = $_POST["mensaje"];
+$contenido = "Nombre: " . $name . "\nCorreo: " . $email . "\nMensaje: " . $mensaje;
+mail($destino, $mensaje, $contenido);
+echo "<script>alert('Correo enviado exitosamente.')</script>";
+echo "<script> setTimeout(\"location.href='inicio.html'\",1000)</script>";
+?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-10-2022 a las 22:59:41
+-- Tiempo de generación: 14-10-2022 a las 22:03:05
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -20,6 +20,14 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `dielmod`
 --
+
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `carganotas` (IN `Prom1` FLOAT(4), IN `Fichas1` INT(3), IN `Inasistencias1` INT(3), IN `Observaciones1` INT(3), IN `DNI1` VARCHAR(10), IN `Anio1` INT(1))  INSERT INTO info (Prom, Fichas, Inasistencias, Observaciones, DNI, Anio) values (Prom1, Fichas1, Inasistencias1, Observaciones1, DNI1, Anio1)$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -171,13 +179,13 @@ INSERT INTO `eleccion` (`DNI`, `ID_Modalidad`, `Prioridad`, `Situacion`, `Cambio
 (57, 4, 8, 'Dentro de la modalidad', 'No'),
 (58, 4, 6, 'Dentro de la modalidad', 'No'),
 (59, 4, 3, 'Dentro de la modalidad', 'No'),
-(60, 4, 4, 'Dentro de la modalidad', 'No'),
+(60, 4, 5, 'Dentro de la modalidad', 'No'),
 (61, 4, 13, 'Dentro de la modalidad', 'No'),
 (62, 4, 22, 'Dentro de la modalidad', 'No'),
 (63, 4, 21, 'Dentro de la modalidad', 'No'),
 (64, 4, 9, 'Dentro de la modalidad', 'No'),
 (65, 4, 7, 'Dentro de la modalidad', 'No'),
-(66, 4, 5, 'Dentro de la modalidad', 'No'),
+(66, 4, 4, 'Dentro de la modalidad', 'No'),
 (67, 4, 2, 'Dentro de la modalidad', 'No'),
 (68, 4, 1, 'Dentro de la modalidad', 'No'),
 (69, 4, 40, 'En lista de espera', 'No');
