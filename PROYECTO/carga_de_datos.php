@@ -45,18 +45,17 @@
             include("db.php");
             for($i = 0; $i < 3; $i++)
             {
-
-                $in[$i]  = "INSERT INTO info (Prom, Fichas, Inasistencias, Observaciones, DNI, Anio) values 
-                ($P[$i], $F[$i], $I[$i], $O[$i], $DNI, $i+1)";
-                $con[$i] =  $conexion -> query($in[$i]);
                 $PT += $P[$i];
                 $FT += $F[$i];
                 $IT += $I[$i];
                 $OT += $O[$i];
+                $in[$i]  = "call carganotas ($P[$i], $F[$i], $I[$i], $O[$i], '$DNI', $i+1)";
+                $con[$i] =  $conexion -> query($in[$i]);
+
             }
             $PromT = $PT / 3;
             $var2 = "INSERT INTO total (PromediosT, FichasT, InasistenciasT, ObservacionesT, DNI, Comentario, sin_pendientes) values 
-            ($PromT, $FT, $IT, $OT, $DNI, $Comentario, $fecha)";
+            ($PromT, $FT, $IT, $OT, '$DNI', '$Comentario', $fecha)";
             $con4 = $conexion -> query($var2);
             $x = 10;
             $_SESSION['x'] = $x;

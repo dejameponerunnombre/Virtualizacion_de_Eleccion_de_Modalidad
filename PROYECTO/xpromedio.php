@@ -285,7 +285,6 @@ for($x = 1; $x <= 5; $x++)
             $sinotas = $tas ->fetch_array();
             if(empty($sinotas)==false)
             {
-                echo "a";
                 ?>
                 <tr><td><?php echo $y?></td><td><?php echo $sinotas["Nombre"]?></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><tr>
                 <?php 
