@@ -36,7 +36,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="logo" href="inicio.html" ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
+                    <a class="logo" ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
                     
                 </div>
                 <div class="navbar-collapse collapse">

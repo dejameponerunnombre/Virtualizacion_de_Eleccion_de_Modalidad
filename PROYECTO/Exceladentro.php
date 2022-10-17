@@ -15,8 +15,8 @@ for($x = 1; $x <= 5; $x++)
     if ($siquesi[0] > 0)
     {
         ?>
-    <h1> <?php echo $siquesi["Descripcion"] ?></h1>
-     <div class="datagrid">   <table border = 1 ><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th>
+    <h1 style="text-align:center; font-size:20px;"> <?php echo $siquesi["Descripcion"] ?></h1>
+     <div class="datagrid">   <table border = 1 ><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamiento de materia</th>
     <?php
     for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
     {
@@ -55,7 +55,7 @@ for($x = 1; $x <= 5; $x++)
     else
     {
         ?>
-        <h2> No hay alumnos que hayan elegido <?php echo $siquesi["Descripcion"] ?> </h2>
+        <h2 style="text-align:center; font-size:20px;"> No hay alumnos que hayan elegido <?php echo $siquesi["Descripcion"] ?> </h2>
         <?php
     }
     ?>

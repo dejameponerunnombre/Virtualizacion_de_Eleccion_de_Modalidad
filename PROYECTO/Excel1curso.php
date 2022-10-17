@@ -17,10 +17,10 @@ $siquesi[0] = 0;
     {
         ?>
         <div class="col-md-12" style="position: relative;display: inline-block;">
-        <h1>Listas por División: <span style="color:#040544;">3<?php echo $x ?></span></h1>
+        <h1 style="text-align:center; font-size:20px;">Listas por División: <span style="color:#040544;">3<?php echo $x ?></span></h1>
         <br>  
         <div class="datagrid" style="overflow-x:auto;">
-        <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th>
+        <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamiento de materia</th>
         <?php
         include("db.php");
         $request = "SELECT COUNT(*) FROM alumnos where Curso = '$x' and DNI in(select DNI from eleccion) and DNI in(select DNI from total)";

@@ -107,7 +107,7 @@ if($ahora < $final && $ahora > $inicio)
         {
             ?>
         <h2 style="text-align: center; font-weight:600; color:#000a35;"> <?php echo $siquesi["Descripcion"] ?></h2>
-         <div class="datagrid">   <table border = 1 ><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
+         <div class="datagrid">   <table border = 1 ><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamiento de materia</th></tr>
         <?php
         for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
         {    
@@ -160,7 +160,7 @@ if($ahora < $final && $ahora > $inicio)
             </table></div>
             
             <h1 style="text-align: center; font-weight:600; color:#000a35;">Tabla de espera de <?php echo $siquesi["Descripcion"]?></h1>
-            <div class="datagrid"><table border = 1><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
+            <div class="datagrid"><table border = 1><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamiento de materia</th></tr>
             <?php
             for($y = 40; $y <= $siquesi[0]; $y++)
             {   

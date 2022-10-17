@@ -16,8 +16,8 @@ for($x = 1; $x <= 5; $x++)
     {
         ?>
         </table></div>
-    <h2 style="text-align: center; font-weight:600; color:#000a35;"> <?php echo $siquesi["Descripcion"] ?></h2>
-     <div class="datagrid">   <table border = 1 style="text-align: center;"><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
+    <h2 style="font-size:20px; text-align:center;"> <?php echo $siquesi["Descripcion"] ?></h2>
+     <div class="datagrid">   <table border = 1 style="text-align: center;"><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamiento de materia</th></tr>
     <?php
     for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
     {    
@@ -61,7 +61,7 @@ for($x = 1; $x <= 5; $x++)
     else
     {
         ?>
-        <h1> No hay alumnos que hayan elegido <?php echo $siquesi["Descripcion"] ?> </h1>
+        <h1 style="font-size:20px; text-align:center;"> No hay alumnos que hayan elegido <?php echo $siquesi["Descripcion"] ?> </h1>
         <?php
     }
     if($siquesi[0] > 39)
@@ -69,7 +69,7 @@ for($x = 1; $x <= 5; $x++)
         ?>
         </table></div>
         
-        <h1 style="text-align: center; font-weight:600; color:#000a35;">Tabla de espera de <?php echo $siquesi["Descripcion"]?></h1>
+        <h1 style="font-size:20px; text-align:center;">Tabla de espera de <?php echo $siquesi["Descripcion"]?></h1>
         <div class="datagrid"><table border = 1><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th>
         <?php
         for($y = 40; $y <= $siquesi[0]; $y++)
@@ -113,7 +113,7 @@ for($x = 1; $x <= 5; $x++)
     {
         ?>
         </div>
-        <h1 style="text-align: center; font-weight:600; color:#000a35; font-size:18px"> No hay lista de espera de <?php echo $siquesi["Descripcion"] ?> </h1>
+        <h1 style="font-size:20px; text-align:center;"> No hay lista de espera de <?php echo $siquesi["Descripcion"] ?> </h1>
         <div class="datagrid">
         <?php
         

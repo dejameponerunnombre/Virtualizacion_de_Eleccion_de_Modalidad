@@ -37,7 +37,7 @@ include("calculo.php");
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="logo" href="inicio.html" ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
+                    <a class="logo" ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
                     
                 </div>
                 <div class="navbar-collapse collapse">
@@ -257,7 +257,7 @@ if ($siquesi[0] > 0)
     ?>
     <h2>Modalidad: <?php echo $siquesi["Descripcion"] ?></h2>  
     <hr>
-    <div class="datagrid">   <table border = 1 ><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
+    <div class="datagrid">   <table border = 1 ><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamiento de materia</th></tr>
     <?php
     for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
     {   
@@ -304,7 +304,7 @@ if ($siquesi[0] > 0)
         ?>
         </table></div>
         <h1>Tabla de espera de <?php echo $siquesi["Descripcion"]?></h1>
-        <div class="datagrid"><table border = 1><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
+        <div class="datagrid"><table border = 1><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamiento de materia</th></tr>
         <?php
         for($y = 40; $y <= $siquesi[0]; $y++)
     {   
