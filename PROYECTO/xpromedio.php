@@ -37,7 +37,7 @@ include("calculo.php");
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="logo" href="inicio.html" ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
+                    <a class="logo"  ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
                     
                 </div>
                 <div class="navbar-collapse collapse">
@@ -256,7 +256,7 @@ for($x = 1; $x <= 5; $x++)
         ?>
         </table></div>
     <h2 style="text-align: center; font-weight:600; color:#000a35;"> <?php echo $siquesi["Descripcion"] ?></h2>
-     <div class="datagrid">   <table border = 1 ><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
+     <div class="datagrid">   <table border = 1 ><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamiento de materia</th></tr>
     <?php
     for($y = 1; $y <= 39 && $y <= $siquesi[0]; $y++)
     {    
@@ -309,7 +309,7 @@ for($x = 1; $x <= 5; $x++)
         </table></div>
         
         <h1 style="text-align: center; font-weight:600; color:#000a35;">Tabla de espera de <?php echo $siquesi["Descripcion"]?></h1>
-        <div class="datagrid"><table border = 1><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
+        <div class="datagrid"><table border = 1><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamiento de materia</th></tr>
         <?php
         for($y = 40; $y <= $siquesi[0]; $y++)
         {   

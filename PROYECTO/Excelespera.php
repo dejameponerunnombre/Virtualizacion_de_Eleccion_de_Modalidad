@@ -16,7 +16,7 @@ for($x = 1; $x <= 5; $x++)
         $a = 1;
         ?>
         </table></div>
-        <h1 style="font-size:22px; text-align:center; color:#172d8d; ">Tabla de espera de <?php echo $siquesi["Descripcion"]?></h1>
+        <h1 style="font-size:20px; text-align:center; ">Tabla de espera de <?php echo $siquesi["Descripcion"]?></h1>
         <div class="datagrid"><table border = 1 style=" margin-left: auto; margin-right: auto;"><tr><th>Puesto</th><th>Alumno</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamiento de materia</th>
         <?php
         for($y = 40; $y <= $siquesi[0]; $y++)

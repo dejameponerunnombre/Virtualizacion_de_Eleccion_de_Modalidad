@@ -37,7 +37,7 @@ include("calculo.php");
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="logo" href="inicio.html" ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
+                    <a class="logo" ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
                     
                 </div>
                 <div class="navbar-collapse collapse">
@@ -258,7 +258,7 @@ $siquesi[0] = 0;
         <h1>Listas por División: <span style="color:#040544;">3º <?php echo $x ?></span></h1>
         <br>  
         <div class="datagrid" style="overflow-x:auto;">
-        <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situacion</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamineto de materia</th></tr>
+        <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situación</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamiento de materia</th></tr>
         <?php
         include("db.php");
         $request = "SELECT COUNT(*) FROM alumnos where Curso = '$x' and DNI in(select DNI from eleccion) and DNI in(select DNI from total)";
@@ -372,7 +372,8 @@ $siquesi[0] = 0;
 
                
                   
-
+<br>
+<br>
                              
                     
 </div>

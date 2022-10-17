@@ -6,10 +6,10 @@ include("db.php");
 $consulta = "SELECT DNI, Usuario, Contrasenia FROM alumnos where Usuario = '$usuario' and Contrasenia = '$contraseña'";
 $resultado = $conexion -> query($consulta);
 $filas = $resultado ->fetch_array();
-$_SESSION['DNI'] = $filas[0];
 
 if(empty($filas[0]) === false)
 {
+    $_SESSION['DNI'] = $filas[0];
     if($filas[1]===$usuario && $filas[2]===$contraseña )
     {
         $consulta2 = "SELECT * FROM eleccion where DNI = $filas[0]";
