@@ -20,9 +20,13 @@
     </head>
 
 <?php
-session_start();
+if($_SESSION==FALSE)
+{
+    session_start();
+}
 include("db.php");
 $DNI = $_POST['DNI'];
+$_SESSION['DNI'] = $DNI;
 $request = "SELECT*FROM alumnos where DNI = '$DNI'";
 $resultado=mysqli_query($conexion,$request);
 $filas = mysqli_num_rows($resultado);

@@ -18,11 +18,11 @@ else
 $mail = $_POST['mail'];
 $usuario = $_POST['usuario'];
 $contrasenia = $_POST['contrasenia'];
-if($mail==NULL || $usuario=NULL || $contrasenia==NULL || $curso==NULL || $Nombre==NULL || $DNI==NULL || $escuela==NULL)
+if($mail==NULL || $usuario==NULL || $contrasenia==NULL || $curso==NULL || $Nombre==NULL || $DNI==NULL)
 {
     $v=1;
     $_SESSION['v'] = $v;
-    include("ingreso_alumno.php")
+    include("ingreso-alumno.php");
 }
 else
 {
@@ -33,7 +33,9 @@ else
     {
         $x = 10;
         $_SESSION['x'] = $x;
-        include("ingreso-alumno.php");
+        $v=0;
+        $_SESSION['v'] = $v;
+        include("ingreso-alumno.php"); 
     }
 }
 mysqli_close($conexion);

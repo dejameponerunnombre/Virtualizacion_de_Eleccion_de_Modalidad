@@ -66,7 +66,7 @@
                         <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver alumnos cargados</a>
                     </li>
                 </ul>
-
+ 
             </div>
 
         </nav>
@@ -85,7 +85,7 @@
                 }  
                 $_SESSION['varia'] = null;
                 $_SESSION['vari'] = null;
-                $_SESSION['var'] = null;
+                $_SESSION['var'] = null; 
                 include("db.php");
                 $x = empty($_SESSION['x']);
         if($x == false)
@@ -107,34 +107,51 @@
         }
         else
         {
-            ?>  
-            <h2>Ingresar informacion del alumno</h2>   
-            <hr />
-            <form action="ingreso_alumno.php" method="post"  >
+            $v = $_SESSION['v'];
+            if($v===0)
+            {
+                ?>  
+                <h2>Ingresar informacion del alumno</h2>   
+                <hr />
+                <form action="ingreso_alumno.php" method="post"  >
                     <div class="info">
-                    <div class="datos">        
+                        <div class="datos">
+                            <br>
+                            <h3>DNI del alumno</h3>
+                            <p><input type="text" name="DNI" id="DNI"></p>
+                        </div>
+                        <div class="texto-centro">
+                            <ul>
+                                <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px; border-radius: 100px;">Consultar</button></li>
+                            </ul>
+                        </div>
+                    </form>
+                    <?php
+                    $vari = empty($_SESSION['variab']);
+                    if($vari == false)
+                    {   
+                        ?> <div class="boton_formulario"> <h2>El alumno ya existe</h2></div>
+                        <?php 
+                        $_SESSION['variab'] = null;
+                    }
+                    $_SESSION['v'] = 0;
+            }
+            else
+            {
+                
+                    ?>
+                    <div style="margin-top: 15%; text-align: center; margin-left: 17%; margin-right: 17%; border: 3px outset #172d8d;">
+                        <h2 style="font-weight: 300;">Algun campo no fue completado</h2>
                         <br>
-                        <h3>DNI del alumno</h3>   
-                        <p><input type="number" name="DNI" id="DNI"></p>
-                        
-                    </div>   
-                    <div class="texto-centro">
                         <ul>
-                            
-                            <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px; border-radius: 100px;">Consultar</button></li>
+                            <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="ingreso-alumno.php">Volver a ingresar alumno</a></button></li>
                         </ul>
-                    </div>
-                        </form>
-                        <?php
-                        $vari = empty($_SESSION['variab']);
-                        if($vari == false)
-                            {   
-                                ?> <div class="boton_formulario"> <h2>El alumno ya existe</h2></div>
-                                <?php 
-                                $_SESSION['variab'] = null;
-                            }
-                                }
-                        ?>              
+                    </div> 
+                    <?php 
+                    $_SESSION['v'] = 0;
+            }
+        }
+            ?>              
     </div>
             </div>
    
