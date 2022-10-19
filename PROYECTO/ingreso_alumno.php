@@ -21,8 +21,19 @@
 
 <?php
 session_start();
-$DNI = $_SESSION['DNI'];
 include("db.php");
+$DNI = $_POST['DNI'];
+$request = "SELECT*FROM alumnos where DNI = '$DNI'";
+$resultado=mysqli_query($conexion,$request);
+$filas = mysqli_num_rows($resultado);
+if($filas > 0)
+{
+    $_SESSION['x'] = null;
+    $_SESSION['variab'] = 1;
+    include("ingreso-alumno.php");
+}
+else
+{
 ?>
     <div id="wrapper">
          <div class="navbar navbar-inverse navbar-fixed-top">
@@ -51,7 +62,7 @@ include("db.php");
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
                     <li> 
-                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
+                        <a href="ingreso-alumno.php"><i class="fa fa-user "></i>Cargar alumno</a>
                     </li>
                     <li> 
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
@@ -69,7 +80,7 @@ include("db.php");
                         <a href="cambio-eleccion.php"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
                     <li>
-                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver todos los alumnos cargados</a>
+                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver alumnos cargados</a>
                     </li>
                 </ul>
 
@@ -81,12 +92,12 @@ include("db.php");
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Seleccione una opción</h2>   
+                     <h2>Ingresar datos de alumno</h2>   
                     </div>
                 </div>              
                
                   <hr />  
-                  <h2 id="h2">Ingresar datos de alumno</h2>
+                  
                   <br>
             <form action="carga_alumno.php" method="post"  >
     <div class="temas">
@@ -95,18 +106,18 @@ include("db.php");
         <div class="temas1">
 
         <div class="prom">
-            <h3>Nombre y Apellido</h3>
+            <h4>Nombre y Apellido</h4>
             <input step="any" type="text"  name="nombre" value="">           
         </div>   
         <br>
         <div class="inasis">
-            <h3>Mail de contacto</h3>
+            <h4>Mail de contacto</h4>
             <input step="any" type="email" name="mail" value="" >
         </div>
 
         <fieldset id="curso">
-
-        <legend>Curso</legend>
+            <br>
+        <h4>Curso</h4>
         <input type="radio" id="A" value= A name="curso" ><label for="A">A</label>
         <input type="radio" id="B"value= B name="curso"><label for="B">B</label>
         <input type="radio" id="C"value= C name="curso"><label for="C">C</label>
@@ -118,12 +129,12 @@ include("db.php");
         <br>
         <div class="temas2">
         <div class="fichas">
-            <h3>Usuario</h3>
+            <h4>Usuario</h4>
             <input  type="text" name="usuario" value="">
         </div>
         <br>
         <div class="observ">
-            <h3>Contraseña</h3>
+            <h4>Contraseña</h4>
             <input type="text" name="contrasenia" value=""> 
         </div>
         </div>
@@ -143,3 +154,5 @@ include("db.php");
         </div>
     </footer>
 </html>
+<?php
+}

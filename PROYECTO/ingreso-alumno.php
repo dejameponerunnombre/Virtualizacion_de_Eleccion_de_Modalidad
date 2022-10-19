@@ -45,7 +45,7 @@
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
                     <li> 
-                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
+                        <a href="ingreso-alumno.php"><i class="fa fa-user "></i>Cargar alumno</a>
                     </li>
                     <li> 
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
@@ -63,7 +63,7 @@
                         <a href="cambio-eleccion.php"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
                     <li>
-                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver todos los alumnos cargados</a>
+                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver alumnos cargados</a>
                     </li>
                 </ul>
 
@@ -82,7 +82,7 @@
                 if(!isset($_SESSION)) 
                 { 
                     session_start(); 
-                } 
+                }  
                 $_SESSION['varia'] = null;
                 $_SESSION['vari'] = null;
                 $_SESSION['var'] = null;
@@ -110,7 +110,7 @@
             ?>  
             <h2>Ingresar informacion del alumno</h2>   
             <hr />
-            <form action="ingreso-alumno.php" method="post"  >
+            <form action="ingreso_alumno.php" method="post"  >
                     <div class="info">
                     <div class="datos">        
                         <br>
@@ -129,50 +129,11 @@
                         $vari = empty($_SESSION['variab']);
                         if($vari == false)
                             {   
-                                ?> <div class="boton_formulario"> <h2>El alumno ya existe</h2>
+                                ?> <div class="boton_formulario"> <h2>El alumno ya existe</h2></div>
                                 <?php 
                                 $_SESSION['variab'] = null;
                             }
-                        $x = empty($_POST['DNI']);
-                        
-                        if($x == false)
-                        {
-                            $DNI = $_POST['DNI'];
-                            $_SESSION['DNI'] = $DNI;
-                            include("db.php");
-                            $request = "SELECT*FROM alumnos where DNI = '$_SESSION[DNI]'";
-                            $resultado=mysqli_query($conexion,$request);
-                            $filas = mysqli_num_rows($resultado);
-                            if($filas > 0)
-                            {
-                                $_SESSION['x'] = null;
-                                $_SESSION['variab'] = 1;
-                            }
-                                if(empty($_SESSION['variab'] ) == false)
-                                {
-                                    ?>
-                                    <form action = "ingreso-alumno.php" method = "post" class="boton_formulario"> 
-                                    <ul>
-                                    <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
-                                    </ul>    
-                                    </div>              
-                                    </div>             
-                                    </form>   
-                                    <?php
                                 }
-                                else{
-                                    ?>
-                                    <form action = "ingreso_alumno.php" method = "post" class="boton_formulario"> 
-                                    <ul>
-                                    <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
-                                    </ul>  
-                                    </div>              
-                                    </div>               
-                                    </form>   
-                                    <?php
-                                    }
-                            }
-                    }
                         ?>              
     </div>
             </div>
