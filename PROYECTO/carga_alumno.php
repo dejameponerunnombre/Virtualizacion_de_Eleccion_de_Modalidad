@@ -18,15 +18,23 @@ else
 $mail = $_POST['mail'];
 $usuario = $_POST['usuario'];
 $contrasenia = $_POST['contrasenia'];
-$in  = "INSERT INTO alumnos (DNI, Nombre, Usuario, Contrasenia, Mail,Curso,Escuela) values 
-('$DNI','$Nombre','$usuario','$contrasenia','$mail','$curso','$escuela')";
-$con =  $conexion -> query($in);
-if(empty($con) === false)
+if($mail==NULL || $usuario=NULL || $contrasenia==NULL || $curso==NULL || $Nombre==NULL || $DNI==NULL || $escuela==NULL)
 {
-    $x = 10;
-$_SESSION['x'] = $x;
-include("ingreso-alumno.php");
+    $v=1;
+    $_SESSION['v'] = $v;
+    include("ingreso_alumno.php")
 }
-
+else
+{
+    $in  = "INSERT INTO alumnos (DNI, Nombre, Usuario, Contrasenia, Mail,Curso,Escuela) values 
+    ('$DNI','$Nombre','$usuario','$contrasenia','$mail','$curso','$escuela')";
+    $con =  $conexion -> query($in);
+    if(empty($con) === false)
+    {
+        $x = 10;
+        $_SESSION['x'] = $x;
+        include("ingreso-alumno.php");
+    }
+}
 mysqli_close($conexion);
 ?> 

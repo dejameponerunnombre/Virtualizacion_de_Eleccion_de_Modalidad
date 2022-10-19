@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2022 a las 22:03:05
+-- Tiempo de generación: 19-10-2022 a las 19:42:32
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -118,8 +118,7 @@ INSERT INTO `alumnos` (`DNI`, `Nombre`, `Escuela`, `Curso`, `Usuario`, `Contrase
 ('69', 'Sesentainueve', 'Tecnica', 'G', '69', '69', 'alumno.paltamiranda@gmail.com'),
 ('7', 'multi', 'tecnica', 'A', '7', '7', 'alumno.paltamiranda@gmail.com'),
 ('8', 'medios', 'tecnica', 'A', '8', '8', 'alumno.paltamiranda@gmail.com'),
-('9', 'Economia2', 'Orientada', 'C', '9', '9', 'alumno.paltamiranda@gmail.com'),
-('99', 'Kachy Chien', 'Tecnica', 'B', '99', '99', 'alumno.paltamiranda@gmail.com');
+('9', 'Economia2', 'Orientada', 'C', '9', '9', 'alumno.paltamiranda@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -392,9 +391,9 @@ INSERT INTO `info` (`DNI`, `Anio`, `Prom`, `Fichas`, `Inasistencias`, `Observaci
 ('68', '1', 6, 6, 8, 8),
 ('68', '2', 8, 8, 6, 6),
 ('68', '3', 6, 6, 8, 8),
-('69', '1', 10, 0, 0, 0),
-('69', '2', 10, 0, 0, 0),
-('69', '3', 10, 0, 0, 0),
+('69', '1', 6, 6, 9, 9),
+('69', '2', 9, 9, 6, 6),
+('69', '3', 6, 6, 9, 9),
 ('7', '1', 7, 7, 7, 7),
 ('7', '2', 7, 7, 7, 7),
 ('7', '3', 7, 7, 7, 7),
@@ -495,6 +494,7 @@ INSERT INTO `total` (`DNI`, `PromediosT`, `FichasT`, `InasistenciasT`, `Observac
 ('66', 6, 18, 18, 18, '66', 1),
 ('67', 6.33333, 19, 20, 20, '67', 1),
 ('68', 6.66667, 20, 22, 22, '68', 1),
+('69', 7, 21, 24, 24, '69', 2),
 ('7', 7, 21, 21, 21, '8', 1),
 ('8', 8, 24, 24, 24, '8', 1),
 ('9', 9, 27, 27, 27, '10', 1);
