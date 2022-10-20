@@ -20,7 +20,7 @@
     </head>
 
 <?php
-if($_SESSION==FALSE)
+if(!isset($_SESSION))
 {
     session_start();
 }

@@ -83,8 +83,6 @@
                 { 
                     session_start(); 
                 } 
-                $_SESSION['varia'] = null;
-                $_SESSION['vari'] = null;
                 include("db.php");
                 $x = empty($_SESSION['x']);
                     if($x == false)
@@ -132,7 +130,7 @@
                                     <h3>DNI del alumno</h3>   
                                     <p><input type="number" name="DNI" id="DNI"></p>
                                     
-                                </div>   
+                                </div>    
                                 <div class="texto-centro">
                                     <ul>
                                         <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px; border-radius: 100px;">Consultar</button></li>
@@ -140,22 +138,6 @@
                                 </div>
                                     </form>
                                     <?php
-                                    $vari = empty($_SESSION['var']);
-                                    if($vari == false)
-                                        {   
-                                            $DNI = $_SESSION['DNI'];
-                                            $request = "SELECT*FROM total where DNI = '$_SESSION[DNI]'";
-                                            $resultado=mysqli_query($conexion,$request);
-                                            $array = $resultado -> fetch_array();
-                                            ?> <div class="boton_formulario"> <h2>Las notas de este alumno ya fueron ingresadas</h2>
-                                            <p>Promedio total: <?php echo $array["PromediosT"]?></p>
-                                            <p>Fichas totales: <?php echo $array["FichasT"]?></p>
-                                            <p>Inasistencias totales: <?php echo $array["InasistenciasT"]?></p>
-                                            <p>Observaciones totales: <?php echo $array["ObservacionesT"]?></p>
-                                            <p>Comentario: <?php echo $array["Comentario"]?></p></div>
-                                            <?php 
-                                            $_SESSION['var'] = null;
-                                        }
                                     $x = empty($_POST['DNI']);
                                     
                                     if($x == false)
@@ -181,12 +163,8 @@
                                             <?php
                                             if(empty($filas2) == false)
                                             {
-                                                $_SESSION['var'] = 1;
-                                            }
-                                            if(empty($_SESSION['var'] ) == false)
-                                            {
                                                 ?>
-                                                <form action = "form-ingreso.php" method = "post" class="boton_formulario"> 
+                                                <form action = "notas_ingresadas.php" method = "post" class="boton_formulario"> 
                                                 <ul>
                                                 <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
                                                 </ul>    

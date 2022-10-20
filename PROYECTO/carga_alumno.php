@@ -33,7 +33,7 @@ else
     {
         $x = 10;
         $_SESSION['x'] = $x;
-        $v=0;
+        $v=null;
         $_SESSION['v'] = $v;
         include("ingreso-alumno.php"); 
     }

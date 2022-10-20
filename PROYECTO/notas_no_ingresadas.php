@@ -81,7 +81,7 @@
                      <h2>Ingrese DNI del alumno a cambiar</h2>   
                     </div>
                 </div>              
-                  <hr>
+                  <hr />
                   <form action="form_ingreso_DNI.php" method="post">
                     <div class="info">
                     <div class="datos">
@@ -97,60 +97,8 @@
                     </div> 
                 </form>
                  
-                <?php 
-                $x = empty($_POST['DNI']);
-                if($x == false)
-                {
-                    $DNI = $_POST['DNI'];
-                    $_SESSION['DNI'] = $DNI;
-                    include("db.php");
-                    $request = "SELECT*FROM alumnos where DNI = '$DNI'";
-                    $resultado=mysqli_query($conexion,$request);
-                    $filas = mysqli_num_rows($resultado);
-                    if($filas > 0)
-                    {
-                        $array = $resultado -> fetch_array();
-                        $_SESSION['x'] = null;
-                        $request2 = "SELECT*FROM info where DNI = $DNI";
-                        $resultado2=mysqli_query($conexion,$request2);
-                        $filas2 = mysqli_num_rows($resultado2);
-                        ?>
-                        <h2 style="text-decoration:underline; font-weight:bold; padding-left: 20%; font-size: 14px;">Alumno ingresado:</h2> 
-                        <p style="padding-left: 20%;">Nombre: <?php echo $array["Nombre"]?></p>
-                        <p style="padding-left: 20%;">DNI: <?php echo $array["DNI"]?></p>
-                        <?php
-                        if(empty($filas2) === TRUE)
-                        {
-                            ?>
-                            <form action = "notas_no_ingresadas.php" method = "post" class="boton_formulario">   
-                              <ul>
-                                <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
-                              </ul>             
-                                        </div>              
-                              </div>   
-                          </form>   
-                          <?php
-                          }
-                          else{
-                            ?>
-                            <form action = "validacion_de_DNI.php" method = "post" class="boton_formulario">  
-                            <ul>
-                            <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
-                            </ul>             
-                            </div>              
-                           
-                          </form>   
-                          <?php
-                          }
-                        }
-                        else
-                        {
-                            ?> <div class="boton_formulario"> <h2>Alumno no ingresado</h2></div>
-                            <?php 
-                        }
-                    }
-                        ?>        
-    </div>
+<div class="boton_formulario"> <h2>Las notas de este alumno no fueron cargadas con anterioridad</h2></div>
+</div>
             </div>
    
         </div>

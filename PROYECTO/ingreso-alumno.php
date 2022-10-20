@@ -108,7 +108,7 @@
         else
         {
             $v = $_SESSION['v'];
-            if($v===0)
+            if(empty($v) === true)
             {
                 ?>  
                 <h2>Ingresar informacion del alumno</h2>   
@@ -118,7 +118,7 @@
                         <div class="datos">
                             <br>
                             <h3>DNI del alumno</h3>
-                            <p><input type="text" name="DNI" id="DNI"></p>
+                            <p><input type="number" name="DNI" id="DNI"></p>
                         </div>
                         <div class="texto-centro">
                             <ul>
@@ -134,7 +134,7 @@
                         <?php 
                         $_SESSION['variab'] = null;
                     }
-                    $_SESSION['v'] = 0;
+                    $_SESSION['v'] = null;
             }
             else
             {
@@ -148,7 +148,7 @@
                         </ul>
                     </div> 
                     <?php 
-                    $_SESSION['v'] = 0;
+                    $_SESSION['v'] = null;
             }
         }
             ?>              
