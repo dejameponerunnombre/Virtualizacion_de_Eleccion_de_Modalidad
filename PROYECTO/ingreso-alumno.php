@@ -144,7 +144,7 @@
                         <h2 style="font-weight: 300;">Algun campo no fue completado</h2>
                         <br>
                         <ul>
-                            <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="ingreso-alumno.php">Volver a ingresar alumno</a></button></li>
+                            <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="ingreso_alumno.php">Volver a cargar alumno</a></button></li>
                         </ul>
                     </div> 
                     <?php 

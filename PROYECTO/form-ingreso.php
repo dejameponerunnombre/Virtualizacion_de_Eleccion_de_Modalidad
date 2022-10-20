@@ -45,7 +45,7 @@
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
                     <li> 
-                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
+                        <a href="ingreso-alumno.php"><i class="fa fa-user "></i>Cargar alumno</a>
                     </li>
                     <li> 
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
@@ -63,7 +63,7 @@
                         <a href="cambio-eleccion.php"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
                     <li>
-                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver todos los alumnos cargados</a>
+                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver alumnos cargados</a>
                     </li>
                 </ul>
 
@@ -112,7 +112,7 @@
                                 <h2 style="font-weight: 300;">Algun campo no fue completado</h2>
                                 <br>
                                 <ul>
-                                    <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="form-ingreso.php">Volver a ingresar alumno</a></button></li>
+                                    <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="ingreso_de_datos.php">Volver a ingresar alumno</a></button></li>
                                 </ul>
                             </div> 
                             <?php 
