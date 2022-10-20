@@ -45,7 +45,7 @@
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
                     <li> 
-                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
+                        <a href="ingreso-alumno.php"><i class="fa fa-user "></i>Cargar alumno</a>
                     </li>
                     <li> 
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
@@ -63,7 +63,7 @@
                         <a href="cambio-eleccion.php"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
                     <li>
-                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver todos los alumnos cargados</a>
+                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver alumnos cargados</a>
                     </li>
                 </ul>
 
@@ -83,8 +83,6 @@
                 { 
                     session_start(); 
                 } 
-                $_SESSION['varia'] = null;
-                $_SESSION['vari'] = null;
                 include("db.php");
                 $x = empty($_SESSION['x']);
                     if($x == false)
@@ -114,7 +112,7 @@
                                 <h2 style="font-weight: 300;">Algun campo no fue completado</h2>
                                 <br>
                                 <ul>
-                                    <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="form-ingreso.php">Volver a ingresar alumno</a></button></li>
+                                    <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="ingreso_de_datos.php">Volver a ingresar alumno</a></button></li>
                                 </ul>
                             </div> 
                             <?php 
@@ -132,7 +130,7 @@
                                     <h3>DNI del alumno</h3>   
                                     <p><input type="number" name="DNI" id="DNI"></p>
                                     
-                                </div>   
+                                </div>    
                                 <div class="texto-centro">
                                     <ul>
                                         <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px; border-radius: 100px;">Consultar</button></li>
@@ -140,22 +138,6 @@
                                 </div>
                                     </form>
                                     <?php
-                                    $vari = empty($_SESSION['var']);
-                                    if($vari == false)
-                                        {   
-                                            $DNI = $_SESSION['DNI'];
-                                            $request = "SELECT*FROM total where DNI = '$_SESSION[DNI]'";
-                                            $resultado=mysqli_query($conexion,$request);
-                                            $array = $resultado -> fetch_array();
-                                            ?> <div class="boton_formulario"> <h2>Las notas de este alumno ya fueron ingresadas</h2>
-                                            <p>Promedio total: <?php echo $array["PromediosT"]?></p>
-                                            <p>Fichas totales: <?php echo $array["FichasT"]?></p>
-                                            <p>Inasistencias totales: <?php echo $array["InasistenciasT"]?></p>
-                                            <p>Observaciones totales: <?php echo $array["ObservacionesT"]?></p>
-                                            <p>Comentario: <?php echo $array["Comentario"]?></p></div>
-                                            <?php 
-                                            $_SESSION['var'] = null;
-                                        }
                                     $x = empty($_POST['DNI']);
                                     
                                     if($x == false)
@@ -181,12 +163,8 @@
                                             <?php
                                             if(empty($filas2) == false)
                                             {
-                                                $_SESSION['var'] = 1;
-                                            }
-                                            if(empty($_SESSION['var'] ) == false)
-                                            {
                                                 ?>
-                                                <form action = "form-ingreso.php" method = "post" class="boton_formulario"> 
+                                                <form action = "notas_ingresadas.php" method = "post" class="boton_formulario"> 
                                                 <ul>
                                                 <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
                                                 </ul>    

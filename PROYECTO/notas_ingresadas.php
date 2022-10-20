@@ -16,8 +16,8 @@
 </head>
 <body>
      
-           
-           
+            
+          
     <div id="wrapper">
          <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="adjust-nav">
@@ -74,94 +74,41 @@
         <div id="page-wrapper" >
             <div id="page-inner">
                 <div class="row">
+                    
                     <div class="col-md-12">
                     </div>
-                </div>   
-                <?php
-                if(!isset($_SESSION)) 
-                { 
-                    session_start(); 
-                } 
-                $_SESSION['var'] = null;
-                $_SESSION['varia'] = null;
-                $_SESSION['vari'] = null;
-                $x = empty($_SESSION['x']);
-        if($x == false)
-        {
-            ?>
-                        <div style="margin-top: 15%; text-align: center; margin-left: 17%; margin-right: 17%; border: 3px outset #172d8d;">
-		                        <h2 style="font-weight: 300;">Enviado con éxito</h2>
-		                        <p style="font-weight: 900;">El alumno fue eliminado del sistema</p>
-                                <br>
-                                <ul>
-
-                                <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="eliminar-alumno.php">Ingresar otro alumno</a></button></li>
-
-                                
-                              </ul>
-	                        </div> 
-            <?php 
-            $_SESSION['x'] = null;
-        }
-        else 
-        {
-            ?>        
-             <h2>Ingrese DNI del alumno a eliminar</h2>        
-                <hr />
-                <form action="eliminar-alumno.php" method="post">
-                <div class="info">
-                    <div class="datos">
-                        <br>
-                        <h3>DNI del alumno</h3>   
-                    </div>   
-                    <p><input type="number" name="DNI" id="DNI"></p>
-                    <div class="texto-centro">
-                        <ul>
-                            <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px;">Consultar</button></li>
-                        </ul>
-                    </div>
-                </div>
-                </form>  
-                <?php
-                $x = empty($_POST['DNI']);
-                    if($x == false)
-                    {
-                        $DNI = $_POST['DNI'];
-                        $_SESSION['DNI'] = $DNI;
-                        include("db.php");
-                        $request = "SELECT*FROM alumnos where DNI = '$DNI'";
-                        $resultado=mysqli_query($conexion,$request);
-                        $filas = mysqli_num_rows($resultado);
-                        if($filas > 0)
-                        {
-                            $array = $resultado -> fetch_array();
-                            ?>
-                            <form action = "eliminar_alumno.php" method = "post" class="boton_formulario"> 
-                            <h2>Alumno ingresado:</h2>  
-                            <p>Nombre: <?php echo $array["Nombre"]?></p>
-                            <p>DNI: <?php echo $array["DNI"]?></p>
-                            <ul>
-                            <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>                        </div>
-            </div>                                                    
+                </div>  
+                <h2>Notas de alumno ya cargadas</h2>   
+                        <hr /> 
+<?php
+include("db.php");
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}
+    $DNI = $_SESSION['DNI'];
+    $request = "SELECT*FROM total where DNI = '$_SESSION[DNI]'";
+    $resultado=mysqli_query($conexion,$request);
+    $array = $resultado -> fetch_array();
+    ?> <div class="boton_formulario">
+        <br>
+        <h2>Las notas de este alumno ya fueron ingresadas</h2>
+    <p>Promedio total: <?php echo $array["PromediosT"]?></p>
+    <p>Fichas totales: <?php echo $array["FichasT"]?></p>
+    <p>Inasistencias totales: <?php echo $array["InasistenciasT"]?></p>
+    <p>Observaciones totales: <?php echo $array["ObservacionesT"]?></p>
+    <p>Comentario: <?php echo $array["Comentario"]?></p></div>
+    <div class="texto-centro">
+    <form action = "form-ingreso.php" method = "post" class="boton_formulario"> 
+    <ul>
+    <li><button type="submit" class="boton2" style="margin-left: 20%;">Ingresa otro alumno</button></li>
+    </ul>    
         </div>
-                          </form>   
-                          <?php
-                        }
-                        else
-                        {
-                            ?> <div class="boton_formulario"> <h2>Alumno no ingresado</h2></div>
-                            <?php 
-                        }
-                    }
-                }
-                        ?>
-
     </div>
             </div>
    
         </div>
- 
-        <script src="../js/jquery-1.10.2.js"></script>
+      <script src="../js/jquery-1.10.2.js"></script>
       <script src="../js/bootstrap.min.js"></script>
       <script src="../js/jquery.metisMenu.js"></script>
       <script src="../js/custom.js"></script>
@@ -173,4 +120,3 @@
     </div>
 </footer>
 </html>
-

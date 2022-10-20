@@ -66,7 +66,7 @@ if($filas > 0)
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
                     <li> 
-                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
+                        <a href="ingreso-alumno.php"><i class="fa fa-user "></i>Cargar alumno</a>
                     </li>
                     <li> 
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
@@ -84,7 +84,7 @@ if($filas > 0)
                         <a href="cambio-eleccion.php"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
                     <li>
-                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver todos los alumnos cargados</a>
+                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver alumnos cargados</a>
                     </li>
                 </ul>
 
@@ -96,13 +96,12 @@ if($filas > 0)
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Seleccione una opción</h2>   
+                     <h2>Ingresar datos de alumno</h2>   
                     </div>
                 </div>              
                
                   <hr />  
-                  <h2 id="h2">Ingresar datos de alumno</h2>
-                  <br>
+                 
             <form action="carga_de_datos.php" method="post"  >
 
         
@@ -168,17 +167,6 @@ if($filas > 0)
         </div>
 
         </div>
-
-        <fieldset id="termina">
-
-        <legend>Cuando dejó de tener materias pendientes?</legend>
-        <input type="radio" id="Noviembre" value= 1 name="termina" ><label for="Noviembre">Noviembre</label>
-        <input type="radio" id="Diciembre"value= 2 name="termina"><label for="Diciembre">Diciembre</label>
-        <input type="radio" id="Febrero"value= 3 name="termina"><label for="Febrero">Febrero</label>
-        <input type="radio" id="Marzo"value= 4 name="termina" required><label for="Marzo">Marzo</label>
-        </fieldset>
-        <br>
-
         <div class="temas3">
 
         <div class="comen">    
@@ -187,10 +175,26 @@ if($filas > 0)
             <p>Comentario de conducta: <input type="text" name="Comentario" id="comentario"></p>
         
         </div>
-        
-        
+
+        <fieldset id="termina" >
+
+        <h3 style="font-size:19px; margin-bottom: 5%; margin-left:10px;">Cuando dejó de tener materias pendientes?</h3>
+        <input type="radio" id="Noviembre" value= 1 name="termina" style="margin-left:30%;" ><label for="Noviembre" style="margin-left:15px;">Noviembre</label>
+        <br>
+        <input type="radio" id="Diciembre"value= 2 name="termina" style="margin-left:30%;"><label for="Diciembre" style="margin-left:15px;">Diciembre</label>
+        <br>
+        <input type="radio" id="Febrero"value= 3 name="termina" style="margin-left:30%;"><label for="Febrero" style="margin-left:15px;">Febrero</label>
+        <br>
+        <input type="radio" id="Marzo"value= 4 name="termina"  style="margin-left:30%;"><label for="Marzo" style="margin-left:15px;">Marzo</label>
+        </fieldset>
+        <br>
+        <br>
         <button type="submit" class="m_boton_formulario bttn-pill bttn-md bttn-primary">Enviar</button>
     </div>
+        
+        <br>
+
+        
     </form>
     </div>
     </div>

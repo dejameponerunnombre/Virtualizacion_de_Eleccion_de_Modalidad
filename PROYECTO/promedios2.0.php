@@ -46,7 +46,7 @@
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
                     <li> 
-                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
+                        <a href="ingreso-alumno.php"><i class="fa fa-user "></i>Cargar alumno</a>
                     </li>
                     <li> 
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
@@ -64,7 +64,7 @@
                         <a href="cambio-eleccion.php"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
                     <li>
-                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver todos los alumnos cargados</a>
+                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver alumnos cargados</a>
                     </li>
                 </ul>
 
@@ -200,10 +200,14 @@ if($ahora < $final && $ahora > $inicio)
         <?php 
         }
     }
+
 }
 else
 {
-    include("mensaje-error.html");
+    ?>
+    <a class="img" ><img src="../IMG/curso.jpg" style="opacity: 0.2; width: 50%; margin-left: 25%; vertical-align: top;"/></a> 
+                     <h1 style="margin-left: 40%;position: absolute; top: 50%;  transform: translate(-50%, -50%);font-size: 25px;"> Las inscripciones aún no han sido abiertas</h1>
+    <?php
 }
 ?>
 <br>

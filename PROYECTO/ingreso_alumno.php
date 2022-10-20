@@ -15,18 +15,26 @@
     
     
 
-        <title>Ingreso de notas</title>
+        <title>Ingreso de alumno</title>
 
     </head>
 
 <?php
-if($_SESSION==FALSE)
+if(!isset($_SESSION))
 {
     session_start();
 }
 include("db.php");
-$DNI = $_POST['DNI'];
-$_SESSION['DNI'] = $DNI;
+if(empty($_POST['DNI']) === false)
+{
+    $DNI = $_POST['DNI'];
+    $_SESSION['DNI'] = $DNI;
+}
+else
+{
+    $DNI = $_SESSION['DNI'];
+}
+
 $request = "SELECT*FROM alumnos where DNI = '$DNI'";
 $resultado=mysqli_query($conexion,$request);
 $filas = mysqli_num_rows($resultado);
@@ -122,12 +130,12 @@ else
         <fieldset id="curso">
             <br>
         <h4>Curso</h4>
-        <input type="radio" id="A" value= A name="curso" ><label for="A">A</label>
-        <input type="radio" id="B"value= B name="curso"><label for="B">B</label>
-        <input type="radio" id="C"value= C name="curso"><label for="C">C</label>
-        <input type="radio" id="D"value= D name="curso" required><label for="D">D</label>
-        <input type="radio" id="E"value= E name="curso"><label for="E">E</label>
-        <input type="radio" id="G"value= G name="curso" required><label for="G">G</label>
+        <label for="A" style="margin-left: 15px;">A</label><input type="radio" id="A" value= A name="curso" >
+        <label for="B" style="margin-left: 15px;">B</label><input type="radio" id="B"value= B name="curso">
+        <label for="C" style="margin-left: 15px;">C</label><input type="radio" id="C"value= C name="curso">
+        <label for="D" style="margin-left: 15px;">D</label><input type="radio" id="D"value= D name="curso">
+        <label for="E" style="margin-left: 15px;">E</label><input type="radio" id="E"value= E name="curso">
+        <label for="G" style="margin-left: 15px;">G</label><input type="radio" id="G"value= G name="curso">
         </fieldset>
         </div>
         <br>
@@ -146,7 +154,7 @@ else
         <div class="temas3">
         
         
-        <button type="submit" class="m_boton_formulario bttn-pill bttn-md bttn-primary">Enviar</button>
+        <button type="submit" class="m_boton_formulario bttn-pill bttn-md bttn-primary" style="margin-left:0; margin-top:35%;">Enviar</button>
     </div>
     </form>
     </div>

@@ -6,15 +6,7 @@ include("db.php");
 $x = 0;
 $DNI = $_SESSION['DNI'];
 $Nombre = $_POST['nombre'];
-$curso=$_POST['curso'];
-if($curso=='A' || $curso=='B' || $curso=='C' || $curso=='G' )
-{
-    $escuela="Tecnica";
-}
-else
-{
-    $escuela="Orientada";
-}
+$curso = $_POST['curso'];
 $mail = $_POST['mail'];
 $usuario = $_POST['usuario'];
 $contrasenia = $_POST['contrasenia'];
@@ -26,6 +18,14 @@ if($mail==NULL || $usuario==NULL || $contrasenia==NULL || $curso==NULL || $Nombr
 }
 else
 {
+    if($curso=='A' || $curso=='B' || $curso=='C' || $curso=='G' )
+    {
+        $escuela="Tecnica";
+    }
+    else
+    {
+        $escuela="Orientada";
+    }
     $in  = "INSERT INTO alumnos (DNI, Nombre, Usuario, Contrasenia, Mail,Curso,Escuela) values 
     ('$DNI','$Nombre','$usuario','$contrasenia','$mail','$curso','$escuela')";
     $con =  $conexion -> query($in);
@@ -33,7 +33,7 @@ else
     {
         $x = 10;
         $_SESSION['x'] = $x;
-        $v=0;
+        $v=null;
         $_SESSION['v'] = $v;
         include("ingreso-alumno.php"); 
     }

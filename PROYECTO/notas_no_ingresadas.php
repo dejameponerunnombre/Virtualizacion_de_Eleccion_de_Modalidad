@@ -1,24 +1,26 @@
-﻿<!DOCTYPE html>
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
+<!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Secretaría</title>
 
-    <link href="bootstrap.css" rel="stylesheet" />
-  
-    <link href="font-awesome.css" rel="stylesheet" />
-
-    <link href="custom.css" rel="stylesheet" />
+    <link href=" bootstrap.css" rel="stylesheet" />
+    <link href=" font-awesome.css" rel="stylesheet" />
+    <link href=" custom.css" rel="stylesheet" >
+    <link rel="stylesheet" href="boton.css">
+    <link rel="stylesheet" href=" footer.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="icon" href="../IMG/Logo_azul (2).PNG">
 
-     <link rel="stylesheet" href="footer.css">
-     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
-<body>
-     
-           
-          
+<body>     
     <div id="wrapper">
          <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="adjust-nav">
@@ -28,10 +30,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="logo" href="#" ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
+                    <a class="logo" ><img src="../IMG/Escuela.png" style="width: 40px; margin-top: 2px;"/></a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="panel de control.html">Volver</a></li>
                         <li><a href="inicio.html">Cerrar Sesión</a></li>
                     </ul>
                 </div>
@@ -40,7 +43,7 @@
         </div>
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
+            <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
@@ -75,22 +78,35 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Seleccione una opción del panel</h2>   
+                     <h2>Ingrese DNI del alumno a cambiar</h2>   
                     </div>
                 </div>              
-               
-                  <hr /> 
-                  <img src="../IMG/login.png" style="width: 40%; margin-left: 30%; margin-top: 0%;vertical-align: top;"/>
-          
-    </div>
+                  <hr />
+                  <form action="form_ingreso_DNI.php" method="post">
+                    <div class="info">
+                    <div class="datos">
+                        <br>
+                        <h3>DNI del alumno</h3>   
+                    </div>   
+                        <p><input type="number" name="DNI" id="DNI"></p>
+                        <div class="texto-centro">
+                                <ul>
+                                    <li><button type="submit" class="bttn-pill bttn-md bttn-primary" style="margin-top: 3px; margin-left: 50px; border-radius: 100px;">Consultar</button></li>
+                                </ul>
+                        </div>     
+                    </div> 
+                </form>
+                 
+<div class="boton_formulario"> <h2>Las notas de este alumno no fueron cargadas con anterioridad</h2></div>
+</div>
             </div>
    
         </div>
  
-    <script src="../js/jquery-1.10.2.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.metisMenu.js"></script>
-    <script src="../js/custom.js"></script>
+        <script src="../js/jquery-1.10.2.js"></script>
+      <script src="../js/bootstrap.min.js"></script>
+      <script src="../js/jquery.metisMenu.js"></script>
+      <script src="../js/custom.js"></script>
     
    
 </body>

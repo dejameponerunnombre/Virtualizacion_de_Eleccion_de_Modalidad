@@ -46,7 +46,7 @@
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
                     <li> 
-                        <a href="ingreso-alumno.php"><i class="fa fa-user "></i>Cargar alumno</a>
+                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
                     </li>
                     <li> 
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
@@ -64,7 +64,7 @@
                         <a href="cambio-eleccion.php"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
                     <li>
-                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver alumnos cargados</a>
+                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver todos los alumnos cargados</a>
                     </li>
                 </ul>
 
@@ -78,39 +78,12 @@
                     
                     <div class="col-md-12">  
                     </div>
-                </div> 
-                <?php
-                if(!isset($_SESSION)) 
-                { 
-                    session_start(); 
-                } 
-                $x = empty($_SESSION['x']);
-        if($x == false)
-        {
-            ?>
-            <div style="margin-top: 15%; text-align: center;
-    margin-left: 17%; margin-right: 17%; border: 3px outset #172d8d;">
-		                        <h2 style="font-weight: 300;">Enviado con éxito</h2>
-		                        <p style="font-weight: 900;">El alumno ya puede rehacer su elección</p>
-                                <br>
-                                <ul>
-
-                                <li><button class="boton2" style="margin-left: 0;"><a style="color:white;"href="cambio-eleccion.php">Ingresar otro alumno</a></button></li>
-
-                                
-                              </ul>
-	                        </div> 
-            <?php 
-            $_SESSION['x'] = null;
-        }
-        else
-        {
-            ?>             
+                </div>
                 <h2>Ingrese DNI del alumno que desea cambiar su elección</h2>   
 
                   <hr />
               
-                  <form action="cambio-eleccion.php" method="post" >
+                <form action="cambio-eleccion.php" method="post" >
                     <div class="info">
                     <div class="datos">
                         <br>
@@ -124,61 +97,8 @@
                             </div>
                         </div>
                     </form>
-                    <?php
-                    $e = empty($_POST['DNI']);
-                    if($e == false)
-                    {
-                        $DNI = $_POST['DNI'];
-                        $_SESSION['DNI'] = $DNI;
-                        include("db.php");
-                        $request = "SELECT*FROM alumnos where DNI = '$DNI'";
-                        $resultado=mysqli_query($conexion,$request);
-                        $filas = mysqli_num_rows($resultado);
-                        if($filas > 0)
-                        {
-                        $_SESSION['x'] = null;
-                          $array = $resultado -> fetch_array();
-                          $request2 = "SELECT*FROM eleccion where DNI = $DNI";
-                        $resultado2=mysqli_query($conexion,$request2);
-                        $filas2 = mysqli_num_rows($resultado2);
-                        ?>
-                        <h2 style="text-decoration:underline; font-weight:bold; padding-left: 20%; font-size: 14px;">Alumno ingresado:</h2> 
-                        <p style="padding-left: 20%;">Nombre: <?php echo $array["Nombre"]?></p>
-                        <p style="padding-left: 20%;">DNI: <?php echo $array["DNI"]?></p>
-                        <?php
-                        if(empty($filas2) === TRUE)
-                        {
-                            ?>
-                            <form action = "eleccion_no_realizada.php" method = "post" class="boton_formulario">   
-                              <ul>
-                                <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
-                              </ul>             
-                                        </div>              
-                              </div>   
-                          </form>   
-                          <?php
-                          }
-                          else{
-                            ?>
-                            <form action = "cambio_eleccion.php" method = "post" class="boton_formulario">  
-                            <ul>
-                            <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
-                            </ul>             
-                            </div>              
-                           
-                          </form>   
-                          <?php
-                          }
-                        }
-                        else
-                        {
-                         ?> <div class="boton_formulario"> <h2>Alumno no ingresado</h2></div>
-                          <?php 
-                        }
-                    }
-                }
-                        ?>        
-    </div>
+                <div class="boton_formulario"> <h2>El alumno no ha realizado la elección</h2></div>
+                </div>
             </div>
    
         </div>

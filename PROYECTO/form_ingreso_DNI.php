@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -42,7 +48,7 @@
                         <img src="../IMG/find_user.png" class="img-responsive" />
                     </li>
                     <li> 
-                        <a href="ingreso-alumno.php"><i class="fa fa-desktop "></i>Cargar alumno</a>
+                        <a href="ingreso-alumno.php"><i class="fa fa-user "></i>Cargar alumno</a>
                     </li>
                     <li> 
                         <a href="form-ingreso.php"><i class="fa fa-desktop "></i>Cargar notas</a>
@@ -60,7 +66,7 @@
                         <a href="cambio-eleccion.php"><i class="fa fa-edit "></i>Permitir rehacer elección</a>
                     </li>
                     <li>
-                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver todos los alumnos cargados</a>
+                        <a href="todoscursoss.php"><i class="fa fa-table "></i>Ver alumnos cargados</a>
                     </li>
                 </ul>
 
@@ -75,7 +81,7 @@
                      <h2>Ingrese DNI del alumno a cambiar</h2>   
                     </div>
                 </div>              
-                  <hr />
+                  <hr>
                   <form action="form_ingreso_DNI.php" method="post">
                     <div class="info">
                     <div class="datos">
@@ -92,20 +98,6 @@
                 </form>
                  
                 <?php 
-                
-                if(!isset($_SESSION)) 
-                { 
-                    session_start(); 
-                } 
-                $_SESSION['var'] = null;
-                $_SESSION['varia'] = null;
-                $varia = empty($_SESSION['vari']);
-                if($varia == false)
-                    {
-                        ?> <div class="boton_formulario"> <h2>Las notas de este alumno no fueron cargadas con anterioridad</h2></div>
-                         <?php 
-                         $_SESSION['vari'] = null;
-                    }
                 $x = empty($_POST['DNI']);
                 if($x == false)
                 {
@@ -129,12 +121,8 @@
                         <?php
                         if(empty($filas2) === TRUE)
                         {
-                            $_SESSION['vari'] = 1;
-                        }
-                        if(empty($_SESSION['vari']) == false)
-                        {
                             ?>
-                            <form action = "form_ingreso_DNI.php" method = "post" class="boton_formulario">   
+                            <form action = "notas_no_ingresadas.php" method = "post" class="boton_formulario">   
                               <ul>
                                 <li><button type="submit" class="boton2" style="margin-left: 20%;">Confirmar</button></li>
                               </ul>             
@@ -154,16 +142,12 @@
                           </form>   
                           <?php
                           }
-                          
                         }
                         else
                         {
                             ?> <div class="boton_formulario"> <h2>Alumno no ingresado</h2></div>
                             <?php 
                         }
-                        mysqli_free_result($resultado);
-                        mysqli_close($conexion);
-                        
                     }
                         ?>        
     </div>
