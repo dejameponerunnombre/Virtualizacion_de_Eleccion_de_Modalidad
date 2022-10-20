@@ -200,10 +200,14 @@ if($ahora < $final && $ahora > $inicio)
         <?php 
         }
     }
+
 }
 else
 {
-    include("mensaje-error.html");
+    ?>
+    <a class="img" ><img src="../IMG/curso.jpg" style="opacity: 0.2; width: 50%; margin-left: 25%; vertical-align: top;"/></a> 
+                     <h1 style="margin-left: 40%;position: absolute; top: 50%;  transform: translate(-50%, -50%);font-size: 25px;"> Las inscripciones aún no han sido abiertas</h1>
+    <?php
 }
 ?>
 <br>

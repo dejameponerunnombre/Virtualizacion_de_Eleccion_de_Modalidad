@@ -10,7 +10,6 @@ $curso = $_POST['curso'];
 $mail = $_POST['mail'];
 $usuario = $_POST['usuario'];
 $contrasenia = $_POST['contrasenia'];
-echo $DNI, $Nombre, $curso, $mail, $usuario, $contrasenia;
 if($mail==NULL || $usuario==NULL || $contrasenia==NULL || $curso==NULL || $Nombre==NULL || $DNI==NULL)
 {
     $v=1;

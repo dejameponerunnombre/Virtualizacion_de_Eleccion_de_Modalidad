@@ -74,8 +74,12 @@ include("calculo.php");
             </div>
 
         </nav>
+        
+                
+                    <div class="col-md-12">
         <div id="page-wrapper" style="z-index:1" >
             <div id="page-inner" >
+            <div class="row">
             
                 <div class="col-md-12">
                     <h2>Lista de <span style="color:#040544; font-weight: 900;"> Divisiones</span></h2> 
@@ -91,11 +95,11 @@ for($x="A";$x<="G" and $x!="f";$x++)
     if ($siquesi[0] != 0)
     {
         ?>
-        <div class="col-md-12" style="position: relative;display: inline-block;">
-        <h1>Listas por División: <span style="color:#040544;">3º <?php echo $x ?></span></h1>
+        <div class="col-md-12" style="position: relative;display: inline-block; text-align:center;">
+        <h3>Listas por División: <span style="color:#040544;">3º <?php echo $x ?></span></h3>
         <br>  
-        <div class="datagrid">
-            <table border = 1 ><tr><th>Modalidad</th><th>Puesto</th><th>Alumno</th><th>Situación</th><th>Cambio de colegio</th><th>Promedio</th><th>Fichas</th><th>Observaciones</th><th>Inasistencias</th><th>Comentario</th><th>Mes sin adeudamiento de materia</th></tr>
+        <div class="datagrid" >
+            <table border = 1 style="text-align:center;"><tr><th style="text-align:center;">Modalidad</th><th style="text-align:center;">Puesto</th><th style="text-align:center;">Alumno</th><th style="text-align:center;">Situación</th><th style="text-align:center;">Cambio de colegio</th><th style="text-align:center;">Promedio</th><th style="text-align:center;">Fichas</th><th style="text-align:center;">Observaciones</th><th style="text-align:center;">Inasistencias</th><th style="text-align:center;">Comentario</th><th style="text-align:center;">Mes sin adeudamiento de materia</th></tr>
             <?php
             include("db.php");
             $request = "SELECT COUNT(*) FROM alumnos where Curso = '$x' and DNI in(select DNI from eleccion) and DNI in(select DNI from total)";
@@ -203,7 +207,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
     {
         ?>
         <div class="col-md-12" style="position: relative;display: inline-block;">
-        <h1>Listas por División: <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h1>
+        <h3>Listas por División: <span style="color:#040544; font-weight: 900;">3º <?php echo $x ?></span></h3>
         <br>
         <h1 style="text-align: center; margin-left: 50%; transform: translate(-50%, -50%);font-size:  16px; border: 2px solid #172d8d; padding: 10px; margin-top: 30px;">No hay alumnos en esta división</h1>
         <?php
@@ -217,7 +221,8 @@ for($x="A";$x<="G" and $x!="f";$x++)
 <?php
 } 
 ?>
-<button type="submit" class="boton2" style="margin-left: 85%; "><a href="ExcelCurso.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>                            
+
+<button type="submit" class="boton2" style="margin-top:3%;margin-left: 85%; "><a href="ExcelCurso.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>                            
 
 <br><br><br><br>          
                   
