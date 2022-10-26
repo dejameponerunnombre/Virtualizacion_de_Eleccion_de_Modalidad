@@ -1,7 +1,10 @@
 <?php
         echo "<link rel=stylesheet href=../PROYECTO/footer.css>";
         echo "<link rel=stylesheet href=../PROYECTO/custom.css>";
-        session_start();
+        if(!isset($_SESSION)) 
+        { 
+            session_start(); 
+        }  
         include("db.php");
         $x = 0;
         $PT = 0;

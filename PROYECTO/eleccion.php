@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}  
 $modalidad = $_POST['modalidad'];
 $DNI = $_SESSION['DNI'];
 include("db.php");

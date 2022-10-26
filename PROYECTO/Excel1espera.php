@@ -1,6 +1,9 @@
 <html>
 <?php
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}  
 include("db.php");
 $x = $_SESSION['X'];
 $ahorasi="SELECT Ingresos, Descripcion FROM modalidad where ID_Modalidad = $x";

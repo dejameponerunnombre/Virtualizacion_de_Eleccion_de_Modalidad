@@ -1,11 +1,12 @@
 <?php
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}  
 $dni = $_POST['dni'];
 $mail = $_POST['mail'];
-session_start();
 $_SESSION['dni'] = $dni;
 include("db.php");
-echo $dni;
-echo $mail;
 $de = 'dielmod7c@gmail.com';
 $consulta = "SELECT Mail, Contrasenia FROM alumnos where Usuario = '$dni' and Mail='$mail'";
 $contra= $conexion->query($consulta);

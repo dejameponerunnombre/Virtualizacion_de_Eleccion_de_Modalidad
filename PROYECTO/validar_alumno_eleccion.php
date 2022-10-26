@@ -1,7 +1,10 @@
 <?php
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}  
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
-session_start();
 include("db.php");
 $consulta = "SELECT DNI, Usuario, Contrasenia FROM alumnos where Usuario = '$usuario' and Contrasenia = '$contraseña'";
 $resultado = $conexion -> query($consulta);

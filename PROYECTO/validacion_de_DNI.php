@@ -20,7 +20,10 @@
 
 <body> 
 <?php
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}  
 $DNI = $_SESSION['DNI'];
  
 include("db.php");

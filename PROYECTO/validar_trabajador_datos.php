@@ -1,7 +1,10 @@
 <?php
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}  
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
-session_start();
 $_SESSION['usuario'] = $usuario;
 include("db.php");
 $consult = "SELECT Usuario, Contrasenia, Tipo FROM empleado where Usuario = '$usuario' and Contrasenia = '$contraseña'";

@@ -89,7 +89,10 @@
 $inicio = mktime(0, 0, 0, 5, 1, 2022);
 $final =  mktime(0, 0, 0, 10, 15, 2022);
 $ahora = time() ;
-
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}  
 if($ahora < $final && $ahora > $inicio)
 {
 

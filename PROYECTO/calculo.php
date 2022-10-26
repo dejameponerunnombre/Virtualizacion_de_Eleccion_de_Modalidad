@@ -1,5 +1,9 @@
 <?php
 include ("db.php");
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}  
 $limpiado="UPDATE eleccion SET Prioridad = 0";
 $limpio= $conexion->query($limpiado);
 for($x = 1; $x <= 5; $x++)

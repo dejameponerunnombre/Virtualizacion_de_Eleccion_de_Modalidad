@@ -1,7 +1,10 @@
 <html>
 
 <?php
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}  
 include("db.php");
 header("Content-type: application/octet-stream");  
 header("Content-Disposition: attachment; filename=Listas.xls");  

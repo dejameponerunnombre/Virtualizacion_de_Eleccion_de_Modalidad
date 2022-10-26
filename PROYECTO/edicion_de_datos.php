@@ -1,5 +1,8 @@
 <?php
-        session_start();
+        if(!isset($_SESSION)) 
+        { 
+            session_start(); 
+        }  
         include("db.php");
         $DNI = $_SESSION['DNI'];
         $anio1[0] = $_POST['Promedio_1ro'];
