@@ -93,7 +93,7 @@
                   $_SESSION['varia'] = null;
                   $_SESSION['vari'] = null;
 $inicio = mktime(0, 0, 0, 5, 1, 2022);
-$final =  mktime(0, 0, 0, 10, 15, 2022);
+$final =  mktime(0, 0, 0, 10, 15, 2023);
 $ahora = time() ;
 
 if($ahora < $final && $ahora > $inicio)
