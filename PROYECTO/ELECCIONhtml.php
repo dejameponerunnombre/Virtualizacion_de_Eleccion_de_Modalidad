@@ -44,6 +44,11 @@ if(!isset($_SESSION))
 
     </header>
    <?php
+   $final =  mktime(0, 0, 0, 10, 15, 2022);
+   $ahora = time() ;
+   
+   if($ahora < $final)
+   {
    $x = empty($_SESSION['x']);
    if($x == false)
    {
@@ -57,7 +62,7 @@ if(!isset($_SESSION))
                        </div> 
        <?php 
        $_SESSION['x'] = null;
-   }
+   } 
    else 
    {
     ?>
@@ -114,8 +119,16 @@ if(!isset($_SESSION))
 </div>
 
    <?php
-
    }
+   }
+   else
+   {
+    ?>
+    <h2>¡Error!</h2>
+            <br>
+            <h3>El periodo de eleccion ya ha transcurrido, por favor comunicarse con <a href="inicio.html#contacto" style="color:#172d8d; text-decoration:underline;">secretaría</a> para resolver el inconveniente.</h3>
+            <?php
+    }
    ?>
     <footer class="pie-pagina">
         

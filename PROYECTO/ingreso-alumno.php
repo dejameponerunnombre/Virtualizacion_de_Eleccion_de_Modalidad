@@ -107,7 +107,10 @@
         }
         else
         {
-            $v = $_SESSION['v'];
+            if(isset($_SESSION['v'])==TRUE)
+            {
+                $v = $_SESSION['v'];
+            }
             if(empty($v) === true)
             {
                 ?>  

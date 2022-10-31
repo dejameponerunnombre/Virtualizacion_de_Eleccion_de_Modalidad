@@ -1,9 +1,8 @@
 <?php
-$inicio = mktime(0, 0, 0, 5, 1, 2022);
 $final =  mktime(0, 0, 0, 10, 15, 2022);
 $ahora = time() ;
 
-if($ahora < $final and $ahora > $inicio)
+if($ahora > $final)
 {
     $usuario = $_POST['usuario'];
     $contraseña = $_POST['contraseña'];

@@ -1,13 +1,12 @@
 <?php
 $inicio = mktime(0, 0, 0, 5, 1, 2022);
-$final =  mktime(0, 0, 0, 10, 15, 2023);
-$ahora = time() ;
+$ahora = time();
 
-if($ahora < $final and $ahora > $inicio)
+if($ahora > $inicio)
 {
  include("login_alumno_eleccion.html");
 }
-else
+else 
 {
     include("mensaje-error.html");
 }

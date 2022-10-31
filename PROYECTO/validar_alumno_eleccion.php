@@ -21,7 +21,7 @@ if(empty($filas[0]) === false)
         if(empty($anashe) === false)
         {
             include("curso.php");
-        }
+        } 
         else
         {
             include("ELECCIONhtml.php");
