@@ -14,6 +14,7 @@ if(!isset($_SESSION))
     <script src="https://kit.fontawesome.com/2eed8f0a03.js" crossorigin="anonymous"></script>
     <link rel="icon" href="../IMG/Logo_azul (2).PNG">
     <link rel="stylesheet" href="boton.css">
+    <link rel="stylesheet" href="mensaje-error.css">
     <link rel="stylesheet" href="footer.css">
     <title>Elección de Modalidad</title>
 </head>
@@ -124,10 +125,21 @@ if(!isset($_SESSION))
    else
    {
     ?>
-    <h2>¡Error!</h2>
+    <div class="texto-centro">
+            
+          
+            <h2>¡Error!</h2>
             <br>
-            <h3>El periodo de eleccion ya ha transcurrido, por favor comunicarse con <a href="inicio.html#contacto" style="color:#172d8d; text-decoration:underline;">secretaría</a> para resolver el inconveniente.</h3>
-            <?php
+            <h3 style="textalign:center">El periodo de eleccion ya ha transcurrido, por favor comunicarse con <a href="inicio.html#contacto" style="color: #F28773; text-decoration:underline;">secretaría</a> para resolver el inconveniente.</h3>
+            <div>
+                
+                <img src="../IMG/20945385.jpg" alt="error" class="logo" style="width: 30%; margin-right:5%;">
+                
+            </div>
+            
+        </div>  
+        <?php
+            
     }
    ?>
     <footer class="pie-pagina">
