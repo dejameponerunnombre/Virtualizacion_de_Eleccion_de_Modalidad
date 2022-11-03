@@ -197,6 +197,7 @@ if($ahora < $final && $ahora > $inicio)
             }
         ?>
         </table>
+        </div>
         <?php 
         }
     }
@@ -213,14 +214,19 @@ else
 <br>
 <button type="submit" class="boton2" style="margin-left: 85%; "><a href="Exceltotal.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>
      
-    </div>
+    
             </div>  
         </div>
+</div>
+</div>
+
         </tbody>
     <script src="../js/jquery-1.10.2.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.metisMenu.js"></script>
     <script src="../js/custom.js"></script>
+    </div>
+    </div>
 <footer class="pie-pagina" style="left: 0; right: 0;">
     <div class="grupo-2">
         <small>&copy; 2022 <b>7mo Informática</b> - Grupo 3</small>
