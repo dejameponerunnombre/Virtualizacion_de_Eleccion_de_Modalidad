@@ -236,7 +236,7 @@ include("calculo.php");
                         </div>
                     </li>
                 </ul>
-            </div>
+            
         </nav>
 
         <div id="page-wrapper" style="z-index:1" >
@@ -382,7 +382,7 @@ for($x="A";$x<="G" and $x!="f";$x++)
 <?php
 } 
 ?>
-
+</div>
 
 <button type="submit" class="boton2" style="margin-left: 85%; margin-top:20px; "><a href="ExcelCurso.php"style="color:white;"><i class="fa fa-edit "></i>Exportar a Excel</a>   </button>                            
 
